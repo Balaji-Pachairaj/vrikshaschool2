@@ -17,91 +17,111 @@ const Milestone_actual_animation = () => {
 
   //----------------------------------------------------
 
+  const start_one = 0;
+  const middle_one = 0.2;
+  const end_one = 0.42;
+
   const image_one_rotate = useTransform(
     fullRef_useScroll?.scrollYProgress,
-    [0, 0.1, 0.24],
+    [start_one, middle_one, end_one],
     [-90, 0, 90]
   );
   const image_one_top = useTransform(
     fullRef_useScroll?.scrollYProgress,
-    [0, 0.24],
-    ["105%", "-5%"]
+    [start_one, end_one],
+    ["105%", "-15%"]
   );
   const scale_one_top = useTransform(
     fullRef_useScroll?.scrollYProgress,
-    [0, 0.08, 0.12, 0.24],
+    [start_one, middle_one - 0.2, middle_one + 0.2, end_one],
     [0.8, 1, 1, 0.8]
   );
 
   //-----------------------------------------------------
 
+  const start_two = 0.17;
+  const middle_two = 0.4;
+  const end_two = 0.56;
+
   const image_two_rotate = useTransform(
     fullRef_useScroll?.scrollYProgress,
-    [0.22, 0.3, 0.44],
+    [start_two, middle_two, end_two],
     [-90, 0, 90]
   );
   const image_two_top = useTransform(
     fullRef_useScroll?.scrollYProgress,
-    [0.22, 0.44],
-    ["105%", "-5%"]
+    [start_two, end_two],
+    ["105%", "-15%"]
   );
   const scale_two_top = useTransform(
     fullRef_useScroll?.scrollYProgress,
-    [0.22, 0.28, 0.32, 0.44],
+    [start_two, middle_two - 0.2, middle_two + 0.2, end_two],
     [0.8, 1, 1, 0.8]
   );
 
   //---------------------------------------------------
 
+  const start_three = 0.35;
+  const middle_three = 0.6;
+  const end_three = 0.7;
+
   const image_three_rotate = useTransform(
     fullRef_useScroll?.scrollYProgress,
-    [0.42, 0.5, 0.64],
+    [start_three, middle_three, end_three],
     [-90, 0, 90]
   );
   const image_three_top = useTransform(
     fullRef_useScroll?.scrollYProgress,
-    [0.42, 0.64],
-    ["105%", "-5%"]
+    [start_three, end_three],
+    ["105%", "-15%"]
   );
   const scale_three_top = useTransform(
     fullRef_useScroll?.scrollYProgress,
-    [0.42, 0.48, 0.52, 0.64],
+    [start_three, middle_three - 0.2, middle_three + 0.2, end_three],
     [0.8, 1, 1, 0.8]
   );
 
   //-------------------------------------------------------
 
+  const start_four = 0.55;
+  const middle_four = 0.7;
+  const end_four = 0.88;
+
   const image_four_rotate = useTransform(
     fullRef_useScroll?.scrollYProgress,
-    [0.64, 0.7, 0.84],
+    [start_four, middle_four, end_four],
     [-90, 0, 90]
   );
   const image_four_top = useTransform(
     fullRef_useScroll?.scrollYProgress,
-    [0.62, 0.84],
-    ["105%", "-5%"]
+    [start_four, end_four],
+    ["105%", "-15%"]
   );
   const scale_four_top = useTransform(
     fullRef_useScroll?.scrollYProgress,
-    [0.62, 0.68, 0.72, 0.84],
+    [start_four, middle_four - 0.2, middle_four + 0.2, end_four],
     [0.8, 1, 1, 0.8]
   );
 
   //---------------------------------------------------------
 
+  const start_five = 0.68;
+  const middle_five = 0.85;
+  const end_five = 1;
+
   const image_five_rotate = useTransform(
     fullRef_useScroll?.scrollYProgress,
-    [0.82, 0.9, 1],
+    [start_five, middle_five, end_five],
     [-90, 0, 90]
   );
   const image_five_top = useTransform(
     fullRef_useScroll?.scrollYProgress,
-    [0.8, 1],
-    ["105%", "-5%"]
+    [start_five, end_five],
+    ["105%", "-15%"]
   );
   const scale_five_top = useTransform(
     fullRef_useScroll?.scrollYProgress,
-    [0.82, 0.88, 0.92, 1],
+    [start_five, middle_five - 0.2, middle_five + 0.2, end_five],
     [0.8, 1, 1, 0.8]
   );
 
