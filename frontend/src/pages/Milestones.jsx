@@ -18,8 +18,8 @@ const Milestone_actual_animation = () => {
   //----------------------------------------------------
 
   const start_one = 0;
-  const middle_one = 0.2;
-  const end_one = 0.42;
+  const middle_one = 0.175;
+  const end_one = 0.35;
 
   const image_one_rotate = useTransform(
     fullRef_useScroll?.scrollYProgress,
@@ -39,9 +39,9 @@ const Milestone_actual_animation = () => {
 
   //-----------------------------------------------------
 
-  const start_two = 0.17;
-  const middle_two = 0.4;
-  const end_two = 0.56;
+  const start_two = 0.15;
+  const middle_two = 0.325;
+  const end_two = 0.5;
 
   const image_two_rotate = useTransform(
     fullRef_useScroll?.scrollYProgress,
@@ -61,9 +61,9 @@ const Milestone_actual_animation = () => {
 
   //---------------------------------------------------
 
-  const start_three = 0.35;
-  const middle_three = 0.6;
-  const end_three = 0.7;
+  const start_three = 0.3;
+  const middle_three = 0.475;
+  const end_three = 0.65;
 
   const image_three_rotate = useTransform(
     fullRef_useScroll?.scrollYProgress,
@@ -83,9 +83,9 @@ const Milestone_actual_animation = () => {
 
   //-------------------------------------------------------
 
-  const start_four = 0.55;
-  const middle_four = 0.7;
-  const end_four = 0.88;
+  const start_four = 0.45;
+  const middle_four = 0.625;
+  const end_four = 0.8;
 
   const image_four_rotate = useTransform(
     fullRef_useScroll?.scrollYProgress,
@@ -105,9 +105,9 @@ const Milestone_actual_animation = () => {
 
   //---------------------------------------------------------
 
-  const start_five = 0.68;
-  const middle_five = 0.85;
-  const end_five = 1;
+  const start_five = 0.6;
+  const middle_five = 0.775;
+  const end_five = 0.95;
 
   const image_five_rotate = useTransform(
     fullRef_useScroll?.scrollYProgress,
