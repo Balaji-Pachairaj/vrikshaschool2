@@ -1,9 +1,16 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
-import mil1 from "../assets/brand1.jpg";
-import mil2 from "../assets/brand2.jpg";
-import mil3 from "../assets/brand3.jpg";
-import mil4 from "../assets/brand4.jpg";
+import milestone1 from "../assets/milestones/Mil1.jpg";
+import milestone2 from "../assets/milestones/Mil2.jpg";
+import milestone3 from "../assets/milestones/Mil3.jpg";
+import milestone4 from "../assets/milestones/Mil4.jpg";
+import milestone5 from "../assets/milestones/Mil5.jpg";
+
+const src1 = milestone1;
+const src2 = milestone2;
+const src3 = milestone3;
+const src4 = milestone4;
+const src5 = milestone5;
 
 const MobileSection = styled.section`
   width: 100%;
@@ -63,7 +70,7 @@ const MilestoneText = styled.h2`
 `;
 
 const MobileMillestones = () => {
-  const images = [mil1, mil2, mil3, mil4];
+  const images = [src1, src2, src3, src4, src5];
   const containerRefs = useRef([]);
 
   useEffect(() => {
