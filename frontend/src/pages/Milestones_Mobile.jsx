@@ -99,7 +99,11 @@ const MobileMillestones = () => {
   return (
     <MobileSection>
       <ScrollContainer>
-        <MilestoneText>Milestone</MilestoneText>
+        <MilestoneText>
+          <span className=" bg-whitelight text-transparent bg-clip-text">
+            Milestone
+          </span>
+        </MilestoneText>
         {images.map((image, index) => (
           <ImageContainer
             key={index}

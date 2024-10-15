@@ -56,7 +56,8 @@ const VisionParagraph = styled.p`
 `;
 
 const Word = styled.span`
-  opacity: ${(props) => (props.visible ? 0.9 : 0.2)}; // Increased opacity for visible words
+  opacity: ${(props) =>
+    props.visible ? 0.9 : 0.2}; // Increased opacity for visible words
   transition: opacity 0.3s ease;
 `;
 
@@ -65,9 +66,10 @@ const Vision = () => {
   const [visibleWords, setVisibleWords] = useState(0);
   const paragraphRef = useRef(null);
 
-  const paragraphContent = "Every kid is unique—and so is their path to success. Vriksha Global School redefines education by empowering every child to discover their unique potential. We believe in learning beyond classrooms, embracing experiences that foster creativity, critical thinking, and real-world skills. Our holistic approach ensures that sports, arts, and other creative pursuits are valued equally alongside STEM disciplines, allowing students to explore diverse careers and passions. By nurturing each child's individuality, we create an environment where every learner can thrive, follow their dreams, and contribute meaningfully to the world.";
+  const paragraphContent =
+    "Every kid is unique—and so is their path to success. Vriksha Global School redefines education by empowering every child to discover their unique potential. We believe in learning beyond classrooms, embracing experiences that foster creativity, critical thinking, and real-world skills. Our holistic approach ensures that sports, arts, and other creative pursuits are valued equally alongside STEM disciplines, allowing students to explore diverse careers and passions. By nurturing each child's individuality, we create an environment where every learner can thrive, follow their dreams, and contribute meaningfully to the world.";
 
-  const words = paragraphContent.split(' ');
+  const words = paragraphContent.split(" ");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,7 +82,8 @@ const Vision = () => {
       const paragraphHeight = paragraphRef.current.offsetHeight;
       const windowHeight = window.innerHeight;
 
-      const scrollDistance = visionHeight - windowHeight * 0.75 - paragraphHeight / 2;
+      const scrollDistance =
+        visionHeight - windowHeight * 0.75 - paragraphHeight / 2;
       const scrollProgress = (scrollPosition - visionStart) / scrollDistance;
 
       setProgress(Math.max(0, Math.min(scrollProgress, 1)));
@@ -94,11 +97,15 @@ const Vision = () => {
   return (
     <VisionWrapper id="vision-wrapper">
       <VisionContainer>
-        <VisionText progress={progress}>n-Vision-v</VisionText>
+        {/* <VisionText progress={progress}>
+          <span className=" bg-whitelight text-transparent bg-clip-text">
+            n-Vision-v
+          </span>
+        </VisionText> */}
         <VisionParagraph ref={paragraphRef} progress={progress}>
           {words.map((word, index) => (
             <Word key={index} visible={index < visibleWords}>
-              {word}{' '}
+              {word}{" "}
             </Word>
           ))}
         </VisionParagraph>

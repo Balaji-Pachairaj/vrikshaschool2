@@ -192,8 +192,6 @@ const Hero = () => {
     [0.7, 1, 1.5, 1.5, 1.5]
   );
 
-
-
   return (
     <>
       {/* Inject the font styles */}
@@ -210,7 +208,7 @@ const Hero = () => {
             rotateX: rotateX_one,
             rotateY: rotateY_one,
           }}
-          className=" fixed lg:w-[350px] lg:h-[300px] md:w-[275px] md:h-[275px] w-[200px] h-[200px] top-[55%] left-[35%]   z-[10]"
+          className=" fixed lg:w-[350px] lg:h-[300px] md:w-[275px] md:h-[275px] w-[170px] h-[200px] top-[55%] left-[35%]   z-[10]"
         >
           <img src={src1} className=" w-full h-full object-cover" />
         </motion.div>
@@ -224,7 +222,7 @@ const Hero = () => {
             rotateX: rotateX_two,
             rotateY: rotateY_two,
           }}
-          className=" fixed lg:w-[350px] lg:h-[300px] md:w-[275px] md:h-[275px] w-[200px] h-[200px] top-[55%] left-[70%] -translate-x-[50%] -translate-y-[50%] z-[10]"
+          className=" fixed lg:w-[350px] lg:h-[300px] md:w-[275px] md:h-[275px] w-[170px] h-[200px] top-[55%] left-[70%] -translate-x-[50%] -translate-y-[50%] z-[10]"
         >
           <img src={src3} className=" w-full h-full object-cover" />
         </motion.div>
@@ -239,7 +237,7 @@ const Hero = () => {
             rotateX: rotateX_three,
             rotateY: rotateY_three,
           }}
-          className=" fixed lg:w-[350px] lg:h-[300px] md:w-[275px] md:h-[275px] w-[200px] h-[200px] top-[75%] left-[45%] -translate-x-[50%] -translate-y-[50%] z-[20]"
+          className=" fixed lg:w-[350px] lg:h-[300px] md:w-[275px] md:h-[275px] w-[170px] h-[200px] top-[75%] left-[45%] -translate-x-[50%] -translate-y-[50%] z-[20]"
         >
           <img src={src2} className=" w-full h-full object-cover" />
         </motion.div>
@@ -253,7 +251,7 @@ const Hero = () => {
             rotateX: rotateX_four,
             rotateY: rotateY_four,
           }}
-          className=" fixed lg:w-[350px] lg:h-[300px] md:w-[275px] md:h-[275px] w-[200px] h-[200px] top-[75%] left-[62.5%] -translate-x-[50%] -translate-y-[50%] z-[20]"
+          className=" fixed lg:w-[350px] lg:h-[300px] md:w-[275px] md:h-[275px] w-[170px] h-[200px] top-[75%] left-[62.5%] -translate-x-[50%] -translate-y-[50%] z-[20]"
         >
           <img src={src4} className=" w-full h-full object-cover" />
         </motion.div>
@@ -269,7 +267,7 @@ const Hero = () => {
             y: "-50%",
             fontFamily: "'Nohemi', sans-serif",
           }}
-          className="lg:w-full w-[50%] md:text-[38px] text-[24px] text-[white] font-[600] fixed z-[5] text-center capitalize  bg-whitelight text-transparent bg-clip-text "
+          className="lg:w-full w-[50%] md:text-[38px] text-[24px] text-[white] font-[600] fixed z-[5] text-center font-poppins capitalize  bg-whitelight text-transparent bg-clip-text"
         >
           Vriksha Gives WINGS <br /> To Your <br />{" "}
           <span

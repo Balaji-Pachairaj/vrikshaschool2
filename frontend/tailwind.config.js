@@ -14,6 +14,15 @@ export default {
         },
       },
 
+      //---
+      fontFamily: {
+        montserrat: ["Montserrat", "sans-serif"],
+        manrope: ["Manrope", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        lato: ["Lato", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+      },
+
       backgroundImage: {
         whitelight:
           "linear-gradient(96deg, #FFF -4.79%, rgba(255, 255, 255, 0.35) 98.05%)",

@@ -119,7 +119,11 @@ const Events = () => {
   return (
     <EventsWrapper id="events-wrapper">
       <EventsContainer>
-        <EventsText>Events</EventsText>
+        <EventsText>
+          <span className=" bg-whitelight text-transparent bg-clip-text">
+            Events
+          </span>
+        </EventsText>
         <ImageCardsContainer ref={containerRef}>
           {imageUrls_with_content.map((item, index) => (
             <ImageCard key={index} imageUrl={item?.image}>
