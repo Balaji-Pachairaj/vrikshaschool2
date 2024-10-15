@@ -283,7 +283,9 @@ const Testimonial = () => {
     <>
       <div className=" w-full h-[120vh] overflow-hidden sm:block hidden">
         <h1 className="text-[12vw] text-center font-black text-white uppercase tracking-[-0.05em] leading-[0.8] whitespace-nowrap scale-y-[1.2] mb-[2rem]">
-          Testimonals
+          <span className=" bg-whitelight text-transparent bg-clip-text">
+            Testimonals
+          </span>
         </h1>
         <div className="w-full h-screen relative overflow-hidden sm:block hidden">
           {/* ---------------- */}

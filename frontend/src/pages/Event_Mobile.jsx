@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-
 import event1 from "../assets/events/Event1.jpg";
 import event2 from "../assets/events/Event2.jpg";
 import event3 from "../assets/events/Event3.jpg";
@@ -29,12 +28,14 @@ const EventsMobile = () => {
       title: "Vriksha Junior Sport Meet",
       description: "9TH DEC, 2019",
     },
-  ]
+  ];
 
   return (
     <section className="py-8">
       <h2 className="text-4xl font-bold text-white text-center mb-6">
-        EVENT GALLERY
+        <span className=" bg-whitelight text-transparent bg-clip-text">
+          EVENTS GALLERY
+        </span>
       </h2>
       <div className="px-4 space-y-4">
         {events.map((item) => (

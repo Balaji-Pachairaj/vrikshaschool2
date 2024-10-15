@@ -8,10 +8,51 @@ import milestone4 from "../assets/milestones/Mil4.jpg";
 import milestone5 from "../assets/milestones/Mil5.jpg";
 
 const src1 = milestone1;
+const text1 = "Football Court";
 const src2 = milestone2;
+const text2 = "Running Track";
 const src3 = milestone3;
+const text3 = "Swimming Court";
 const src4 = milestone4;
+const text4 = "Football Track";
 const src5 = milestone5;
+const text5 = "Swimming Track";
+
+const Milestone_Card = ({
+  src = "",
+  top = "50%",
+  rotateX = "50%",
+  scale = "50%",
+  text = "",
+}) => {
+  return (
+    <motion.div
+      style={{
+        x: "-50%",
+        y: "-50%",
+        left: "50%",
+
+        top: top,
+        rotateX: rotateX,
+        scale: scale,
+      }}
+      className=" w-[550px] h-[400px] rounded-[30px]  fixed z-[20] overflow-hidden "
+    >
+      <div className=" w-full h-full relative ">
+        <img src={src} className=" w-full h-full object-cover " />
+
+        <div className=" w-full h-full flex flex-col justify-end absolute z-[1000] top-0">
+          <div className=" w-full h-[15%] bg-black bg-opacity-60 ps-4 pe-4 pt-1 flex flex-col justify-start gap-[0.5rem]  ">
+            <h1 className=" text-[24px] text-[white] font-bold text-center pt-2  ">
+              {text}
+            </h1>
+            <p className=" text-[14px] font-[500] text-[white]">{""}</p>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
 
 const Milestone_actual_animation = () => {
   const fullRef = useRef();
@@ -161,80 +202,48 @@ const Milestone_actual_animation = () => {
           }}
           className="text-[18vw] font-black text-white uppercase tracking-[-0.05em] leading-[0.8] whitespace-nowrap scale-y-[1.2] fixed z-[2] "
         >
-          Milestone
+          <span className=" bg-whitelight text-transparent bg-clip-text">
+            Milestone
+          </span>
         </motion.h1>
       </div>
       <div ref={fullRef} className=" w-full h-[300vh]">
-        <motion.div
-          style={{
-            x: "-50%",
-            y: "-50%",
-            left: "50%",
+        <Milestone_Card
+          src={src3}
+          top={image_one_top}
+          rotateX={image_one_rotate}
+          scale={scale_one_fullRef}
+          text={text1}
+        />
+        <Milestone_Card
+          src={src1}
+          top={image_two_top}
+          rotateX={image_two_rotate}
+          scale={scale_two_fullRef}
+          text={text2}
+        />
+        <Milestone_Card
+          src={src2}
+          top={image_three_top}
+          rotateX={image_three_rotate}
+          scale={scale_three_fullRef}
+          text={text3}
+        />
 
-            top: image_one_top,
-            rotateX: image_one_rotate,
-            scale: scale_one_fullRef,
-          }}
-          className=" w-[550px] h-[400px] rounded-[30px]  fixed z-[20] overflow-hidden "
-        >
-          <img src={src1} className=" w-full h-full object-cover " />
-        </motion.div>
-        <motion.div
-          style={{
-            x: "-50%",
-            y: "-50%",
-            left: "50%",
-
-            top: image_two_top,
-            rotateX: image_two_rotate,
-            scale: scale_two_fullRef,
-          }}
-          className=" w-[550px] h-[400px] rounded-[30px]  fixed z-[20] overflow-hidden "
-        >
-          <img src={src2} className=" w-full h-full object-cover " />
-        </motion.div>
-        <motion.div
-          style={{
-            x: "-50%",
-            y: "-50%",
-            left: "50%",
-
-            top: image_three_top,
-            rotateX: image_three_rotate,
-            scale: scale_three_fullRef,
-          }}
-          className=" w-[550px] h-[400px] rounded-[30px]  fixed z-[20] overflow-hidden "
-        >
-          <img src={src3} className=" w-full h-full object-cover " />
-        </motion.div>
-        <motion.div
-          style={{
-            x: "-50%",
-            y: "-50%",
-            left: "50%",
-
-            top: image_four_top,
-            rotateX: image_four_rotate,
-            scale: scale_four_fullRef,
-          }}
-          className=" w-[550px] h-[400px] rounded-[30px]  fixed z-[20] overflow-hidden "
-        >
-          <img src={src4} className=" w-full h-full object-cover " />
-        </motion.div>
-        <motion.div
-          style={{
-            x: "-50%",
-            y: "-50%",
-            left: "50%",
-
-            top: image_five_top,
-            rotateX: image_five_rotate,
-            scale: scale_five_fullRef,
-          }}
-          className=" w-[550px] h-[400px] rounded-[30px]  fixed z-[20] overflow-hidden "
-        >
-          <img src={src5} className=" w-full h-full object-cover " />
-        </motion.div>
+        <Milestone_Card
+          src={src4}
+          top={image_four_top}
+          rotateX={image_four_rotate}
+          scale={scale_four_fullRef}
+          text={text4}
+        />
+        <Milestone_Card
+          src={src5}
+          top={image_five_top}
+          rotateX={image_five_rotate}
+          scale={scale_five_fullRef}
+          text={text5}
+        />
       </div>
     </>
   );
