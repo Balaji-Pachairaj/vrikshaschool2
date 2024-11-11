@@ -344,7 +344,7 @@ const Testimonial = () => {
           />
 
           {/* -------------- Button Section --------- */}
-          <div className="w-fit h-fit absolute bottom-[2rem] right-[2rem] flex flex-row justify-center gap-[1.5rem]">
+          <div className="w-fit h-fit absolute bottom-[5rem] right-[2rem] flex flex-row justify-center gap-[1.5rem]">
             {/* Button 1 */}
             <button
               onClick={() => {
