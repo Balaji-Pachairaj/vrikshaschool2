@@ -15,7 +15,7 @@ const Home = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   return (
-    <div className="min-h-screen bg-black p-4">
+    <div className="min-h-screen bg-black ">
       <HeroAndVisionSection />
 
       <Categories />

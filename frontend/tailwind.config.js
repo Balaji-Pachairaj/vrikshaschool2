@@ -21,6 +21,7 @@ export default {
         poppins: ["Poppins", "sans-serif"],
         lato: ["Lato", "sans-serif"],
         inter: ["Inter", "sans-serif"],
+        cabin: ["Cabin", "sans-serif"],
       },
 
       backgroundImage: {
