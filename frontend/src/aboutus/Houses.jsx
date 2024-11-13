@@ -1,9 +1,9 @@
-// Houses.jsx
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const CardStack = () => {
   const cardsRef = useRef([]);
   const containerRef = useRef(null);
+  const [isStacked, setIsStacked] = useState(false);
 
   const cards = [
     {
@@ -28,6 +28,8 @@ const CardStack = () => {
     cardsRef.current = cardsRef.current.slice(0, cards.length);
 
     const handleScroll = () => {
+      let allCardsStacked = true;
+
       cardsRef.current.forEach((card, index) => {
         if (!card || index === cardsRef.current.length - 1) return;
 
@@ -41,15 +43,20 @@ const CardStack = () => {
         const maxDistance = window.innerHeight * 0.8;
         const percentage = Math.max(0, Math.min(1, distanceToNext / maxDistance));
         
-        const toScale = 1 - (cards.length - 1 - index) * 0.1;
-        const scale = 1 - ((1 - toScale) * (1 - percentage));
+        // Check if this card is stacked
+        if (distanceToNext > 20) {
+          allCardsStacked = false;
+        }
+
+        // Calculate brightness
         const brightness = 1 - (0.4 * (1 - percentage));
         
         if (card.style) {
-          card.style.transform = `scale(${scale})`;
           card.style.filter = `brightness(${brightness})`;
         }
       });
+
+      setIsStacked(allCardsStacked);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -60,26 +67,26 @@ const CardStack = () => {
 
   return (
     <div className="min-h-screen bg-black">
-      <div className="h-[40vh]" />
+      <div/>
       
       <div 
         ref={containerRef} 
         className="max-w-[1100px] mx-auto"
         style={{
           display: 'grid',
-          gap: '40px 0',
+          gap: '0',
           gridTemplateRows: `repeat(${cards.length}, auto)`
         }}
       >
         {cards.map((card, index) => (
           <div 
             key={index}
-            className="sticky top-0 rotate-3"
-            style={{ paddingTop: `${20 + index * 20}px` }}
+            className={`sticky top-0 transition-transform duration-700 ease-in-out ${isStacked ? 'rotate-0' : 'rotate-3'}`}
+            style={{ paddingTop: `${index * 2}px` }}
           >
             <div
               ref={el => cardsRef.current[index] = el}
-              className="rounded-xl overflow-hidden shadow-lg transform-gpu will-change-transform relative"
+              className="rounded-xl mt-32 overflow-hidden shadow-lg transform-gpu will-change-transform relative"
               style={{ transformOrigin: 'center top' }}
             >
               <div className="relative">
@@ -88,7 +95,6 @@ const CardStack = () => {
                   alt={card.title}
                   className="w-full h-[500px] object-cover"
                 />
-                {/* Overlay covering the entire card */}
                 <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
                   <h1 className="text-6xl font-bold text-white text-center tracking-wider">
                     {card.title}
@@ -100,7 +106,7 @@ const CardStack = () => {
         ))}
       </div>
 
-      <div className="h-[90vh]" />
+      <div className="h-[40vh]" />
     </div>
   );
 };
