@@ -7,7 +7,6 @@ import Mission from "./aboutus/Mission";
 import Overview from "./aboutus/Overview";
 import Learning from "./pages/Learning/Learning";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -16,15 +15,17 @@ const router = createBrowserRouter([
   {
     path: "/aboutus",
     element: <>
-    <Mission/>
-    <Overview/>
-    </>
+      <Mission/>
+      <Overview/>
+    </>,
   },
   {
     path: "/learning",
     element: <Learning />,
-  },
-]);
+  }
+], {
+  basename: "/" // This ensures proper base URL handling
+});
 
 function App() {
   return <RouterProvider router={router} />;
