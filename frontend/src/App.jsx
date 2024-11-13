@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Mission from "./aboutus/Mission";
 import Overview from "./aboutus/Overview";
 import Learning from "./pages/Learning/Learning";
+import Houses from "./aboutus/Houses";
 
 
 const router = createBrowserRouter([
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
     element: <>
     <Mission/>
     <Overview/>
+    <Houses/>
     </>
   },
   {
