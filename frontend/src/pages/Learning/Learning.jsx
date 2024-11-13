@@ -5,17 +5,16 @@ import Facilities from "./Facilities";
 import FacilitiesMobile from "./FacilitiesMobile";
 import { useMediaQuery } from "react-responsive";
 import Overview from "./Overview";
+import FacilitiesSection from "./FacilitiesSection";
 
 const Learning = () => {
-  const isMobile = useMediaQuery({ maxWidth: 767 });
-
   return (
     <div className="w-full bg-black  ">
       <Overview />
 
-      <PrimarySchoolSection />
+      <FacilitiesSection />
 
-      {isMobile ? <FacilitiesMobile /> : <Facilities />}
+      <PrimarySchoolSection />
 
       <LeadCurriculam />
     </div>

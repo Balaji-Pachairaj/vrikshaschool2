@@ -12,8 +12,9 @@ const TextComponent = ({
   onMouseLeave = () => {},
 }) => {
   return (
-    <div
-      className=" w-full h-fit "
+    <li
+      className=" w-full h-fit flex flex-row gap-[1rem] flex-shrink-0"
+
       onMouseEnter={() => {
         onMouseEnter(index);
       }}
@@ -21,23 +22,39 @@ const TextComponent = ({
         onMouseLeave();
       }}
     >
+      <span className=" w-[10px] h-[10px] rounded-[50%] bg-gray-300 mt-[1.5rem]"></span>
       <h1 className=" cursor-pointer text-[3vw] text-gray-300 font-[600] hover:translate-x-[7%] hover:text-black hover:scale-110 duration-500">
         {text}
       </h1>
-    </div>
+    </li>
   );
 };
 
 const content = [
-  { text: "Brand Acemeady", image: png1 },
-  { text: "Brand Acemeady", image: png2 },
-  { text: "Brand Acemeady", image: png3 },
-  { text: "Brand Acemeady", image: png4 },
-  { text: "Brand Acemeady", image: png1 },
-  { text: "Brand Acemeady", image: png2 },
-  { text: "Brand Acemeady", image: png3 },
-  { text: "Brand Acemeady", image: png4 },
-  { text: "Brand Acemeady", image: png1 },
+  { text: "Child-friendly furniture (chowkis)", image: png1 },
+  { text: "Outdoor area", image: png2 },
+  { text: "Sports equipment", image: png3 },
+  {
+    text: "Separate activity centers with puppet theatre, doll house etc",
+    image: png4,
+  },
+  { text: "Spacious classrooms", image: png1 },
+  { text: "Huge airy library", image: png2 },
+  { text: "Dance & music room", image: png3 },
+  { text: "AV and art room", image: png4 },
+  { text: "Outside play area with splash pool", image: png1 },
+
+  { text: "Sandpit", image: png1 },
+  {
+    text: "Skating rink (with coaching for children above three, under the guidance of an expert)",
+    image: png2,
+  },
+  {
+    text: "Field trips, outdoor education and community participation",
+    image: png3,
+  },
+  { text: "Nutritious lunch and drinking water", image: png4 },
+  { text: "Kids based learning center", image: png1 },
 ];
 
 const Facilities = () => {
@@ -64,11 +81,11 @@ const Facilities = () => {
 
   return (
     <div className=" w-full min-h-screen h-fit  bg-[white] flex flex-row justify-evenly items-start font-cabin pt-[10vh] pb-[10vh]">
-      <div className=" w-[35%] h-fit p-4 relative">
+      <div className=" w-[35%] h-full p-4 relative">
         <h1 className=" text-[#758694] text-[18px] font-[600] ">Facilities</h1>
 
-        <div className=" w-full h-fit flex flex-row justify-center mt-[2rem] ">
-          <div className=" w-[45vw] h-[30vw] relative overflow-hidden ">
+        <div className=" w-full lg:h-[150vh] h-[100vh] flex flex-row justify-center mt-[2rem]  ">
+          <div className=" w-[45vw] h-[30vw]  overflow-hidden sticky top-[2rem] ">
             {/* ---------------- */}
             <motion.div
               animate={controls}
@@ -87,7 +104,7 @@ const Facilities = () => {
           </div>
         </div>
       </div>
-      <div className=" w-[60%]  h-[90%]  border-[black] flex flex-col justify-start gap-[0rem] overflow-hidden pt-[10vh] ">
+      <ul className=" w-[60%]  h-[90%]  border-[black] flex flex-col justify-start gap-[0rem] overflow-hidden pt-[10vh] ">
         {content.map((item, index) => {
           return (
             <TextComponent
@@ -102,7 +119,7 @@ const Facilities = () => {
             />
           );
         })}
-      </div>
+      </ul>
     </div>
   );
 };

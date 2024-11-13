@@ -5,24 +5,38 @@ import png3 from "../../assets/3.png";
 import png4 from "../../assets/4.png";
 
 const content = [
-  { text: "Brand Acemeady", image: png1 },
-  { text: "Brand Acemeady", image: png2 },
-  { text: "Brand Acemeady", image: png3 },
-  { text: "Brand Acemeady", image: png4 },
-  { text: "Brand Acemeady", image: png1 },
-  { text: "Brand Acemeady", image: png2 },
-  { text: "Brand Acemeady", image: png3 },
-  { text: "Brand Acemeady", image: png4 },
-  { text: "Brand Acemeady", image: png1 },
-];
+  { text: "Child-friendly furniture (chowkis)", image: png1 },
+  { text: "Outdoor area", image: png2 },
+  { text: "Sports equipment", image: png3 },
+  {
+    text: "Separate activity centers with puppet theatre, doll house etc",
+    image: png4,
+  },
+  { text: "Spacious classrooms", image: png1 },
+  { text: "Huge airy library", image: png2 },
+  { text: "Dance & music room", image: png3 },
+  { text: "AV and art room", image: png4 },
+  { text: "Outside play area with splash pool", image: png1 },
 
+  { text: "Sandpit", image: png1 },
+  {
+    text: "Skating rink (with coaching for children above three, under the guidance of an expert)",
+    image: png2,
+  },
+  {
+    text: "Field trips, outdoor education and community participation",
+    image: png3,
+  },
+  { text: "Nutritious lunch and drinking water", image: png4 },
+  { text: "Kids based learning center", image: png1 },
+];
 const FacilitiesMobile = () => {
   return (
-    <div className=" w-full h-fit bg-[white] flex flex-col gap-[1rem] pt-[10vh] pb-[10vh] ">
+    <div className=" w-full h-fit bg-[white] flex flex-col gap-[1rem] pt-[10vh] pb-[10vh]  ">
       {content?.map((item) => {
         return (
-          <div className=" w-full h-[30vh]  flex flex-row justify-between items-center ps-2 pe-2">
-            <h1 className=" font-bold font-cabin sm:text-[42px] text-[32px] text-center ">
+          <div className=" w-full h-[30vh]  flex flex-row justify-between flex-nowrap items-center ps-2 pe-2">
+            <h1 className=" w-[60%] h-full  flex flex-row justify-center items-center font-bold font-cabin sm:text-[24px] text-[16px] text-center ">
               {item?.text}
             </h1>
             <div className=" w-[30vh] h-[30vh] border-2">
