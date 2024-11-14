@@ -7,6 +7,8 @@ import Mission from "./aboutus/Mission";
 import Overview from "./aboutus/Overview";
 import Learning from "./pages/Learning/Learning";
 import Houses from "./aboutus/Houses";
+import Partners from "./pages/Partners";
+import CTA from "./pages/CTA";
 
 
 const router = createBrowserRouter([
@@ -20,6 +22,8 @@ const router = createBrowserRouter([
     <Mission/>
     <Overview/>
     <Houses/>
+    <Partners/>
+    <CTA />
     </>
   },
   {

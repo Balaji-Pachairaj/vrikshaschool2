@@ -71,7 +71,7 @@ const CardStack = () => {
       
       <div 
         ref={containerRef} 
-        className="max-w-[1100px] mx-auto"
+        className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8"
         style={{
           display: 'grid',
           gap: '0',
@@ -81,22 +81,27 @@ const CardStack = () => {
         {cards.map((card, index) => (
           <div 
             key={index}
-            className={`sticky top-0 transition-transform duration-700 ease-in-out ${isStacked ? 'rotate-0' : 'rotate-3'}`}
-            style={{ paddingTop: `${index * 2}px` }}
+            className={`sticky top-0 transition-transform duration-700 ease-in-out ${
+              isStacked ? 'rotate-0' : 'rotate-2 sm:rotate-3'
+            }`}
+            style={{ 
+              paddingTop: `${index * 2}px`,
+              top: '-5vh'
+            }}
           >
             <div
               ref={el => cardsRef.current[index] = el}
-              className="rounded-xl mt-32 overflow-hidden shadow-lg transform-gpu will-change-transform relative"
+              className="rounded-xl mt-8 sm:mt-16 lg:mt-32 overflow-hidden shadow-lg transform-gpu will-change-transform relative"
               style={{ transformOrigin: 'center top' }}
             >
               <div className="relative">
                 <img
                   src={card.image}
                   alt={card.title}
-                  className="w-full h-[500px] object-cover"
+                  className="w-full h-[400px] sm:h-[500px] lg:h-[600px] object-cover"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                  <h1 className="text-6xl font-bold text-white text-center tracking-wider">
+                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4">
+                  <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white text-center tracking-wider">
                     {card.title}
                   </h1>
                 </div>
@@ -106,7 +111,7 @@ const CardStack = () => {
         ))}
       </div>
 
-      <div className="h-[40vh]" />
+      <div className="h-[30vh] sm:h-[40vh]" />
     </div>
   );
 };
