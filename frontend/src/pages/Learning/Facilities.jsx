@@ -23,7 +23,7 @@ const TextComponent = ({
       }}
     >
       <span className=" w-[10px] h-[10px] rounded-[50%] bg-gray-300 mt-[1.5rem]"></span>
-      <h1 className=" cursor-pointer text-[3vw] text-gray-300 font-[600] hover:translate-x-[7%] hover:text-black hover:scale-110 duration-500">
+      <h1 className=" cursor-pointer text-[3vw] text-gray-300 font-[600] hover:translate-x-[7%] hover:text-white hover:scale-110 duration-500">
         {text}
       </h1>
     </li>
@@ -80,7 +80,7 @@ const Facilities = () => {
   };
 
   return (
-    <div className=" w-full min-h-screen h-fit  bg-[white] flex flex-row justify-evenly items-start font-cabin pt-[10vh] pb-[10vh]">
+    <div className=" w-full min-h-screen h-fit  bg-[black] flex flex-row justify-evenly items-start font-cabin pt-[10vh] pb-[10vh]">
       <div className=" w-[35%] h-full p-4 relative">
         <h1 className=" text-[#758694] text-[18px] font-[600] ">Facilities</h1>
 
