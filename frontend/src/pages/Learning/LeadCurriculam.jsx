@@ -94,20 +94,20 @@ const array = [
 
 const LeadCurriculam = () => {
   return (
-    <div className=" w-full min-h-screen bg-[#d6d6c6] pt-[2rem] pb-[2rem]">
+    <div className=" w-full min-h-screen bg-[black] pt-[2rem] pb-[2rem]">
       <div className=" w-full h-fit flex flex-col items-center mb-[2vh] mt-[3vh]">
-        <h1 className=" font-cabin xl:text-[4vw] lg:text-[4.5vw] md:text-[5vw] sm:text-[6vw] text-[6.5vw] text-[black] text-center font-[600] ">
+        <h1 className=" font-cabin xl:text-[4vw] lg:text-[4.5vw] md:text-[5vw] sm:text-[6vw] text-[6.5vw] text-[white] text-center font-[600] ">
           LEAD Curriculum
         </h1>
         <p className=" ps-8 pe-8  md:max-w-[85%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[12px]  text-[blue] text-center font-[400] mt-[1rem]">
           Academic excellence powered by Lead School
         </p>
-        <p className=" ps-8 pe-8  md:max-w-[85%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[12px]  text-[black] text-center font-[400] mt-[1rem]">
+        <p className=" ps-8 pe-8  md:max-w-[85%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[12px]  text-[white] text-center font-[400] mt-[1rem]">
           Our school has partnered with LEAD School which is an Academic
           Excellence System who towards empowering India by making excellent
           education accessible and affordable to every child.
         </p>
-        <p className=" ps-8 pe-8  italic md:max-w-[85%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[12px]  text-[black] text-center font-[400] mt-[1rem]">
+        <p className=" ps-8 pe-8  italic md:max-w-[85%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[12px]  text-[white] text-center font-[400] mt-[1rem]">
           They are built on 5 Pillars of Excellence.
         </p>
       </div>
