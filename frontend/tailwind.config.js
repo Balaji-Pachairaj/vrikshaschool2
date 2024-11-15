@@ -14,6 +14,14 @@ export default {
         },
       },
 
+      rotate: {
+        'x-12': '12deg',
+      },
+
+      perspective: {
+        '1000': '1000px',
+      },
+
       //---
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],

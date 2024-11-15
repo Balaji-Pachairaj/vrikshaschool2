@@ -9,6 +9,7 @@ import Learning from "./pages/Learning/Learning";
 import Houses from "./aboutus/Houses";
 import Partners from "./pages/Partners";
 import CTA from "./pages/CTA";
+import VKadvantage from "./aboutus/VKadvantage";
 
 
 const router = createBrowserRouter([
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
     element: <>
     <Mission/>
     <Overview/>
+    <VKadvantage/>
     <Houses/>
     <Partners/>
     <CTA />
