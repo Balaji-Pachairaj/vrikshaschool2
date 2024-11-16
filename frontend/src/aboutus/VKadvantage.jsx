@@ -67,7 +67,8 @@ const VKadvantage = () => {
                   <span className="block text-white uppercase tracking-tight">{project.title}</span>
                 </div>
               </h2>
-              <p className="text-sm mt-6 text-gray-300">{project.description}</p>
+              <p className="text-sm mt-6
+               text-gray-300">{project.description}</p>
             </div>
             <div className="md:w-[400px]">
               <div className="rounded-lg overflow-hidden shadow-lg">

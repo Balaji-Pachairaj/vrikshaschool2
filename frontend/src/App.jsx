@@ -10,6 +10,7 @@ import Houses from "./aboutus/Houses";
 import Partners from "./pages/Partners";
 import CTA from "./pages/CTA";
 import VKadvantage from "./aboutus/VKadvantage";
+import Cooverview from "./curricular/Cooverview";
 
 
 const router = createBrowserRouter([
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: "/learning",
     element: <Learning />,
+  },
+  {
+    path: "/curricular",
+    element: <Cooverview />,
   },
 ]);
 

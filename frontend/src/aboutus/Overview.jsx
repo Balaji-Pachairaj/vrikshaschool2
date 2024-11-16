@@ -80,7 +80,7 @@ const Overview = () => {
           }
         `}
       </style>
-      <div className="relative bg-black min-h-screen text-white py-20 overflow-hidden">
+      <div className="relative bg-black min-h-screen text-white overflow-hidden">
         <div className="container mx-auto flex items-center justify-center min-h-screen">
           <div className="relative max-w-7xl w-full">
             {/* Left Decorative Image Card */}
