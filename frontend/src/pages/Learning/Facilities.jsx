@@ -14,7 +14,6 @@ const TextComponent = ({
   return (
     <li
       className=" w-full h-fit flex flex-row gap-[1rem] flex-shrink-0"
-
       onMouseEnter={() => {
         onMouseEnter(index);
       }}
@@ -22,8 +21,8 @@ const TextComponent = ({
         onMouseLeave();
       }}
     >
-      <span className=" w-[10px] h-[10px] rounded-[50%] bg-gray-300 mt-[1.5rem]"></span>
-      <h1 className=" cursor-pointer text-[3vw] text-gray-300 font-[600] hover:translate-x-[7%] hover:text-white hover:scale-110 duration-500">
+      {/* <span className=" w-[10px] h-[10px] rounded-[50%] bg-gray-300 mt-[1.5rem]"></span> */}
+      <h1 className=" cursor-pointer text-[3vw] text-gray-300 font-[600] hover:translate-x-[7%] hover:text-white  duration-500">
         {text}
       </h1>
     </li>
@@ -72,7 +71,7 @@ const Facilities = () => {
 
   const onMouseLeave = () => {
     controls.start({
-      y: 0,
+      y: "2px",
       transition: {
         duration: 0.75,
       },
@@ -84,7 +83,7 @@ const Facilities = () => {
       <div className=" w-[35%] h-full p-4 relative">
         <h1 className=" text-[#758694] text-[18px] font-[600] ">Facilities</h1>
 
-        <div className=" w-full lg:h-[150vh] h-[100vh] flex flex-row justify-center mt-[2rem]  ">
+        <div className=" w-full lg:h-[180vh] h-[130vh] flex flex-row justify-center mt-[2rem]  ">
           <div className=" w-[45vw] h-[30vw]  overflow-hidden sticky top-[2rem] ">
             {/* ---------------- */}
             <motion.div
@@ -104,7 +103,7 @@ const Facilities = () => {
           </div>
         </div>
       </div>
-      <ul className=" w-[60%]  h-[90%]  border-[black] flex flex-col justify-start gap-[0rem] overflow-hidden pt-[10vh] ">
+      <ul className=" w-[60%]  h-[90%]  border-[black] flex flex-col justify-start gap-[1rem] overflow-hidden pt-[10vh]  ">
         {content.map((item, index) => {
           return (
             <TextComponent
