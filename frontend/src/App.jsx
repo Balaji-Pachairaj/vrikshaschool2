@@ -20,8 +20,8 @@ const router = createBrowserRouter([
   {
     path: "/aboutus",
     element: <>
+     <Overview/>
     <Mission/>
-    <Overview/>
     <VKadvantage/>
     <Houses/>
     <Partners/>
