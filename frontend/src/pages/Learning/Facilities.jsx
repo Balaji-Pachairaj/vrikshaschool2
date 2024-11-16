@@ -13,7 +13,7 @@ const TextComponent = ({
 }) => {
   return (
     <li
-      className=" w-full h-fit flex flex-row gap-[1rem] flex-shrink-0"
+      className=" w-full h-fit pt-[0.5rem] pb-[0.5rem] flex flex-row gap-[1rem] flex-shrink-0"
       onMouseEnter={() => {
         onMouseEnter(index);
       }}
@@ -22,7 +22,7 @@ const TextComponent = ({
       }}
     >
       {/* <span className=" w-[10px] h-[10px] rounded-[50%] bg-gray-300 mt-[1.5rem]"></span> */}
-      <h1 className=" cursor-pointer text-[3vw] text-gray-300 font-[600] hover:translate-x-[7%] hover:text-white  duration-500">
+      <h1 className=" cursor-pointer text-[4vw] text-gray-300 font-[600] hover:translate-x-[7%] hover:text-white  duration-500">
         {text}
       </h1>
     </li>
@@ -90,10 +90,10 @@ const Facilities = () => {
               animate={controls}
               className=" w-full h-fit absolute top-0 bottom-0 "
             >
-              <div className=" w-full h-[30vw] "></div>
+              <div className=" w-full h-[40vw] "></div>
               {content?.map((item) => {
                 return (
-                  <div className=" w-full h-[30vw]">
+                  <div className=" w-full h-[40vw]">
                     <img src={item?.image} className=" w-full h-full" />
                   </div>
                 );
@@ -103,7 +103,7 @@ const Facilities = () => {
           </div>
         </div>
       </div>
-      <ul className=" w-[60%]  h-[90%]  border-[black] flex flex-col justify-start gap-[1rem] overflow-hidden pt-[10vh]  ">
+      <ul className=" w-[60%]  h-[90%]  border-[black] flex flex-col justify-start gap-[0rem] overflow-hidden pt-[10vh]  ">
         {content.map((item, index) => {
           return (
             <TextComponent

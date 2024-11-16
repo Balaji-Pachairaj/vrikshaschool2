@@ -14,7 +14,7 @@ const Component = ({
   return (
     <div
       style={{ backgroundColor: content?.boxbg }}
-      className={` md:w-[90%] w-[45%] md:h-[45%]  h-[30vh] bg-[${content?.boxbg}] overflow-visible rounded-[8px] `}
+      className={` md:w-[90%] w-[45%] md:h-[45%]  h-[30vh] bg-[${content?.boxbg}] overflow-visible rounded-[8px] font-cabin `}
     >
       <div
         style={{ backgroundColor: content?.bg }}

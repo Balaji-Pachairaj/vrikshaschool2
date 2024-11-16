@@ -32,14 +32,14 @@ const content = [
 ];
 const FacilitiesMobile = () => {
   return (
-    <div className=" w-full h-fit bg-[white] flex flex-col gap-[1rem] pt-[10vh] pb-[10vh]  ">
+    <div className=" w-full h-fit bg-[black] flex flex-col gap-[1rem] sm:pt-[10vh] sm:pb-[10vh] pt-[3vh] pb-[3vh]  ">
       {content?.map((item) => {
         return (
-          <div className=" w-full h-[30vh]  flex flex-row justify-between flex-nowrap items-center ps-2 pe-2">
-            <h1 className=" w-[60%] h-full  flex flex-row justify-center items-center font-bold font-cabin sm:text-[24px] text-[16px] text-center ">
+          <div className=" w-full h-[40vh]  flex flex-row justify-between flex-nowrap items-center ps-2 pe-2">
+            <h1 className=" w-[55%] h-full  flex flex-row justify-start items-center font-semibold font-poppins sm:text-[34px] text-[24px] text-white ">
               {item?.text}
             </h1>
-            <div className=" w-[30vh] h-[30vh] border-2">
+            <div className=" sm:w-[40vh] sm:h-[40vh] w-[50vw] h-[50vw] border-2">
               <img src={item?.image} className=" w-full h-full object-cover" />
             </div>
           </div>
