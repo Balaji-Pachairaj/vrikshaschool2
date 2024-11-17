@@ -15,11 +15,11 @@ export default {
       },
 
       rotate: {
-        'x-12': '12deg',
+        "x-12": "12deg",
       },
 
       perspective: {
-        '1000': '1000px',
+        1000: "1000px",
       },
 
       //---
@@ -30,6 +30,7 @@ export default {
         lato: ["Lato", "sans-serif"],
         inter: ["Inter", "sans-serif"],
         cabin: ["Cabin", "sans-serif"],
+        kanit: ["Kanit", "sans-serif"],
       },
 
       backgroundImage: {
