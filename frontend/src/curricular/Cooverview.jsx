@@ -38,7 +38,7 @@ const Component = ({
 
 const array = [
   {
-    title: "Art & Craft",
+    title: "PHYSICAL DEVELOPMENT",
     body: "Nurturing creativity and artistic expression through various mediums",
     bodytext: "white",
     boxbg: "white",

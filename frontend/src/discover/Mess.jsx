@@ -1,8 +1,8 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
+import { motion,useInView } from 'framer-motion';
 
-const Digit = ({ finalValue, isInView }) => {
+
+const Digit = ({ value, isInView }) => {
   const [isAnimating, setIsAnimating] = React.useState(false);
 
   React.useEffect(() => {
@@ -11,14 +11,23 @@ const Digit = ({ finalValue, isInView }) => {
     }
   }, [isInView]);
 
+  // Don't animate non-numeric characters
+  if (isNaN(value)) {
+    return (
+      <div className="w-5 h-24 flex items-center justify-center">
+        <span className="text-4xl font-serif italic text-white">{value}</span>
+      </div>
+    );
+  }
+
   return (
     <div className="w-5 h-24 bg-black bg-opacity-80 rounded-lg overflow-hidden">
       <div className="relative h-full">
         <motion.div
           initial={{ y: '0%' }}
-          animate={isAnimating ? { y: `${-(finalValue + 10) * 100}%` } : { y: '0%' }} // 10 full rotations before stopping
+          animate={isAnimating ? { y: `${-(parseInt(value) + 10) * 100}%` } : { y: '0%' }}
           transition={{
-            duration: 2, // Reduced duration for faster scrolling
+            duration: 2,
             ease: 'easeOut',
             type: 'spring',
             damping: 15,
@@ -26,7 +35,7 @@ const Digit = ({ finalValue, isInView }) => {
           }}
           className="absolute inset-0"
         >
-          {[...Array(20)].map((_, i) => ( // 20 items for multiple full rotations
+          {[...Array(20)].map((_, i) => (
             <div key={i} className="h-full flex items-center justify-center">
               <span className="text-4xl font-serif italic text-white">{i % 10}</span>
             </div>
@@ -37,13 +46,23 @@ const Digit = ({ finalValue, isInView }) => {
   );
 };
 
-const NumberDisplay = ({ number, isInView }) => {
-  const digits = number.toString().padStart(2, '0').split('');
-
+const NumberDisplay = ({ value, isInView }) => {
+  // Split the value into individual characters (including special characters)
+  const characters = value.toString().split('');
+  
   return (
-    <div className="flex space-x-1">
-      {digits.map((digit, index) => (
-        <Digit key={index} finalValue={parseInt(digit)} isInView={isInView} />
+    <div className="flex items-center space-x-1">
+      {characters.map((char, index) => (
+        <React.Fragment key={index}>
+          {/* Handle special characters */}
+          {char === ':' && (
+            <span className="text-white text-4xl font-serif italic mx-1">:</span>
+          )}
+          {/* Regular digits and other characters */}
+          {char !== ':' && (
+            <Digit value={char} isInView={isInView} />
+          )}
+        </React.Fragment>
       ))}
     </div>
   );
@@ -52,6 +71,11 @@ const NumberDisplay = ({ number, isInView }) => {
 const StatsCard = ({ number, label }) => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true });
+
+  // Extract suffix (if any) from the number
+  const match = number.match(/^([\d:]+)([a-zA-Z]+)?$/);
+  const numericPart = match ? match[1] : number;
+  const suffix = match ? match[2] : '';
 
   return (
     <motion.div
@@ -62,12 +86,9 @@ const StatsCard = ({ number, label }) => {
       className="text-center"
     >
       <div className="flex justify-center items-center mb-2">
-        <NumberDisplay number={number.replace(/[^0-9]/g, '')} isInView={isInView} />
-        {number.includes('k') && (
-          <span className="text-white text-4xl font-serif italic ml-1">k</span>
-        )}
-        {number.includes('M') && (
-          <span className="text-white text-4xl font-serif italic ml-1">M</span>
+        <NumberDisplay value={numericPart} isInView={isInView} />
+        {suffix && (
+          <span className="text-white text-4xl font-serif italic ml-1">{suffix}</span>
         )}
       </div>
       <p className="text-gray-400 text-lg">{label}</p>
@@ -83,12 +104,10 @@ const StatsCard = ({ number, label }) => {
 
 const StatsSection = () => {
   const stats = [
-    { number: '50', label: 'Acres Campus' },
-    { number: '24', label: 'Research Labs' },
-    { number: '12', label: 'Academic Blocks' },
-    { number: '5000', label: 'Seating Capacity' },
-    { number: '4', label: 'Sports Grounds' },
-    { number: '3', label: 'Student Hostels' },
+    { number: '1:20', label: 'Teacher student ratio' },
+    { number: '2000', label: 'Books and journals' },
+    { number: '700', label: 'Dining hall capacity' },
+    { number: '25m', label: 'Olympic size swimming pool' },
   ];
 
   return (
@@ -102,7 +121,7 @@ const StatsSection = () => {
         >
           Our Campus & Facilities
         </motion.h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {stats.map((stat, index) => (
             <StatsCard key={index} number={stat.number} label={stat.label} />
           ))}

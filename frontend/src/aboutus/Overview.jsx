@@ -78,6 +78,31 @@ const Overview = () => {
           .animate-heading {
             animation: rotate3D 1s ease forwards;
           }
+            // Update the @keyframes in your style tag
+
+  @keyframes fadeInRotate {
+    0% {
+      opacity: 0;
+      transform: perspective(500px) rotateY(0deg) rotateX(0deg);
+    }
+    50% {
+      opacity: 1;
+      transform: perspective(500px) rotateY(0deg) rotateX(0deg);
+    }
+    100% {
+      opacity: 1;
+      transform: perspective(500px) rotateY(20deg) rotateX(10deg);
+    }
+  }
+
+  .animate-heading {
+    animation: fadeInRotate 2s ease forwards;
+    background: linear-gradient(45deg, #4f46e5, #7c3aed, #2563eb);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
         `}
       </style>
       <div className="relative bg-black min-h-screen text-white overflow-hidden">
@@ -102,11 +127,7 @@ const Overview = () => {
                 Overview
               </h1>
               <p className="text-gray-300 text-xl mx-auto leading-tight max-w-3xl">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ornare
-                ipsum nullam fermentum noster, posuere pharetra.
-                <br />
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ornare
-                ipsum nullam fermentum noster, posuere pharetra.
+              Vriksha Global School is an educational institution in Tamilnadu, India, established in 2012. Since then it has been playing a vital role in Promoting the cause of education by imparting quality education with special emphasis on the holistic development of the child. It is an English medium school from class I to class XII affiliated to the Central Board of Secondary Education (CBSE), New Delhi.
               </p>
             </div>
             {/* Right Decorative Image Card */}

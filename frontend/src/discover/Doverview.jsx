@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const Component = ({
@@ -15,19 +14,21 @@ const Component = ({
   return (
     <div
       style={{ backgroundColor: content?.boxbg }}
-      className={` md:w-[90%] w-[45%] md:h-[45%]  h-[30vh] bg-[${content?.boxbg}] overflow-visible rounded-[8px] `}
+      className="w-full h-[300px] overflow-visible rounded-[8px]"
     >
       <div
         style={{ backgroundColor: content?.bg }}
-        className={` w-full h-full flex flex-col justify-start gap-[2.5rem] md:p-[2rem] p-[1.5rem] bg-[${content?.bg}] rounded-[8px] hover:rotate-6 duration-300`}
+        className="w-full h-full flex flex-col justify-start gap-[1.5rem] p-6 rounded-[8px] hover:rotate-6 duration-300"
       >
         <h1
-          className={` w-full  font-[500] lg:text-[24px] md:text-[20px] text-[16px] text-[${content?.text}] hover:text-[${content?.textHover}] duration-300`}
+          style={{ color: content?.text }}
+          className="w-full font-[500] text-xl md:text-2xl uppercase hover:text-[#ff643d] duration-300"
         >
           {content?.title}
         </h1>
-        <p
-          className={` font-[400] font-poppins lg:text-[20px] md:text-[16px] text-[12px] text-[${content?.bodytext}]`}
+        <p 
+          style={{ color: content?.bodytext }}
+          className="font-[300] font-poppins text-sm md:text-base"
         >
           {content?.body}
         </p>
@@ -38,8 +39,8 @@ const Component = ({
 
 const array = [
   {
-    title: "Art & Craft",
-    body: "Nurturing creativity and artistic expression through various mediums",
+    title: "PHYSICAL DEVELOPMENT",
+    body: "Drill, P.T., indoor and outdoor games, sports, exercise, NSS, athletics, etc.",
     bodytext: "white",
     boxbg: "white",
     bg: "#1a1a1a",
@@ -47,8 +48,8 @@ const array = [
     textHover: "#ff643d",
   },
   {
-    title: "Music & Dance",
-    body: "Exploring rhythm, melody, and movement in classical and contemporary styles",
+    title: "SOCIAL DEVELOPMENT",
+    body: "Co-operative society, scouting and guiding, games and sports, school council activities, celebration of special festivals, morning assembly, etc.",
     bodytext: "white",
     boxbg: "white",
     bg: "#1a1a1a",
@@ -56,8 +57,8 @@ const array = [
     textHover: "#ff643d",
   },
   {
-    title: "Sports & Games",
-    body: "Building teamwork, discipline, and physical fitness through diverse sports activities",
+    title: "INTELLECTUAL DEVELOPMENT",
+    body: "School magazine, science club, world affairs society, debates, seminars and discussions, essay and story writing competition, poetry recitation, newspaper reading, etc.",
     bodytext: "white",
     boxbg: "white",
     bg: "#1a1a1a",
@@ -65,8 +66,8 @@ const array = [
     textHover: "#ff643d",
   },
   {
-    title: "Public Speaking",
-    body: "Developing confidence and communication skills through debates and presentations",
+    title: "PSYCHOMOTOR DEVELOPMENT",
+    body: "Tailoring, carpentry, toy-making, soap-making, candle and incense-stick making, embroidery, knitting, spinning, gardening, sculpture making, leather work, clay work, weaving, book-binding, etc.",
     bodytext: "white",
     boxbg: "white",
     bg: "#1a1a1a",
@@ -74,8 +75,8 @@ const array = [
     textHover: "#ff643d",
   },
   {
-    title: "Environmental Club",
-    body: "Creating awareness and responsibility towards nature and sustainability",
+    title: "CIVIC VALUES DEVELOPMENT",
+    body: "Celebration of social, religious and national festivals, school parliament election, co-operative stores, cleanliness drive, drug and alcohol abuse programs, World Environment Day celebrations, etc",
     bodytext: "white",
     boxbg: "white",
     bg: "#1a1a1a",
@@ -83,37 +84,49 @@ const array = [
     textHover: "#ff643d",
   },
   {
-    title: "Robotics & Coding",
-    body: "Exploring technology through hands-on learning and creative problem-solving",
+    title: "CULTURAL DEVELOPMENT",
+    body: "Annual day programs, music and dance, drawing and painting, fancy dress competitions",
     bodytext: "white",
     boxbg: "white",
     bg: "#1a1a1a",
     text: "white",
     textHover: "#ff643d",
   },
+  {
+    title: "excursions/ picnics/ tours",
+    body: "Visits to museums, zoo, aquarium, visits to exhibitions, etc. For primary, external visits include a bank, a post-office, a hospital, a police-station, a garden, LIC office, government offices, an airport etc.",
+    bodytext: "white",
+    boxbg: "white",
+    bg: "#1a1a1a",
+    text: "white",
+    textHover: "#ff643d",
+  },
+  
 ];
 
 const Cooverview = () => {
   return (
-    <div className="w-full min-h-screen bg-black pt-[2rem] pb-[2rem]">
-      <div className="w-full h-fit flex flex-col items-center mb-[2vh] mt-[3vh]">
-        <h1 className="font-cabin xl:text-[4vw] lg:text-[4.5vw] md:text-[5vw] sm:text-[6vw] text-[6.5vw] text-[white] text-center font-[600]">
+    <div className="w-full min-h-screen bg-black py-12">
+      <div className="w-full mb-8 mt-12">
+        <h1 className="font-cabin text-4xl md:text-5xl lg:text-6xl text-white text-center font-[600]">
           Overview
         </h1>
-    
       </div>
-      <div className="w-full md:h-screen h-fit flex flex-row justify-center md:flex-nowrap flex-wrap gap-y-[1rem]">
-        <div className="md:w-[33vw] w-[100vw] md:h-full h-fit flex md:flex-col flex-row md:items-center justify-evenly">
-          <Component content={array[0]} />
-          <Component content={array[1]} />
-        </div>
-        <div className="md:w-[33vw] w-[100vw] md:h-full h-fit flex md:flex-col flex-row md:items-center justify-evenly">
-          <Component content={array[2]} />
-          <Component content={array[3]} />
-        </div>
-        <div className="md:w-[33vw] w-[100vw] md:h-full h-fit flex md:flex-col flex-row md:items-center justify-evenly">
-          <Component content={array[4]} />
-          <Component content={array[5]} />
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="space-y-6">
+            <Component content={array[0]} />
+            <Component content={array[1]} />
+          </div>
+          <div className="space-y-6">
+            <Component content={array[2]} />
+            <Component content={array[3]} />
+            <Component content={array[6]} />
+          </div>
+          <div className="space-y-6">
+            <Component content={array[4]} />
+            <Component content={array[5]} />
+          </div>
         </div>
       </div>
     </div>
