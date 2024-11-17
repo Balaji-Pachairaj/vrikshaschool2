@@ -11,7 +11,7 @@ import Partners from "./pages/Partners";
 import CTA from "./pages/CTA";
 import VKadvantage from "./aboutus/VKadvantage";
 import Cooverview from "./curricular/Cooverview";
-
+import SportAcademy from "./pages/SportAcademy/SportAcademy";
 
 const router = createBrowserRouter([
   {
@@ -20,14 +20,16 @@ const router = createBrowserRouter([
   },
   {
     path: "/aboutus",
-    element: <>
-     <Overview/>
-    <Mission/>
-    <VKadvantage/>
-    <Houses/>
-    <Partners/>
-    <CTA />
-    </>
+    element: (
+      <>
+        <Overview />
+        <Mission />
+        <VKadvantage />
+        <Houses />
+        <Partners />
+        <CTA />
+      </>
+    ),
   },
   {
     path: "/learning",
@@ -36,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: "/curricular",
     element: <Cooverview />,
+  },
+  {
+    path: "/sportacademy",
+    element: <SportAcademy />,
   },
 ]);
 

@@ -83,7 +83,7 @@ const Facilities = () => {
       <div className=" w-[35%] h-full p-4 relative">
         <h1 className=" text-[#758694] text-[18px] font-[600] ">Facilities</h1>
 
-        <div className=" w-full lg:h-[180vh] h-[130vh] flex flex-row justify-center mt-[2rem]  ">
+        <div className=" w-full lg:h-[250vh] h-[130vh] flex flex-row justify-center mt-[2rem]  ">
           <div className=" w-[45vw] h-[30vw]  overflow-hidden sticky top-[2rem] ">
             {/* ---------------- */}
             <motion.div
