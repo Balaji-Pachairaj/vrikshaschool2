@@ -15,6 +15,8 @@ import Cocurricular from "./curricular/Cocurricular";
 import Doverview from "./discover/Doverview";
 import Mess from "./discover/Mess";
 import Content from "./discover/Content";
+import Sports from "./curricular/Sports";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -40,6 +42,7 @@ const router = createBrowserRouter([
     element: <>
     <Cooverview />
     <Cocurricular />
+    <Sports />
     </>,
   },
   {
