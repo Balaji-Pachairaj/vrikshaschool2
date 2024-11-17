@@ -87,7 +87,7 @@ const SportAcademyHero = () => {
       <div className=" w-full h-screen bg-black relative overflow-hidden ">
         <motion.div
           style={{ display: display }}
-          className="w-full h-full fixed top-0 botton-0 flex flex-row justify-center items-center bg-opacity-25 bg-black z-[10]"
+          className="w-full h-full fixed top-0 botton-0 flex flex-row justify-center items-center bg-opacity-[0.6] bg-black z-[10]"
         >
           {/* --- text ----------- */}
           <h1 className=" font-poppins md:text-[3vw] sm:text-[4.5vw] text-[6vw]  text-[white] font-light  lg:leading-[4rem] md:leading-[3rem] text-center ">

@@ -164,7 +164,7 @@ const SportAdacemySuccess = () => {
               style={{ top: top3 }}
               className=" w-full h-full absolute top-0 left-0 z-[8]"
             >
-              <img src={png2} className=" w-full h-full object-cover " />
+              <img src={png3} className=" w-full h-full object-cover " />
             </motion.div>
 
             {/* ----------- */}
@@ -172,14 +172,12 @@ const SportAdacemySuccess = () => {
               style={{ top: top4 }}
               className=" w-full h-full absolute top-0 left-0 z-[7]"
             >
-              <img src={png2} className=" w-full h-full object-cover " />
+              <img src={png4} className=" w-full h-full object-cover " />
             </motion.div>
             {/* ----------- */}
           </div>
         </div>
       </div>
-
-      <div className=" w-full h-screen"></div>
     </>
   );
 };
