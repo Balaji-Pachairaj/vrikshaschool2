@@ -1,6 +1,6 @@
 import React from "react";
 import bg from "../../assets/Learning/backgroundimage.png";
-import overviewImage from "../../assets/Learning/learningOverview.webp"
+import overviewImage from "../../assets/Learning/learningOverview.webp";
 
 import { motion, useAnimation } from "framer-motion";
 
@@ -15,7 +15,7 @@ const Overview = () => {
       <div className=" w-full h-full absolute top-0 left-0 pt-[10vh] flex flex-col justify-start ">
         <div className=" w-full h-fit flex flex-col items-center">
           <h1 className=" font-cabin xl:text-[4vw] lg:text-[4.5vw] md:text-[5vw] sm:text-[6vw] text-[6.5vw] text-[white] text-center font-[500]">
-            Overview
+            Overviewg
           </h1>
 
           <p className=" ps-8 pe-8 md:max-w-[705px] max-w-[580px] font-cabin lg:text-[20px] md:text-[16px] text-[12px]  text-[#dcdcdc] text-center font-[400] mt-[1rem]">
@@ -120,9 +120,12 @@ const Overview = () => {
         </div>
 
         <div className=" w-full flex flex-row justify-center ">
-              <div className=" w-[80vw] sm:h-[60vh] h-[40vh] sm:mt-[4rem] mt-[1rem]">
-                <img src={overviewImage} className=" w-full h-full object-contain" />
-              </div>
+          <div className=" w-[80vw] sm:h-[60vh] h-[40vh] sm:mt-[4rem] mt-[1rem]">
+            <img
+              src={overviewImage}
+              className=" w-full h-full object-contain"
+            />
+          </div>
         </div>
 
         {/* Stat  */}

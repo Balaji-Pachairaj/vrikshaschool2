@@ -14,7 +14,7 @@ const Component = ({
   return (
     <div
       style={{ backgroundColor: content?.boxbg }}
-      className={` md:w-[90%] w-[45%] md:h-[45%]  h-[30vh] bg-[${content?.boxbg}] overflow-visible rounded-[8px] `}
+      className={` md:w-[90%] w-[45%] md:h-[45%]  h-[30vh] bg-[${content?.boxbg}] overflow-visible rounded-[8px] font-cabin `}
     >
       <div
         style={{ backgroundColor: content?.bg }}
@@ -94,7 +94,7 @@ const array = [
 
 const LeadCurriculam = () => {
   return (
-    <div className=" w-full min-h-screen bg-[black] pt-[2rem] pb-[2rem]">
+    <div className=" w-full min-h-screen bg-[black] pt-[2rem] pb-[2rem] overflow-hidden">
       <div className=" w-full h-fit flex flex-col items-center mb-[2vh] mt-[3vh]">
         <h1 className=" font-cabin xl:text-[4vw] lg:text-[4.5vw] md:text-[5vw] sm:text-[6vw] text-[6.5vw] text-[white] text-center font-[600] ">
           LEAD Curriculum
