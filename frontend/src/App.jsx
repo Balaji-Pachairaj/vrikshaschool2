@@ -11,8 +11,10 @@ import Partners from "./pages/Partners";
 import CTA from "./pages/CTA";
 import VKadvantage from "./aboutus/VKadvantage";
 import Cooverview from "./curricular/Cooverview";
-
-
+import Cocurricular from "./curricular/Cocurricular";
+import Doverview from "./discover/Doverview";
+import Mess from "./discover/Mess";
+import Content from "./discover/Content";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -21,7 +23,7 @@ const router = createBrowserRouter([
   {
     path: "/aboutus",
     element: <>
-     <Overview/>
+    <Overview/>
     <Mission/>
     <VKadvantage/>
     <Houses/>
@@ -35,7 +37,18 @@ const router = createBrowserRouter([
   },
   {
     path: "/curricular",
-    element: <Cooverview />,
+    element: <>
+    <Cooverview />
+    <Cocurricular />
+    </>,
+  },
+  {
+    path: "/discover",
+    element: <>
+    <Doverview />
+    <Mess />.
+    <Content />
+    </>,
   },
 ]);
 
