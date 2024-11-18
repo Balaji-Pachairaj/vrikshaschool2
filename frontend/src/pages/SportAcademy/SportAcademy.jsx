@@ -6,6 +6,11 @@ import SportAcademyTraining from "./SportAcademyTraining";
 import SportAcademyTrainingMobile from "./SportAcademyTrainingMobile";
 import { useMediaQuery } from "react-responsive";
 import SportAdacemySuccess from "./SportAdacemySuccess";
+import SportAcademySuccessMobile from "./SportAcademySuccessMobile";
+import SportAcedemyStory from "./SportAcedemyStory";
+import SportAcademyStoryMobile from "./SportAcademyStoryMobile";
+import SportAcademyMemberShip from "./SportAcademyMemberShip";
+import SportAcademyFAQ from "./SportAcademyFAQ";
 
 const SportAcademy = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -16,8 +21,11 @@ const SportAcademy = () => {
       <SportAcademyProgramOffer />
 
       {isMobile ? <SportAcademyTrainingMobile /> : <SportAcademyTraining />}
+      {isMobile ? <SportAcademySuccessMobile /> : <SportAdacemySuccess />}
+      {isMobile ? <SportAcademyStoryMobile /> : <SportAcedemyStory />}
 
-      <SportAdacemySuccess />
+      <SportAcademyMemberShip />
+      <SportAcademyFAQ />
     </div>
   );
 };
