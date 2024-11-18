@@ -6,10 +6,12 @@ import FacilitiesMobile from "./FacilitiesMobile";
 import { useMediaQuery } from "react-responsive";
 import Overview from "./Overview";
 import FacilitiesSection from "./FacilitiesSection";
+import NavBar from "../NavBar";
 
 const Learning = () => {
   return (
     <div className="w-full bg-black  ">
+      <NavBar />
       <Overview />
 
       <FacilitiesSection />
