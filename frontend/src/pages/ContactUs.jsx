@@ -1,9 +1,11 @@
 import React from "react";
 import NavBar from "./NavBar";
+import FooterSection from "./FooterSection";
 
 const ContactUs = () => {
   return (
     <>
+      <div className="w-full h-[0.1px]" id="start"></div>
       <NavBar />
       <div className=" w-full min-h-screen bg-black" id="contact">
         <div className=" w-full md:h-[80vh] h-[30vh] flex flex-col md:justify-center justify-end items-center md:pb-[0px] pb-[5vh]">
@@ -92,6 +94,7 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
+      <FooterSection />
     </>
   );
 };

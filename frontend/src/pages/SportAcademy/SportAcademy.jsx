@@ -12,11 +12,13 @@ import SportAcademyStoryMobile from "./SportAcademyStoryMobile";
 import SportAcademyMemberShip from "./SportAcademyMemberShip";
 import SportAcademyFAQ from "./SportAcademyFAQ";
 import NavBar from "../NavBar";
+import FooterSection from "../FooterSection";
 
 const SportAcademy = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   return (
     <div className=" w-full min-h-screen bg-black ">
+      <div className="w-full h-[0.1px]" id="start"></div>
       <NavBar />
       <div className=" w-full h-[0.1px] " id="hero"></div>
       <SportAcademyHero />
@@ -36,6 +38,7 @@ const SportAcademy = () => {
       <SportAcademyMemberShip />
       <div className=" w-full h-[10vh] " id="faqs"></div>
       <SportAcademyFAQ />
+      <FooterSection />
     </div>
   );
 };

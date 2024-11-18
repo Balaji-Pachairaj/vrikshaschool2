@@ -18,6 +18,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-black ">
+      <div className="w-full h-[0.1px]" id="start"></div>
       <NavBar />
       <HeroAndVisionSection />
 
@@ -34,6 +35,7 @@ const Home = () => {
       <div className=" w-full h-[10vh]" id={"partners"}></div>
       <Partners />
       <CTA />
+      <FooterSection />
     </div>
   );
 };

@@ -22,7 +22,7 @@ const TextComponent = ({
       }}
     >
       {/* <span className=" w-[10px] h-[10px] rounded-[50%] bg-gray-300 mt-[1.5rem]"></span> */}
-      <h1 className=" cursor-pointer text-[4vw] text-gray-300 font-[600] hover:translate-x-[7%] hover:text-white  duration-500">
+      <h1 className=" cursor-pointer text-[4vw] text-gray-600 font-[600] hover:translate-x-[2rem] hover:text-white   duration-500">
         {text}
       </h1>
     </li>

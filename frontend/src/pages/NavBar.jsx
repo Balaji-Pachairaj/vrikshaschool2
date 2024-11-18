@@ -5,10 +5,10 @@ import { TbTriangleInvertedFilled } from "react-icons/tb";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { motion, useAnimation } from "framer-motion";
 
-const NavBarLinks = [
+export const NavBarLinks = [
   {
     title: "Home",
-    to: "/",
+    to: "/?section=start",
     sections: [
       { title: "Hero", to: "/?section=hero" },
       { title: "Our vision", to: "/?section=visionandmission" },
@@ -22,7 +22,7 @@ const NavBarLinks = [
   },
   {
     title: "About us",
-    to: "/aboutus",
+    to: "/aboutus?section=start",
     sections: [
       { title: "overview", to: "/aboutus?section=overview" },
       { title: "Vision and mission", to: "/aboutus?section=mission" },
@@ -34,29 +34,29 @@ const NavBarLinks = [
   },
   {
     title: "Learning",
-    to: "/learning",
+    to: "/learning?section=start",
     sections: [
-      { title: "overview", to: "/aboutus?section=overview" },
-      { title: "our facilities", to: "/aboutus?section=facilities" },
+      { title: "overview", to: "/learning?section=overview" },
+      { title: "our facilities", to: "/learning?section=facilities" },
       {
         title: "Primary, Seconday & High School",
-        to: "/aboutus?section=primaryschool",
+        to: "/learning?section=primaryschool",
       },
-      { title: "LEAD Curriculum", to: "/aboutus?section=lead" },
+      { title: "LEAD Curriculum", to: "/learning?section=lead" },
     ],
   },
   {
     title: "curricular",
-    to: "/curricular",
+    to: "/curricular?section=start",
     sections: [
-      { title: "overview", to: "/aboutus?section=overview" },
-      { title: "curricular", to: "/aboutus?section=co" },
-      { title: "sports", to: "/aboutus?section=sports" },
+      { title: "overview", to: "/curricular?section=overview" },
+      { title: "curricular", to: "/curricular?section=co" },
+      { title: "sports", to: "/curricular?section=sports" },
     ],
   },
   {
     title: "discover",
-    to: "/discover",
+    to: "/discover?section=start",
     sections: [
       { title: "overview", to: "/discover?section=overview" },
       { title: "mess and menu", to: "/discover?section=mess" },
@@ -65,7 +65,7 @@ const NavBarLinks = [
   },
   {
     title: "sport academy",
-    to: "/sportacademy",
+    to: "/sportacademy?section=start",
     sections: [
       { title: "hero", to: "/sportacademy?section=hero" },
       { title: "aboutus", to: "/sportacademy?section=aboutus" },
@@ -79,7 +79,7 @@ const NavBarLinks = [
   },
   {
     title: "contact us",
-    to: "/contact",
+    to: "/contact?section=start",
     sections: [],
   },
 ];

@@ -27,7 +27,6 @@ import Admission from "./pages/Admission/Admission";
 
 import Cards from "./curricular/Cards";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,6 +41,7 @@ const router = createBrowserRouter([
 
     element: (
       <>
+        <div className="w-full h-[0.1px]" id="start"></div>
         <NavBar />
         <div className="w-full bg-black h-[0.1px]" id="overview"></div>
         <Overview />
@@ -55,6 +55,7 @@ const router = createBrowserRouter([
         <Partners />
         <div className="w-full bg-black h-[0.1vh]" id="cta"></div>
         <CTA />
+        <FooterSection />
       </>
     ),
   },
@@ -66,6 +67,7 @@ const router = createBrowserRouter([
     path: "/curricular",
     element: (
       <>
+        <div className="w-full h-[0.1px]" id="start"></div>
         <NavBar />
         <div className="w-full h-[0.1px] " id={"overview"}></div>
         <Cooverview />
@@ -74,7 +76,7 @@ const router = createBrowserRouter([
 
         <div className="w-full h-[0.1px] " id={"sports"}></div>
         <Sports />
-
+        <FooterSection />
       </>
     ),
   },
@@ -82,6 +84,7 @@ const router = createBrowserRouter([
     path: "/discover",
     element: (
       <>
+        <div className="w-full h-[0.1px]" id="start"></div>
         <NavBar />
         <div className="w-full h-[0.1px] bg-black " id={"overview"}></div>
         <Doverview />
@@ -89,7 +92,7 @@ const router = createBrowserRouter([
         <Mess />
         <div className="w-full h-[10vh] bg-black " id={"content"}></div>
         <Content />
-
+        <FooterSection />
       </>
     ),
   },
@@ -101,12 +104,15 @@ const router = createBrowserRouter([
   { path: "/contact", element: <ContactUs /> },
 
   {
-    path: "/sports", element: (
+    path: "/sports",
+    element: (
       <>
-      <Sports />,
-      <Cards />
+        <div className="w-full h-[0.1px]" id="start"></div>
+        <Sports />,
+        <Cards />
+        <FooterSection />
       </>
-    )
+    ),
   },
 ]);
 
@@ -114,7 +120,6 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
-      <FooterSection />
     </>
   );
 }

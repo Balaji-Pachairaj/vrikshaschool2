@@ -7,10 +7,12 @@ import { useMediaQuery } from "react-responsive";
 import Overview from "./Overview";
 import FacilitiesSection from "./FacilitiesSection";
 import NavBar from "../NavBar";
+import FooterSection from "../FooterSection";
 
 const Learning = () => {
   return (
     <div className="w-full bg-black  ">
+        <div className="w-full h-[0.1px]" id="start"></div>
       <NavBar />
       <div className=" w-full h-[0.1px]" id="overview"></div>
       <Overview />
@@ -23,6 +25,7 @@ const Learning = () => {
 
       <div className=" w-full h-[0.1px]" id="lead"></div>
       <LeadCurriculam />
+      <FooterSection />
     </div>
   );
 };
