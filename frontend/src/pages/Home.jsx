@@ -21,12 +21,17 @@ const Home = () => {
       <NavBar />
       <HeroAndVisionSection />
 
+      <div className=" w-full h-[10vh]" id={"category"}></div>
       <Categories />
+      <div className=" w-full h-[10vh]" id={"advantages"}></div>
       <Advantages />
+      <div className=" w-full h-[0.1px]" id={"events"}></div>
       {isMobile ? <EventsMobile /> : <Events />}
 
+      <div className=" w-full h-[10vh]" id={"testimonals"}></div>
       <Testimonials />
       <Testimonials_Mobile />
+      <div className=" w-full h-[10vh]" id={"partners"}></div>
       <Partners />
       <CTA />
     </div>

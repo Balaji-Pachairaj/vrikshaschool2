@@ -18,15 +18,23 @@ const SportAcademy = () => {
   return (
     <div className=" w-full min-h-screen bg-black ">
       <NavBar />
+      <div className=" w-full h-[0.1px] " id="hero"></div>
       <SportAcademyHero />
+      <div className=" w-full h-[10vh] " id="aboutus"></div>
       <SportAcademyAboutUs />
+      <div className=" w-full h-[10vh] " id="programoffer"></div>
       <SportAcademyProgramOffer />
 
+      <div className=" w-full h-[10vh] " id="training"></div>
       {isMobile ? <SportAcademyTrainingMobile /> : <SportAcademyTraining />}
+      <div className=" w-full h-[10vh] " id="success"></div>
       {isMobile ? <SportAcademySuccessMobile /> : <SportAdacemySuccess />}
+      <div className=" w-full h-[10vh] " id="story"></div>
       {isMobile ? <SportAcademyStoryMobile /> : <SportAcedemyStory />}
 
+      <div className=" w-full h-[1vh] " id="membership"></div>
       <SportAcademyMemberShip />
+      <div className=" w-full h-[10vh] " id="faqs"></div>
       <SportAcademyFAQ />
     </div>
   );

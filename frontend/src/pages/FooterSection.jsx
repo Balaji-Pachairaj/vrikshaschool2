@@ -3,7 +3,10 @@ import React from "react";
 const FooterSection = () => {
   return (
     <>
-      <div className=" w-full h-fit pt-[10vh] pb-[10vh] bg-black flex flex-row justify-center">
+      <div
+        className=" w-full h-fit pt-[10vh] pb-[10vh] bg-black flex flex-row justify-center"
+        id={"footer"}
+      >
         {/* ------------------------------------- */}
         <div className=" w-[85vw] h-fit flex flex-col md:gap-[1rem] gap-[2rem] ">
           {/* ------------------------------------- */}

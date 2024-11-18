@@ -5,7 +5,7 @@ const ContactUs = () => {
   return (
     <>
       <NavBar />
-      <div className=" w-full min-h-screen bg-black">
+      <div className=" w-full min-h-screen bg-black" id="contact">
         <div className=" w-full md:h-[80vh] h-[30vh] flex flex-col md:justify-center justify-end items-center md:pb-[0px] pb-[5vh]">
           <h1 className=" text-[10vw] text-white font-kanit uppercase   ">
             Contact
