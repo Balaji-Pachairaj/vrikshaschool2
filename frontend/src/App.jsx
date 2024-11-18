@@ -22,6 +22,9 @@ import Sports from "./curricular/Sports";
 import NavBar from "./pages/NavBar";
 import FooterSection from "./pages/FooterSection";
 import ContactUs from "./pages/ContactUs";
+
+import Admission from "./pages/Admission/Admission";
+
 import Cards from "./curricular/Cards";
 
 const router = createBrowserRouter([
@@ -38,13 +41,21 @@ const router = createBrowserRouter([
 
     element: (
       <>
+        <div className="w-full h-[0.1px]" id="start"></div>
         <NavBar />
+        <div className="w-full bg-black h-[0.1px]" id="overview"></div>
         <Overview />
+        <div className="w-full bg-black h-[0.1vh]" id="mission"></div>
         <Mission />
+        <div className="w-full bg-black h-[10vh]" id="advantage"></div>
         <VKadvantage />
+        <div className="w-full bg-black h-[10vh]" id="houses"></div>
         <Houses />
+        <div className="w-full bg-black h-[10vh]" id="partners"></div>
         <Partners />
+        <div className="w-full bg-black h-[0.1vh]" id="cta"></div>
         <CTA />
+        <FooterSection />
       </>
     ),
   },
@@ -56,10 +67,16 @@ const router = createBrowserRouter([
     path: "/curricular",
     element: (
       <>
+        <div className="w-full h-[0.1px]" id="start"></div>
         <NavBar />
+        <div className="w-full h-[0.1px] " id={"overview"}></div>
         <Cooverview />
+        <div className="w-full h-[0.1px] " id={"co"}></div>
         <Cocurricular />
-        
+
+        <div className="w-full h-[0.1px] " id={"sports"}></div>
+        <Sports />
+        <FooterSection />
       </>
     ),
   },
@@ -67,11 +84,15 @@ const router = createBrowserRouter([
     path: "/discover",
     element: (
       <>
+        <div className="w-full h-[0.1px]" id="start"></div>
         <NavBar />
+        <div className="w-full h-[0.1px] bg-black " id={"overview"}></div>
         <Doverview />
+        <div className="w-full h-[2vh] bg-black " id={"mess"}></div>
         <Mess />
+        <div className="w-full h-[10vh] bg-black " id={"content"}></div>
         <Content />
-
+        <FooterSection />
       </>
     ),
   },
@@ -79,16 +100,19 @@ const router = createBrowserRouter([
     path: "/sportacademy",
     element: <SportAcademy />,
   },
-  { path: "/admission", element: <></> },
+  { path: "/admission", element: <Admission /> },
   { path: "/contact", element: <ContactUs /> },
 
   {
-    path: "/sports", element: (
+    path: "/sports",
+    element: (
       <>
-      <Sports />,
-      <Cards />
+        <div className="w-full h-[0.1px]" id="start"></div>
+        <Sports />,
+        <Cards />
+        <FooterSection />
       </>
-    )
+    ),
   },
 ]);
 
@@ -96,7 +120,6 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
-      <FooterSection />
     </>
   );
 }

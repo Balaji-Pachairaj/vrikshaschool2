@@ -37,7 +37,9 @@ const HeroAndVisionSection = () => {
   return (
     <div className="w-full h-fit" id={"hero"} ref={full_ref}>
       <Hero />
+      <div className=" w-full h-[0.1px]" id="visionandmission"></div>
       <Vision />
+      <div className=" w-full h-[0.1px]" id="milestone"></div>
       {isMobile ? <Milestones_Mobile /> : <Milestones />}
 
       <motion.div
