@@ -22,7 +22,11 @@ import Sports from "./curricular/Sports";
 import NavBar from "./pages/NavBar";
 import FooterSection from "./pages/FooterSection";
 import ContactUs from "./pages/ContactUs";
+
 import Admission from "./pages/Admission/Admission";
+
+import Cards from "./curricular/Cards";
+
 
 const router = createBrowserRouter([
   {
@@ -67,8 +71,10 @@ const router = createBrowserRouter([
         <Cooverview />
         <div className="w-full h-[0.1px] " id={"co"}></div>
         <Cocurricular />
+
         <div className="w-full h-[0.1px] " id={"sports"}></div>
         <Sports />
+
       </>
     ),
   },
@@ -83,6 +89,7 @@ const router = createBrowserRouter([
         <Mess />
         <div className="w-full h-[10vh] bg-black " id={"content"}></div>
         <Content />
+
       </>
     ),
   },
@@ -92,6 +99,15 @@ const router = createBrowserRouter([
   },
   { path: "/admission", element: <Admission /> },
   { path: "/contact", element: <ContactUs /> },
+
+  {
+    path: "/sports", element: (
+      <>
+      <Sports />,
+      <Cards />
+      </>
+    )
+  },
 ]);
 
 function App() {
