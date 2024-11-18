@@ -7,21 +7,17 @@ const CardStack = () => {
 
   const cards = [
     {
-      image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2075&auto=format&fit=crop",
-      title: "BLUE HOUSE",
+      image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=2070",
+      title: "-Red House-",
     },
     {
-      image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?q=80&w=2065&auto=format&fit=crop",
-      title: "GREEN HOUSE",
+      image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=2072",
+      title: "-Blue House-",
     },
     {
-      image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=2070&auto=format&fit=crop",
-      title: "RED HOUSE",
+      image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070",
+      title: "-Yellow House-",
     },
-    {
-      image: "https://images.unsplash.com/photo-1576941089067-2de3c901e126?q=80&w=2043&auto=format&fit=crop",
-      title: "YELLOW HOUSE",
-    }
   ];
 
   useEffect(() => {
