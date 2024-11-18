@@ -3,6 +3,7 @@ import "./App.css";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
+
 import Mission from "./aboutus/Mission";
 import Overview from "./aboutus/Overview";
 import Learning from "./pages/Learning/Learning";
@@ -18,18 +19,23 @@ import Doverview from "./discover/Doverview";
 import Mess from "./discover/Mess";
 import Content from "./discover/Content";
 import Sports from "./curricular/Sports";
-
+import NavBar from "./pages/NavBar";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: (
+      <>
+        <Home />
+      </>
+    ),
   },
   {
     path: "/aboutus",
 
     element: (
       <>
+        <NavBar />
         <Overview />
         <Mission />
         <VKadvantage />
@@ -38,16 +44,6 @@ const router = createBrowserRouter([
         <CTA />
       </>
     ),
-
-    element: <>
-    <Overview/>
-    <Mission/>
-    <VKadvantage/>
-    <Houses/>
-    <Partners/>
-    <CTA />
-    </>
-
   },
   {
     path: "/learning",
@@ -55,19 +51,25 @@ const router = createBrowserRouter([
   },
   {
     path: "/curricular",
-    element: <>
-    <Cooverview />
-    <Cocurricular />
-    <Sports />
-    </>,
+    element: (
+      <>
+        <NavBar />
+        <Cooverview />
+        <Cocurricular />
+        <Sports />
+      </>
+    ),
   },
   {
     path: "/discover",
-    element: <>
-    <Doverview />
-    <Mess />.
-    <Content />
-    </>,
+    element: (
+      <>
+        <NavBar />
+        <Doverview />
+        <Mess />
+        <Content />
+      </>
+    ),
   },
   {
     path: "/sportacademy",
@@ -76,7 +78,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />;
+    </>
+  );
 }
 
 export default App;

@@ -11,11 +11,13 @@ import SportAcedemyStory from "./SportAcedemyStory";
 import SportAcademyStoryMobile from "./SportAcademyStoryMobile";
 import SportAcademyMemberShip from "./SportAcademyMemberShip";
 import SportAcademyFAQ from "./SportAcademyFAQ";
+import NavBar from "../NavBar";
 
 const SportAcademy = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
   return (
-    <div className=" w-full min-h-screen bg-black">
+    <div className=" w-full min-h-screen bg-black ">
+      <NavBar />
       <SportAcademyHero />
       <SportAcademyAboutUs />
       <SportAcademyProgramOffer />

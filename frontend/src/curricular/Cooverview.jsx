@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const Component = ({
@@ -95,12 +94,11 @@ const array = [
 
 const Cooverview = () => {
   return (
-    <div className="w-full min-h-screen bg-black pt-[2rem] pb-[2rem]">
+    <div className="w-full min-h-screen bg-black pt-[7.5vh] pb-[2rem] ">
       <div className="w-full h-fit flex flex-col items-center mb-[2vh] mt-[3vh]">
         <h1 className="font-cabin xl:text-[4vw] lg:text-[4.5vw] md:text-[5vw] sm:text-[6vw] text-[6.5vw] text-[white] text-center font-[600]">
           Overview
         </h1>
-    
       </div>
       <div className="w-full md:h-screen h-fit flex flex-row justify-center md:flex-nowrap flex-wrap gap-y-[1rem]">
         <div className="md:w-[33vw] w-[100vw] md:h-full h-fit flex md:flex-col flex-row md:items-center justify-evenly">
