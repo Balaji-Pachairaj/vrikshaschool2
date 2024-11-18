@@ -12,6 +12,7 @@ const NavBar_links = [
   { title: "Co-curriculam", to: "/curricular" },
   { title: "Sport Academy", to: "/sportacademy" },
   { title: "About Us", to: "/aboutus" },
+  { title: "Contact", to: "/contact" },
 ];
 
 const NavBar = () => {

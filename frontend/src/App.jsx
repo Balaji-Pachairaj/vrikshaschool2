@@ -21,6 +21,7 @@ import Content from "./discover/Content";
 import Sports from "./curricular/Sports";
 import NavBar from "./pages/NavBar";
 import FooterSection from "./pages/FooterSection";
+import ContactUs from "./pages/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -77,6 +78,7 @@ const router = createBrowserRouter([
     element: <SportAcademy />,
   },
   { path: "/admission", element: <></> },
+  { path: "/contact", element: <ContactUs /> },
 ]);
 
 function App() {
