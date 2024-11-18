@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 const Overview = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('show-element');
-            if (entry.target.classList.contains('heading')) {
-              entry.target.classList.add('animate-heading');
+            entry.target.classList.add("show-element");
+            if (entry.target.classList.contains("heading")) {
+              entry.target.classList.add("animate-heading");
             }
           }
         });
@@ -17,15 +17,15 @@ const Overview = () => {
       }
     );
 
-    const hiddenElements = document.querySelectorAll('.hide-element');
+    const hiddenElements = document.querySelectorAll(".hide-element");
     hiddenElements.forEach((el) => observer.observe(el));
 
     // Manually trigger the observer callback for initially intersecting elements
     hiddenElements.forEach((el) => {
       if (el.getBoundingClientRect().top < window.innerHeight) {
-        el.classList.add('show-element');
-        if (el.classList.contains('heading')) {
-          el.classList.add('animate-heading');
+        el.classList.add("show-element");
+        if (el.classList.contains("heading")) {
+          el.classList.add("animate-heading");
         }
       }
     });
@@ -106,7 +106,10 @@ const Overview = () => {
         `}
       </style>
       <div className="relative bg-black min-h-screen text-white overflow-hidden">
-        <div className="container mx-auto flex items-center justify-center min-h-screen">
+        <div
+          className="container mx-auto flex items-center justify-center min-h-screen"
+          id={"overview"}
+        >
           <div className="relative max-w-7xl w-full">
             {/* Left Decorative Image Card */}
             <div className="absolute left-[-220px] top-[-140px] -translate-y-32 hide-element hide-left">
@@ -127,7 +130,13 @@ const Overview = () => {
                 Overview
               </h1>
               <p className="text-gray-300 text-xl mx-auto leading-tight max-w-3xl">
-              Vriksha Global School is an educational institution in Tamilnadu, India, established in 2012. Since then it has been playing a vital role in Promoting the cause of education by imparting quality education with special emphasis on the holistic development of the child. It is an English medium school from class I to class XII affiliated to the Central Board of Secondary Education (CBSE), New Delhi.
+                Vriksha Global School is an educational institution in
+                Tamilnadu, India, established in 2012. Since then it has been
+                playing a vital role in Promoting the cause of education by
+                imparting quality education with special emphasis on the
+                holistic development of the child. It is an English medium
+                school from class I to class XII affiliated to the Central Board
+                of Secondary Education (CBSE), New Delhi.
               </p>
             </div>
             {/* Right Decorative Image Card */}

@@ -20,6 +20,7 @@ import Mess from "./discover/Mess";
 import Content from "./discover/Content";
 import Sports from "./curricular/Sports";
 import NavBar from "./pages/NavBar";
+import FooterSection from "./pages/FooterSection";
 
 const router = createBrowserRouter([
   {
@@ -75,12 +76,14 @@ const router = createBrowserRouter([
     path: "/sportacademy",
     element: <SportAcademy />,
   },
+  { path: "/admission", element: <></> },
 ]);
 
 function App() {
   return (
     <>
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
+      <FooterSection />
     </>
   );
 }

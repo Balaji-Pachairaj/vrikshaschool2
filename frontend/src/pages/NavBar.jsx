@@ -5,7 +5,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { motion, useAnimation } from "framer-motion";
 
 const NavBar_links = [
-  { title: "Home", to: "/" },
+  { title: "Home", to: "/#hero" },
   { title: "Admission", to: "/admission" },
   { title: "Learning", to: "/learning" },
   { title: "Discover", to: "/discover" },
@@ -71,7 +71,7 @@ const NavBar = () => {
 
       <motion.div
         animate={controls}
-        className="w-full h-[40vh] z-[20000] fixed top-[-100%] bg-black shadow-xl flex flex-col gap-[0.5rem] md:hidden "
+        className="w-full h-[40vh] z-[20000] fixed top-[-100%] pb-[2vh] bg-black shadow-xl flex flex-col gap-[0.5rem] md:hidden "
       >
         {NavBar_links?.map((item) => {
           return (

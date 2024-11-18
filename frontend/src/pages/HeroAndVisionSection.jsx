@@ -4,7 +4,7 @@ import Vision from "./Vision";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import Milestones from "./Milestones";
-import logo from '../assets/wings.gif';  
+import logo from "../assets/wings.gif";
 import Milestones_Mobile from "./Milestones_Mobile";
 
 const HeroAndVisionSection = () => {
@@ -35,7 +35,7 @@ const HeroAndVisionSection = () => {
   );
 
   return (
-    <div className="w-full h-fit" ref={full_ref}>
+    <div className="w-full h-fit" id={"hero"} ref={full_ref}>
       <Hero />
       <Vision />
       {isMobile ? <Milestones_Mobile /> : <Milestones />}

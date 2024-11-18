@@ -11,6 +11,7 @@ import CTA from "./CTA";
 import Testimonials from "./Testimonials";
 import Testimonials_Mobile from "./Testimonals_Mobile";
 import NavBar from "./NavBar";
+import FooterSection from "./FooterSection";
 
 const Home = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
