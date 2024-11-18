@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const PortfolioGrid = () => {
+  const navigate = useNavigate();
   const sectionRef = useRef(null);
   const cardsRef = useRef([]);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -11,39 +13,45 @@ const PortfolioGrid = () => {
   const portfolioItems = [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5",
-      title: "ALL FOR ONE",
+      image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211",
+      title: "Sports",
       subtitle: "ONE FOR ALL",
+      path: "/sports"
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1557683311-eac922347aa1",
-      title: "Geometric",
+      image: "https://images.unsplash.com/photo-1551632811-561732d1e306",
+      title: "Outdoor Activities",
       subtitle: "Purple Edition",
+      path: "/outdoor"
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
-      title: "DESIGN",
+      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18",
+      title: "Clubs",
       subtitle: "PROJECTS",
+      path: "/clubs"
     },
     {
       id: 4,
-      image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211",
-      title: "MOVE",
+      image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae",
+      title: "Music & Dance",
       subtitle: "Sport Campaign",
+      path: "/music-dance"
     },
     {
       id: 5,
-      image: "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc",
-      title: "DIGITAL",
+      image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f",
+      title: "Creative Arts",
       subtitle: "STUDIO",
+      path: "/arts"
     },
     {
       id: 6,
       image: "https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2",
       title: "Webflow",
       subtitle: "Templates",
+      path: "/webflow"
     }
   ];
 
@@ -132,6 +140,11 @@ const PortfolioGrid = () => {
     setMousePosition({ x: e.clientX, y: e.clientY });
   };
 
+  // Handle item click navigation
+  const handleItemClick = (path) => {
+    navigate(path);
+  };
+
   return (
     <div 
       ref={sectionRef} 
@@ -143,29 +156,31 @@ const PortfolioGrid = () => {
           <div
             key={item.id}
             ref={(el) => (cardsRef.current[index] = el)}
-            className="relative overflow-hidden rounded-lg"
+            className="relative overflow-hidden rounded-lg cursor-pointer"
             onMouseEnter={() => setHoveredItem(item)}
             onMouseLeave={() => setHoveredItem(null)}
+            onClick={() => handleItemClick(item.path)}
           >
             <img
               src={item.image}
               alt={item.title}
-              className="w-full h-[260px] object-cover"
+              className="w-full h-[260px] object-cover transition-transform duration-300 hover:scale-105"
             />
           </div>
         ))}
       </div>
 
-      {/* Cursor Following Popup */}
       {hoveredItem && (
         <div
-          className="fixed pointer-events-none z-50 bg-gray-400 text-black px-4 py-2 rounded-lg shadow-lg transform -translate-x-1/2 -translate-y-1/2"
+          className="fixed pointer-events-none z-50 px-4 py-2 -rotate-6 rounded-lg shadow-lg transform -translate-x-1/2 -translate-y-1/2 backdrop-blur-md bg-white/30 border border-white/20"
           style={{
             left: mousePosition.x,
             top: mousePosition.y,
+            backgroundColor: 'rgba(255, 255, 255, 0.1)',
+            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
           }}
         >
-          <p className="font-bold whitespace-nowrap">{hoveredItem.title}</p>
+          <p className="font-bold whitespace-nowrap text-white">{hoveredItem.title}</p>
         </div>
       )}
     </div>
