@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-const Sports = () => {
+const Outdoor = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -21,7 +21,7 @@ const Sports = () => {
           <div className="space-y-4">
             <h2 className="text-7xl font-bold text-white tracking-tight">
               <span className="block italic text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
-                Sports
+              Outdoor Activities
               </span>
             </h2>
           </div>
@@ -35,8 +35,10 @@ const Sports = () => {
             >
               <div className="space-y-2">
                 <p className="text-white text-xl">
-                  Vriksha is home to some truly outstanding sports facilities, geared up to help aspiring sports professionals to discover their true potential. The school provides playgrounds of international size for these games.
+                We believe that play enhances every aspect of a child’s development and learning. In fact, it is the child’s window to the external world and forms the foundation of social, intellectual, physical and emotional skills that are a key requisite for success in school as well as in life.
                 </p>
+
+                
               </div>
             </motion.div>
           </div>
@@ -62,4 +64,4 @@ const Sports = () => {
   );
 };
 
-export default Sports;
+export default Outdoor;

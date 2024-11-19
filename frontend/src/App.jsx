@@ -25,7 +25,9 @@ import ContactUs from "./pages/ContactUs";
 
 import Admission from "./pages/Admission/Admission";
 
-import Cards from "./curricular/Cards";
+
+import Sportscard from "./curricular/Sportscard";
+import Outdoor from "./curricular/Outdoor";
 
 const router = createBrowserRouter([
   {
@@ -98,7 +100,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/sportacademy",
-    element: <SportAcademy />,
+    element: <SportAcademy />
   },
   { path: "/admission", element: <Admission /> },
   { path: "/contact", element: <ContactUs /> },
@@ -108,8 +110,28 @@ const router = createBrowserRouter([
     element: (
       <>
         <div className="w-full h-[0.1px]" id="start"></div>
-        <Sports />,
-        <Cards />
+        <NavBar />
+        <div className="w-full h-[0.1px] "></div>
+        <Sports />
+        <div className="w-full h-[0.1px]"></div>
+       
+        <Sportscard />
+        <FooterSection />
+      </>
+    ),
+  },
+
+  {
+    path: "/outdoor",
+    element: (
+      <>
+        <div className="w-full h-[0.1px]" id="start"></div>
+        <NavBar />
+        <div className="w-full h-[0.1px] "></div>
+        <Outdoor />
+        <div className="w-full h-[0.1px]"></div>
+       
+        <Sportscard />
         <FooterSection />
       </>
     ),

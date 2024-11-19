@@ -2,10 +2,10 @@ import React, { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
 const cardData = [
-  { title: "Design", description: "Creative solutions for modern interfaces" },
-  { title: "Development", description: "Robust and scalable web applications" },
-  { title: "Marketing", description: "Strategic digital growth approaches" },
-  { title: "Consulting", description: "Expert guidance for technology strategies" }
+  { title: "Qualified trainers and coaches", description: "monitor the progress of every child, to ensure that they learn, and excel in sports. Keeping this in view, the school has invested heavily in creating world - class sports infrastructure" },
+  { title: "indoor sports", description: "A huge indoor sports Auditorium set up is under progress which aims to provide extensive training to the students in Table Tennis, Badminton, Basketball and many other indoor games." },
+  { title: "martial arts and yoga", description: "Martial arts are also taught for self-defense. Yoga is regular features of the senior school’s schedule. The School encourages students and provides them with opportunities to participate in different inter school competitions at the national and international levels. Sports Day is celebrated every year with great zeal and enthusiasm." },
+ 
 ]
 
 function Card({ title, description, index, scrollYProgress }) {
@@ -24,13 +24,13 @@ function Card({ title, description, index, scrollYProgress }) {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
-      <h3 className="text-xl font-bold mb-2 text-white">{title}</h3>
-      <p className="text-gray-300">{description}</p>
+      <h3 className="text-xl font-bold mb-2 text-white uppercase">{title}</h3>
+      <p className="text-white  ">{description}</p>
     </motion.div>
   )
 }
 
-function ScrollCards() {
+function Sportscard() {
   const containerRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -48,4 +48,4 @@ function ScrollCards() {
   )
 }
 
-export default ScrollCards
+export default Sportscard
