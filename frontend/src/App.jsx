@@ -28,6 +28,10 @@ import Admission from "./pages/Admission/Admission";
 
 import Sportscard from "./curricular/Sportscard";
 import Outdoor from "./curricular/Outdoor";
+import Clubs from "./curricular/Clubs";
+import Clubcard from "./curricular/Clubscards";
+import Clubcard2 from "./curricular/Clubscards2";
+import Creative from "./curricular/Creative";
 
 const router = createBrowserRouter([
   {
@@ -76,8 +80,7 @@ const router = createBrowserRouter([
         <div className="w-full h-[0.1px] " id={"co"}></div>
         <Cocurricular />
 
-        <div className="w-full h-[0.1px] " id={"sports"}></div>
-        <Sports />
+        
         <FooterSection />
       </>
     ),
@@ -132,6 +135,38 @@ const router = createBrowserRouter([
         <div className="w-full h-[0.1px]"></div>
        
         <Sportscard />
+        <FooterSection />
+      </>
+    ),
+  },
+
+  {
+    path: "/clubs",
+    element: (
+      <>
+        <div className="w-full h-[0.1px]" id="start"></div>
+        <NavBar />
+        <div className="w-full h-[0.1px] "></div>
+        <Clubs />
+        <div className="w-full h-[0.1px]"></div>
+       
+        <Clubcard />
+        <Clubcard2 />
+        <FooterSection />
+      </>
+    ),
+  },
+
+  {
+    path: "/creative",
+    element: (
+      <>
+        <div className="w-full h-[0.1px]" id="start"></div>
+        <NavBar />
+        <div className="w-full h-[0.1px] "></div>
+        
+        <Creative />
+        
         <FooterSection />
       </>
     ),

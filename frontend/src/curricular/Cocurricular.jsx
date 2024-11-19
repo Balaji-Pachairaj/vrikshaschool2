@@ -44,7 +44,7 @@ const PortfolioGrid = () => {
       image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f",
       title: "Creative Arts",
       subtitle: "STUDIO",
-      path: "/arts"
+      path: "/creative"
     },
     {
       id: 6,
