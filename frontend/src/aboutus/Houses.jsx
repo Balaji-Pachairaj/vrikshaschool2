@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import dolphin from "../assets/houses/dolphin.png"
-import lions from "../assets/houses/lions.png"
-import hawks from "../assets/houses/hawks.png"
+import dolphin from "../assets/houses/Dolphin.png";
+import lions from "../assets/houses/lions.png";
+import hawks from "../assets/houses/hawks.png";
 
 const CardStack = () => {
   const cardsRef = useRef([]);
