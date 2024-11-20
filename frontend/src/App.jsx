@@ -171,6 +171,10 @@ const router = createBrowserRouter([
       </>
     ),
   },
+  {
+    path: "/admission",
+    element: <Admission />
+  },
 ]);
 
 function App() {
