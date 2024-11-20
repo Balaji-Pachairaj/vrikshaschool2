@@ -51,11 +51,11 @@ export const NavBarLinks = [
     sections: [
       { title: "overview", to: "/curricular?section=overview" },
       { title: "curricular", to: "/curricular?section=co" },
-      { title: "sports", to: "/curricular?section=sports" },
-      { title: "outdoor activites", to: "/curricular?section=outdoor" },
-      { title: "clubs", to: "/curricular?section=outdoor" },
+      { title: "sports", to: "/sports?section=sports" },
+      { title: "outdoor activites", to: "/outdoor?section=outdoor" },
+      { title: "clubs", to: "/clubs?section=clubs" },
       { title: "Music & Dance", to: "/curricular?section=outdoor" },
-      { title: "creative arts", to: "/curricular?section=outdoor" },
+      { title: "creative arts", to: "/creative?section=creative" },
 
     ],
   },

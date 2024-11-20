@@ -117,9 +117,11 @@ const StatsSection = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-white text-4xl font-bold text-center mb-12"
+          className="text-white text-5xl font-bold text-center mb-12"
         >
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
           Our Campus & Facilities
+                </span>
         </motion.h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {stats.map((stat, index) => (

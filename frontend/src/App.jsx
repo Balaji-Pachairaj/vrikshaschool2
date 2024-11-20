@@ -26,7 +26,7 @@ import ContactUs from "./pages/ContactUs";
 import Admission from "./pages/Admission/Admission";
 
 
-import Sportscard from "./curricular/Sportscard";
+
 import Outdoor from "./curricular/Outdoor";
 import Clubs from "./curricular/Clubs";
 import Clubcard from "./curricular/Clubscards";
@@ -79,7 +79,6 @@ const router = createBrowserRouter([
         <Cooverview />
         <div className="w-full h-[0.1px] " id={"co"}></div>
         <Cocurricular />
-
         
         <FooterSection />
       </>
@@ -114,11 +113,10 @@ const router = createBrowserRouter([
       <>
         <div className="w-full h-[0.1px]" id="start"></div>
         <NavBar />
-        <div className="w-full h-[0.1px] "></div>
+        <div className="w-full h-[0.1px] " id={"sports"}></div>
         <Sports />
-        <div className="w-full h-[0.1px]"></div>
-       
-        <Sportscard />
+        
+      
         <FooterSection />
       </>
     ),
@@ -130,11 +128,11 @@ const router = createBrowserRouter([
       <>
         <div className="w-full h-[0.1px]" id="start"></div>
         <NavBar />
-        <div className="w-full h-[0.1px] "></div>
+        <div className="w-full h-[0.1px] " id="outdoor"></div>
         <Outdoor />
-        <div className="w-full h-[0.1px]"></div>
        
-        <Sportscard />
+       
+      
         <FooterSection />
       </>
     ),
@@ -146,7 +144,7 @@ const router = createBrowserRouter([
       <>
         <div className="w-full h-[0.1px]" id="start"></div>
         <NavBar />
-        <div className="w-full h-[0.1px] "></div>
+        <div className="w-full h-[0.1px] " id="clubs"></div>
         <Clubs />
         <div className="w-full h-[0.1px]"></div>
        
@@ -163,7 +161,7 @@ const router = createBrowserRouter([
       <>
         <div className="w-full h-[0.1px]" id="start"></div>
         <NavBar />
-        <div className="w-full h-[0.1px] "></div>
+        <div className="w-full h-[0.1px]" id="creative" ></div>
         
         <Creative />
         

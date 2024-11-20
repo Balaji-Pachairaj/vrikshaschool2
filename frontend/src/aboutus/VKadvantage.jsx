@@ -38,7 +38,9 @@ const VKadvantage = () => {
     <div className="w-full bg-black relative">
       <div className="container mx-auto px-2 py-16 relative">
         <h1 className="text-6xl font-bold py-8 text-white mb-16 text-center">
-          The Vriksha Advantage
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
+        The Vriksha Advantage
+                </span>
         </h1>
         {[
           {

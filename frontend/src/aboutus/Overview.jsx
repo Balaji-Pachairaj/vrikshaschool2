@@ -127,7 +127,9 @@ const Overview = () => {
             {/* Center Content */}
             <div className="text-center flex flex-col items-center hide-element">
               <h1 className="text-5xl md:text-9xl font-bold mb-8 uppercase heading">
-                Overview
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
+                  Overview
+                </span>
               </h1>
               <p className="text-gray-300 text-xl mx-auto leading-tight max-w-3xl">
                 Vriksha Global School is an educational institution in

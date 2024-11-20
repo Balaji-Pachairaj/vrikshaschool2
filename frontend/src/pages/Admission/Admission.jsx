@@ -8,7 +8,7 @@ const Admission = () => {
     <>
       <div className="w-full h-[0.1px]" id="start"></div>
       <NavBar />
-      <div className="w-full h-[0.1px]" id="start"></div>
+      <div className="w-full h-[0.1px]" ></div>
       <Aoverview />
       <div className=" w-full  bg-black"></div>
       <FooterSection />

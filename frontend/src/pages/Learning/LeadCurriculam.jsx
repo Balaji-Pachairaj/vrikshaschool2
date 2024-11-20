@@ -39,56 +39,56 @@ const array = [
   {
     title: "Excellent Teachers",
     body: "100%",
-    bodytext: "blue",
-    boxbg: "#ff643d",
-    bg: "#E4E0E1",
-    text: "black",
-    textHover: "#ff643d",
+    bodytext: "white",
+    boxbg: "white",
+    bg: "#1a1a1a",
+    text: "white",
+    textHover: "white",
   },
   {
     title: "Students Proficient in English",
     body: "100%",
-    bodytext: "blue",
-    boxbg: "#ff643d",
-    bg: "#243642",
+    bodytext: "white",
+    boxbg: "white",
+    bg: "#1a1a1a",
     text: "white",
-    textHover: "#ff643d",
+    textHover: "white",
   },
   {
     title: "Strong Foundation in Math and Science",
     body: "100%",
-    bodytext: "blue",
-    boxbg: "#ff643d",
-    bg: "#E4E0E1",
-    text: "black",
-    textHover: "#ff643d",
+    bodytext: "white",
+    boxbg: "white",
+    bg: "#1a1a1a",
+    text: "white",
+    textHover: "white",
   },
   {
     title: "Personalised Progress",
     body: "100%",
-    bodytext: "blue",
-    boxbg: "#243642",
-    bg: "#ff643d",
+    bodytext: "white",
+    boxbg: "white",
+    bg: "#1a1a1a",
     text: "white",
-    textHover: "#243642",
+    textHover: "white",
   },
   {
     title: "Collaboration between Teachers and Parents",
     body: "100%",
-    bodytext: "blue",
-    boxbg: "#ff643d",
-    bg: "#243642",
+    bodytext: "white",
+    boxbg: "white",
+    bg: "#1a1a1a",
     text: "white",
-    textHover: "#ff643d",
+    textHover: "white",
   },
   {
     title: "Lata Acemey Comebacke",
     body: "100%",
-    bodytext: "blue",
-    boxbg: "#ff643d",
-    bg: "#E4E0E1",
-    text: "black",
-    textHover: "#ff643d",
+    bodytext: "white",
+    boxbg: "white",
+    bg: "#1a1a1a",
+    text: "white",
+    textHover: "white",
   },
 ];
 
@@ -97,9 +97,11 @@ const LeadCurriculam = () => {
     <div className=" w-full min-h-screen bg-[black] pt-[2rem] pb-[2rem] overflow-hidden">
       <div className=" w-full h-fit flex flex-col items-center mb-[2vh] mt-[3vh]">
         <h1 className=" font-cabin xl:text-[4vw] lg:text-[4.5vw] md:text-[5vw] sm:text-[6vw] text-[6.5vw] text-[white] text-center font-[600] ">
-          LEAD Curriculum
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
+        Lead Curriculum
+                </span>
         </h1>
-        <p className=" ps-8 pe-8  md:max-w-[85%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[12px]  text-[blue] text-center font-[400] mt-[1rem]">
+        <p className=" ps-8 pe-8  md:max-w-[85%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[12px]  text-[white] text-center font-[400] mt-[1rem]">
           Academic excellence powered by Lead School
         </p>
         <p className=" ps-8 pe-8  md:max-w-[85%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[12px]  text-[white] text-center font-[400] mt-[1rem]">
