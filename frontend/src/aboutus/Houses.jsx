@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import dolphinhouse from "../assets/houses/dolphin.png"
+import dolphin from "../assets/houses/dolphin.png"
+import lions from "../assets/houses/lions.png"
+import hawks from "../assets/houses/hawks.png"
 
 const CardStack = () => {
   const cardsRef = useRef([]);
@@ -8,16 +10,16 @@ const CardStack = () => {
 
   const cards = [
     {
-      image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=2070",
-      title: "-Red House-",
+      image: dolphin,
+      title: "-Dolphin House-",
     },
     {
-      image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=2072",
-      title: "-Blue House-",
+      image: lions,
+      title: "-Lions House-",
     },
     {
-      image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070",
-      title: "-Yellow House-",
+      image: hawks,
+      title: "-Hawks House-",
     },
   ];
 
@@ -113,4 +115,4 @@ const CardStack = () => {
   );
 };
 
-export default CardStack;
+export default CardStack; 
