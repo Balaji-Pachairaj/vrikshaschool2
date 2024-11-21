@@ -1,4 +1,7 @@
 import React, { useEffect } from "react";
+import leftcard from "../assets/aboutus/admission-banner.webp"
+import rightcard from "../assets/aboutus/about-overview.webp"
+
 const Overview = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -117,7 +120,7 @@ const Overview = () => {
                 <div className="absolute inset-0 bg-blue-500 rounded-lg -rotate-12 shadow-hover-blue"></div>
                 <div className="absolute inset-0 overflow-hidden rounded-lg -rotate-12">
                   <img
-                    src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3"
+                    src= {leftcard}
                     alt="Decorative art"
                     className="w-full h-full object-cover image-hover-effect"
                   />
@@ -147,7 +150,7 @@ const Overview = () => {
                 <div className="absolute inset-0 bg-purple-500 rounded-lg rotate-12 shadow-hover-purple"></div>
                 <div className="absolute inset-0 overflow-hidden rounded-lg rotate-12">
                   <img
-                    src="https://images.unsplash.com/photo-1608501947097-86951ad73fea?ixlib=rb-4.0.3"
+                    src={rightcard}
                     alt="Decorative art"
                     className="w-full h-full object-cover image-hover-effect"
                   />

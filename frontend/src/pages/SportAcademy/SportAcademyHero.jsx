@@ -153,14 +153,12 @@ const SportAcademyHero = () => {
       <div className=" w-full h-[100vh] flex flex-col justify-center gap-[3rem] bg-black">
         <div className=" w-full h-fit  md:ps-[5rem]">
           <h1 className=" font-cabin  text-[white] md:text-[4vw] text-[8vw] font-bold md:text-start text-center ">
-            Companions are Made
+          Where Champions Are Made
           </h1>
         </div>
         <div className=" w-full h-fit   text-end flex flex-row justify-end md:pe-[5rem] ps-[2rem] pe-[2rem]">
           <p className=" font-cabin  text-[white] md:text-[1.5vw] text-[4vw]  md:w-[500px] md:text-start text-center">
-            With years of experience, a passion for creativity, and a
-            results-driven mindset, our team is dedicated to helping your
-            business thrive in the digital space.
+          With state-of-the-art facilities, expert coaches, and a focus on holistic development, we provide athletes with the tools they need to excel both on and off the field. Whether you're striving for professional success or personal growth, this is where champions are made.
           </p>
         </div>
       </div>

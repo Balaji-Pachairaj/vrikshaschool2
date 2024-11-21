@@ -1,5 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import sports from "../assets/curricular/sports.png"
+import clubs from "../assets/curricular/clubs.png"
+import music from "../assets/curricular/music.png"
+import creative from "../assets/curricular/creative.png"
+import outdoor from "../assets/curricular/outdoor.png"
+
+
+
 
 const PortfolioGrid = () => {
   const navigate = useNavigate();
@@ -13,35 +21,35 @@ const PortfolioGrid = () => {
   const portfolioItems = [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211",
+      image: sports,
       title: "Sports",
       subtitle: "ONE FOR ALL",
       path: "/sports"
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1551632811-561732d1e306",
+      image: outdoor,
       title: "Outdoor Activities",
       subtitle: "Purple Edition",
       path: "/outdoor"
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18",
+      image: clubs,
       title: "Clubs",
       subtitle: "PROJECTS",
       path: "/clubs"
     },
     {
       id: 4,
-      image: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae",
+      image: music,
       title: "Music & Dance",
       subtitle: "Sport Campaign",
       path: "/music-dance"
     },
     {
       id: 5,
-      image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f",
+      image: creative,
       title: "Creative Arts",
       subtitle: "STUDIO",
       path: "/creative"
