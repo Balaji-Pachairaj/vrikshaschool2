@@ -1,9 +1,9 @@
 import React from "react";
 import { ClipboardList, UserPlus, GraduationCap } from "lucide-react";
 
-const Aoverview = () => {
+const Admissionoverview = () => {
   return (
-    <div className="w-full bg-black min-h-screen pt-[10vh]">
+    <div className="w-full bg-black min-h-screen pb-24 pt-[10vh]">
       <div className="w-full h-fit bg-black pt-[0rem] flex flex-col items-center mb-[5vh]">
         <h1 className="font-cabin xl:text-[3vw] lg:text-[3.5vw] md:text-[4vw] sm:text-[4.5vw] text-[5vw] text-[white] text-center font-[600]">
           Admission Overview
@@ -66,4 +66,4 @@ const Aoverview = () => {
   );
 };
 
-export default Aoverview;
+export default Admissionoverview;
