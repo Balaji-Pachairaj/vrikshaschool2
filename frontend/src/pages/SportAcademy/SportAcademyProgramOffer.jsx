@@ -1,8 +1,9 @@
 import React from "react";
-import png4 from "../../assets/4.png";
-import png3 from "../../assets/3.png";
-import png2 from "../../assets/2.png";
-import png1 from "../../assets/1.png";
+
+import png21 from "../../assets/sportsacademy/21.png"
+import png22 from "../../assets/sportsacademy/22.png"
+import png23 from "../../assets/sportsacademy/23.png"
+import png24 from "../../assets/sportsacademy/24.png"
 
 const Com = ({ content = {} }) => {
   return (
@@ -20,10 +21,10 @@ const Com = ({ content = {} }) => {
 };
 
 const array = [
-  { image: png1, title: "STRENGTH TRAINING" },
-  { image: png2, title: "BODY_WEIGHT TRAINING" },
-  { image: png3, title: "MUSLE TRAINING" },
-  { image: png4, title: "BODY TRAINING" },
+  { image: png21, title: "Professional Sports Training Program" },
+  { image: png22, title: "Sports as a Career Program" },
+  { image: png23, title: "Active Lifestyle and Wellness Program" },
+  { image: png24, title: "Youth Leadership Through Sports Program" },
 ];
 
 const SportAcademyProgramOffer = () => {

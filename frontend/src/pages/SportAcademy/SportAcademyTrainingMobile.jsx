@@ -35,7 +35,7 @@ const SportAcademyTrainingMobile = () => {
         <div className=" w-full h-[7rem]  border-b-[1px] border-[#3b3b3b]">
           <div className=" w-full h-full flex flex-col justify-center ps-[2rem] pe-[2rem] pb-[0rem] lg:gap-[3rem] gap-[1rem] ">
             <h1 className=" font-inter lg:text-[3.5vw]  text-[2rem] font-semibold  text-white">
-              The line up
+            Why Us 
             </h1>
           </div>
         </div>

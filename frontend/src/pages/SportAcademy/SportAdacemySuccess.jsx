@@ -1,9 +1,12 @@
 import React, { useRef } from "react";
 
-import png4 from "../../assets/4.png";
-import png3 from "../../assets/3.png";
-import png2 from "../../assets/2.png";
-import png1 from "../../assets/1.png";
+
+import pool from "../../assets/sportsacademy/pool.jpeg"
+import turf from "../../assets/sportsacademy/turf.jpeg"
+import basket from "../../assets/sportsacademy/basket.jpeg"
+import ground from "../../assets/sportsacademy/ground.jpeg"
+
+
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const SportAdacemySuccess = () => {
@@ -91,13 +94,11 @@ const SportAdacemySuccess = () => {
               style={{ opacity: opacity1 }}
               className="w-full h-full flex flex-col justify-center items-end absolute top-0 left-0 pe-[5rem] gap-[1rem] bg-black"
             >
-              <h1 className=" text-[3.3vw] font-inter text-white font-light ">
-                Dummy text 1
+              <h1 className=" text-[3.3vw] font-inter text-right text-white font-light ">
+              State-of-the-art <br /> Swimming Pool
               </h1>
               <p className=" text-[#d0d0d0] text-[18px] font-inter font-light text-end w-[80%]">
-                With years of experience, a passion for creativity, and a
-                results-driven mindset, our team is dedicated to helping your
-                business thrive in the digital space.
+              Provides the perfect environment for both beginners and competitive swimmers to refine their skills and enhance performance
               </p>
             </motion.div>
             {/* ----------- */}
@@ -106,12 +107,11 @@ const SportAdacemySuccess = () => {
               className="w-full h-full flex flex-col justify-center items-end absolute top-0 left-0 pe-[5rem] gap-[1rem] bg-black"
             >
               <h1 className=" text-[3.3vw] font-inter text-white font-light ">
-                text Dummy2
+              Versatile Turf
               </h1>
               <p className=" text-[#d0d0d0] text-[18px] font-inter font-light text-end w-[80%]">
-                our team is dedicated to helping your business thrive in the
-                digital space. With years of experience, a passion for
-                creativity, and a results-driven mindset,
+              Supporting a variety of sports like football, cricket, tennis, etc., our versatile turf withstands high-octane performances.
+
               </p>
             </motion.div>
             {/* ----------- */}
@@ -119,13 +119,13 @@ const SportAdacemySuccess = () => {
               style={{ opacity: opacity3 }}
               className="w-full h-full flex flex-col justify-center items-end absolute top-0 left-0 pe-[5rem] gap-[1rem] bg-black"
             >
-              <h1 className=" text-[3.3vw] font-inter text-white font-light ">
-                Dummy text3
+              <h1 className=" text-[3.3vw] font-inter text-white text-right font-light ">
+              Professional-grade Basketball Court
+
               </h1>
               <p className=" text-[#d0d0d0] text-[18px] font-inter font-light text-end w-[80%]">
-                With years of experience, a passion for creativity, and a
-                results-driven mindset, our team is dedicated to helping your
-                business thrive in the digital space.
+              The high-performance surface offers athletes the perfect platform to sharpen their shooting, agility, and teamwork skills.
+
               </p>
             </motion.div>
             {/* ----------- */}
@@ -133,13 +133,12 @@ const SportAdacemySuccess = () => {
               style={{ opacity: opacity4 }}
               className="w-full h-full flex flex-col justify-center items-end absolute top-0 left-0 pe-[5rem] gap-[1rem] bg-black"
             >
-              <h1 className=" text-[3.3vw] font-inter text-white font-light ">
-                text Dummy4
+              <h1 className=" text-[3.3vw] font-inter text-white text-right font-light ">
+              World-class Athletic Ground 
               </h1>
               <p className=" text-[#d0d0d0] text-[18px] font-inter font-light text-end w-[80%]">
-                our team is dedicated to helping your business thrive in the
-                digital space. With years of experience, a passion for
-                creativity, and a results-driven mindset,
+              Designed to accommodate track and field events, our ground empowers athletes to train and compete at their peak performance.
+
               </p>
             </motion.div>
           </div>
@@ -149,14 +148,14 @@ const SportAdacemySuccess = () => {
               style={{ top: top1 }}
               className=" w-full h-full absolute left-0 z-[10]"
             >
-              <img src={png1} className=" w-full h-full object-cover " />
+              <img src={pool} className=" w-full h-full object-cover " />
             </motion.div>
             {/* ----------- */}
             <motion.div
               style={{ top: top2 }}
               className=" w-full h-full absolute top-0 left-0 z-[9]"
             >
-              <img src={png2} className=" w-full h-full object-cover " />
+              <img src={turf} className=" w-full h-full object-cover " />
             </motion.div>
             {/* ----------- */}
 
@@ -164,7 +163,7 @@ const SportAdacemySuccess = () => {
               style={{ top: top3 }}
               className=" w-full h-full absolute top-0 left-0 z-[8]"
             >
-              <img src={png3} className=" w-full h-full object-cover " />
+              <img src={basket} className=" w-full h-full object-cover " />
             </motion.div>
 
             {/* ----------- */}
@@ -172,7 +171,7 @@ const SportAdacemySuccess = () => {
               style={{ top: top4 }}
               className=" w-full h-full absolute top-0 left-0 z-[7]"
             >
-              <img src={png4} className=" w-full h-full object-cover " />
+              <img src={ground} className=" w-full h-full object-cover " />
             </motion.div>
             {/* ----------- */}
           </div>

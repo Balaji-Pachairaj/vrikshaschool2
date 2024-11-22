@@ -1,7 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
+import center from "../../assets/sportsacademy/center.png"
+import png1 from "../../assets/sportsacademy/1.png"
+import png2 from "../../assets/sportsacademy/2.png"
+import png3 from "../../assets/sportsacademy/3.png"
+import png4 from "../../assets/sportsacademy/4.png"
 
 import overviewImage from "../../assets/Learning/learningOverview.webp";
-import png4 from "../../assets/4.png";
+
 import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 
@@ -105,7 +110,7 @@ const SportAcademyHero = () => {
             animate={control1}
             className="md:w-[23vw] md:h-[23vw] w-[40vw] h-[40vw] fixed  rounded-[12px] overflow-hidden md:left-[10%] left-[5%]"
           >
-            <img src={overviewImage} className=" w-full h-full object-cover " />
+            <img src={png1} className=" w-full h-full object-cover " />
           </motion.div>
           {/* --- Image ----------- */}
           <motion.div
@@ -113,7 +118,7 @@ const SportAcademyHero = () => {
             animate={control2}
             className="md:w-[23vw] md:h-[23vw] w-[40vw] h-[40vw] fixed  rounded-[12px] overflow-hidden md:left-[10%] left-[5%]"
           >
-            <img src={overviewImage} className=" w-full h-full object-cover " />
+            <img src={png2} className=" w-full h-full object-cover " />
           </motion.div>
           {/* --- Image ----------- */}
           <motion.div
@@ -121,7 +126,7 @@ const SportAcademyHero = () => {
             animate={control3}
             className="md:w-[23vw] md:h-[23vw] w-[40vw] h-[40vw] fixed  rounded-[12px] overflow-hidden md:left-[70%] left-[80%]"
           >
-            <img src={overviewImage} className=" w-full h-full object-cover " />
+            <img src={png3} className=" w-full h-full object-cover " />
           </motion.div>
           {/* --- Image ----------- */}
           <motion.div
@@ -129,7 +134,7 @@ const SportAcademyHero = () => {
             animate={control4}
             className="md:w-[23vw] md:h-[23vw] w-[40vw] h-[40vw] fixed  rounded-[12px] overflow-hidden md:left-[70%] left-[80%]"
           >
-            <img src={overviewImage} className=" w-full h-full object-cover " />
+            <img src={png4} className=" w-full h-full object-cover " />
           </motion.div>
         </motion.div>
       </div>
@@ -146,7 +151,7 @@ const SportAcademyHero = () => {
           }}
           className="fixed  overflow-hidden z-[200]"
         >
-          <img src={png4} className=" w-full h-full object-cover z-[11] " />
+          <img src={center} className=" w-full h-full object-cover z-[11] " />
         </motion.div>
       </div>
 
