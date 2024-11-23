@@ -44,12 +44,12 @@ function App() {
     <div className="min-h-screen bg-black flex items-center justify-center p-8">
       <div className="w-full max-w-6xl mx-auto relative">
         {/* Oval frame */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[calc(100%+2rem)] h-[calc(100%+2rem)] border border-gray-700 rounded-[60px]"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[calc(100%+2rem)] h-[calc(100%+2rem)] border border-white rounded-[60px]"></div>
         
         <div className="relative flex items-center justify-center py-8">
           <button 
             onClick={prevSlide}
-            className="absolute left-4 z-10 p-4 text-gray-400 hover:text-gray-200 transition-all duration-300 hover:scale-110"
+            className="absolute left-4 z-10 p-4 text-white hover:text-gray-200 transition-all duration-300 hover:scale-110"
             aria-label="Previous"
           >
             <FaChevronLeft className="text-2xl" />
@@ -72,7 +72,7 @@ function App() {
 
           <button 
             onClick={nextSlide}
-            className="absolute right-4 z-10 p-4 text-gray-400 hover:text-gray-200 transition-all duration-300 hover:scale-110"
+            className="absolute right-4 z-10 p-4 text-white hover:text-gray-200 transition-all duration-300 hover:scale-110"
             aria-label="Next"
           >
             <FaChevronRight className="text-2xl" />

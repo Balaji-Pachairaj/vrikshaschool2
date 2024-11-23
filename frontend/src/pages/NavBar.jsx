@@ -69,6 +69,11 @@ export const NavBarLinks = [
     ],
   },
   {
+    title: "admissions",
+    to: "/admission?section=start",
+    sections: [],
+  },
+  {
     title: "sport academy",
     to: "/sportacademy?section=start",
     sections: [

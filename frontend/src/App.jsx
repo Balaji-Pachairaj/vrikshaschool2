@@ -33,6 +33,11 @@ import Clubcard from "./curricular/Clubscards";
 import Clubcard2 from "./curricular/Clubscards2";
 import Creative from "./curricular/Creative";
 
+import Marathonrun from "./pages/Marathon/Marathonrun"
+import Marathoncategories from "./pages/Marathon/Marathoncategories"
+import Marathontime from "./pages/Marathon/Marathontime";
+import Marathonsponsor from "./pages/Marathon/Marathonsponsor"
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -172,6 +177,19 @@ const router = createBrowserRouter([
   {
     path: "/admission",
     element: <Admission />
+  },
+  {
+    path: "/marathon",
+    element: (
+    <>
+    <Marathonrun />
+    <Marathoncategories/>
+    <Marathontime/>
+    <Marathonsponsor/>
+    </>
+
+    ),
+
   },
 ]);
 
