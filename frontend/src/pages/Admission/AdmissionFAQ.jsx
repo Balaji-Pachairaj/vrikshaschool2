@@ -14,7 +14,7 @@ const FAQItem = ({ item, delay }) => {
   return (
     <div className={`mb-4 ${isVisible ? 'opacity-100' : 'opacity-0'} transition-all duration-300`}>
       <button
-        className="w-full text-left bg-gray-900 hover:bg-gray-800 text-white font-bold py-4 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600 flex justify-between items-center transition-all duration-200 ease-in-out"
+        className="w-full text-left bg-[#1a1a1a] hover:bg-gray-800 text-white font-bold py-4 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-600 flex justify-between items-center transition-all duration-200 ease-in-out"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span>{item.question}</span>
@@ -23,7 +23,7 @@ const FAQItem = ({ item, delay }) => {
         </span>
       </button>
       <div
-        className={`mt-2 px-6 py-4 bg-gray-900 text-white rounded-lg transition-all duration-200 ease-in-out ${
+        className={`mt-2 px-6 py-4 bg-[#1a1a1a] text-white rounded-lg transition-all duration-200 ease-in-out ${
           isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         } overflow-hidden`}
       >
@@ -87,4 +87,4 @@ const AdmissionFAQ = () => {
   )
 }
 
-export default AdmissionFAQ 
+export default AdmissionFAQ  
