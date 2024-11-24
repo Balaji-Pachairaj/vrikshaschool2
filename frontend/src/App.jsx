@@ -33,10 +33,13 @@ import Clubcard from "./curricular/Clubscards";
 import Clubcard2 from "./curricular/Clubscards2";
 import Creative from "./curricular/Creative";
 
+import Marathonhero from "./pages/Marathon/Marathonhero"
 import Marathonrun from "./pages/Marathon/Marathonrun"
 import Marathoncategories from "./pages/Marathon/Marathoncategories"
 import Marathontime from "./pages/Marathon/Marathontime";
 import Marathonsponsor from "./pages/Marathon/Marathonsponsor"
+import Marathongoodies from "./pages/Marathon/Marathongoodies";
+import Marathonregistration from "./pages/Marathon/Marathonregsitration"
 
 const router = createBrowserRouter([
   {
@@ -182,10 +185,13 @@ const router = createBrowserRouter([
     path: "/marathon",
     element: (
     <>
+   
     <Marathonrun />
     <Marathoncategories/>
     <Marathontime/>
     <Marathonsponsor/>
+    <Marathongoodies/>
+    <Marathonregistration/>
     </>
 
     ),

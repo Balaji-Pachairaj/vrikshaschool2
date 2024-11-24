@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+
 // Import all partner logos
 import niit from '../../assets/partners/niit.png';
 import sof from '../../assets/partners/sof.png';
@@ -44,7 +44,7 @@ const Marathonsponsor = () => {
   return (
     <section className="bg-black text-white py-12 flex flex-col justify-center overflow-hidden">
       <div className="container mx-auto px-4 max-w-7xl">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-white text-center">Partners</h2>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-white text-center">Sponsor</h2>
         
         <div className="relative overflow-hidden">
           <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-black to-transparent z-10"></div>
