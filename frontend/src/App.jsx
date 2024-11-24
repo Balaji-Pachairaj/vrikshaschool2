@@ -41,6 +41,12 @@ import Marathonsponsor from "./pages/Marathon/Marathonsponsor"
 import Marathongoodies from "./pages/Marathon/Marathongoodies";
 import Marathonregistration from "./pages/Marathon/Marathonregsitration"
 
+import Alumnioverview from "./pages/Alumni/Alumnioverview"
+import Alumninetwork from "./pages/Alumni/Alumninetwork"
+import Alumnibenefits from "./pages/Alumni/Alumnibenefits"
+import Alumnivolunteer from "./pages/Alumni/Alumnivolunteer"
+import Alumninoteable from "./pages/Alumni/Alumninoteable"
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -192,6 +198,23 @@ const router = createBrowserRouter([
     <Marathonsponsor/>
     <Marathongoodies/>
     <Marathonregistration/>
+    </>
+
+    ),
+
+  },
+
+  {
+    path: "/alumni",
+    element: (
+    <>
+      
+      <Alumnioverview/>
+      <Alumninetwork/>
+    
+      <Alumnivolunteer/>
+      <Alumninoteable/>
+
     </>
 
     ),
