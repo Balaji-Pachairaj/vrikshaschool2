@@ -46,6 +46,7 @@ import Alumninetwork from "./pages/Alumni/Alumninetwork"
 import Alumnibenefits from "./pages/Alumni/Alumnibenefits"
 import Alumnivolunteer from "./pages/Alumni/Alumnivolunteer"
 import Alumninoteable from "./pages/Alumni/Alumninoteable"
+import Alumniconnect from "./pages/Alumni/Alumniconnect";
 
 const router = createBrowserRouter([
   {
@@ -190,17 +191,19 @@ const router = createBrowserRouter([
     <>
     <div className="w-full h-[0.1px]" id="start"></div>
     <NavBar />
-    <div className="w-full h-[0.1px]" ></div>
+    <div className="w-full h-[0.1px]" id="hero"></div>
+      <Marathonhero/>
+    <div className="w-full h-[0.1px]" id="about"></div>
     <Marathonrun />
-    <div className="w-full h-[0.1px]" ></div>
+    <div className="w-full h-[0.1px]" id="categories"></div>
     <Marathoncategories/>
-    <div className="w-full h-[0.1px]" ></div>
+    <div className="w-full h-[0.1px]" id="time"></div>
     <Marathontime/>
-    <div className="w-full h-[0.1px]" ></div>
+    <div className="w-full h-[0.1px]" id="sponsor"></div>
     <Marathonsponsor/>
-    <div className="w-full h-[0.1px]" ></div>
+    <div className="w-full h-[0.1px]" id="goodies"></div>
     <Marathongoodies/>
-    <div className="w-full h-[0.1px]" ></div>
+    <div className="w-full h-[0.1px]" id="registration"></div>
     <Marathonregistration/>
 
     <FooterSection /> 
@@ -214,6 +217,7 @@ const router = createBrowserRouter([
     <>
       <div className="w-full h-[0.1px]" id="start"></div>
       <NavBar />
+      
       <div className="w-full h-[0.1px]" ></div>
       <Alumnioverview/>
       <div className="w-full h-[0.1px]" ></div>
@@ -222,6 +226,8 @@ const router = createBrowserRouter([
       <Alumnivolunteer/>
       <div className="w-full h-[0.1px]" ></div>
       <Alumninoteable/>
+      <div className="w-full h-[0.1px]" ></div>
+      <Alumniconnect/>
 
       <FooterSection />
 

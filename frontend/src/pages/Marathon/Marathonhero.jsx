@@ -13,54 +13,69 @@ const Hero = () => {
       1000
     );
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-    // Increase renderer size to better fit the larger cube
-    renderer.setSize(window.innerWidth * 0.6, window.innerHeight * 0.6);
-    cubeRef.current.appendChild(renderer.domElement);
 
-    const createTextTexture = () => {
-      const canvas = document.createElement('canvas');
-      canvas.width = 1024; // Increased canvas size for higher resolution
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    if (cubeRef.current) {
+      cubeRef.current.appendChild(renderer.domElement);
+    }
+
+    const createTextTexture = (text) => {
+      const canvas = document.createElement("canvas");
+      canvas.width = 1024;
       canvas.height = 1024;
-      const context = canvas.getContext('2d');
-      context.fillStyle = '#FFFFFF';
+
+      const context = canvas.getContext("2d");
+      context.fillStyle = "#FFFFFF";
       context.fillRect(0, 0, canvas.width, canvas.height);
-      context.font = 'bold 96px Arial'; // Increased font size
-      context.fillStyle = '#000000';
-      context.textAlign = 'center';
-      context.textBaseline = 'middle';
-      
-      context.fillText('U', canvas.width / 2, 400);
-      context.fillText('DIGITAL', canvas.width / 2, 512);
-      context.fillText('STUDIO', canvas.width / 2, 624);
-      
+
+      context.font = "bold 48px Arial"; // Reduced font size to fit text
+      context.fillStyle = "#000000";
+      context.textAlign = "center";
+      context.textBaseline = "middle";
+
+      const lines = text.split('\n');
+      let yOffset = canvas.height / 2 - (lines.length * 48) / 2; // Center vertically
+
+      lines.forEach(line => {
+        context.fillText(line, canvas.width / 2, yOffset);
+        yOffset += 48;
+      });
+
       return new THREE.CanvasTexture(canvas);
     };
 
-    const materials = Array(6).fill(null).map(() => 
-      new THREE.MeshStandardMaterial({ 
-        map: createTextTexture(),
-        side: THREE.DoubleSide
-      })
-    );
+    const materials = [
+      new THREE.MeshStandardMaterial({ color: 0xffffff, side: THREE.DoubleSide }),
+      new THREE.MeshStandardMaterial({ color: 0xffffff, side: THREE.DoubleSide }),
+      new THREE.MeshStandardMaterial({ color: 0xffffff, transparent: true, opacity: 0, side: THREE.DoubleSide }),
+      new THREE.MeshStandardMaterial({ color: 0xffffff, transparent: true, opacity: 0, side: THREE.DoubleSide }),
+      new THREE.MeshStandardMaterial({ color: 0xffffff, side: THREE.DoubleSide }),
+      new THREE.MeshStandardMaterial({ color: 0xffffff, side: THREE.DoubleSide }),
+    ];
 
-    // Increase the cube size
-    const cube = new THREE.Mesh(new THREE.BoxGeometry(10, 10, 10), materials);
+    const cube = new THREE.Mesh(new THREE.BoxGeometry(15, 15, 15), materials);
     scene.add(cube);
+
+    const text = "Vriksha Marathon V.2025\nIs Back";
+    const texture = createTextTexture(text);
+
+    materials.forEach(material => {
+      material.map = texture;
+    });
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 1);
     scene.add(ambientLight);
 
     const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
-    directionalLight.position.set(10, 10, 10); // Adjusted light position for larger cube
+    directionalLight.position.set(10, 10, 10);
     scene.add(directionalLight);
 
-    // Adjust camera position to fit the larger cube
-    camera.position.z = 15;
+    camera.position.z = 25;
 
     const sequences = [
-      { rotationX: 0, rotationY: 0, duration: 2 },
-      { rotationX: 0, rotationY: Math.PI / 2, duration: 2 },
-      { rotationX: Math.PI / 4, rotationY: Math.PI / 4, duration: 2 }
+      { rotationX: 0, rotationY: 0, duration: 4 },
+      { rotationX: 0, rotationY: Math.PI / 2, duration: 4 },
+      { rotationX: Math.PI / 4, rotationY: Math.PI / 4, duration: 4 },
     ];
 
     let currentSequence = 0;
@@ -68,8 +83,8 @@ const Hero = () => {
 
     const animate = () => {
       requestAnimationFrame(animate);
-      
-      sequenceTime += 0.016;
+
+      sequenceTime += 0.008;
 
       if (sequenceTime >= sequences[currentSequence].duration) {
         sequenceTime = 0;
@@ -97,23 +112,25 @@ const Hero = () => {
     const onResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
-      // Update renderer size on resize
-      renderer.setSize(window.innerWidth * 0.6, window.innerHeight * 0.6);
+      renderer.setSize(window.innerWidth, window.innerHeight);
     };
 
     animate();
-    window.addEventListener('resize', onResize);
+
+    window.addEventListener("resize", onResize);
 
     return () => {
-      window.removeEventListener('resize', onResize);
-      cubeRef.current.removeChild(renderer.domElement);
+      window.removeEventListener("resize", onResize);
+
+      if (cubeRef.current) {
+        cubeRef.current.removeChild(renderer.domElement);
+      }
     };
   }, []);
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center">
-      {/* Increased container height for better cube display */}
-      <div className="w-full h-[500px] lg:h-[600px]" ref={cubeRef} aria-hidden="true"></div>
+    <div className="min-h-screen bg-black flex items-center justify-center overflow-x-hidden">
+      <div className="w-full h-full" ref={cubeRef} aria-hidden="true"></div>
     </div>
   );
 };
