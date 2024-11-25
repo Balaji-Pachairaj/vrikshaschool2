@@ -2,16 +2,22 @@
 
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
+import alumn1 from "../../assets/alumni/15.png"
+import alumn2 from "../../assets/alumni/16.png"
+import alumn3 from "../../assets/alumni/17.png"
+import alumn4 from "../../assets/alumni/18.png"
+import alumn5 from "../../assets/alumni/19.png"
+
+
+
 
 const images = [
-  'https://cdn.prod.website-files.com/664898738f1fcda8f023ed65/666209c5480b9fa1083606af_image-04.webp',
-  'https://cdn.prod.website-files.com/664898738f1fcda8f023ed65/666209c43c9aa29768029c2d_image-03.webp',
-  'https://cdn.prod.website-files.com/664898738f1fcda8f023ed65/666209c4fe1cf23a9923614d_image-06.webp',
-  'https://cdn.prod.website-files.com/664898738f1fcda8f023ed65/66620bc4685d1955e79f8b4e_image-01.webp',
-  'https://cdn.prod.website-files.com/664898738f1fcda8f023ed65/666209c50797210dc93e5965_image-07.webp',
-  'https://cdn.prod.website-files.com/664898738f1fcda8f023ed65/666209c434b5039ec31c72df_image-02.webp',
-  'https://cdn.prod.website-files.com/664898738f1fcda8f023ed65/66620bc7723300c1a7df6c39_image-08.webp',
-  'https://cdn.prod.website-files.com/664898738f1fcda8f023ed65/666209c4cb4e6529596b8508_image-05.webp'
+  alumn1,
+  alumn2,
+  alumn3,
+  alumn4,
+  alumn5,
+ 
 ];
 
 const faceTransforms = [
@@ -89,7 +95,7 @@ function RotatingCube() {
 
 function Hero() {
   return (
-    <main className="relative min-h-screen bg-black overflow-hidden">
+    <main className="relative min-h-[600px] bg-black overflow-hidden">
       <div className="w-full grid grid-cols-1 md:grid-cols-2 min-h-screen">
         <div className="relative flex items-center p-8 md:p-16">
           <div className="max-w-lg">

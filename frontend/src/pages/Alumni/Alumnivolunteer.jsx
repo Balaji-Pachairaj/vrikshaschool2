@@ -1,30 +1,33 @@
+import React from 'react';
+
 const HeroSection = () => {
-    return (
-      <div className="container mx-auto px-4 py-12">
+  return (
+    <section className="bg-black text-white py-16 pt-44 min-h-screen">
+      <div className="container mx-auto px-4 ">
         <div className="relative flex flex-col lg:flex-row items-center">
           {/* Left Content */}
           <div className="lg:w-1/2 z-10">
             <h1 className="text-6xl font-bold mb-2">
-              RELEASE STYLE
+              Give Back and
               <br />
-              WITH <span className="text-gray-500">CONFIDENCE</span>
+              Make an <span className="text-gray-500">Impact</span>
             </h1>
             
             <div className="mt-8">
               <p className="uppercase text-sm font-medium mb-4">
-                Perfect blend of fashion
+                Support the next generation
                 <br />
-                and comfortable cloths.
+                of students and alumni
               </p>
             </div>
   
-            <div className="bg-gray-100 rounded-3xl p-8 mt-12 max-w-md">
+            <div className="bg-[#303030] rounded-3xl shadow-2xl p-8 mt-12 max-w-md">
               <p className="text-sm mb-6">
-                INDULGE IN PURE COMFORT WITH OUR T-SHIRTS. SOFT, BREATHABLE FABRICS GUARANTEE AN UNMATCHED COZY FIT FOR YOUR EVERYDAY RELAXATION.
+                Use your experience and expertise to mentor, inspire, and support the next generation of students and alumni.
               </p>
               
-              <button className="flex items-center space-x-2 bg-white px-6 py-2 rounded-full text-sm">
-                <span>SHOP NOW</span>
+              <button className="flex items-center space-x-2 bg-white text-black px-6 py-2 rounded-full text-sm hover:bg-gray-200 transition-colors">
+                <span>VOLUNTEER NOW</span>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
@@ -40,19 +43,16 @@ const HeroSection = () => {
                 alt="Model wearing red t-shirt" 
                 className="w-full object-cover"
               />
-              <div className="absolute top-4 right-4">
-                <span className="bg-white px-4 py-2 rounded-full text-sm">
-                  COMFORT
-                </span>
-              </div>
             </div>
           </div>
   
           {/* Background Decoration */}
-          <div className="absolute right-0 bottom-0 w-2/3 h-2/3 bg-gray-100 rounded-tl-[100px] -z-10" />
+          <div className="absolute right-0 bottom-0 w-2/3 h-2/3 bg-[#b5afaf] rounded-[100px] -z-10" />
         </div>
       </div>
-    );
-  };
+    </section>
+  );
+};
 
-  export default HeroSection
+export default HeroSection;
+

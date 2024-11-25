@@ -1,4 +1,11 @@
 import React, { useRef } from "react";
+import bag from "../../assets/marathon/bag.png";
+import cap from "../../assets/marathon/cap.png";
+import tshirt from "../../assets/marathon/tshirt.png";
+import medal from "../../assets/marathon/medal.png";
+import certificate from "../../assets/marathon/certificate.png";
+
+
 
 // New import for medal image
 import png4 from "../../assets/4.png";
@@ -111,7 +118,7 @@ const Marathongoodies = () => {
             style={{ opacity: opacity1 }}
             className="z-[10] w-[30vw] h-[67vh] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] rounded-[15px] overflow-hidden"
           >
-            <img src={png1} className="w-full h-full object-cover" alt="Medal" />
+            <img src={bag} className="w-full h-full object-cover" alt="Medal" />
           </motion.div>
           <motion.div
             style={{ top: top1 }}
@@ -126,7 +133,7 @@ const Marathongoodies = () => {
             style={{ opacity: opacity2 }}
             className="z-[9] w-[30vw] h-[67vh] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] rounded-[15px] overflow-hidden"
           >
-            <img src={png4} className="w-full h-full object-cover" alt="Bag" />
+            <img src={cap} className="w-full h-full object-cover" alt="Bag" />
           </motion.div>
           <motion.div
             style={{ top: top2 }}
@@ -141,7 +148,7 @@ const Marathongoodies = () => {
             style={{ opacity: opacity3 }}
             className="z-[8] w-[30vw] h-[67vh] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] rounded-[15px] overflow-hidden"
           >
-            <img src={png3} className="w-full h-full object-cover" alt="Cap" />
+            <img src={tshirt} className="w-full h-full object-cover" alt="Cap" />
           </motion.div>
           <motion.div
             style={{ top: top3 }}
@@ -157,7 +164,7 @@ const Marathongoodies = () => {
             style={{ opacity: opacity4 }}
             className="z-[7] w-[30vw] h-[67vh] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] rounded-[15px] overflow-hidden"
           >
-            <img src={png2} className="w-full h-full object-cover" alt="T-shirt" />
+            <img src={certificate} className="w-full h-full object-cover" alt="T-shirt" />
           </motion.div>
           <motion.div
             style={{ top: top4 }}
@@ -173,7 +180,7 @@ const Marathongoodies = () => {
             style={{ opacity: opacity5 }}
             className="z-[6] w-[30vw] h-[67vh] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] rounded-[15px] overflow-hidden"
           >
-            <img src={png1} className="w-full h-full object-cover" alt="Certificate" />
+            <img src={medal} className="w-full h-full object-cover" alt="Certificate" />
           </motion.div>
           <motion.div
             style={{ top: top5 }}

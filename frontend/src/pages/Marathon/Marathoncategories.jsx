@@ -1,27 +1,31 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import png1 from "../../assets/marathon/1.png"
+import png2 from "../../assets/marathon/2.png"
+import png3 from "../../assets/marathon/3.png"
+import png4 from "../../assets/marathon/4.png"
 
 const MarathonCategories = () => {
   const cards = [
     {
       title: "U-17 CATEGORY",
       subtitle: "10 KM FOR BOYS & GIRLS",
-      image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80&w=400&h=250&fit=crop"
+      image: png1
     },
     {
       title: "U-12 CATEGORY",
       subtitle: "3 KM FOR BOYS & GIRLS",
-      image: "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?q=80&w=400&h=250&fit=crop"
+      image: png2
     },
     {
       title: "OPEN CATEGORY",
       subtitle: "10 KM FOR MEN & WOMEN",
-      image: "https://images.unsplash.com/photo-1486218119243-13883505764c?q=80&w=400&h=250&fit=crop"
+      image: png3
     },
     {
       title: "FREE RUN",
       subtitle: "5 KM FREE RUN",
-      image: "https://images.unsplash.com/photo-1571008887538-b36bb32f4571?q=80&w=400&h=250&fit=crop"
+      image: png4
     }
   ];
 

@@ -1,8 +1,8 @@
-'use client'
 
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { useEffect, useRef } from 'react'
+import png1 from "../../assets/alumni/connect.png"
 
 export default function WorkflowSection() {
   const [inViewRef, inView] = useInView({
@@ -33,7 +33,7 @@ export default function WorkflowSection() {
             style={{ rotate }}
           >
             <img
-              src="https://images.unsplash.com/photo-1555421689-d68471e189f2?q=80&w=1200&auto=format&fit=crop"
+              src={png1}
               alt="Person using smartphone"
               className="w-full h-full object-cover"
             />

@@ -1,23 +1,26 @@
 import React from 'react';
+import img1 from "../../assets/marathon/11.png";
+import img2 from "../../assets/marathon/12.png";
+import img3 from "../../assets/marathon/13.png";
 
 const Marathontime = () => {
   const events = [
     {
       name: "Date",
       content: "26th January 2025",
-      image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?q=80",
+      image: img1,
       color: "bg-blue-600/80",
     },
     {
       name: "Day",
       content: "Sunday",
-      image: "https://images.unsplash.com/photo-1539794830467-1f1755804d13?q=80",
+      image: img2,
       color: "bg-red-600/80",
     },
     {
       name: "Location",
       content: "Vriksha Sports Academy",
-      image: "https://images.unsplash.com/photo-1538370965046-79c0d6907d47?q=80",
+      image: img3,
       color: "bg-pink-600/80",
     }
   ];

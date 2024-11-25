@@ -72,9 +72,9 @@ const SportAcademySuccess = () => {
         </div>
 
         {/* Timeline */}
-        <div className="w-[1px] h-full relative">
+        <div className="w-[1px] h-full relative bg-white">
           <motion.div 
-            className="absolute bottom-0 left-0 w-full bg-white/30"
+            className="absolute bottom-0 left-0 w-full bg-white"
             style={{ 
               height: lineHeight,
               originY: 1

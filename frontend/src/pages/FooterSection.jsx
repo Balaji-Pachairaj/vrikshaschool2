@@ -20,10 +20,10 @@ const FooterSection = () => {
         {/* ------------------------------------- */}
         <div className=" w-[85vw] h-fit flex flex-col md:gap-[1rem] gap-[2rem] ">
           {/* ------------------------------------- */}
-          <div className="w-full h-fit flex md:flex-row flex-wrap flex-col gap-y-[1.5rem] justify-between md:items-start items-center">
+          <div className="w-full h-fit flex md:flex-row flex-wrap flex-col gap-y-[1.5rem] justify-between">
             {/* ------------------------------------- */}
             <div className=" flex flex-col gap-[2rem]">
-              <div className=" w-full h-fit flex md:flex-row gap-[2rem] flex-col items-center ">
+              <div className=" w-full h-fit flex md:flex-row gap-[2rem] flex-col">
                 <img className=" w-fit h-[150px] object-contain" src={logo} />
                 <img
                   className=" w-fit h-[80px] object-contain"
@@ -34,12 +34,12 @@ const FooterSection = () => {
               <h1 className=" text-[14px] font-inter text-[#eee]">
                 Kozhikaalnatham road Tiruchengode,
                 <br />
-                Tamilnadu, India , 637211.
+                Tamilnadu, India , 637211.  
               </h1>
             </div>
             {/* ------------------------ */}
-            <div className=" w-fit h-fit flex md:flex-row flex-col md:items-start items-center gap-[3rem] ">
-              <div className=" w-fit h-fit flex flex-col items-center gap-[1.5rem]">
+            <div className=" w-fit h-fit flex md:flex-row flex-col gap-[3rem]">
+              <div className=" w-fit h-fit flex flex-col items-start gap-[1.5rem]">
                 <h1 className=" text-[18px]  font-inter font-bold text-[#ffd82b]">
                   Quick Links
                 </h1>
@@ -48,7 +48,7 @@ const FooterSection = () => {
                 </p>
                 <p className=" text-[14px]  font-inter text-white">Faq's</p>
               </div>
-              <div className=" w-fit h-fit flex flex-col items-center gap-[1.5rem]">
+              <div className=" w-fit h-fit flex flex-col items-start gap-[1.5rem]">
                 <h1 className=" text-[18px]  font-inter font-bold text-[#ffd82b]">
                   Visit Other Pages
                 </h1>
@@ -67,19 +67,21 @@ const FooterSection = () => {
                   );
                 })}
               </div>
-              <div className=" w-fit h-fit flex flex-col items-center gap-[1.5rem]">
-                <h1 className=" text-[18px]  font-bold font-inter text-[#ffd82b]">
+              <div className=" w-fit h-fit flex flex-col items-start gap-[1.5rem]">
+                <h1 className=" text-[18px] font-bold font-inter text-[#ffd82b]">
                   Follows us
                 </h1>
-                <button className=" rounded-[50%] p-[0.4rem] bg-white text-[14px]  font-inter text-white">
-                  <FaFacebookF size={18} color={"black"} />
-                </button>
-                <button className=" rounded-[50%] p-[0.4rem] bg-white text-[14px]  font-inter text-white">
-                  <FaInstagram size={22} color={"black"} />
-                </button>
-                <button className=" rounded-[50%] p-[0.4rem] bg-white text-[14px]  font-inter text-white">
-                  <FaTwitter size={22} color={"black"} />
-                </button>
+                <div className="flex flex-row gap-[1rem]">
+                  <button className=" rounded-[50%] p-[0.4rem] bg-white text-[14px] font-inter text-white">
+                    <FaFacebookF size={18} color={"black"} />
+                  </button>
+                  <button className=" rounded-[50%] p-[0.4rem] bg-white text-[14px] font-inter text-white">
+                    <FaInstagram size={22} color={"black"} />
+                  </button>
+                  <button className=" rounded-[50%] p-[0.4rem] bg-white text-[14px] font-inter text-white">
+                    <FaTwitter size={22} color={"black"} />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
