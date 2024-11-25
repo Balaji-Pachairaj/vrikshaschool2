@@ -39,19 +39,16 @@ export default function WorkflowSection() {
             />
           </motion.div>
         </div>
-        
+
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 max-w-3xl mx-auto">
-          Ready to Transform Your Workflow?
+          Stay Connected
         </h1>
+
+        <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
+  Join the conversation and stay engaged with your alumni community through events, updates, and more.
+</p>
+
         
-        <div className="flex gap-4 justify-center">
-          <button className="bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors">
-            Get Started
-          </button>
-          <button className="bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-900 border border-white transition-colors">
-            Learn More
-          </button>
-        </div>
       </div>
     </section>
   )
