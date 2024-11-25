@@ -64,14 +64,21 @@ export const NavBarLinks = [
     to: "/discover?section=start",
     sections: [
       { title: "overview", to: "/discover?section=overview" },
-      { title: "mess and menu", to: "/discover?section=mess" },
-      { title: "content", to: "/discover?section=content" },
+      { title: "facilities", to: "/discover?section=mess" },
+      { title: "discover", to: "/discover?section=content" },
     ],
   },
   {
     title: "admissions",
     to: "/admission?section=start",
-    sections: [],
+    sections: [
+      { title: "overview", to: "/admission?section=overview" },
+      { title: "Admission Steps", to: "/admission?section=admissionsteps" },
+      { title: "Documents", to: "/admission?section=admissiondocuments" },
+      { title: "Terms & Conditions", to: "/admission?section=termsconditions" },
+      { title: "Term Dates", to: "/admission?section=termdates" },
+      { title: "FAQ's", to: "/admission?section=faq" },
+    ],
   },
   {
     title: "sport academy",
@@ -86,6 +93,16 @@ export const NavBarLinks = [
       { title: "membership", to: "/sportacademy?section=membership" },
       { title: "faq's", to: "/sportacademy?section=faqs" },
     ],
+  },
+  {
+    title: "Alum",
+    to: "/alumni?section=start",
+    sections: [],
+  },
+  {
+    title: "Marathon",
+    to: "/marathon?section=start",
+    sections: [],
   },
   {
     title: "contact us",

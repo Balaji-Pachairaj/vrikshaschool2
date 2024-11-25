@@ -51,7 +51,11 @@ const SportAcademySuccess = () => {
         {/* Static Left Side */}
         <div className="w-[50%] h-full bg-black flex flex-col justify-center items-end text-right pe-[5rem] gap-[2rem]">
           <div className="text-white">
-            <h2 className="text-[2vw] font-inter font-bold mb-4">Admission Process</h2>
+            <h2 className="text-[2vw] font-inter font-bold mb-4">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
+         Admission Process
+          </span>
+            </h2>
             <div className="mb-6">
               <h3 className="text-[1.5vw] font-inter font-semibold mb-2">Online</h3>
               <p className="text-[#d0d0d0] text-[16px] font-inter font-light">

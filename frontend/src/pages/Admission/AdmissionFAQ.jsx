@@ -72,7 +72,11 @@ const AdmissionFAQ = () => {
   return (
     <div className="bg-black min-h-screen w-full px-4 py-16">
       <h2 className="text-3xl font-bold mb-12 text-center text-white">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
         Frequently Asked Questions
+      
+          </span>
+
       </h2>
       <div className="max-w-3xl mx-auto space-y-4">
         {faqData.map((item, index) => (

@@ -6,7 +6,10 @@ const Admissionoverview = () => {
     <div className="w-full bg-black min-h-screen pb-24 pt-[10vh]">
       <div className="w-full h-fit bg-black pt-[0rem] flex flex-col items-center mb-[5vh]">
         <h1 className="font-cabin xl:text-[3vw] lg:text-[3.5vw] md:text-[4vw] sm:text-[4.5vw] text-[5vw] text-[white] text-center font-[600]">
-          Admission Overview
+        
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
+          Overview
+          </span>
         </h1>
       </div>
 

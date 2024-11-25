@@ -13,17 +13,17 @@ const Admission = () => {
     <>
       <div className="w-full h-[0.1px]" id="start"></div>
       <NavBar />
-      <div className="w-full h-[0.1px]" ></div>
+      <div className="w-full h-[0.1px]" id="overview" ></div>
       <Admissionoverview />
-      <div className=" w-full h-[0.1px] bg-black"></div>
+      <div className=" w-full h-[0.1px]" id="admissionsteps"></div>
       <Admissionsteps />
-      <div className=" w-full h-[0.1px] bg-black"></div>
+      <div className=" w-full h-[0.1px]" id="admissiondocuments"></div>
       <AdmissionDOCS/>
-      <div className=" w-full h-[0.1px] bg-black"></div>
+      <div className=" w-full h-[0.1px] bg-black" id="termsconditions"></div>
       <Admissionconditions/>
-      <div className=" w-full h-[0.1px] bg-black"></div>
+      <div className=" w-full h-[0.1px] bg-black" id="termdates"></div>
       <Admissiontermdates/>
-      <div className=" w-full h-[0.1px] bg-black"></div>
+      <div className=" w-full h-[0.1px] bg-black" id="faq"></div>
       <AdmissionFAQ/>
       
 

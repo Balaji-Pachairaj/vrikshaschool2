@@ -183,37 +183,47 @@ const router = createBrowserRouter([
       </>
     ),
   },
-  {
-    path: "/admission",
-    element: <Admission />
-  },
+
   {
     path: "/marathon",
     element: (
     <>
-   
+    <div className="w-full h-[0.1px]" id="start"></div>
+    <NavBar />
+    <div className="w-full h-[0.1px]" ></div>
     <Marathonrun />
+    <div className="w-full h-[0.1px]" ></div>
     <Marathoncategories/>
+    <div className="w-full h-[0.1px]" ></div>
     <Marathontime/>
+    <div className="w-full h-[0.1px]" ></div>
     <Marathonsponsor/>
+    <div className="w-full h-[0.1px]" ></div>
     <Marathongoodies/>
+    <div className="w-full h-[0.1px]" ></div>
     <Marathonregistration/>
+
+    <FooterSection /> 
     </>
-
     ),
-
   },
-
+  
   {
     path: "/alumni",
     element: (
     <>
-      
+      <div className="w-full h-[0.1px]" id="start"></div>
+      <NavBar />
+      <div className="w-full h-[0.1px]" ></div>
       <Alumnioverview/>
+      <div className="w-full h-[0.1px]" ></div>
       <Alumninetwork/>
-    
+      <div className="w-full h-[0.1px]" ></div>    
       <Alumnivolunteer/>
+      <div className="w-full h-[0.1px]" ></div>
       <Alumninoteable/>
+
+      <FooterSection />
 
     </>
 

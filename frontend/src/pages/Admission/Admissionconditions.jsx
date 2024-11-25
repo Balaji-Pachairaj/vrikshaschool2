@@ -9,7 +9,10 @@ function App() {
         <div className="lg:w-1/2 space-y-8">
           <div className="space-y-4">
             <h2 className="text-4xl font-bold tracking-tight mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
               Terms and Conditions
+
+          </span>
             </h2>
           </div>
           
@@ -39,23 +42,22 @@ function App() {
             </ul>
           </div>
         </div>
-
-        {/* Right side - 3D Image */}
-        <div className="lg:w-1/2">
-  <div className="relative perspective-[1000px] transform-style-preserve-3d">
-    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/30 to-blue-500/30 blur-3xl rounded-3xl transform rotate-12 skew-y-6"></div>
-    <img
-      src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=2000&h=1500"
-      alt="Abstract Design"
-      className="relative rounded-3xl shadow-2xl transform 
-        hover:rotate-y-12 hover:-rotate-x-12 
-        hover:scale-[1.05] 
-        transition-all duration-500 ease-out
-        hover:shadow-xl hover:shadow-purple-500/20"
-    />
-  </div>
-  </div>
-      </div>
+          {/* Right side - 3D Image */}
+          <div className="lg:w-1/2">
+            <div className="relative perspective-[1000px] transform-style-preserve-3d">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/30 to-blue-500/30 blur-3xl rounded-3xl transform rotate-12 skew-y-6"></div>
+              <img
+                src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=2000&h=1500"
+                alt="Abstract Design"
+                className="relative rounded-3xl shadow-2xl"
+                style={{
+                  transform: 'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(8deg) rotateY(-16deg) rotateZ(0deg) skew(0deg, 0deg)',
+                  transition: 'all 500ms ease-out',
+                }}
+              />
+            </div>
+          </div>
+        </div>
     </div>
   );
 }
