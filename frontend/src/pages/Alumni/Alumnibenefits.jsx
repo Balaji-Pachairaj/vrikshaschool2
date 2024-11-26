@@ -1,80 +1,99 @@
-import { useEffect, useRef } from 'react';
+import React from 'react';
+import { motion, useAnimation, useInView } from 'framer-motion';
+import { BarChart3, Link, FileText, Package } from 'lucide-react';
 
-const AlumniBenefits = () => {
-  const sectionRef = useRef(null);
-  const cardsRef = useRef([]);
+const BenefitCard = ({ title, description, icon: Icon, index }) => {
+  const controls = useAnimation();
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: false });
 
-  const cards = [
-    {
-      title: "INTEGRATIONS",
-      description: "SEAMLESSLY CONNECT WITH YOUR FAVORITE TOOLS FOR A UNIFIED WORKFLOW."
-    },
-    {
-      title: "ANALYTICS", 
-      description: "GAIN ACTIONABLE INSIGHTS WITH POWERFUL DATA ANALYSIS CAPABILITIES."
-    },
-    {
-      title: "REPORTS",
-      description: "GENERATE DETAILED REPORTS TO TRACK PERFORMANCE AND MAKE INFORMED DECISIONS."
-    },
-    {
-      title: "ALL-IN-ONE",
-      description: "ACCESS ALL ESSENTIAL GROWTH TOOLS IN ONE COMPREHENSIVE PLATFORM."
+  React.useEffect(() => {
+    if (isInView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
     }
-  ];
+  }, [isInView, controls]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const { top } = sectionRef.current.getBoundingClientRect();
-      const scrollProgress = (window.innerHeight - top) / window.innerHeight;
-
-      cardsRef.current.forEach((card, index) => {
-        if (!card || index === 0) return; // First card stays static
-
-        const startPoint = index * 0.2; // Stagger the animation
-        const progress = Math.max(0, Math.min(1, (scrollProgress - startPoint) * 2));
-        
-        if (card.style) {
-          const translateY = (1 - progress) * 100;
-          card.style.transform = `translateY(${translateY}vh)`;
-          card.style.opacity = progress;
-        }
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const cardVariants = {
+    hidden: { 
+      opacity: 0,
+      y: 100
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: index * 0.1,
+        ease: "easeOut"
+      }
+    }
+  };
 
   return (
-    <section ref={sectionRef} className="min-h-screen bg-black">
-      <div className="sticky top-1/4 max-w-7xl mx-auto px-4">
-        <h1 className="text-4xl font-bold text-white text-center mb-16">
-          Exclusive Alumni Benefits
-        </h1>
-        <div className="grid grid-cols-4 gap-6">
-          {cards.map((card, index) => (
-            <div
-              key={index}
-              ref={el => cardsRef.current[index] = el}
-              className="bg-zinc-900 p-6 rounded-lg shadow-lg transition-all duration-500"
-              style={index === 0 ? {} : { 
-                opacity: 0,
-                transform: 'translateY(100vh)'
-              }}
-            >
-              <div className="flex flex-col gap-4">
-                <h3 className="text-white text-xl font-bold">{card.title}</h3>
-                <p className="text-gray-400 text-sm">{card.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="h-[100vh]" />
-    </section>
+    <motion.div
+      ref={ref}
+      variants={cardVariants}
+      initial="hidden"
+      animate={controls}
+      className="bg-zinc-900 rounded-3xl p-8"
+    >
+      <Icon className="w-12 h-12 mb-6 text-blue-500" />
+      <h2 className="text-2xl font-bold mb-4">{title}</h2>
+      <p className="text-gray-400 text-lg">
+        {description}
+      </p>
+    </motion.div>
   );
 };
 
-export default AlumniBenefits;
+const benefitsData = [
+  {
+    title: 'INTEGRATIONS',
+    description: 'Seamlessly connect with your favorite tools for a unified workflow.',
+    icon: Link,
+  },
+  {
+    title: 'ANALYTICS',
+    description: 'Gain actionable insights with powerful data analysis capabilities.',
+    icon: BarChart3,
+  },
+  {
+    title: 'REPORTS',
+    description: 'Generate detailed reports to track performance and make informed decisions.',
+    icon: FileText,
+  },
+  {
+    title: 'ALL-IN-ONE',
+    description: 'Access all essential growth tools in one comprehensive platform.',
+    icon: Package,
+  },
+];
+
+export function AlumniBenefits() {
+  return (
+    <section className="min-h-screen bg-black text-white py-20 px-4">
+      <div className="max-w-7xl mx-auto">
+        <motion.h2 
+          className="text-5xl font-bold text-center mb-20"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          Exclusive Alumni Benefits
+        </motion.h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {benefitsData.map((benefit, index) => (
+            <BenefitCard
+              key={benefit.title}
+              {...benefit}
+              index={index}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

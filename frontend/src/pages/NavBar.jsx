@@ -103,7 +103,7 @@ export const NavBarLinks = [
     title: "Marathon",
     to: "/marathon?section=start",
     sections: [
-      { title: "hero", to: "/marathon?section=hero" },      
+      { title: "hero", to: "/marathon?section=hero" },
       { title: "about", to: "/marathon?section=about" },
       { title: "categories", to: "/marathon?section=categories" },
       { title: "time", to: "/marathon?section=time" },

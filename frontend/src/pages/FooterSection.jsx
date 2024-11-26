@@ -52,20 +52,22 @@ const FooterSection = () => {
                 <h1 className=" text-[18px]  font-inter font-bold text-[#ffd82b]">
                   Visit Other Pages
                 </h1>
-                {NavBarLinks?.map((item) => {
-                  return (
-                    <NavLink
-                      to={item?.to}
-                      className={({ isActive }) => {
-                        return `text-[14px] ${
-                          isActive ? " border-b-2 " : ""
-                        } hover:-translate-y-[2px] duration-100 uppercase  font-inter text-white`;
-                      }}
-                    >
-                      {item?.title}
-                    </NavLink>
-                  );
-                })}
+                <div className="grid grid-cols-2 gap-x-8 gap-y-[1.5rem]">
+                  {NavBarLinks?.map((item) => {
+                    return (
+                      <NavLink
+                        to={item?.to}
+                        className={({ isActive }) => {
+                          return `text-[14px] ${
+                            isActive ? " border-b-2 " : ""
+                          } hover:-translate-y-[2px] duration-100 uppercase  font-inter text-white`;
+                        }}
+                      >
+                        {item?.title}
+                      </NavLink>
+                    );
+                  })}
+                </div>
               </div>
               <div className=" w-fit h-fit flex flex-col items-start gap-[1.5rem]">
                 <h1 className=" text-[18px] font-bold font-inter text-[#ffd82b]">
