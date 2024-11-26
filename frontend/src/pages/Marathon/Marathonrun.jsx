@@ -17,7 +17,7 @@ const Marathonrun = () => {
   ));
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-black p-6">
+    <div className="h-[400px] flex flex-col items-center justify-center bg-black p-6">
       {/* Marquee container */}
       <div className="w-full overflow-hidden mb-8">
         <div className="animate-marquee whitespace-nowrap flex items-center">

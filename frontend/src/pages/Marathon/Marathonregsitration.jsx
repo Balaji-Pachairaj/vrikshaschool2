@@ -2,7 +2,7 @@ import { ArrowUpRight } from 'lucide-react'
 
 const ContactSection = () => {
   return (
-    <div className="min-h-screen bg-black overflow-hidden">
+    <div className="h-[500px] bg-black overflow-hidden">
       <div 
         className="min-h-screen flex flex-col items-center justify-center px-4 py-20"
         style={{

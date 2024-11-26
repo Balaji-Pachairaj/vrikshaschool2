@@ -6,12 +6,6 @@ import medal from "../../assets/marathon/medal.png";
 import certificate from "../../assets/marathon/certificate.png";
 
 
-
-// New import for medal image
-import png4 from "../../assets/4.png";
-import png3 from "../../assets/3.png";
-import png2 from "../../assets/2.png";
-import png1 from "../../assets/1.png";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const Marathongoodies = () => {
