@@ -4,6 +4,7 @@ import png1 from "../../assets/sportsacademy/1.png"
 import png2 from "../../assets/sportsacademy/2.png"
 import png3 from "../../assets/sportsacademy/3.png"
 import png4 from "../../assets/sportsacademy/4.png"
+import logo from "../../assets/sportsacademy/logo.png"
 
 import overviewImage from "../../assets/Learning/learningOverview.webp";
 
@@ -95,9 +96,11 @@ const SportAcademyHero = () => {
           className="w-full h-full fixed top-0 botton-0 flex flex-row justify-center items-center bg-opacity-[0.6] bg-black z-[10]"
         >
           {/* --- text ----------- */}
-          <h1 className=" font-poppins md:text-[3vw] sm:text-[4.5vw] text-[6vw]  text-[white] font-light  lg:leading-[4rem] md:leading-[3rem] text-center ">
-            Design that flows <br></br> above the rest
-          </h1>
+          <img 
+            src={logo} 
+            alt="Design that flows above the rest"
+            className="md:w-[40vw] w-[70vw] object-contain mb-24"
+          />
         </motion.div>
         {/* ---- box ------ */}
         <motion.div
@@ -158,7 +161,10 @@ const SportAcademyHero = () => {
       <div className=" w-full h-[100vh] flex flex-col justify-center gap-[3rem] bg-black">
         <div className=" w-full h-fit  md:ps-[5rem]">
           <h1 className=" font-cabin  text-[white] md:text-[4vw] text-[8vw] font-bold md:text-start text-center ">
+          
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
           Where Champions Are Made
+                </span>
           </h1>
         </div>
         <div className=" w-full h-fit   text-end flex flex-row justify-end md:pe-[5rem] ps-[2rem] pe-[2rem]">

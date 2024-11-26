@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 
-
 import pool from "../../assets/sportsacademy/pool.jpeg"
 import turf from "../../assets/sportsacademy/turf.jpeg"
 import basket from "../../assets/sportsacademy/basket.jpeg"
@@ -94,10 +93,10 @@ const SportAdacemySuccess = () => {
               style={{ opacity: opacity1 }}
               className="w-full h-full flex flex-col justify-center items-end absolute top-0 left-0 pe-[5rem] gap-[1rem] bg-black"
             >
-              <h1 className=" text-[3.3vw] font-inter text-right text-white font-light ">
+              <h1 className=" text-[3.5vw] font-inter text-right text-white font-bold ">
               State-of-the-art <br /> Swimming Pool
               </h1>
-              <p className=" text-[#d0d0d0] text-[18px] font-inter font-light text-end w-[80%]">
+              <p className=" text-[#d0d0d0] text-[16px] font-inter font-semibold text-end w-[80%]">
               Provides the perfect environment for both beginners and competitive swimmers to refine their skills and enhance performance
               </p>
             </motion.div>
@@ -106,10 +105,10 @@ const SportAdacemySuccess = () => {
               style={{ opacity: opacity2 }}
               className="w-full h-full flex flex-col justify-center items-end absolute top-0 left-0 pe-[5rem] gap-[1rem] bg-black"
             >
-              <h1 className=" text-[3.3vw] font-inter text-white font-light ">
+              <h1 className=" text-[3.5vw] font-inter text-white font-bold ">
               Versatile Turf
               </h1>
-              <p className=" text-[#d0d0d0] text-[18px] font-inter font-light text-end w-[80%]">
+              <p className=" text-[#d0d0d0] text-[16px] font-inter font-semibold text-end w-[80%]">
               Supporting a variety of sports like football, cricket, tennis, etc., our versatile turf withstands high-octane performances.
 
               </p>
@@ -119,11 +118,11 @@ const SportAdacemySuccess = () => {
               style={{ opacity: opacity3 }}
               className="w-full h-full flex flex-col justify-center items-end absolute top-0 left-0 pe-[5rem] gap-[1rem] bg-black"
             >
-              <h1 className=" text-[3.3vw] font-inter text-white text-right font-light ">
+              <h1 className=" text-[3.5vw] font-inter text-white text-right font-bold ">
               Professional-grade Basketball Court
 
               </h1>
-              <p className=" text-[#d0d0d0] text-[18px] font-inter font-light text-end w-[80%]">
+              <p className=" text-[#d0d0d0] text-[16px] font-inter font-semibold text-end w-[80%]">
               The high-performance surface offers athletes the perfect platform to sharpen their shooting, agility, and teamwork skills.
 
               </p>
@@ -133,10 +132,10 @@ const SportAdacemySuccess = () => {
               style={{ opacity: opacity4 }}
               className="w-full h-full flex flex-col justify-center items-end absolute top-0 left-0 pe-[5rem] gap-[1rem] bg-black"
             >
-              <h1 className=" text-[3.3vw] font-inter text-white text-right font-light ">
+              <h1 className=" text-[3.5vw] font-inter text-white text-right font-bold ">
               World-class Athletic Ground 
               </h1>
-              <p className=" text-[#d0d0d0] text-[18px] font-inter font-light text-end w-[80%]">
+              <p className=" text-[#d0d0d0] text-[16px] font-inter font-semibold text-end w-[80%]">
               Designed to accommodate track and field events, our ground empowers athletes to train and compete at their peak performance.
 
               </p>

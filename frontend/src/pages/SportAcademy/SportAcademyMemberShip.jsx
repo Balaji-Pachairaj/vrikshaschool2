@@ -55,7 +55,7 @@ const Com = ({ content = {} }) => {
         </div>
       </div>
       <div className=" w-full flex flex-row justify-center">
-        <div className="w-[90%] h-[50px] bg-[#deff5f] font-kanit font-bold  flex flex-row justify-center items-center text-black">
+        <div className="w-[90%] h-[50px] bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] font-kanit font-bold flex flex-row justify-center items-center text-white">
           GET STARTED
         </div>
       </div>

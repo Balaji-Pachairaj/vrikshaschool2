@@ -5,8 +5,8 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
 
-import logo from "../assets/footer/vrikshalogo.webp";
-import juniorlogo from "../assets/footer/junior.webp";
+import logo from "../assets/footer/footer.png";
+
 import { NavLink } from "react-router-dom";
 import { NavBarLinks } from "./NavBar";
 
@@ -22,16 +22,13 @@ const FooterSection = () => {
           {/* ------------------------------------- */}
           <div className="w-full h-fit flex md:flex-row flex-wrap flex-col gap-y-[1.5rem] justify-between">
             {/* ------------------------------------- */}
-            <div className=" flex flex-col gap-[2rem]">
-              <div className=" w-full h-fit flex md:flex-row gap-[2rem] flex-col">
-                <img className=" w-fit h-[150px] object-contain" src={logo} />
-                <img
-                  className=" w-fit h-[80px] object-contain"
-                  src={juniorlogo}
-                />
-              </div>
-
-              <h1 className=" text-[14px] font-inter text-[#eee]">
+            <div className="flex flex-col gap-4">
+              <img 
+                className="md:w-[300px] w-[300px] h-[200px] -mt-12 object-contain object-left" 
+                src={logo} 
+                alt="Vriksha Global School Logo"
+              />
+              <h1 className="text-[14px] font-inter text-[#eee]">
                 Kozhikaalnatham road Tiruchengode,
                 <br />
                 Tamilnadu, India , 637211.  

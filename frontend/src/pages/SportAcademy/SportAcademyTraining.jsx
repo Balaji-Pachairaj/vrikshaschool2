@@ -3,12 +3,12 @@ import React from "react";
 import overviewImage from "../../assets/Learning/training.png";
 
 const content = [
-  { title: "World-Class Facilities",  },
-  { title: "Expert Mentorship"},
-  { title: "Performance Analytics"},
-  { title: "Skill-Based Training"},
-  { title: "Active Lifestyle Advocacy"},
-  { title: "Discipline and Resilience Building"},
+  { title: "World-Class Facilities", },
+  { title: "Expert Mentorship" },
+  { title: "Performance Analytics" },
+  { title: "Skill-Based Training" },
+  { title: "Active Lifestyle Advocacy" },
+  { title: "Discipline and Resilience Building" },
 ];
 
 const Com = ({ content }) => {
@@ -40,9 +40,12 @@ const SportAcademyTraining = () => {
 
           <div className=" w-full h-full flex flex-col justify-end ps-[2rem] pe-[2rem] pb-[0rem] lg:gap-[3rem] gap-[1rem] ">
             <h1 className=" font-inter lg:text-[3.5vw]  text-[2rem] font-semibold  text-white">
-              Why us
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
+                Why us
+              </span>
+
             </h1>
-            <p className=" lg:text-[7vw] text-[5rem] font-inter font-bold text-[#c7f849]">
+            <p className=" lg:text-[7vw] text-[5rem] font-inter font-bold bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] text-transparent bg-clip-text">
               1
             </p>
           </div>
@@ -55,7 +58,7 @@ const SportAcademyTraining = () => {
           <div className=" w-[4px] h-[4px] rounded-[0.5px] bg-[#c7f849] absolute bottom-[-2px] right-[-2px]"></div>
           {/* ------------------- */}
           <div className=" w-full h-full flex flex-col justify-end ps-[2rem] pe-[2rem] pb-[0rem]  ">
-            <p className=" lg:text-[7vw] text-[5rem] font-inter font-bold text-[#c7f849]">
+            <p className=" lg:text-[7vw] text-[5rem] font-inter font-bold bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] text-transparent bg-clip-text">
               2
             </p>
           </div>
@@ -67,7 +70,7 @@ const SportAcademyTraining = () => {
           {/* ------------------- */}
 
           <div className=" w-full h-full flex flex-col justify-end ps-[2rem] pe-[2rem] pb-[0rem] ">
-            <p className=" lg:text-[7vw] text-[5rem] font-inter font-bold text-[#c7f849]">
+            <p className=" lg:text-[7vw] text-[5rem] font-inter font-bold bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] text-transparent bg-clip-text">
               3
             </p>
           </div>
@@ -105,7 +108,7 @@ const SportAcademyTraining = () => {
           {/* ------------------- */}
 
           <div className=" w-full h-full flex flex-col justify-end ps-[2rem]  gap-[0.5rem]">
-            <p className=" lg:text-[7vw] text-[5rem] font-inter font-bold text-[#c7f849] ">
+            <p className=" lg:text-[7vw] text-[5rem] font-inter font-bold bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] text-transparent bg-clip-text">
               4
             </p>
           </div>
@@ -116,7 +119,7 @@ const SportAcademyTraining = () => {
           <div className=" w-[4px] h-[4px] rounded-[0.5px] bg-[#c7f849] absolute bottom-[-2px] right-[-2px]"></div>
           {/* ------------------- */}
           <div className=" w-full h-full flex flex-col justify-end ps-[2rem]  gap-[0.5rem]">
-            <p className=" lg:text-[7vw] text-[5rem] font-inter font-bold text-[#c7f849]">
+            <p className=" lg:text-[7vw] text-[5rem] font-inter font-bold bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] text-transparent bg-clip-text">
               5
             </p>
           </div>
@@ -127,7 +130,7 @@ const SportAcademyTraining = () => {
           {/* ------------------- */}
 
           <div className=" w-full h-full flex flex-col justify-end ps-[2rem]  gap-[0.5rem]">
-            <p className=" lg:text-[7vw] text-[5rem] font-inter font-bold text-[#c7f849]">
+            <p className=" lg:text-[7vw] text-[5rem] font-inter font-bold bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] text-transparent bg-clip-text">
               6
             </p>
           </div>

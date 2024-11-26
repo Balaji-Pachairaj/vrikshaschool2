@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 
-import png4 from "../../assets/4.png";
-import png3 from "../../assets/3.png";
-import png2 from "../../assets/2.png";
-import png1 from "../../assets/1.png";
+
+import png1 from "../../assets/sportsacademy/1.png";
 
 const Com = ({ title, body, state = "0", onClick = () => {} }) => {
   return (
@@ -74,9 +72,7 @@ const SportAcademyFAQ = () => {
 
   return (
     <div className="w-full min-h-screen pb-[10rem]">
-      <p className="text-[#deff5f] text-[18px] font-kanit ps-[3vw] animate-fadeIn">
-        + FAQ's
-      </p>
+      
       <h1 className="ps-[2vw] font-kanit text-white md:text-[6vw] text-[24px] font-bold uppercase mb-[2rem] animate-slideIn">
         Have a question?
       </h1>
