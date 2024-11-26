@@ -223,8 +223,7 @@ const router = createBrowserRouter([
       <Alumnioverview/>
       <div className="w-full h-[0.1px]" ></div>
       <Alumninetwork/>  
-      <div className="w-full h-[0.1px]" ></div>
-      <Alumnibenefits/>
+      
       <div className="w-full h-[0.1px]" ></div>    
       <Alumnivolunteer/>
       <div className="w-full h-[0.1px]" ></div>
