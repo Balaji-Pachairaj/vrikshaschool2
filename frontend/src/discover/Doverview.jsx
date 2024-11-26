@@ -21,7 +21,8 @@ const Component = ({
         className="w-full h-full flex flex-col justify-start gap-[1.5rem] p-6 rounded-[8px] hover:rotate-6 duration-300"
       >
         <h1
-          style={{ color: content?.text }}
+                    style={{ color: content?.text, background: `linear-gradient(to right, #7c2ae8, #00c4cc)`, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+
           className="w-full font-[500] text-xl md:text-2xl uppercase hover:text-[#ff643d] duration-300"
         >
           {content?.title}

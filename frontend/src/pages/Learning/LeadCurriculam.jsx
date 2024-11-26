@@ -21,7 +21,7 @@ const Component = ({
         className={` w-full h-full flex flex-col justify-start gap-[2.5rem] md:p-[2rem] p-[1.5rem] bg-[${content?.bg}] rounded-[8px] hover:rotate-6 duration-300`}
       >
         <h1
-          className={` w-full  font-[500] lg:text-[24px] md:text-[20px] text-[16px] text-[${content?.text}] hover:text-[${content?.textHover}] duration-300`}
+          className={` w-full  font-[500] lg:text-[24px] md:text-[20px] text-[16px] text-[${content?.text}] text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] duration-300`}
         >
           {content?.title}
         </h1>

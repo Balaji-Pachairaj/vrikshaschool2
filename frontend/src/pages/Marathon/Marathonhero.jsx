@@ -44,24 +44,20 @@ const Hero = () => {
       return new THREE.CanvasTexture(canvas);
     };
 
+    const text = "Vriksha Marathon V.2025\nIs Back";
+    const texture = createTextTexture(text);
+
     const materials = [
-      new THREE.MeshStandardMaterial({ color: 0xffffff, side: THREE.DoubleSide }),
-      new THREE.MeshStandardMaterial({ color: 0xffffff, side: THREE.DoubleSide }),
-      new THREE.MeshStandardMaterial({ color: 0xffffff, transparent: true, opacity: 0, side: THREE.DoubleSide }),
-      new THREE.MeshStandardMaterial({ color: 0xffffff, transparent: true, opacity: 0, side: THREE.DoubleSide }),
-      new THREE.MeshStandardMaterial({ color: 0xffffff, side: THREE.DoubleSide }),
-      new THREE.MeshStandardMaterial({ color: 0xffffff, side: THREE.DoubleSide }),
+      new THREE.MeshStandardMaterial({ color: 0xffffff, map: texture, side: THREE.DoubleSide }), // front
+      new THREE.MeshStandardMaterial({ color: 0xffffff, map: texture, side: THREE.DoubleSide }), // back
+      new THREE.MeshStandardMaterial({ color: 0xffffff, side: THREE.DoubleSide }), // top
+      new THREE.MeshStandardMaterial({ color: 0xffffff, side: THREE.DoubleSide }), // bottom
+      new THREE.MeshStandardMaterial({ color: 0xffffff, side: THREE.DoubleSide }), // right
+      new THREE.MeshStandardMaterial({ color: 0xffffff, side: THREE.DoubleSide }), // left
     ];
 
     const cube = new THREE.Mesh(new THREE.BoxGeometry(15, 15, 15), materials);
     scene.add(cube);
-
-    const text = "Vriksha Marathon V.2025\nIs Back";
-    const texture = createTextTexture(text);
-
-    materials.forEach(material => {
-      material.map = texture;
-    });
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 1);
     scene.add(ambientLight);

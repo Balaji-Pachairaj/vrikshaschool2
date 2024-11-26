@@ -272,8 +272,9 @@ const Hero = () => {
           Vriksha Gives WINGS <br /> To Your <br />{" "}
           <span
             style={{ fontFamily: "'Mazius Display', serif" }}
-            className="text-[#ff516f] normal-case"
+            className="normal-case text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]"
           >
+            
             Child's Dream
           </span>
         </motion.h1>

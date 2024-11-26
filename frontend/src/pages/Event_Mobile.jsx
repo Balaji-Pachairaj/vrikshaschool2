@@ -33,7 +33,7 @@ const EventsMobile = () => {
   return (
     <section className="py-8">
       <h2 className="text-4xl font-bold text-white text-center mb-6">
-        <span className=" bg-whitelight text-transparent bg-clip-text">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
           EVENTS GALLERY
         </span>
       </h2>

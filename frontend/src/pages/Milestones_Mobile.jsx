@@ -100,9 +100,10 @@ const MobileMillestones = () => {
     <MobileSection>
       <ScrollContainer>
         <MilestoneText>
-          <span className=" bg-whitelight text-transparent bg-clip-text">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
             Milestone
           </span>
+          
         </MilestoneText>
         {images.map((image, index) => (
           <ImageContainer

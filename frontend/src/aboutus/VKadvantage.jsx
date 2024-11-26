@@ -42,11 +42,11 @@ const VKadvantage = () => {
     <div className="w-full bg-black relative">
       <div className="container mx-auto px-2 py-16 relative">
         <h1 className="text-6xl font-bold py-8 text-white mb-16 text-center">
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
-        The Vriksha Advantage
-                </span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
+            The Vriksha Advantage
+          </span>
         </h1>
-        {[
+        {[/* eslint-disable */
           {
             title: 'microcosm of the modern world',
             description: 'A coeducation school, which stands as the perfect learning ground for every child. The vast expanse of the campus inspires a child in treating the world as his / her domain. When young minds are opened to the exceptional world of talent that lies inside them, they will surely lead the world to a greater tomorrow.',
@@ -72,7 +72,7 @@ const VKadvantage = () => {
             <div className="md:w-1/2 project-container">
               <h2 className="text-8xl font-normal heading-animate font-panchang transition-all duration-1000 ease-in-out opacity-80 transform translate-y-5">
                 <div className="transform-3d">
-                  <span className="block text-white uppercase tracking-tight">{project.title}</span>
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] uppercase tracking-tight">{project.title}</span>
                 </div>
               </h2>
               <p className="text-sm mt-6 text-gray-300">{project.description}</p>
@@ -137,14 +137,20 @@ const VKadvantage = () => {
           transform: translateY(0);
           transition: all 1.0s ease-in-out;
         }
-
         .transform-3d span:hover {
-          color: #FFFF00;
+          color: transparent;
           left: 20px;
           transform: scale(1.02);
           opacity: 1;
+          text-shadow: 
+            1px 1px 0 rgba(0, 0, 0, 0.2),
+            2px 2px 0 rgba(0, 0, 0, 0.3),
+            3px 3px 0 rgba(0, 0, 0, 0.4);
+          background-image: linear-gradient(to right, #7c2ae8, #00c4cc);
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
-
         .image-container {
           overflow: hidden;
           position: relative;

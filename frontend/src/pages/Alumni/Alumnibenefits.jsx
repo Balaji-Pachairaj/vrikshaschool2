@@ -77,7 +77,7 @@ const benefitsData = [
 
 export function AlumniBenefits() {
   return (
-    <section className="min-h-screen bg-black text-white px-4 pt-24">
+    <section className="min-h-screen bg-black text-white px-4 py-24">
       <div className="max-w-7xl mx-auto">
         <motion.h2 
           className="text-5xl font-bold text-center mb-12"

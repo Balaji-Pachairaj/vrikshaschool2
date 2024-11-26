@@ -202,7 +202,7 @@ const Milestone_actual_animation = () => {
           }}
           className="text-[18vw] font-black text-white uppercase tracking-[-0.05em] leading-[0.8] whitespace-nowrap scale-y-[1.2] fixed z-[2] "
         >
-          <span className=" bg-whitelight text-transparent bg-clip-text">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
             Milestone
           </span>
         </motion.h1>

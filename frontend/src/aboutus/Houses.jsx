@@ -97,13 +97,14 @@ const CardStack = () => {
                 <img
                   src={card.image}
                   alt={card.title}
-                  className="w-full h-[400px] sm:h-[500px] lg:h-[600px] object-cover"
+                  className="w-full h-[400px] sm:h-[500px] lg:h-[600px] object-cover opacity-80"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4">
+                {/* Remove the overlay title */}
+                {/* <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4">
                   <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white text-center tracking-wider">
                     {card.title}
                   </h1>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

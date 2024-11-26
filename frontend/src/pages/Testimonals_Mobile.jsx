@@ -253,7 +253,7 @@ const Testimonals_Mobile = () => {
     <>
       <div className=" w-full h-[120vh] overflow-hidden sm:hidden  ">
         <h1 className="text-[12vw] text-center font-black text-white uppercase tracking-[-0.05em] leading-[0.8] whitespace-nowrap scale-y-[1.2] mt-[5rem]">
-          <span className=" bg-whitelight text-transparent bg-clip-text">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
             Testimonals
           </span>
         </h1>

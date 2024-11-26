@@ -58,9 +58,7 @@ const FooterSection = () => {
                       <NavLink
                         to={item?.to}
                         className={({ isActive }) => {
-                          return `text-[14px] ${
-                            isActive ? " border-b-2 " : ""
-                          } hover:-translate-y-[2px] duration-100 uppercase  font-inter text-white`;
+                          return `text-[14px] hover:-translate-y-[2px] duration-100 uppercase  font-inter text-white`;
                         }}
                       >
                         {item?.title}

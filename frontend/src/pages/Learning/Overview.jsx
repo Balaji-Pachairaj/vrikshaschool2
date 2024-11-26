@@ -172,10 +172,11 @@ const Overview = () => {
 
         <div className=" w-full flex flex-row justify-center ">
           <div className=" w-[80vw] sm:h-[60vh] h-[40vh] sm:mt-[4rem] mt-[1rem]">
-            <img
-              src={overviewImage}
-              className=" w-full h-full object-contain"
-            />
+          <img
+  src={overviewImage}
+  className=" w-full h-full object-contain" // Add the "opacity-70" class to set the opacity to 70%
+/>
+
           </div>
         </div>
 
