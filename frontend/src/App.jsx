@@ -47,7 +47,7 @@ import Alumnibenefits from "./pages/Alumni/Alumnibenefits"
 import Alumnivolunteer from "./pages/Alumni/Alumnivolunteer"
 import Alumninoteable from "./pages/Alumni/Alumninoteable"
 import Alumniconnect from "./pages/Alumni/Alumniconnect";
-import AlumniBenefits from "./pages/Alumni/Alumnibenefits";
+import Alumnibenefits from "./pages/Alumni/Alumnibenefits";
 
 const router = createBrowserRouter([
   {
@@ -224,7 +224,7 @@ const router = createBrowserRouter([
       <div className="w-full h-[0.1px]" ></div>
       <Alumninetwork/>  
       <div className="w-full h-[0.1px]" ></div>
-      <AlumniBenefits/>
+      <Alumnibenefits/>
       <div className="w-full h-[0.1px]" ></div>    
       <Alumnivolunteer/>
       <div className="w-full h-[0.1px]" ></div>
