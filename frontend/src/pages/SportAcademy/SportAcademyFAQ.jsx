@@ -3,10 +3,10 @@ import React, { useState } from "react";
 
 import png1 from "../../assets/sportsacademy/1.png";
 
-const Com = ({ title, body, state = "0", onClick = () => {} }) => {
+const Com = ({ title, body, state = "0", onClick = () => { } }) => {
   return (
     <>
-      <div 
+      <div
         className="w-full md:h-[13%] h-[70px] flex flex-row justify-between items-center cursor-pointer hover:bg-white/5 transition-all duration-300 px-2 rounded-lg"
         onClick={onClick}
       >
@@ -20,7 +20,7 @@ const Com = ({ title, body, state = "0", onClick = () => {} }) => {
           {state === "1" ? "−" : "+"}
         </button>
       </div>
-      <div 
+      <div
         className="overflow-hidden transition-all duration-300 ease-in-out"
         style={{
           maxHeight: state === "1" ? "500px" : "0",
@@ -72,28 +72,31 @@ const SportAcademyFAQ = () => {
 
   return (
     <div className="w-full min-h-screen pb-[10rem]">
-      
-      <h1 className="ps-[2vw] font-kanit text-white md:text-[6vw] text-[24px] font-bold uppercase mb-[2rem] animate-slideIn">
-        Have a question?
+
+      <h1 className="ps-[2vw] md:text-[6vw] text-[24px] font-bold uppercase mb-[2rem] animate-slideIn">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
+          Have a question?
+        </span>
+
       </h1>
 
       <div className="w-full md:h-[90vh] h-fit md:mt-0 mt-[3rem] flex md:flex-row flex-col-reverse gap-y-[4rem] justify-center duration-500">
         <div className="md:w-[40%] w-fill h-full flex flex-row justify-center items-center">
-          <div 
+          <div
             className="w-[80%] md:h-[80%] h-[50vh] rounded-[20px] overflow-hidden transform transition-all duration-500 hover:scale-105"
           >
-            <img 
-              src={png1} 
-              alt="Sport Academy" 
+            <img
+              src={png1}
+              alt="Sport Academy"
               className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
             />
           </div>
         </div>
-        
+
         <div className="md:w-[60%] w-full md:h-[90vh] h-fit flex ms:flex-row flex-col justify-center items-center">
           <div className="md:w-[90%] w-full md:ps-0 ps-[5px] md:h-[90%] h-fit space-y-2">
             {faqContent.map((item, index) => (
-              <div 
+              <div
                 key={index}
                 className="transform transition-all duration-300 hover:translate-x-2"
               >

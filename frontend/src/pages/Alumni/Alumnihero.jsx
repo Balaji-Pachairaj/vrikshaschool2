@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import png1 from "../../assets/1.png";
-import png2 from "../../assets/2.png";
-import png3 from "../../assets/3.png";
-import png4 from "../../assets/4.png";
+import png1 from "../../assets/alumni/15.png";
+import png2 from "../../assets/alumni/16.png";
+import png3 from "../../assets/alumni/17.png";
+import png4 from "../../assets/alumni/18.png";
+import png5 from "../../assets/alumni/19.png";
 
 const Hero = () => {
   const cubeRef = useRef(null);
@@ -35,7 +36,7 @@ const Hero = () => {
         png2,
         png3,
         png4,
-        png2,
+        png5,
         png1
       ];
 
@@ -71,7 +72,7 @@ const Hero = () => {
       ];
 
       let currentSequence = 0;
-      let animationTime = 0;
+      let animationTime = 0;  
       const ROTATION_INTERVAL = 11; // Total time (rotation + zoom in + zoom out)
       const ZOOM_IN_START = 0; // Start with zoom in
       const ZOOM_IN_DURATION = 4; // Time for zoom in
@@ -152,7 +153,7 @@ const Hero = () => {
     <div className="min-h-screen bg-black flex items-center justify-center overflow-x-hidden relative">
       <div className="absolute w-full text-center z-0">
         <marquee className="text-white text-8xl font-bold" scrollamount="10">
-          Welcome Back to the Alumni Network
+          Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to
         </marquee>
       </div>
       <div className="w-full h-full z-10 relative" ref={cubeRef} aria-hidden="true"></div>
