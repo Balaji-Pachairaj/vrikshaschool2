@@ -31,8 +31,11 @@ const MarathonCategories = () => {
 
   return (
     <section className="bg-black min-h-screen py-16 px-4">
-      <h1 className="text-6xl font-extrabold text-center mb-16 text-white tracking-tight">
+      <h1 className="text-6xl font-extrabold text-center mb-16 tracking-tight">
+        
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
         Categories
+                </span>
       </h1>
       
       <div className="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">

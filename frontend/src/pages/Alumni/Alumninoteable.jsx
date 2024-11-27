@@ -283,7 +283,7 @@ const Testimonial = () => {
     <>
       <div className=" w-full h-[150vh] overflow-hidden sm:block hidden py-24 bg-black">
         <h1 className="text-[8vw] text-center font-black text-white uppercase tracking-[-0.05em] leading-[0.8] whitespace-nowrap scale-y-[1.2] mb-[2rem]">
-          <span className=" bg-whitelight text-transparent bg-clip-text">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
           Notable Alumni
           </span>
         </h1>

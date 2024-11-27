@@ -5,7 +5,7 @@ const Marathonrun = () => {
   const repeatCount = 10; // Adjust this number based on screen width
   const marqueeContent = Array(repeatCount).fill(null).map((_, index) => (
     <React.Fragment key={index}>
-      <h1 className="text-8xl font-bold text-white inline-block uppercase px-4">
+      <h1 className="text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] inline-block uppercase px-4">
         Let's Run
       </h1>
       <div className="mx-1 inline-flex items-center justify-center">

@@ -143,17 +143,17 @@ const NavLap = ({ content = {} }) => {
         <div
           className={`w-[200px] h-fit pb-[2rem] ${
             onHover ? "opacity-100 flex " : "opacity-0 hidden"
-          } gap-[0.5rem] pt-[2rem] left-[-20px] bg-black border-s-[1px] border-e-[1px]  flex flex-col absolute top-[101%] duration-500 `}
+          } gap-[0.5rem] pt-[2rem] left-[-20px] backdrop-blur-md bg-black/90 border border-white/10 shadow-lg flex flex-col absolute top-[101%] duration-500 rounded-[8px]`}
         >
           {content?.sections?.map((item) => {
             return (
               <NavLink
                 to={item?.to}
                 smooth
-                className=" ps-[1rem] pe-[1rem] uppercase text-wrap  flex flex-col justify-center min-h-[30px] h-fit text-[#ffffffb3] text-[12px] font-[500] font-inter "
+                className=" ps-[1rem] pe-[1rem] uppercase text-wrap flex flex-col justify-center min-h-[30px] h-fit text-white text-[12px] font-[500] font-inter "
               >
                 <p
-                  className={`p-[0.5rem] w-fit h-fit rounded-[8px]  hover:bg-gray-800  duration-300`}
+                  className={`p-[0.5rem] w-fit h-fit rounded-[8px] hover:bg-white/20 duration-300`}
                 >
                   {item?.title}
                 </p>
@@ -290,7 +290,7 @@ const NavBar = () => {
 
   return (
     <>
-      <div className=" fixed top-[1.5rem] max-w-[90%]  z-[20000] left-[50%] -translate-x-1/2 bg-gray-800 bg-opacity-80 shadow-xl w-fit rounded-[20px] h-fit  ps-[1rem] pe-[1rem] md:flex  hidden flex-row gap-[1.5rem]">
+      <div className=" fixed top-[1.5rem] max-w-[90%]  z-[20000] left-[50%] -translate-x-1/2 backdrop-blur-md bg-white/10 border border-white/20 shadow-xl w-fit rounded-[20px] h-fit  ps-[1rem] pe-[1rem] md:flex  hidden flex-row gap-[1.5rem]">
         {NavBarLinks?.map((item) => {
           return <NavLap content={item} />;
         })}

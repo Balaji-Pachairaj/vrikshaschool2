@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import hero from "../../assets/marathon/hero.png"
 
 const Hero = () => {
   const cubeRef = useRef(null);
@@ -48,12 +49,30 @@ const Hero = () => {
     const texture = createTextTexture(text);
 
     const materials = [
-      new THREE.MeshStandardMaterial({ color: 0xffffff, map: texture, side: THREE.DoubleSide }), // front
-      new THREE.MeshStandardMaterial({ color: 0xffffff, map: texture, side: THREE.DoubleSide }), // back
-      new THREE.MeshStandardMaterial({ color: 0xffffff, side: THREE.DoubleSide }), // top
-      new THREE.MeshStandardMaterial({ color: 0xffffff, side: THREE.DoubleSide }), // bottom
-      new THREE.MeshStandardMaterial({ color: 0xffffff, side: THREE.DoubleSide }), // right
-      new THREE.MeshStandardMaterial({ color: 0xffffff, side: THREE.DoubleSide }), // left
+      new THREE.MeshStandardMaterial({
+        map: new THREE.TextureLoader().load(hero),
+        side: THREE.DoubleSide
+      }), // front
+      new THREE.MeshStandardMaterial({
+        map: new THREE.TextureLoader().load(hero),
+        side: THREE.DoubleSide
+      }), // back
+      new THREE.MeshStandardMaterial({
+        map: new THREE.TextureLoader().load(hero),
+        side: THREE.DoubleSide
+      }), // top
+      new THREE.MeshStandardMaterial({
+        map: new THREE.TextureLoader().load(hero),
+        side: THREE.DoubleSide
+      }), // bottom
+      new THREE.MeshStandardMaterial({
+        map: new THREE.TextureLoader().load(hero),
+        side: THREE.DoubleSide
+      }), // right
+      new THREE.MeshStandardMaterial({
+        map: new THREE.TextureLoader().load(hero),
+        side: THREE.DoubleSide
+      }), // left
     ];
 
     const cube = new THREE.Mesh(new THREE.BoxGeometry(15, 15, 15), materials);

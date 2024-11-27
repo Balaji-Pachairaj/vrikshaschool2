@@ -118,7 +118,7 @@ const Marathongoodies = () => {
             style={{ top: top1 }}
             className="w-[30%] h-fit absolute top-[50%] -translate-y-[50%] left-0 flex flex-col items-center ps-[5vw] gap-[2rem]"
           >
-            <h1 className="text-[white] text-[3.3vw] leading-[3.5vw] font-inter font-light">
+            <h1 className="text-[3.3vw] leading-[3.5vw] font-inter font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
             Bag
             </h1>
           </motion.div>
@@ -133,7 +133,7 @@ const Marathongoodies = () => {
             style={{ top: top2 }}
             className="w-[30%] h-fit absolute top-[50%] -translate-y-[50%] right-0 flex flex-col items-center ps-[0vw] pe-[5vh] gap-[2rem]"
           >
-            <h1 className="text-[white] text-[3.3vw] leading-[3.5vw] font-inter font-light">
+            <h1 className="text-[3.3vw] leading-[3.5vw] font-inter font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
             Cap
             </h1>
           </motion.div>
@@ -148,9 +148,8 @@ const Marathongoodies = () => {
             style={{ top: top3 }}
             className="w-[30%] h-fit absolute top-[50%] -translate-y-[50%] left-0 flex flex-col items-center ps-[5vw] gap-[2rem]"
           >
-            <h1 className="text-[white] text-[3.3vw] leading-[3.5vw] font-inter font-light">
+            <h1 className="text-[3.3vw] leading-[3.5vw] font-inter font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
             T-shirt
-              
             </h1>
           </motion.div>
           {/* -------------------------------- */}
@@ -164,9 +163,8 @@ const Marathongoodies = () => {
             style={{ top: top4 }}
             className="w-[30%] h-fit absolute top-[50%] -translate-y-[50%] right-0 flex flex-col items-center ps-[0vw] pe-[5vh] gap-[2rem]"
           >
-            <h1 className="text-[white] text-[3.3vw] leading-[3.5vw] font-inter font-light">
+            <h1 className="text-[3.3vw] leading-[3.5vw] font-inter font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
             Certificate
-            
             </h1>
           </motion.div>
           {/* -------------------------------- */}
@@ -180,7 +178,7 @@ const Marathongoodies = () => {
             style={{ top: top5 }}
             className="w-[30%] h-fit absolute top-[50%] -translate-y-[50%] left-0 flex flex-col items-center ps-[5vw] gap-[2rem]"
           >
-            <h1 className="text-[white] text-[3.3vw] leading-[3.5vw] font-inter font-light">
+            <h1 className="text-[3.3vw] leading-[3.5vw] font-inter font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
             Medal
             </h1>
           </motion.div>
@@ -192,4 +190,3 @@ const Marathongoodies = () => {
 };
 
 export default Marathongoodies;
-

@@ -103,7 +103,7 @@ function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight"
+              className="text-4xl md:text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]"
             >
             Unlock New Opportunities
             </motion.h1>

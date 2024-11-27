@@ -63,23 +63,22 @@ const Hero = () => {
       camera.position.z = 25;
 
       const sequences = [
-        { rotationX: 0, rotationY: 0 },         // Front
         { rotationX: 0, rotationY: Math.PI / 2 },    // Right
-        { rotationX: 0, rotationY: Math.PI },        // Back
-        { rotationX: 0, rotationY: -Math.PI / 2 },   // Left
         { rotationX: -Math.PI / 2, rotationY: 0 },   // Top
-        { rotationX: Math.PI / 2, rotationY: 0 }     // Bottom
+        { rotationX: 0, rotationY: -Math.PI / 2 },   // Left
+        { rotationX: Math.PI / 2, rotationY: 0 },    // Bottom
+        { rotationX: 0, rotationY: Math.PI },        // Back
+        { rotationX: 0, rotationY: 0 }              // Front
       ];
 
       let currentSequence = 0;
       let animationTime = 0;  
-      const ROTATION_INTERVAL = 11; // Total time (rotation + zoom in + zoom out)
-      const ZOOM_IN_START = 0; // Start with zoom in
-      const ZOOM_IN_DURATION = 4; // Time for zoom in
-      const ZOOM_OUT_START = 4; // Start zoom out after zoom in
-      const ZOOM_OUT_DURATION = 4; // Time for zoom out
-      const ROTATION_START = 8; // Start rotation after zoom out
-      const ROTATION_DURATION = 3; // Time for rotation
+      const ROTATION_INTERVAL = 10; // Slightly faster total rotation cycle
+      const ZOOM_IN_START = 0;
+      const ZOOM_IN_DURATION = 3; // Faster zoom in
+      const ZOOM_OUT_START = 3;
+      const ZOOM_OUT_DURATION = 3; // Faster zoom out
+      const ROTATION_START = 6; // Start rotation sooner
       const INITIAL_SCALE = 1;
       const ZOOMED_SCALE = 1.3;
 
@@ -107,8 +106,8 @@ const Hero = () => {
         }
 
         // Calculate rotation progress after zoom out
-        if (animationTime >= ROTATION_START && animationTime < ROTATION_START + ROTATION_DURATION) {
-          const progress = (animationTime - ROTATION_START) / ROTATION_DURATION;
+        if (animationTime >= ROTATION_START && animationTime < ROTATION_START + (ROTATION_INTERVAL - ROTATION_START)) {
+          const progress = (animationTime - ROTATION_START) / (ROTATION_INTERVAL - ROTATION_START);
           const prevSequence = (currentSequence - 1 + sequences.length) % sequences.length;
           
           // Smooth transition using lerp
@@ -153,7 +152,8 @@ const Hero = () => {
     <div className="min-h-screen bg-black flex items-center justify-center overflow-x-hidden relative">
       <div className="absolute w-full text-center z-0">
         <marquee className="text-white text-8xl font-bold" scrollamount="10">
-          Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to
+          
+          Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to
         </marquee>
       </div>
       <div className="w-full h-full z-10 relative" ref={cubeRef} aria-hidden="true"></div>

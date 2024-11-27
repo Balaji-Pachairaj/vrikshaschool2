@@ -77,10 +77,10 @@ const benefitsData = [
 
 export function AlumniBenefits() {
   return (
-    <section className="min-h-screen bg-black text-white px-4 py-24">
+    <section className="min-h-screen bg-black px-4 py-24">
       <div className="max-w-7xl mx-auto">
         <motion.h2 
-          className="text-5xl font-bold text-center mb-12"
+          className="text-5xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -88,7 +88,7 @@ export function AlumniBenefits() {
           Exclusive Alumni Benefits
         </motion.h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-white">
           {benefitsData.map((benefit, index) => (
             <BenefitCard
               key={benefit.title}

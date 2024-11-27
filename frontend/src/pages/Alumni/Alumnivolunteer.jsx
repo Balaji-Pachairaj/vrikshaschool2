@@ -1,4 +1,5 @@
 import React from 'react';
+import all from "../../assets/alumni/all.png";
 
 const HeroSection = () => {
   return (
@@ -39,7 +40,7 @@ const HeroSection = () => {
           <div className="lg:w-1/2 lg:absolute lg:right-0 mt-8 lg:mt-0">
             <div className="relative">
               <img 
-                src="https://cdn.prod.website-files.com/65478d390c8996a757a4faaa/6593f0ccecce583b5a13a874_Header%20Img.png" 
+                src={all}
                 alt="Model wearing red t-shirt" 
                 className="w-full object-cover"
               />

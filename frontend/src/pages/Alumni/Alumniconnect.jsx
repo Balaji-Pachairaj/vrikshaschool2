@@ -40,7 +40,7 @@ export default function WorkflowSection() {
           </motion.div>
         </div>
 
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 max-w-3xl mx-auto">
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 max-w-3xl mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
           Stay Connected
         </h1>
 
