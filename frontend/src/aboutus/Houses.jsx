@@ -68,6 +68,8 @@ const CardStack = () => {
     <div className="min-h-screen bg-black">
       <div/>
       
+      <h1 className="text-6xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] py-8">Vriksha Houses</h1>
+      
       <div 
         ref={containerRef} 
         className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8"

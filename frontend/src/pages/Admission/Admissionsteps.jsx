@@ -48,27 +48,17 @@ const SportAcademySuccess = () => {
   return (
     <div ref={fullRef} className="w-full h-[500vh] flex flex-row">
       <div className="w-full h-[100vh] flex flex-row sticky top-0">
-        {/* Static Left Side */}
-        <div className="w-[50%] h-full bg-black flex flex-col justify-center items-end text-right pe-[5rem] gap-[2rem]">
-          <div className="text-white">
-            <h2 className="text-[2vw] font-inter font-bold mb-4">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
-         Admission Process
-          </span>
-            </h2>
-            <div className="mb-6">
-              <h3 className="text-[1.5vw] font-inter font-semibold mb-2">Online</h3>
-              <p className="text-[#d0d0d0] text-[16px] font-inter font-light">
-                Submit the online Enquiry Form from via this link. Our admission in charge will get back to you to answer your questions and collect the required information.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-[1.5vw] font-inter font-semibold mb-2">On Campus</h3>
-              <p className="text-[#d0d0d0] text-[16px] font-inter font-light">
-                Visit the school admissions office and submit the Enquiry Form. Our admission in charge will clear all your queries and will give complete description about the functioning of the school curriculum. Parents / Guardians are invited to visit the school campus to understand the culture and ethos of the Institution.
-              </p>
-            </div>
-          </div>
+        {/* Scrollable Left Side */}
+        <div className="w-[50%] h-full relative overflow-hidden bg-black">
+          {steps.map((step, index) => (
+            <motion.div
+              key={step.title}
+              style={{ opacity: animations[index].opacity, y: animations[index].y }}
+              className="w-full h-full absolute left-0 flex items-center justify-center"
+            >
+              <h2 className="text-white text-[2vw] font-inter text-center px-4">{step.title}</h2>
+            </motion.div>
+          ))}
         </div>
 
         {/* Timeline */}
@@ -93,17 +83,27 @@ const SportAcademySuccess = () => {
           </motion.div>
         </div>
 
-        {/* Scrollable Right Side */}
-        <div className="w-[50%] h-full relative overflow-hidden bg-black">
-          {steps.map((step, index) => (
-            <motion.div
-              key={step.title}
-              style={{ opacity: animations[index].opacity, y: animations[index].y }}
-              className="w-full h-full absolute left-0 flex items-center justify-center"
-            >
-              <h2 className="text-white text-[2vw] font-inter text-center px-4">{step.title}</h2>
-            </motion.div>
-          ))}
+        {/* Static Right Side */}
+        <div className="w-[50%] h-full bg-black flex flex-col justify-center items-start ps-[4rem] gap-[2rem]">
+          <div className="text-white">
+            <h2 className="text-[2vw] font-inter font-bold mb-4">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
+                Admission Process
+              </span>
+            </h2>
+            <div className="mb-6">
+              <h3 className="text-[1.5vw] font-inter font-semibold mb-2">Online</h3>
+              <p className="text-[#d0d0d0] text-[16px] font-inter font-light">
+                Submit the online Enquiry Form from via this link. Our admission in charge will get back to you to answer your questions and collect the required information.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-[1.5vw] font-inter font-semibold mb-2">On Campus</h3>
+              <p className="text-[#d0d0d0] text-[16px] font-inter font-light">
+                Visit the school admissions office and submit the Enquiry Form. Our admission in charge will clear all your queries and will give complete description about the functioning of the school curriculum. Parents / Guardians are invited to visit the school campus to understand the culture and ethos of the Institution.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -111,4 +111,3 @@ const SportAcademySuccess = () => {
 };
 
 export default SportAcademySuccess;
-

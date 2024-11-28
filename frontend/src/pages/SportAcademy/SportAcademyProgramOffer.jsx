@@ -12,7 +12,7 @@ const Com = ({ content = {} }) => {
         <img className=" w-full h-full " src={content?.image} />
       </div>
       <div className=" w-full h-fit  absolute bottom-3 left-0 flex flex-col justify-end p-[2rem] ">
-        <h1 className=" text-center font-kanit text-[24px] text-[white] font-[500]">
+        <h1 className=" text-center font-kanit text-[24px] text-[white] font-[500] [text-shadow:2px_2px_4px_rgb(0_0_0_/_50%)] [-webkit-text-stroke:0.5px_rgba(0,0,0,0.5)]">
           {content?.title}
         </h1>
       </div>

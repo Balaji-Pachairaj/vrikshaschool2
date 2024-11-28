@@ -52,7 +52,7 @@ const Overview = () => {
         
         {sections.map((section, index) => (
           <div key={index} className="relative z-10 px-6 md:px-12 py-4 text-white">
-            <h2 className="text-3xl font-bold mb-6">{section.title}</h2>
+            <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] mb-6">{section.title}</h2>
             <div className="space-y-4 text-base">
               <ul className="list-disc list-inside">
                 {section.items.map((item, itemIndex) => (

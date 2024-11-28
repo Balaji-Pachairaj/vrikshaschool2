@@ -53,13 +53,6 @@ const PortfolioGrid = () => {
       title: "Creative Arts",
       subtitle: "STUDIO",
       path: "/creative"
-    },
-    {
-      id: 6,
-      image: "https://images.unsplash.com/photo-1537432376769-00f5c2f4c8d2",
-      title: "Webflow",
-      subtitle: "Templates",
-      path: "/webflow"
     }
   ];
 

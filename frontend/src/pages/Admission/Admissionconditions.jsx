@@ -1,5 +1,6 @@
 import React from 'react';
 import { Code2, Palette, Laptop, BrainCircuit } from 'lucide-react';
+import png1 from "../../assets/1.png"
 
 function App() {
   return (
@@ -47,7 +48,7 @@ function App() {
             <div className="relative perspective-[1000px] transform-style-preserve-3d">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/30 to-blue-500/30 blur-3xl rounded-3xl transform rotate-12 skew-y-6"></div>
               <img
-                src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=2000&h=1500"
+                src={png1}
                 alt="Abstract Design"
                 className="relative rounded-3xl shadow-2xl"
                 style={{

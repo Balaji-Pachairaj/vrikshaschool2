@@ -93,7 +93,7 @@ const SportAdacemySuccess = () => {
               style={{ opacity: opacity1 }}
               className="w-full h-full flex flex-col justify-center items-end absolute top-0 left-0 pe-[5rem] gap-[1rem] bg-black"
             >
-              <h1 className=" text-[3.5vw] font-inter text-right text-white font-bold ">
+              <h1 className=" text-[3.5vw] font-inter font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] text-right">
               State-of-the-art <br /> Swimming Pool
               </h1>
               <p className=" text-[#d0d0d0] text-[16px] font-inter font-semibold text-end w-[80%]">
@@ -105,7 +105,7 @@ const SportAdacemySuccess = () => {
               style={{ opacity: opacity2 }}
               className="w-full h-full flex flex-col justify-center items-end absolute top-0 left-0 pe-[5rem] gap-[1rem] bg-black"
             >
-              <h1 className=" text-[3.5vw] font-inter text-white font-bold ">
+              <h1 className=" text-[3.5vw] font-inter font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
               Versatile Turf
               </h1>
               <p className=" text-[#d0d0d0] text-[16px] font-inter font-semibold text-end w-[80%]">
@@ -118,7 +118,7 @@ const SportAdacemySuccess = () => {
               style={{ opacity: opacity3 }}
               className="w-full h-full flex flex-col justify-center items-end absolute top-0 left-0 pe-[5rem] gap-[1rem] bg-black"
             >
-              <h1 className=" text-[3.5vw] font-inter text-white text-right font-bold ">
+              <h1 className=" text-[3.5vw] font-inter font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] text-right">
               Professional-grade Basketball Court
 
               </h1>
@@ -132,7 +132,7 @@ const SportAdacemySuccess = () => {
               style={{ opacity: opacity4 }}
               className="w-full h-full flex flex-col justify-center items-end absolute top-0 left-0 pe-[5rem] gap-[1rem] bg-black"
             >
-              <h1 className=" text-[3.5vw] font-inter text-white text-right font-bold ">
+              <h1 className=" text-[3.5vw] font-inter font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] text-right">
               World-class Athletic Ground 
               </h1>
               <p className=" text-[#d0d0d0] text-[16px] font-inter font-semibold text-end w-[80%]">

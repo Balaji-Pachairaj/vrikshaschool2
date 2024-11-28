@@ -1,5 +1,5 @@
 import React from "react";
-import { ClipboardList, UserPlus, GraduationCap } from "lucide-react";
+import { ClipboardList, UserPlus, GraduationCap, ArrowRight } from "lucide-react";
 
 const Admissionoverview = () => {
   return (
@@ -16,7 +16,7 @@ const Admissionoverview = () => {
       <div className="w-full h-fit flex flex-row justify-center">
         <div className="w-fit h-fit border-[1px] rounded-[8px] flex md:flex-row flex-col">
           {/* Enquiry Card */}
-          <div className="md:w-[20vw] w-[80vw] flex-1 md:p-[2rem] p-[1rem] flex flex-col md:gap-[1rem] gap-[0.5rem] md:border-e-[1px] md:border-b-[0px] border-e-[0px] border-b-[1px] border-[white] hover:bg-gray-100 hover:bg-opacity-15 duration-150">
+          <div className="md:w-[20vw] w-[80vw] flex-1 md:p-[2rem] p-[1rem] flex flex-col md:gap-[1rem] gap-[0.5rem] md:border-e-[0px] md:border-b-[0px] border-e-[0px] border-b-[1px] border-[white] hover:bg-gray-100 hover:bg-opacity-15 duration-150">
             <div className="flex justify-center mb-2">
               <ClipboardList className="text-white w-8 h-8" />
             </div>
@@ -25,8 +25,13 @@ const Admissionoverview = () => {
             </h1>
           </div>
 
+          {/* Arrow 1 */}
+          <div className="hidden md:flex items-center">
+            <ArrowRight className="text-white w-10 h-10 stroke-[3]" />
+          </div>
+
           {/* Registration Card */}
-          <div className="md:w-[20vw] w-[80vw] flex-1 md:p-[2rem] p-[1rem] flex flex-col md:gap-[1rem] gap-[0.5rem] md:border-e-[1px] md:border-b-[0px] border-e-[0px] border-b-[1px] border-[white] hover:bg-gray-100 hover:bg-opacity-15 duration-150">
+          <div className="md:w-[20vw] w-[80vw] flex-1 md:p-[2rem] p-[1rem] flex flex-col md:gap-[1rem] gap-[0.5rem] md:border-e-[0px] md:border-b-[0px] border-e-[0px] border-b-[1px] border-[white] hover:bg-gray-100 hover:bg-opacity-15 duration-150">
             <div className="flex justify-center mb-2">
               <UserPlus className="text-white w-8 h-8" />
             </div>
@@ -35,8 +40,13 @@ const Admissionoverview = () => {
             </h1>
           </div>
 
+          {/* Arrow 2 */}
+          <div className="hidden md:flex items-center">
+            <ArrowRight className="text-white w-10 h-10 stroke-[3]" />
+          </div>
+
           {/* Admission Card */}
-          <div className="md:w-[20vw] w-[80vw] flex-1 md:p-[2rem] p-[1rem] flex flex-col md:gap-[1rem] gap-[0.5rem] md:border-e-[1px] md:border-b-[0px] border-e-[0px] border-b-[1px] border-[white] hover:bg-gray-100 hover:bg-opacity-15 duration-150">
+          <div className="md:w-[20vw] w-[80vw] flex-1 md:p-[2rem] p-[1rem] flex flex-col md:gap-[1rem] gap-[0.5rem] md:border-e-[0px] md:border-b-[0px] border-e-[0px] border-b-[1px] border-[white] hover:bg-gray-100 hover:bg-opacity-15 duration-150">
             <div className="flex justify-center mb-2">
               <GraduationCap className="text-white w-8 h-8" />
             </div>

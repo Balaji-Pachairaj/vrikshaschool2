@@ -15,12 +15,10 @@ const SportAcademyAboutUs = () => {
             <img src={png13} className="w-full h-full object-cover" alt="Sports" />
           </div>
           <div className="bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] p-4 md:p-8 flex flex-col justify-between h-[250px] md:h-1/2">
-            <p className="text-sm md:text-base lg:text-lg font-bold font-cabin text-white">
+            <p className="text-sm md:text-base lg:text-xl font-bold font-cabin text-white">
               At our sports academy, we believe in transforming the traditional narrative of sports education. We're not just an academy for athletes; we're a hub where sports meet personal growth, career aspirations, and a lifelong commitment to wellness. Our vision is to redefine sports as a mainstream career path, a tool for holistic development, and a way to inspire an active lifestyle that enriches every aspect of life.
             </p>
-            <button className="font-cabin font-bold text-sm md:text-base px-6 py-3 bg-black text-white w-fit hover:bg-gray-800 transition-colors">
-              ABOUT US
-            </button>
+            
           </div>
         </div>
 

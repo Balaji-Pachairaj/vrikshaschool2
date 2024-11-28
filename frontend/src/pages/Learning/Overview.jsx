@@ -1,6 +1,6 @@
 import React from "react";
 import bg from "../../assets/Learning/backgroundimage.png";
-import overviewImage from "../../assets/Learning/learningOverview.webp";
+import overviewImage from "../../assets/Learning/Overview.png";
 
 import { motion, useAnimation } from "framer-motion";
 
@@ -111,67 +111,10 @@ const Overview = () => {
           </p>
         </div> */}
 
-        <div className=" w-full h-fit flex flex-col justify-center items-center mt-[2.5rem] gap-[2rem] ">
-          <p className=" ps-8 pe-8 md:max-w-[705px] max-w-[580px] font-cabin lg:text-[20px] md:text-[16px] text-[12px]  text-[gray] text-center font-[400] mt-[1rem]">
-            Are you ready to give your child the education and skills to take on
-            the world?
-          </p>
-          <button
-            onMouseEnter={() => {
-              MoreAboutUstext1.start({
-                y: "-20px",
-                transition: {
-                  duration: 0.5,
-                  delay: 0.1,
-                },
-              });
-              MoreAboutUstext2.start({
-                y: "-12px",
-                transition: {
-                  duration: 0.5,
-                  delay: 0.1,
-                },
-              });
-            }}
-            onMouseLeave={() => {
-              MoreAboutUstext1.start({
-                y: "12px",
-                transition: {
-                  duration: 0.5,
-                  delay: 0.1,
-                },
-              });
-              MoreAboutUstext2.start({
-                y: "20px",
-                transition: {
-                  duration: 0.5,
-                  delay: 0.1,
-                },
-              });
-            }}
-            className="w-[170px] h-[50px] bg-[#ffffff21] overflow-hidden rounded-[20px] border-2 border-[white] flex flex-row justify-center items-center  "
-          >
-            <div className=" w-full h-fit pt-0 pb-0 overflow-hidden ">
-              <motion.p
-                initial={{ y: "12px" }}
-                animate={MoreAboutUstext1}
-                className="text-[16x] font-poppins font-[400] text-[white]"
-              >
-                Enroll Now
-              </motion.p>
-              <motion.p
-                initial={{ y: "20px" }}
-                animate={MoreAboutUstext2}
-                className="text-[16x] font-poppins font-[400] text-[white]"
-              >
-                Enroll Now
-              </motion.p>
-            </div>
-          </button>
-        </div>
+       
 
         <div className=" w-full flex flex-row justify-center ">
-          <div className=" w-[80vw] sm:h-[60vh] h-[40vh] sm:mt-[4rem] mt-[1rem]">
+          <div className=" w-[80vw] sm:h-[80vh] h-[40vh] sm:mt-[4rem] mt-[1rem]">
           <img
   src={overviewImage}
   className=" w-full h-full object-contain" // Add the "opacity-70" class to set the opacity to 70%
