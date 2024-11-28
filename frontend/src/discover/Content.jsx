@@ -40,7 +40,7 @@ const Overview = () => {
           </span>
         </h1>
       </div>
-      <div className="relative w-full max-w-5xl mx-auto h-[2000px] md:h-[800px] lg:h-[1050px] overflow-hidden rounded-lg shadow-lg">
+      <div className="relative w-full max-w-5xl mx-auto h-[2500px] md:h-[800px] lg:h-[1050px] overflow-hidden rounded-lg shadow-lg">
         <div className="absolute inset-0">
           <img
             src={img}

@@ -9,8 +9,6 @@ import alumn4 from "../../assets/alumni/18.png"
 import alumn5 from "../../assets/alumni/19.png"
 
 
-
-
 const images = [
   alumn1,
   alumn2,
@@ -35,8 +33,8 @@ const styles = {
   wrapper3d: {
     perspective: '1000px',
     transformStyle: 'preserve-3d',
-    width: '10rem',
-    height: '10rem',
+    width: 'clamp(8rem, 30vw, 10rem)',
+    height: 'clamp(8rem, 30vw, 10rem)',
     position: 'relative',
     transform: 'rotateX(10deg) rotateY(10deg) rotateZ(12deg)'
   },
@@ -49,8 +47,8 @@ const styles = {
   },
   face: {
     position: 'absolute',
-    width: '21rem',
-    height: '21rem',
+    width: 'clamp(16rem, 45vw, 21rem)',
+    height: 'clamp(16rem, 45vw, 21rem)',
     backgroundPosition: '50%',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
@@ -73,7 +71,7 @@ function RotatingCube() {
   }, []);
 
   return (
-    <div className="w-40 h-40">
+    <div className="w-full h-full flex items-center justify-center">
       <div style={styles.wrapper3d}>
         <motion.div animate={controls} style={styles.part3d}>
           {images.map((imageUrl, index) => (
@@ -105,7 +103,7 @@ function Hero() {
               transition={{ delay: 0.2 }}
               className="text-4xl md:text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]"
             >
-            Unlock New Opportunities
+              Unlock New Opportunities
             </motion.h1>
 
             <motion.p
@@ -113,12 +111,13 @@ function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
               className="text-gray-400 text-lg mb-12 max-w-md"
-            >Our alumni network opens doors to valuable placement opportunities, mentorship, upskilling programs, and career-oriented support, helping you advance professionally and succeed in your chosen field.
+            >
+              Our alumni network opens doors to valuable placement opportunities, mentorship, upskilling programs, and career-oriented support, helping you advance professionally and succeed in your chosen field.
             </motion.p>
           </div>
         </div>
 
-        <div className="relative flex items-center justify-center">
+        <div className="relative flex items-center justify-center p-8 md:p-0 h-[50vh] md:h-auto">
           <div className="absolute">
             <RotatingCube />
           </div>
@@ -129,4 +128,3 @@ function Hero() {
 }
 
 export default Hero;
-

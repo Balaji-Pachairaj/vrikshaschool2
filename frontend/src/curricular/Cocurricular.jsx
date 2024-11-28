@@ -95,7 +95,7 @@ const PortfolioGrid = () => {
         ))}
         
         {/* Container for the last two items - centered */}
-        <div className="md:col-span-3 flex justify-center gap-6">
+        <div className="md:col-span-3 flex flex-col md:flex-row justify-center gap-6">
           {portfolioItems.slice(3).map((item) => (
             <div
               key={item.id}

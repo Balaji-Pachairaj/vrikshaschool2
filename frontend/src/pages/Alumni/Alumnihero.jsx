@@ -50,8 +50,21 @@ const Hero = () => {
 
     const setupScene = async () => {
       const materials = await createMaterials();
-      const cube = new THREE.Mesh(new THREE.BoxGeometry(15, 15, 15), materials);
+      
+      // Calculate cube size based on screen width
+      const getCubeSize = () => window.innerWidth < 768 ? 8 : 15;
+      const cube = new THREE.Mesh(new THREE.BoxGeometry(getCubeSize(), getCubeSize(), getCubeSize()), materials);
       scene.add(cube);
+
+      // Handle window resize
+      window.addEventListener('resize', () => {
+        const newSize = getCubeSize();
+        cube.geometry.dispose();
+        cube.geometry = new THREE.BoxGeometry(newSize, newSize, newSize);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+      });
 
       const ambientLight = new THREE.AmbientLight(0xffffff, 1);
       scene.add(ambientLight);
@@ -153,7 +166,7 @@ const Hero = () => {
       <div className="absolute w-full text-center z-0">
         <marquee className="text-white text-8xl font-bold" scrollamount="10">
           
-          Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to
+          Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to
         </marquee>
       </div>
       <div className="w-full h-full z-10 relative" ref={cubeRef} aria-hidden="true"></div>

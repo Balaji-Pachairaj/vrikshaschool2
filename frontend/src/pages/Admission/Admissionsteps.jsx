@@ -47,22 +47,22 @@ const SportAcademySuccess = () => {
 
   return (
     <div ref={fullRef} className="w-full h-[500vh] flex flex-row">
-      <div className="w-full h-[100vh] flex flex-row sticky top-0">
+      <div className="w-full h-[100vh] flex flex-col md:flex-row sticky top-0">
         {/* Scrollable Left Side */}
-        <div className="w-[50%] h-full relative overflow-hidden bg-black">
+        <div className="w-full md:w-[50%] h-full relative overflow-hidden bg-black">
           {steps.map((step, index) => (
             <motion.div
               key={step.title}
               style={{ opacity: animations[index].opacity, y: animations[index].y }}
-              className="w-full h-full absolute left-0 flex items-center justify-center"
+              className="w-full h-full absolute left-0 flex items-center justify-center px-4"
             >
-              <h2 className="text-white text-[2vw] font-inter text-center px-4 font-bold">{step.title}</h2>
+              <h2 className="text-white text-[20px] md:text-[2vw] font-inter text-center font-bold">{step.title}</h2>
             </motion.div>
           ))}
         </div>
 
         {/* Timeline */}
-        <div className="w-[1px] h-full relative bg-white">
+        <div className="hidden md:block w-[1px] h-full relative bg-white">
           <motion.div 
             className="absolute bottom-0 left-0 w-full bg-white"
             style={{ 
@@ -83,23 +83,45 @@ const SportAcademySuccess = () => {
           </motion.div>
         </div>
 
+        {/* Mobile Timeline */}
+        <div className="md:hidden w-full h-[2px] bg-white relative my-4">
+          <motion.div 
+            className="absolute left-0 top-0 h-full bg-white"
+            style={{ 
+              width: lineHeight,
+              originX: 0
+            }}
+          />
+          <motion.div 
+            className="absolute top-1/2 -translate-y-1/2 z-10"
+            style={{ left: circleY }}
+          >
+            <div className="relative flex items-center">
+              <div className="h-[1px] w-8 bg-white" />
+              <div className="w-4 h-4 rounded-full border-2 border-white flex items-center justify-center">
+                <div className="w-1.5 h-1.5 rounded-full bg-white" />
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
         {/* Static Right Side */}
-        <div className="w-[50%] h-full bg-black flex flex-col justify-center items-start ps-[4rem] gap-[2rem]">
-          <div className="text-white">
-            <h2 className="text-[2vw] font-inter font-bold mb-4">
+        <div className="w-full md:w-[50%] h-full bg-black flex flex-col justify-center items-start p-6 md:ps-[4rem] gap-[2rem]">
+          <div className="text-white w-full">
+            <h2 className="text-[24px] md:text-[2vw] font-inter font-bold mb-4">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
                 Admission Process
               </span>
             </h2>
             <div className="mb-6">
-              <h3 className="text-[1.5vw] font-inter font-semibold mb-2">Online</h3>
-              <p className="text-[#d0d0d0] text-[16px] font-inter font-light">
+              <h3 className="text-[20px] md:text-[1.5vw] font-inter font-semibold mb-2">Online</h3>
+              <p className="text-[#d0d0d0] text-[14px] md:text-[16px] font-inter font-light">
                 Submit the online Enquiry Form from via this link. Our admission in charge will get back to you to answer your questions and collect the required information.
               </p>
             </div>
             <div>
-              <h3 className="text-[1.5vw] font-inter font-semibold mb-2">On Campus</h3>
-              <p className="text-[#d0d0d0] text-[16px] font-inter font-light">
+              <h3 className="text-[20px] md:text-[1.5vw] font-inter font-semibold mb-2">On Campus</h3>
+              <p className="text-[#d0d0d0] text-[14px] md:text-[16px] font-inter font-light">
                 Visit the school admissions office and submit the Enquiry Form. Our admission in charge will clear all your queries and will give complete description about the functioning of the school curriculum. Parents / Guardians are invited to visit the school campus to understand the culture and ethos of the Institution.
               </p>
             </div>

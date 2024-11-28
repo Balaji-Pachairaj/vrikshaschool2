@@ -75,7 +75,14 @@ const Hero = () => {
       }), // left
     ];
 
-    const cube = new THREE.Mesh(new THREE.BoxGeometry(15, 15, 15), materials);
+    const getCubeSize = () => {
+      return window.innerWidth <= 768 ? 10 : 15; // Increased mobile size from 8 to 10
+    };
+
+    const cube = new THREE.Mesh(
+      new THREE.BoxGeometry(getCubeSize(), getCubeSize(), getCubeSize()),
+      materials
+    );
     scene.add(cube);
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 1);

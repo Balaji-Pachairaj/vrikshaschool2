@@ -32,15 +32,15 @@ const ContactSection = () => {
               strokeLinejoin="round"
             />
           </svg>
-          <span className="text-base tracking-wider">GET IN TOUCH</span>
+          <span className="text-base md:text-lg tracking-wider">GET IN TOUCH</span>
         </div>
 
         {/* Main heading */}
         <div className="text-center transform -rotate-x-32">
-          <h1 className="text-white text-8xl md:text-9xl font-bold mb-4">
+          <h1 className="text-white text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-4">
             REGISTER
           </h1>
-          <h1 className="text-8xl md:text-9xl font-bold text-transparent" style={{
+          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-transparent" style={{
             WebkitTextStroke: '1px white',
           }}>
             TODAY
@@ -53,7 +53,7 @@ const ContactSection = () => {
             onClick={handleContactClick}
             className="group flex items-center gap-4 text-white border border-white/20 rounded-full px-6 py-3 hover:bg-white hover:text-black transition-all duration-300"
           >
-            <span className="text-xl">CONTACT</span>
+            <span className="text-xl md:text-2xl">CONTACT</span>
             <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center group-hover:bg-black">
               <ArrowUpRight className="w-4 h-4 text-black group-hover:text-white" />
             </div>

@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 
-
 import png1 from "../../assets/sportsacademy/1.png";
 
 const Com = ({ title, body, state = "0", onClick = () => { } }) => {
   return (
     <>
       <div
-        className="w-full md:h-[13%] h-[70px] flex flex-row justify-between items-center cursor-pointer hover:bg-white/5 transition-all duration-300 px-2 rounded-lg"
+        className="w-full md:h-[13%] min-h-[70px] py-3 flex flex-row justify-between items-center cursor-pointer hover:bg-white/5 transition-all duration-300 px-4 rounded-lg"
         onClick={onClick}
       >
-        <h1 className="lg:text-[22px] md:text-[16px] text-[18px] font-kanit text-[white] font-[500] transition-all duration-300">
+        <h1 className="lg:text-[22px] md:text-[16px] text-[16px] font-kanit text-[white] font-[500] transition-all duration-300 flex-1 pe-4">
           {title}
         </h1>
         <button
@@ -28,7 +27,7 @@ const Com = ({ title, body, state = "0", onClick = () => { } }) => {
           transform: state === "1" ? 'translateY(0)' : 'translateY(-20px)'
         }}
       >
-        <div className="w-full h-fit pb-[0.5rem] text-[#d0d0d0] lg:text-[16px] text-[12px] px-2">
+        <div className="w-full h-fit pb-[1rem] text-[#d0d0d0] lg:text-[16px] md:text-[14px] text-[14px] px-4 leading-relaxed">
           {body}
         </div>
       </div>
@@ -71,19 +70,18 @@ const SportAcademyFAQ = () => {
   };
 
   return (
-    <div className="w-full min-h-screen pb-[10rem]">
+    <div className="w-full min-h-screen pb-[5rem] md:pb-[10rem]">
 
-      <h1 className="ps-[2vw] md:text-[6vw] text-[24px] font-bold uppercase mb-[2rem] animate-slideIn">
+      <h1 className="md:ps-[2vw] ps-0 md:text-[6vw] text-[32px] font-bold uppercase mb-[2rem] animate-slideIn md:text-left text-center">
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
           Have a question?
         </span>
-
       </h1>
 
-      <div className="w-full md:h-[90vh] h-fit md:mt-0 mt-[3rem] flex md:flex-row flex-col-reverse gap-y-[4rem] justify-center duration-500">
-        <div className="md:w-[40%] w-fill h-full flex flex-row justify-center items-center">
+      <div className="w-full md:h-[90vh] h-fit md:mt-0 mt-[2rem] flex md:flex-row flex-col-reverse gap-y-[2rem] justify-center duration-500">
+        <div className="md:w-[40%] w-full h-full flex flex-row justify-center items-center px-4 md:px-0">
           <div
-            className="w-[80%] md:h-[80%] h-[50vh] rounded-[20px] overflow-hidden transform transition-all duration-500 hover:scale-105"
+            className="w-full md:w-[80%] h-[300px] md:h-[80%] rounded-[20px] overflow-hidden transform transition-all duration-500 hover:scale-105"
           >
             <img
               src={png1}
@@ -94,7 +92,7 @@ const SportAcademyFAQ = () => {
         </div>
 
         <div className="md:w-[60%] w-full md:h-[90vh] h-fit flex ms:flex-row flex-col justify-center items-center">
-          <div className="md:w-[90%] w-full md:ps-0 ps-[5px] md:h-[90%] h-fit space-y-2">
+          <div className="md:w-[90%] w-full px-4 md:ps-0 h-fit space-y-3 md:space-y-2">
             {faqContent.map((item, index) => (
               <div
                 key={index}

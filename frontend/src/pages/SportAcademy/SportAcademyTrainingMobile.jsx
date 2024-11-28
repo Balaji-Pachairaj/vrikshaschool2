@@ -1,51 +1,63 @@
 import React from "react";
 import overviewImage from "../../assets/Learning/training.png";
 
-const Com = ({ title = "", text = "", index }) => {
-  return (
-    <div className=" w-full h-[10rem] flex flex-col gap-[0rem] justify-center ps-[3rem] border-b-[1px] border-[#3b3b3b]">
-      <p className="  text-[42px] font-inter font-bold text-[#c7f849]">
-        {index}
-      </p>
+const content = [
+  { title: "World-Class Facilities" },
+  { title: "Expert Mentorship" },
+  { title: "Performance Analytics" },
+  { title: "Skill-Based Training" },
+  { title: "Active Lifestyle Advocacy" },
+  { title: "Discipline and Resilience Building" },
+];
 
-      <h1 className=" text-[22px] text-white font-inter  font-bold ">
-        {title}
+const Com = ({ content }) => {
+  return (
+    <div className="w-full h-full flex flex-col justify-start p-4 gap-2">
+      <h1 className="text-xl sm:text-2xl text-white font-inter font-bold">
+        {content?.title}
       </h1>
-      <p className=" text-[20px] text-[#666] font-inter">{text}</p>
+      <p className="text-lg sm:text-xl text-gray-400 font-inter">
+        {content?.text}
+      </p>
     </div>
   );
 };
-
-const content = [
-  { title: "INTRODUCTION", text: "Who are we" },
-  { title: "INTRODUCTION", text: "Who are we" },
-  { title: "INTRODUCTION", text: "Who are we" },
-  { title: "INTRODUCTION", text: "Who are we" },
-  { title: "INTRODUCTION", text: "Who are we" },
-  { title: "INTRODUCTION", text: "Who are we" },
-];
 
 const SportAcademyTrainingMobile = () => {
   return (
     <div
       style={{ backgroundImage: `url(${overviewImage})` }}
-      className=" w-full h-fit pb-[10vh]  relative bg-[url('../../assets/Learning/learningOverview.webp')] bg-cover bg-center flex flex-col items-center justify-center "
+      className="w-full min-h-screen bg-cover bg-center pb-10"
     >
-      <div className=" w-[90%] h-fit border-[1px] border-[#3b3b3b]">
-        <div className=" w-full h-[7rem]  border-b-[1px] border-[#3b3b3b]">
-          <div className=" w-full h-full flex flex-col justify-center ps-[2rem] pe-[2rem] pb-[0rem] lg:gap-[3rem] gap-[1rem] ">
-            <h1 className=" font-inter lg:text-[3.5vw]  text-[2rem] font-semibold  text-white">
-            Why Us 
-            </h1>
+      <div className="w-full py-8 border-t border-b border-gray-700">
+        <div className="px-6">
+          <h1 className="font-inter text-4xl font-semibold mb-4">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-500 to-cyan-400">
+              Why us
+            </span>
+          </h1>
+          
+        </div>
+      </div>
+
+      {content.map((item, index) => (
+        <div
+          key={index}
+          className="w-full border-b border-gray-700 py-6 px-6 relative"
+        >
+          <div className="absolute w-2 h-2 bg-emerald-400 rounded-sm top-0 left-0 transform -translate-x-1 -translate-y-1" />
+          <div className="absolute w-2 h-2 bg-emerald-400 rounded-sm bottom-0 left-0 transform -translate-x-1 translate-y-1" />
+          
+          <div className="flex flex-col gap-4">
+            <div className="text-5xl font-inter font-bold">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-500 to-cyan-400">
+                {index + 1}
+              </span>
+            </div>
+            <Com content={item} />
           </div>
         </div>
-
-        {content?.map((item, index) => {
-          return (
-            <Com title={item?.title} text={item?.text} index={index + 1} />
-          );
-        })}
-      </div>
+      ))}
     </div>
   );
 };

@@ -110,75 +110,75 @@ const Marathongoodies = () => {
           {/* -------------------------------- */}
           <motion.div
             style={{ opacity: opacity1 }}
-            className="z-[10] w-[30vw] h-[67vh] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] rounded-[15px] overflow-hidden"
+            className="z-[10] w-[85vw] md:w-[30vw] h-[40vh] md:h-[67vh] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] rounded-[15px] overflow-hidden"
           >
             <img src={bag} className="w-full h-full object-cover" alt="Medal" />
           </motion.div>
           <motion.div
             style={{ top: top1 }}
-            className="w-[30%] h-fit absolute top-[50%] -translate-y-[50%] left-0 flex flex-col items-center ps-[5vw] gap-[2rem]"
+            className="w-full md:w-[30%] h-fit absolute top-[50%] -translate-y-[50%] left-0 flex flex-col items-center px-4 md:ps-[5vw] gap-[2rem]"
           >
-            <h1 className="text-[3.3vw] leading-[3.5vw] font-inter font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
+            <h1 className="text-[8vw] md:text-[3.3vw] font-bold tracking-wide text-white md:text-transparent md:bg-clip-text md:bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] drop-shadow-lg md:drop-shadow-none">
             Bag
             </h1>
           </motion.div>
           {/* -------------------------------- */}
           <motion.div
             style={{ opacity: opacity2 }}
-            className="z-[9] w-[30vw] h-[67vh] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] rounded-[15px] overflow-hidden"
+            className="z-[9] w-[85vw] md:w-[30vw] h-[40vh] md:h-[67vh] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] rounded-[15px] overflow-hidden"
           >
             <img src={cap} className="w-full h-full object-cover" alt="Bag" />
           </motion.div>
           <motion.div
             style={{ top: top2 }}
-            className="w-[30%] h-fit absolute top-[50%] -translate-y-[50%] right-0 flex flex-col items-center ps-[0vw] pe-[5vh] gap-[2rem]"
+            className="w-full md:w-[30%] h-fit absolute top-[50%] -translate-y-[50%] right-0 flex flex-col items-center px-4 md:pe-[5vh] gap-[2rem]"
           >
-            <h1 className="text-[3.3vw] leading-[3.5vw] font-inter font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
+            <h1 className="text-[8vw] md:text-[3.3vw] font-bold tracking-wide text-white md:text-transparent md:bg-clip-text md:bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] drop-shadow-lg md:drop-shadow-none">
             Cap
             </h1>
           </motion.div>
           {/* -------------------------------- */}
           <motion.div
             style={{ opacity: opacity3 }}
-            className="z-[8] w-[30vw] h-[67vh] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] rounded-[15px] overflow-hidden"
+            className="z-[8] w-[85vw] md:w-[30vw] h-[40vh] md:h-[67vh] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] rounded-[15px] overflow-hidden"
           >
             <img src={tshirt} className="w-full h-full object-cover" alt="Cap" />
           </motion.div>
           <motion.div
             style={{ top: top3 }}
-            className="w-[30%] h-fit absolute top-[50%] -translate-y-[50%] left-0 flex flex-col items-center ps-[5vw] gap-[2rem]"
+            className="w-full md:w-[30%] h-fit absolute top-[50%] -translate-y-[50%] left-0 flex flex-col items-center px-4 md:ps-[5vw] gap-[2rem]"
           >
-            <h1 className="text-[3.3vw] leading-[3.5vw] font-inter font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
+            <h1 className="text-[8vw] md:text-[3.3vw] font-bold tracking-wide text-white md:text-transparent md:bg-clip-text md:bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] drop-shadow-lg md:drop-shadow-none">
             T-shirt
             </h1>
           </motion.div>
           {/* -------------------------------- */}
           <motion.div
             style={{ opacity: opacity4 }}
-            className="z-[7] w-[30vw] h-[67vh] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] rounded-[15px] overflow-hidden"
+            className="z-[7] w-[85vw] md:w-[30vw] h-[40vh] md:h-[67vh] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] rounded-[15px] overflow-hidden"
           >
             <img src={certificate} className="w-full h-full object-cover" alt="T-shirt" />
           </motion.div>
           <motion.div
             style={{ top: top4 }}
-            className="w-[30%] h-fit absolute top-[50%] -translate-y-[50%] right-0 flex flex-col items-center ps-[0vw] pe-[5vh] gap-[2rem]"
+            className="w-full md:w-[30%] h-fit absolute top-[50%] -translate-y-[50%] right-0 flex flex-col items-center px-4 md:pe-[5vh] gap-[2rem]"
           >
-            <h1 className="text-[3.3vw] leading-[3.5vw] font-inter font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
+            <h1 className="text-[8vw] md:text-[3.3vw] font-bold tracking-wide text-white md:text-transparent md:bg-clip-text md:bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] drop-shadow-lg md:drop-shadow-none">
             Certificate
             </h1>
           </motion.div>
           {/* -------------------------------- */}
           <motion.div
             style={{ opacity: opacity5 }}
-            className="z-[6] w-[30vw] h-[67vh] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] rounded-[15px] overflow-hidden"
+            className="z-[6] w-[85vw] md:w-[30vw] h-[40vh] md:h-[67vh] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] rounded-[15px] overflow-hidden"
           >
             <img src={medal} className="w-full h-full object-cover" alt="Certificate" />
           </motion.div>
           <motion.div
             style={{ top: top5 }}
-            className="w-[30%] h-fit absolute top-[50%] -translate-y-[50%] left-0 flex flex-col items-center ps-[5vw] gap-[2rem]"
+            className="w-full md:w-[30%] h-fit absolute top-[50%] -translate-y-[50%] left-0 flex flex-col items-center px-4 md:ps-[5vw] gap-[2rem]"
           >
-            <h1 className="text-[3.3vw] leading-[3.5vw] font-inter font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
+            <h1 className="text-[8vw] md:text-[3.3vw] font-bold tracking-wide text-white md:text-transparent md:bg-clip-text md:bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] drop-shadow-lg md:drop-shadow-none">
             Medal
             </h1>
           </motion.div>

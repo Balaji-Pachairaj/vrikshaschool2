@@ -17,13 +17,13 @@ const HeroSection = () => {
       >
         {/* Heading Content - Positioned behind image */}
         <div 
-          className="absolute top-0 left-0 right-0 z-0 text-center pt-32"
+          className="absolute top-0 left-0 right-0 z-0 text-center pt-16 sm:pt-32"
         >
           <motion.h1 
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-6xl md:text-8xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] mb-8"
+            className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] mb-4 sm:mb-8 px-4"
           >
             Give Back and <br/> Make an Impact
           </motion.h1>
@@ -48,7 +48,7 @@ const HeroSection = () => {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
               transition={{ duration: 0.8 }}
-              className="w-full h-[600px] md:h-[900px]"
+              className="w-full h-[400px] sm:h-[600px] md:h-[900px]"
             >
               <img 
                 src={all}
@@ -59,19 +59,19 @@ const HeroSection = () => {
 
             {/* Bottom Centered Text Box */}
             <div
-              className="absolute -bottom-20 left-0 right-0 mx-auto w-full flex justify-center"
+              className="absolute -bottom-16 sm:-bottom-20 left-0 right-0 mx-auto w-full flex justify-center px-4"
             >
               <motion.div 
                 initial={{ y: 100, opacity: 0 }}
                 animate={isInView ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="bg-gradient-to-r from-blue-500 to-purple-600 p-8 md:p-10 rounded-xl shadow-lg border border-white/10 max-w-3xl w-[90%]"
+                className="bg-gradient-to-r from-blue-500 to-purple-600 p-6 sm:p-8 md:p-10 rounded-xl shadow-lg border border-white/10 max-w-3xl w-[95%] sm:w-[90%]"
               >
                 <motion.p 
                   initial={{ opacity: 0 }}
                   animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.4, delay: 0.8 }}
-                  className="text-xl text-white font-medium leading-relaxed text-center"
+                  className="text-base sm:text-xl text-white font-medium leading-relaxed text-center"
                 >
                   Use your experience and expertise to mentor, inspire, and support the next generation of students and alumni.
                 </motion.p>

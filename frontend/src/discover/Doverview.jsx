@@ -2,13 +2,7 @@ import React from "react";
 
 const Component = ({
   content = {
-    title: "Art & Craft",
-    body: "Nurturing creativity and artistic expression through various mediums",
-    boxbg: "#000000",
-    bg: "#1a1a1a",
-    text: "white",
-    textHover: "#ff643d",
-    bodytext: "white",
+    
   },
 }) => {
   return (
@@ -21,15 +15,14 @@ const Component = ({
         className="w-full h-full flex flex-col justify-start gap-[1.5rem] p-6 rounded-[8px] hover:rotate-6 duration-300"
       >
         <h1
-                    style={{ color: content?.text, background: `linear-gradient(to right, #7c2ae8, #00c4cc)`, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
-
-          className="w-full font-[500] text-xl md:text-2xl uppercase hover:text-[#ff643d] duration-300"
+          style={{ color: content?.text, background: `linear-gradient(to right, #7c2ae8, #00c4cc)`, backgroundClip: 'text', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+          className="w-full font-[500] text-2xl md:text-2xl uppercase duration-300"
         >
           {content?.title}
         </h1>
-        <p
+        <p 
           style={{ color: content?.bodytext }}
-          className="font-[300] font-poppins text-sm md:text-base"
+          className="font-[300] font-poppins text-base md:text-base"
         >
           {content?.body}
         </p>
@@ -102,17 +95,17 @@ const array = [
     text: "white",
     textHover: "#ff643d",
   },
-
+  
 ];
 
 const Cooverview = () => {
   return (
     <div className="w-full min-h-screen bg-black pt-[7.5vh] pb-[2rem]">
       <div className="w-full h-fit flex flex-col items-center mb-[2vh] mt-[3vh]">
-        <h1 className="font-cabin xl:text-[4vw] lg:text-[4.5vw] md:text-[5vw] sm:text-[6vw] text-[6.5vw] text-[white] text-center font-[600]">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
-            Overview
-          </span>
+        <h1 className="font-cabin xl:text-[4vw] lg:text-[4.5vw] md:text-[5vw] sm:text-[6vw] text-[7vw] text-[white] text-center font-[600]">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
+          Overview
+                </span>
         </h1>
       </div>
       <div className="container mx-auto px-4">
