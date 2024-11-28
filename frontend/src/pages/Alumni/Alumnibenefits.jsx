@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
-import { BarChart3, Link, FileText, Package } from 'lucide-react';
+import { Briefcase, Users, GraduationCap, Gift } from 'lucide-react';
 
 const BenefitCard = ({ title, description, icon: Icon, index }) => {
   const controls = useAnimation();
@@ -43,7 +43,7 @@ const BenefitCard = ({ title, description, icon: Icon, index }) => {
       animate={controls}
       className="bg-zinc-900 rounded-3xl p-8 h-full"
     >
-      <Icon className="w-12 h-12 mb-6 text-blue-500" />
+      <Icon className="w-12 h-12 mb-6 stroke-[#7c2ae8] stroke-2" strokeLinecap="round" strokeLinejoin="round" />
       <h2 className="text-2xl font-bold mb-4">{title}</h2>
       <p className="text-gray-400 text-lg">
         {description}
@@ -54,24 +54,24 @@ const BenefitCard = ({ title, description, icon: Icon, index }) => {
 
 const benefitsData = [
   {
-    title: 'INTEGRATIONS',
-    description: 'Seamlessly connect with your favorite tools for a unified workflow.',
-    icon: Link,
+    title: 'CAREER RESOURCES',
+    description: 'Access exclusive job boards, career counseling, and professional development workshops.',
+    icon: Briefcase,
   },
   {
-    title: 'ANALYTICS',
-    description: 'Gain actionable insights with powerful data analysis capabilities.',
-    icon: BarChart3,
+    title: 'NETWORKING',
+    description: 'Connect with fellow alumni through events, mentorship programs, and online communities.',
+    icon: Users,
   },
   {
-    title: 'REPORTS',
-    description: 'Generate detailed reports to track performance and make informed decisions.',
-    icon: FileText,
+    title: 'LEARNING ACCESS',
+    description: 'Lifetime access to library resources, online courses, and continuing education programs.',
+    icon: GraduationCap,
   },
   {
-    title: 'ALL-IN-ONE',
-    description: 'Access all essential growth tools in one comprehensive platform.',
-    icon: Package,
+    title: 'SPECIAL PERKS',
+    description: 'Enjoy exclusive discounts on campus facilities, events, and partner organization services.',
+    icon: Gift,
   },
 ];
 

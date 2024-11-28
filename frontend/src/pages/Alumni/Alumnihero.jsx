@@ -73,12 +73,12 @@ const Hero = () => {
 
       let currentSequence = 0;
       let animationTime = 0;  
-      const ROTATION_INTERVAL = 10; // Slightly faster total rotation cycle
+      const ROTATION_INTERVAL = 3; // 3 second total rotation cycle
       const ZOOM_IN_START = 0;
-      const ZOOM_IN_DURATION = 3; // Faster zoom in
-      const ZOOM_OUT_START = 3;
-      const ZOOM_OUT_DURATION = 3; // Faster zoom out
-      const ROTATION_START = 6; // Start rotation sooner
+      const ZOOM_IN_DURATION = 0.5; // Faster initial zoom in
+      const ZOOM_OUT_START = 0.5;
+      const ZOOM_OUT_DURATION = 0.5; // Faster zoom out
+      const ROTATION_START = 1; // Earlier rotation start
       const INITIAL_SCALE = 1;
       const ZOOMED_SCALE = 1.3;
 
@@ -153,7 +153,7 @@ const Hero = () => {
       <div className="absolute w-full text-center z-0">
         <marquee className="text-white text-8xl font-bold" scrollamount="10">
           
-          Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to
+          Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to
         </marquee>
       </div>
       <div className="w-full h-full z-10 relative" ref={cubeRef} aria-hidden="true"></div>

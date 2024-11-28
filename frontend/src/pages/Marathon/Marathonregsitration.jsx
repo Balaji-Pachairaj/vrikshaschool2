@@ -1,6 +1,13 @@
 import { ArrowUpRight } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
 const ContactSection = () => {
+  const navigate = useNavigate();
+
+  const handleContactClick = () => {
+    navigate('/contact');
+  };
+
   return (
     <div className="min-h-screen bg-black overflow-hidden">
       <div 
@@ -42,7 +49,10 @@ const ContactSection = () => {
 
         {/* Contact button */}
         <div className="mt-6 transform -rotate-x-32">
-          <button className="group flex items-center gap-4 text-white border border-white/20 rounded-full px-6 py-3 hover:bg-white hover:text-black transition-all duration-300">
+          <button 
+            onClick={handleContactClick}
+            className="group flex items-center gap-4 text-white border border-white/20 rounded-full px-6 py-3 hover:bg-white hover:text-black transition-all duration-300"
+          >
             <span className="text-xl">CONTACT</span>
             <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center group-hover:bg-black">
               <ArrowUpRight className="w-4 h-4 text-black group-hover:text-white" />
@@ -55,5 +65,3 @@ const ContactSection = () => {
 }
 
 export default ContactSection
-
-        

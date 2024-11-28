@@ -88,9 +88,9 @@ const Hero = () => {
     camera.position.z = 25;
 
     const sequences = [
-      { rotationX: 0, rotationY: 0, duration: 4 },
-      { rotationX: 0, rotationY: Math.PI / 2, duration: 4 },
-      { rotationX: Math.PI / 4, rotationY: Math.PI / 4, duration: 4 },
+      { rotationX: 0, rotationY: 0, duration: 2.72 },
+      { rotationX: 0, rotationY: Math.PI / 2, duration: 2.72 },
+      { rotationX: Math.PI / 4, rotationY: Math.PI / 4, duration: 2.72 },
     ];
 
     let currentSequence = 0;
@@ -99,7 +99,7 @@ const Hero = () => {
     const animate = () => {
       requestAnimationFrame(animate);
 
-      sequenceTime += 0.008;
+      sequenceTime += 0.012;
 
       if (sequenceTime >= sequences[currentSequence].duration) {
         sequenceTime = 0;
