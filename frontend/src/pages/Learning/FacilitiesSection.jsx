@@ -3,7 +3,6 @@ import Facilities from "./Facilities";
 import FacilitiesMobile from "./FacilitiesMobile";
 import { useMediaQuery } from "react-responsive";
 
-
 import junior from "../../assets/Learning/JuniorImage.webp";
 
 const FacilitiesSection = () => {
@@ -14,21 +13,21 @@ const FacilitiesSection = () => {
         <div className="flex flex-col md:flex-row items-center justify-between max-w-[90%] mx-auto gap-8">
           {/* Content Section - Left Side */}
           <div className="md:w-1/2">
-            <h1 className="font-cabin xl:text-[4vw] lg:text-[4.5vw] md:text-[5vw] sm:text-[6vw] text-[6.5vw] text-[white] font-[600]">
+            <h1 className="font-cabin xl:text-[4.5vw] lg:text-[5vw] md:text-[5.5vw] sm:text-[7vw] text-[9.5vw] text-[white] font-[600]">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
                 Vriksha Junior
               </span>
             </h1>
-            <p className="font-cabin lg:text-[20px] md:text-[16px] text-[12px] text-[white] font-[400] mt-[1rem]">
+            <p className="font-cabin lg:text-[20px] md:text-[16px] text-[16px] text-[white] font-[400] mt-[1rem]">
               Admission is given for children between 2 to 6 years of age.
             </p>
-            <p className="font-cabin lg:text-[20px] md:text-[16px] text-[12px] text-[white] font-[400] mt-[1rem]">
+            <p className="font-cabin lg:text-[20px] md:text-[16px] text-[16px] text-[white] font-[400] mt-[1rem]">
               Unique 'Kiducation' to promote physical, emotional, social, emotional,
               language and intellectual development in the child. Setting the right
               foundation, we unfold your child's conceptual, cognitive, motor,
               creative, & language skills.
             </p>
-            <p className="font-cabin lg:text-[20px] md:text-[16px] text-[12px] text-[white] font-[400] mt-[1rem]">
+            <p className="font-cabin lg:text-[20px] md:text-[16px] text-[16px] text-[white] font-[400] mt-[1rem]">
               We follow a teaching methodology based on Play Way, Montessori &
               Reggio Emilia models with a teacher-student ratio of 1:15. Active
               parental involvement is always encouraged in our school.

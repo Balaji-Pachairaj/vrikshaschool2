@@ -41,7 +41,7 @@ const VKadvantage = () => {
   return (
     <div className="w-full bg-black relative">
       <div className="container mx-auto px-2 py-16 relative">
-        <h1 className="text-6xl font-bold py-8 text-white mb-16 text-center">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold py-4 md:py-8 text-white mb-8 md:mb-16 text-center">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
             The Vriksha Advantage
           </span>
@@ -68,21 +68,21 @@ const VKadvantage = () => {
             imgSrc: four,
           },
         ].map((project, index) => (
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-32" key={index}>
-            <div className="md:w-1/2 project-container">
-              <h2 className="text-8xl font-normal heading-animate font-panchang transition-all duration-1000 ease-in-out opacity-80 transform translate-y-5">
+          <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-4 md:gap-8 mb-16 md:mb-32" key={index}>
+            <div className="w-[90%] md:w-1/2 project-container px-4 md:px-0 mt-6 md:mt-0">
+              <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal heading-animate font-panchang transition-all duration-1000 ease-in-out opacity-80 transform translate-y-5">
                 <div className="transform-3d">
                   <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] uppercase tracking-tight">{project.title}</span>
                 </div>
               </h2>
-              <p className="text-sm mt-6 text-gray-300">{project.description}</p>
+              <p className="text-sm md:text-base mt-4 md:mt-6 text-gray-300">{project.description}</p>
             </div>
-            <div className="md:w-[500px]">
+            <div className="w-[90%] md:w-1/2">
               <div className="rounded-lg overflow-hidden shadow-lg image-container group">
                 <img
                   src={project.imgSrc}
                   alt={project.title}
-                  className="w-full h-[350px] object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                  className="w-full h-[250px] md:h-[350px] object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
                 />
               </div>
             </div>
@@ -176,7 +176,18 @@ const VKadvantage = () => {
 
         @media (max-width: 768px) {
           .project-container {
-            transform: perspective(810px) rotateX(0) rotateY(15deg) rotateZ(0);
+            transform: none !important;
+            transform-style: flat !important;
+            perspective: none !important;
+          }
+          .transform-3d span {
+            text-shadow: none;
+            transform: none;
+            left: 0;
+          }
+          .transform-3d span:hover {
+            left: 0;
+            transform: none;
           }
         }
       `}</style>

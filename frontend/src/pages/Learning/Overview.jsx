@@ -22,15 +22,15 @@ const Overview = () => {
             <h1 className=" font-poppins lg:text-[26px] md:text-[18px] text-[24px] text-[white] font-[600] text-center ">
               Overview
             </h1>
-            <p className=" lg:text-[16px] md:text-[14px] text-[12px] text-[#fbfbfb]">
+            <p className=" lg:text-[16px] md:text-[14px] text-[14px] text-[#fbfbfb]">
               The School is affiliated to the Central Board of Secondary
               Education (CBSE).
             </p>
-            <p className=" lg:text-[16px] md:text-[14px] text-[12px] text-[#fbfbfb]">
+            <p className=" lg:text-[16px] md:text-[14px] text-[14px] text-[#fbfbfb]">
               We encourage independence in our students to develop individual
               interests and be passionate about what they wish to do.
             </p>
-            <p className=" lg:text-[16px] md:text-[14px] text-[12px] text-[#fbfbfb]">
+            <p className=" lg:text-[16px] md:text-[14px] text-[14px] text-[#fbfbfb]">
               Students are made to feel connected to everything that goes on in
               the world- through projects, curriculum related activities like
               excursions, workshops, lectures, seminars, films and national and
@@ -43,19 +43,19 @@ const Overview = () => {
             <h1 className=" font-poppins lg:text-[26px] md:text-[18px] text-[24px] text-[white] font-[600] text-center ">
               Academics
             </h1>
-            <p className=" lg:text-[16px] md:text-[14px] text-[12px] text-[#fbfbfb]">
+            <p className=" lg:text-[16px] md:text-[14px] text-[14px] text-[#fbfbfb]">
               The medium of instruction is English and the second language for
               all classes up to VIII is Tamil. Hindi/ French are a third choice
               from classes VI to VIII. Our students have shown excellent results
               in both our Class X Board examinations.
             </p>
-            <p className=" lg:text-[16px] md:text-[14px] text-[12px] text-[#fbfbfb]">
+            <p className=" lg:text-[16px] md:text-[14px] text-[14px] text-[#fbfbfb]">
               Physical Education and work experience are an essential part of
               the curriculum. Computer science is compulsory for classes IV to
               X. Plans are afoot to offer an additional foreign and modern
               Indian language.
             </p>
-            <p className=" lg:text-[16px] md:text-[14px] text-[12px] text-[#fbfbfb]">
+            <p className=" lg:text-[16px] md:text-[14px] text-[14px] text-[#fbfbfb]">
               In junior school the curriculum is based on the fundamentals –
               mathematics, science, language and reasoning – the basics of all
               learning. No formal examinations are held until class VI. However
@@ -69,15 +69,15 @@ const Overview = () => {
            
           </h1>
 
-          <p className=" ps-8 pe-8 md:max-w-[705px] max-w-[580px] font-cabin lg:text-[20px] md:text-[16px] text-[12px]  text-[#dcdcdc] text-center font-[400] mt-[1rem]">
+          <p className=" ps-8 pe-8 md:max-w-[705px] max-w-[580px] font-cabin lg:text-[20px] md:text-[16px] text-[14px]  text-[#dcdcdc] text-center font-[400] mt-[1rem]">
             The School is affiliated to the Central Board of Secondary Education
             (CBSE).
           </p>
-          <p className=" ps-8 pe-8 md:max-w-[75%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[12px]  text-[#dcdcdc] text-center font-[400] mt-[1rem]">
+          <p className=" ps-8 pe-8 md:max-w-[75%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[14px]  text-[#dcdcdc] text-center font-[400] mt-[1rem]">
             We encourage independence in our students to develop individual
             interests and be passionate about what they wish to do.
           </p>
-          <p className=" ps-8 pe-8  md:max-w-[75%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[12px]  text-[#dcdcdc] text-center font-[400] mt-[1rem]">
+          <p className=" ps-8 pe-8  md:max-w-[75%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[14px]  text-[#dcdcdc] text-center font-[400] mt-[1rem]">
             Students are made to feel connected to everything that goes on in
             the world- through projects, curriculum related activities like
             excursions, workshops, lectures, seminars, films and national and
@@ -90,19 +90,19 @@ const Overview = () => {
             Academics
           </h1>
 
-          <p className=" ps-8 pe-8  md:max-w-[75%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[12px]  text-[#dcdcdc] text-center font-[400] mt-[1rem]">
+          <p className=" ps-8 pe-8  md:max-w-[75%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[14px]  text-[#dcdcdc] text-center font-[400] mt-[1rem]">
             The medium of instruction is English and the second language for all
             classes up to VIII is Tamil. Hindi/ French are a third choice from
             classes VI to VIII. Our students have shown excellent results in
             both our Class X Board examinations.
           </p>
-          <p className=" ps-8 pe-8  md:max-w-[75%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[12px]  text-[#dcdcdc] text-center font-[400] mt-[1rem]">
+          <p className=" ps-8 pe-8  md:max-w-[75%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[14px]  text-[#dcdcdc] text-center font-[400] mt-[1rem]">
             Physical Education and work experience are an essential part of the
             curriculum. Computer science is compulsory for classes IV to X.
             Plans are afoot to offer an additional foreign and modern Indian
             language.
           </p>
-          <p className=" ps-8 pe-8 md:max-w-[75%] max-w-[100%]   font-cabin lg:text-[20px] md:text-[16px] text-[12px]  text-[#dcdcdc] text-center font-[400] mt-[1rem]">
+          <p className=" ps-8 pe-8 md:max-w-[75%] max-w-[100%]   font-cabin lg:text-[20px] md:text-[16px] text-[14px]  text-[#dcdcdc] text-center font-[400] mt-[1rem]">
             In junior school the curriculum is based on the fundamentals –
             mathematics, science, language and reasoning – the basics of all
             learning. No formal examinations are held until class VI. However
@@ -111,19 +111,16 @@ const Overview = () => {
           </p>
         </div> */}
 
-       
-
         <div className=" w-full flex flex-row justify-center ">
           <div className=" w-[80vw] sm:h-[80vh] h-[40vh] sm:mt-[4rem] mt-[1rem]">
-          <img
-  src={overviewImage}
-  className=" w-full h-full object-contain" // Add the "opacity-70" class to set the opacity to 70%
-/>
-
+            <img
+              src={overviewImage}
+              className=" w-full h-full object-contain"
+            />
           </div>
         </div>
 
-        {/* Stat  */}
+        {/* Stat */}
         <div className=" w-full h-fit flex flex-row justify-center mt-[2.5rem]">
           <div className=" md:w-fit w-full h-fit flex flex-row md:justify-center justify-evenly md:gap-[1rem] gap-y-[1rem] flex-wrap md:flex-nowrap ">
             {/* One */}

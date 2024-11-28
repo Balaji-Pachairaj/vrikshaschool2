@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link, NavLink, useNavigate, useSearchParams } from "react-router-dom";
 import { IoMdClose } from "react-icons/io";
 import { TbTriangleInvertedFilled } from "react-icons/tb";
@@ -189,69 +189,59 @@ const NavLap = ({ content = {} }) => {
     </NavLink>
   );
 };
-const NavMobile = ({ content = {}, toggle = () => {} }) => {
-  const [onHover, setOnHover] = useState(false);
+const NavMobile = ({ content = {}, toggle = () => {}, isActive, setActiveMenu }) => {
   const controls = useAnimation();
   const navigate = useNavigate();
 
-  const open = () => {
-    setOnHover(true);
-    controls.start({
-      height: content?.sections?.length * 25 + "px",
-      transition: {
-        duration: 0.5,
-      },
-    });
-  };
-  const close = () => {
-    setOnHover(false);
-    controls.start({
-      height: "0.5px",
-      transition: {
-        duration: 0.1,
-      },
-    });
+  useEffect(() => {
+    if (isActive) {
+      controls.start({
+        height: content?.sections?.length * 25 + "px",
+        transition: {
+          duration: 0.3,
+        },
+      });
+    } else {
+      controls.start({
+        height: "0.5px",
+        transition: {
+          duration: 0.1,
+        },
+      });
+    }
+  }, [isActive, content?.sections?.length, controls]);
+
+  const handleClick = () => {
+    if (!isActive) {
+      setActiveMenu(content.title);
+    } else {
+      setActiveMenu(null);
+    }
+
+    if (!content?.sections?.length) {
+      navigate(content?.to);
+    }
   };
 
   return (
     <>
       <button
-        onMouseEnter={() => {
-          // open();
-        }}
-        onClick={() => {
-          if (!onHover) {
-            open();
-          } else {
-            close();
-          }
-
-          if (!content?.sections?.length) {
-            navigate(content?.to);
-          }
-        }}
+        onClick={handleClick}
         className=" w-full h-[40px] flex flex-row items-center  duration-500 uppercase  gap-[0.3rem] hover:bg-white/15 flex-shrink-0 "
       >
         <h1 className="text-white text-[12px] font-[600] font-inter ps-[2rem] flex flex-row gap-[0.5rem] items-center">
           {content?.title}
-
           <TbTriangleInvertedFilled size={10} color={"white"} />
         </h1>
       </button>
       <motion.div
         initial={{ height: "0px" }}
         animate={controls}
-        onMouseEnter={() => {
-          open();
-        }}
-        onMouseLeave={() => {}}
         onClick={() => {
-          close();
+          setActiveMenu(null);
           toggle();
         }}
-        className={` ${
-          onHover ? "" : ""
-        }  w-full  flex flex-col gap-[0.5rem] flex-shrink-0  overflow-hidden`}
+        className={`w-full flex flex-col gap-[0.5rem] flex-shrink-0 overflow-hidden`}
       >
         {content?.sections?.map((item) => {
           return (
@@ -270,7 +260,9 @@ const NavMobile = ({ content = {}, toggle = () => {} }) => {
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState(null);
   const controls = useAnimation();
+  const navRef = useRef(null);
 
   const [searchParams] = useSearchParams();
 
@@ -292,12 +284,32 @@ const NavBar = () => {
     }
   }, [searchParams]);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target) && isOpen) {
+        controls.start({
+          top: "-100%",
+          transition: {
+            duration: 0.5,
+          },
+        });
+        setIsOpen(false);
+        setActiveMenu(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen, controls]);
+
   const toggle = () => {
     if (isOpen) {
       controls.start({
         top: "-100%",
         transition: {
-          duration: 1,
+          duration: 0.5,
         },
       });
       setIsOpen(false);
@@ -305,7 +317,7 @@ const NavBar = () => {
       controls.start({
         top: "0rem",
         transition: {
-          duration: 1,
+          duration: 0.5,
         },
       });
       setIsOpen(true);
@@ -331,13 +343,22 @@ const NavBar = () => {
       </div>
 
       <motion.div
+        ref={navRef}
         animate={controls}
-        className="w-full max-h-[80vh] overflow-y-auto z-[20000] fixed top-[-100%] pb-[2vh] bg-black shadow-xl flex flex-col gap-[0.5rem] md:hidden "
+        className="w-full max-h-[80vh] overflow-y-auto z-[20000] fixed top-[-100%] pb-[2vh] backdrop-blur-lg bg-black/70 border border-white/20 shadow-xl flex flex-col gap-[0.5rem] md:hidden "
       >
         <div className=" w-full h-[5rem]"></div>
 
         {NavBarLinks?.map((item) => {
-          return <NavMobile content={item} toggle={toggle} />;
+          return (
+            <NavMobile
+              key={item.title}
+              content={item}
+              toggle={toggle}
+              isActive={activeMenu === item.title}
+              setActiveMenu={setActiveMenu}
+            />
+          );
         })}
       </motion.div>
     </>

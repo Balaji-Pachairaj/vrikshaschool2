@@ -21,12 +21,12 @@ const Component = ({
         className={` w-full h-full flex flex-col justify-start gap-[2.5rem] md:p-[2rem] p-[1.5rem] bg-[${content?.bg}] rounded-[8px] hover:rotate-6 duration-300`}
       >
         <h1
-          className={` w-full  font-[500] lg:text-[24px] md:text-[20px] text-[16px] text-[${content?.text}] text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] duration-300`}
+          className={` w-full  font-[500] lg:text-[24px] md:text-[20px] text-[18px] text-[${content?.text}] text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] duration-300`}
         >
           {content?.title}
         </h1>
         <p
-          className={` font-[400] font-poppins lg:text-[20px] md:text-[16px] text-[12px] text-[${content?.bodytext}]`}
+          className={` font-[400] font-poppins lg:text-[20px] md:text-[16px] text-[16px] text-[${content?.bodytext}]`}
         >
           {content?.body}
         </p>
@@ -96,20 +96,20 @@ const LeadCurriculam = () => {
   return (
     <div className=" w-full min-h-screen bg-[black] pt-[2rem] pb-[2rem] overflow-hidden">
       <div className=" w-full h-fit flex flex-col items-center mb-[2vh] mt-[3vh]">
-        <h1 className=" font-cabin xl:text-[4vw] lg:text-[4.5vw] md:text-[5vw] sm:text-[6vw] text-[6.5vw] text-[white] text-center font-[600] ">
+        <h1 className=" font-cabin xl:text-[4vw] lg:text-[4.5vw] md:text-[5vw] sm:text-[8vw] text-[8.5vw] text-[white] text-center font-[600] ">
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
         Lead Curriculum
                 </span>
         </h1>
-        <p className=" ps-8 pe-8  md:max-w-[85%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[12px]  text-[white] text-center font-[400] mt-[1rem]">
+        <p className=" ps-8 pe-8  md:max-w-[85%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[16px]  text-[white] text-center font-[400] mt-[1rem]">
           Academic excellence powered by Lead School
         </p>
-        <p className=" ps-8 pe-8  md:max-w-[85%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[12px]  text-[white] text-center font-[400] mt-[1rem]">
+        <p className=" ps-8 pe-8  md:max-w-[85%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[16px]  text-[white] text-center font-[400] mt-[1rem]">
           Our school has partnered with LEAD School which is an Academic
           Excellence System who towards empowering India by making excellent
           education accessible and affordable to every child.
         </p>
-        <p className=" ps-8 pe-8  italic md:max-w-[85%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[12px]  text-[white] text-center font-[400] mt-[1rem]">
+        <p className=" ps-8 pe-8  italic md:max-w-[85%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[16px]  text-[white] text-center font-[400] mt-[1rem]">
           They are built on 5 Pillars of Excellence.
         </p>
       </div>

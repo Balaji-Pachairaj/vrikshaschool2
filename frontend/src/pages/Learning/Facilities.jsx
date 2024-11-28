@@ -94,17 +94,17 @@ const Facilities = () => {
         <h1 className=" text-[#758694] text-[18px] font-[600] ">Facilities</h1>
 
         <div className=" w-full lg:h-[250vh] h-[130vh] flex flex-row justify-center mt-[2rem]  ">
-          <div className=" w-[45vw] h-[30vw]  overflow-hidden sticky top-[2rem] ">
+          <div className=" w-[45vw] h-[30vw] rounded-lg overflow-hidden sticky top-[2rem] ">
             {/* ---------------- */}
             <motion.div
               animate={controls}
               className=" w-full h-fit absolute top-0 bottom-0 "
             >
-              <div className=" w-full h-[40vw] "></div>
+              <div className=" w-full h-[40vw]"></div>
               {content?.map((item) => {
                 return (
-                  <div className=" w-full h-[40vw]">
-                    <img src={item?.image} className=" w-full h-full" />
+                  <div className=" w-full h-[40vw] rounded-lg">
+                    <img src={item?.image} className=" w-full h-full rounded-lg" />
                   </div>
                 );
               })}

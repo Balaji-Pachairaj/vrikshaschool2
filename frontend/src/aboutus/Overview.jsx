@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import leftcard from "../assets/aboutus/admission-banner.webp"
+import leftcard from "../assets/aboutus/card.jpg"
 import rightcard from "../assets/aboutus/about-overview.webp"
 
 const Overview = () => {
@@ -38,6 +38,9 @@ const Overview = () => {
     <>
       <style>
         {`
+          * {
+            font-family: 'Poppins', sans-serif;
+          }
           .hide-element {
             opacity: 0;
             transition: all 1.5s ease;
@@ -81,54 +84,75 @@ const Overview = () => {
           .animate-heading {
             animation: rotate3D 1s ease forwards;
           }
-            // Update the @keyframes in your style tag
 
-  @keyframes fadeInRotate {
-    0% {
-      opacity: 0;
-      transform: perspective(500px) rotateY(0deg) rotateX(0deg);
-    }
-    50% {
-      opacity: 1;
-      transform: perspective(500px) rotateY(0deg) rotateX(0deg);
-    }
-    100% {
-      opacity: 1;
-      transform: perspective(500px) rotateY(20deg) rotateX(10deg);
-    }
-  }
+          @keyframes fadeInRotate {
+            0% {
+              opacity: 0;
+              transform: perspective(500px) rotateY(0deg) rotateX(0deg);
+            }
+            50% {
+              opacity: 1;
+              transform: perspective(500px) rotateY(0deg) rotateX(0deg);
+            }
+            100% {
+              opacity: 1;
+              transform: perspective(500px) rotateY(20deg) rotateX(10deg);
+            }
+          }
 
-  .animate-heading {
-    animation: fadeInRotate 2s ease forwards;
-    background: linear-gradient(45deg, #4f46e5, #7c3aed, #2563eb);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
+          .animate-heading {
+            animation: fadeInRotate 2s ease forwards;
+            background: linear-gradient(45deg, #4f46e5, #7c3aed, #2563eb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+          }
 
+          @media (max-width: 768px) {
+            .left-card-mobile {
+              position: static !important;
+              transform: none !important;
+              margin: 0 !important;
+            }
+            .right-card-mobile {
+              position: static !important;
+              transform: none !important;
+              margin: 0 !important;
+            }
+            .card-mobile-container {
+              position: relative;
+              width: 100%;
+              height: 300px;
+              overflow: hidden;
+              margin-top: 4rem;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0 1rem;
+            }
+            .card-mobile-container > div > div {
+              transform: none !important;
+              width: 160px !important;
+              height: 220px !important;
+            }
+            .content-mobile {
+              padding: 0 1rem;
+              margin-bottom: 2rem;
+            }
+            .overview-section {
+              margin-top: 6rem !important;
+            }
+          }
         `}
       </style>
-      <div className="relative bg-black min-h-screen text-white overflow-hidden">
+      <div className="relative bg-black min-h-screen text-white overflow-hidden font-['Poppins']">
         <div
-          className="container mx-auto flex items-center justify-center min-h-screen"
+          className="container mx-auto flex items-center justify-center min-h-screen px-4 overview-section"
           id={"overview"}
         >
           <div className="relative max-w-7xl w-full">
-            {/* Left Decorative Image Card */}
-            <div className="absolute left-[-220px] top-[-140px] -translate-y-32 hide-element hide-left">
-              <div className="w-64 h-80 relative card-hover-effect">
-                <div className="absolute inset-0 bg-blue-500 rounded-lg -rotate-12 shadow-hover-blue"></div>
-                <div className="absolute inset-0 overflow-hidden rounded-lg -rotate-12">
-                  <img
-                    src= {leftcard}
-                    alt="Decorative art"
-                    className="w-full h-full object-cover image-hover-effect"
-                  />
-                </div>
-              </div>
-            </div>
             {/* Center Content */}
-            <div className="text-center flex flex-col items-center hide-element">
+            <div className="text-center flex flex-col items-center hide-element mb-8 content-mobile">
               <h1 className="text-5xl md:text-9xl font-bold mb-8 uppercase heading">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
                   Overview
@@ -144,20 +168,37 @@ const Overview = () => {
                 of Secondary Education (CBSE), New Delhi.
               </p>
             </div>
-            {/* Right Decorative Image Card */}
-            <div className="absolute right-[-220px] top-[140px] translate-y-24 hide-element hide-right">
-              <div className="w-64 h-80 relative card-hover-effect">
-                <div className="absolute inset-0 bg-purple-500 rounded-lg rotate-12 shadow-hover-purple"></div>
-                <div className="absolute inset-0 overflow-hidden rounded-lg rotate-12">
-                  <img
-                    src={rightcard}
-                    alt="Decorative art"
-                    className="w-full h-full object-cover image-hover-effect"
-                  />
+
+            <div className="card-mobile-container">
+              {/* Left Decorative Image Card */}
+              <div className="left-card-mobile absolute left-[-220px] top-[-140px] -translate-y-32 hide-element hide-left">
+                <div className="w-64 h-80 relative card-hover-effect">
+                  <div className="absolute inset-0 bg-blue-500 rounded-lg -rotate-12 shadow-hover-blue"></div>
+                  <div className="absolute inset-0 overflow-hidden rounded-lg -rotate-12">
+                    <img
+                      src={leftcard}
+                      alt="Decorative art"
+                      className="w-full h-full object-cover image-hover-effect"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Decorative Image Card */}
+              <div className="right-card-mobile absolute right-[-220px] top-[140px] translate-y-24 hide-element hide-right">
+                <div className="w-64 h-80 relative card-hover-effect">
+                  <div className="absolute inset-0 bg-purple-500 rounded-lg rotate-12 shadow-hover-purple"></div>
+                  <div className="absolute inset-0 overflow-hidden rounded-lg rotate-12">
+                    <img
+                      src={rightcard}
+                      alt="Decorative art"
+                      className="w-full h-full object-cover image-hover-effect"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>-
+          </div>
         </div>
       </div>
     </>
