@@ -23,7 +23,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-6xl md:text-8xl font-bold tracking-tight text-white/80 mb-8"
+            className="text-6xl md:text-8xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] mb-8"
           >
             Give Back and <br/> Make an Impact
           </motion.h1>

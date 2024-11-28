@@ -75,11 +75,13 @@ const PortfolioGrid = () => {
       className="w-full min-h-screen bg-black p-6 overflow-hidden"
       onMouseMove={handleMouseMove}
     >
-      <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-2 h-full gap-6 max-w-7xl mx-auto">
-        {portfolioItems.map((item) => (
+      {/* Modified grid container with auto-rows and justify-items-center */}
+      <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-auto gap-6 max-w-7xl mx-auto">
+        {/* First three items */}
+        {portfolioItems.slice(0, 3).map((item) => (
           <div
             key={item.id}
-            className="relative overflow-hidden rounded-lg cursor-pointer"
+            className="relative overflow-hidden rounded-lg cursor-pointer w-full"
             onMouseEnter={() => setHoveredItem(item)}
             onMouseLeave={() => setHoveredItem(null)}
             onClick={() => handleItemClick(item.path)}
@@ -91,6 +93,25 @@ const PortfolioGrid = () => {
             />
           </div>
         ))}
+        
+        {/* Container for the last two items - centered */}
+        <div className="md:col-span-3 flex justify-center gap-6">
+          {portfolioItems.slice(3).map((item) => (
+            <div
+              key={item.id}
+              className="relative overflow-hidden rounded-lg cursor-pointer w-full md:w-[calc(33.333%-1rem)]"
+              onMouseEnter={() => setHoveredItem(item)}
+              onMouseLeave={() => setHoveredItem(null)}
+              onClick={() => handleItemClick(item.path)}
+            >
+              <img
+                src={item.image}
+                alt={item.title}
+                className="w-full h-[260px] object-cover transition-transform duration-300 hover:scale-105"
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
       {hoveredItem && (

@@ -25,7 +25,7 @@ const Outdoor = () => {
         >
           <div className="space-y-4">
             <h2 className="text-7xl font-bold text-white tracking-tight">
-              <span className="block italic text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
+              <span className="block italic text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
                 Outdoor Activities
               </span>
             </h2>
@@ -102,15 +102,15 @@ const Outdoor = () => {
                 </p>
 
                 <ul className="text-white text-xl grid grid-cols-2 gap-x-4 gap-y-2 pl-6 list-disc">
-  <li>200m running track</li>
-  <li>Football court</li>
-  <li>Volleyball court</li>
-  <li>Kho-kho ground</li>
-  <li>Badminton court</li>
-  <li>Cricket pitch</li>
-  <li>Table tennis</li>
-  <li>Skating rink</li>
-</ul>
+                  <li>200m running track</li>
+                  <li>Football court</li>
+                  <li>Volleyball court</li>
+                  <li>Kho-kho ground</li>
+                  <li>Badminton court</li>
+                  <li>Cricket pitch</li>
+                  <li>Table tennis</li>
+                  <li>Skating rink</li>
+                </ul>
 
                 
               </div>

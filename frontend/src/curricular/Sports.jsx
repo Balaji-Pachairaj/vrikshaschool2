@@ -67,7 +67,7 @@ const Sports = () => {
           >
             <div className="space-y-4">
               <h2 className="text-7xl font-bold text-white tracking-tight">
-                <span className="block italic text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
+                <span className="block italic text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
                   Sports
                 </span>
               </h2>

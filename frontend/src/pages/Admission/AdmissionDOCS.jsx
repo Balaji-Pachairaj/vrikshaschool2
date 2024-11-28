@@ -13,7 +13,7 @@ import {
 } from 'react-icons/fa';
 
 const requirements = [
-  { icon: FaUserGraduate, title: '3 Photographs', subtitle: 'Of Student' },
+  { icon: FaUserGraduate, title: '3 Photographs', subtitle: 'Of the Student' },
   { icon: FaUsers, title: '3 Photographs', subtitle: 'Of Parent' },
   { icon: FaFileAlt, title: 'Original TC', subtitle: 'From Previous School' },
   { icon: FaHome, title: 'Proof of Residence', subtitle: 'Family card' },
@@ -52,23 +52,28 @@ function RequirementIcon({ icon: Icon, title, subtitle }) {
     </div>
   );
 }
-  function AdmissionDOCS() {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const visibleCount = 4;
 
-    const nextSlide = () => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % requirements.length);
-    };
+function AdmissionDOCS() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const visibleCount = 4;
 
-    const prevSlide = () => {
-      setCurrentIndex((prevIndex) => (prevIndex - 1 + requirements.length) % requirements.length);
-    };
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex + visibleCount >= requirements.length ? 0 : prevIndex + 1
+    );
+  };
 
-    const visibleRequirements = [...requirements.slice(currentIndex), ...requirements.slice(0, currentIndex)].slice(0, visibleCount);
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? requirements.length - visibleCount : prevIndex - 1
+    );
+  };
 
-    return (
-      <div className="min-h-screen bg-black flex items-center justify-center p-8">
-        <div className="w-full max-w-6xl mx-auto relative">
+  return (
+    <div className="min-h-screen bg-black flex items-center justify-center p-8">
+      <div className="w-full max-w-6xl mx-auto">
+        <h2 className="text-4xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">Documents Required</h2>
+        <div className="relative">
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[calc(100%+2rem)] h-[calc(100%+2rem)] border border-white rounded-[60px]"></div>
 
           <div className="relative flex items-center justify-center py-8">
@@ -80,16 +85,25 @@ function RequirementIcon({ icon: Icon, title, subtitle }) {
               <FaChevronLeft className="text-2xl" />
             </button>
 
-            <div className="flex justify-between items-center px-20 overflow-hidden">
-              <div className="grid grid-cols-4 gap-6">
-                {visibleRequirements.map((req, index) => (
-                  <RequirementIcon
-                    key={index}
-                    icon={req.icon}
-                    title={req.title}
-                    subtitle={req.subtitle}
-                  />
-                ))}
+            <div className="flex justify-between items-center px-20 overflow-hidden w-full">
+              <div className="w-full relative overflow-hidden">
+                <div 
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${currentIndex * (100 / visibleCount)}%)` }}
+                >
+                  {requirements.map((req, index) => (
+                    <div 
+                      key={index} 
+                      className="flex-shrink-0 w-1/4 px-3"
+                    >
+                      <RequirementIcon
+                        icon={req.icon}
+                        title={req.title}
+                        subtitle={req.subtitle}
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -103,8 +117,7 @@ function RequirementIcon({ icon: Icon, title, subtitle }) {
           </div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+}
 export default AdmissionDOCS;
-
-  

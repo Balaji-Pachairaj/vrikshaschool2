@@ -56,7 +56,7 @@ const SportAcademySuccess = () => {
               style={{ opacity: animations[index].opacity, y: animations[index].y }}
               className="w-full h-full absolute left-0 flex items-center justify-center"
             >
-              <h2 className="text-white text-[2vw] font-inter text-center px-4">{step.title}</h2>
+              <h2 className="text-white text-[2vw] font-inter text-center px-4 font-bold">{step.title}</h2>
             </motion.div>
           ))}
         </div>
