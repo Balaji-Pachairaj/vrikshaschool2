@@ -56,7 +56,6 @@ export const NavBarLinks = [
       { title: "clubs", to: "/clubs?section=clubs" },
       { title: "Music & Dance", to: "/curricular?section=outdoor" },
       { title: "creative arts", to: "/creative?section=creative" },
-
     ],
   },
   {
@@ -97,7 +96,14 @@ export const NavBarLinks = [
   {
     title: "Alum",
     to: "/alumni?section=start",
-    sections: [],
+    sections: [
+      { title: "hero", to: "/alumni?section=hero" },
+      { title: "overview", to: "/alumni?section=overview" },
+      { title: "Opportunities", to: "/alumni?section=network" },
+      { title: "Volunteer", to: "/alumni?section=volunteer" },
+      { title: "Noteable alumni", to: "/alumni?section=noteable" },
+      { title: "Connect", to: "/alumni?section=connect" },
+    ],
   },
   {
     title: "Marathon",
@@ -110,7 +116,6 @@ export const NavBarLinks = [
       { title: "sponsor", to: "/marathon?section=sponsor" },
       { title: "goodies", to: "/marathon?section=goodies" },
       { title: "registration", to: "/marathon?section=registration" },
-
     ],
   },
   {
@@ -134,33 +139,52 @@ const NavLap = ({ content = {} }) => {
       }}
       className={({ isActive }) => {
         return `cursor-pointer uppercase ${
-          isActive ? "border-b-2" : ""
-        } text-[#ffffffb3] text-[14px] font-[500] font-inter h-fit w-fit ps-[0.25rem] pe-[0.25rem] pt-[0.5rem] pb-[0.5rem] text-nowrap relative`;
+          isActive ? "border-b-2 border-white" : ""
+        } text-white text-[14px] font-[600] font-inter h-fit w-fit ps-[0.25rem] pe-[0.25rem] pt-[0.5rem] pb-[0.5rem] text-nowrap relative`;
       }}
     >
       {content?.title}
       {content?.sections?.length > 0 && (
-        <div
-          className={`w-[200px] h-fit pb-[2rem] ${
-            onHover ? "opacity-100 flex " : "opacity-0 hidden"
-          } gap-[0.5rem] pt-[2rem] left-[-20px] backdrop-blur-md bg-black/90 border border-white/10 shadow-lg flex flex-col absolute top-[101%] duration-500 rounded-[8px]`}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{
+            opacity: onHover ? 1 : 0,
+            y: onHover ? 0 : -10,
+            display: onHover ? "flex" : "none",
+          }}
+          transition={{
+            duration: 0.2,
+            ease: "easeOut",
+          }}
+          className={`w-[200px] h-fit pb-[2rem] gap-[0.5rem] pt-[2rem] left-[-20px] backdrop-blur-lg bg-black/70 border border-white/20 shadow-xl flex-col absolute top-[101%] rounded-[8px]`}
         >
-          {content?.sections?.map((item) => {
+          {content?.sections?.map((item, index) => {
             return (
-              <NavLink
-                to={item?.to}
-                smooth
-                className=" ps-[1rem] pe-[1rem] uppercase text-wrap flex flex-col justify-center min-h-[30px] h-fit text-white text-[12px] font-[500] font-inter "
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: 0.2,
+                  delay: index * 0.05,
+                  ease: "easeOut",
+                }}
               >
-                <p
-                  className={`p-[0.5rem] w-fit h-fit rounded-[8px] hover:bg-white/20 duration-300`}
+                <NavLink
+                  to={item?.to}
+                  smooth
+                  className=" ps-[1rem] pe-[1rem] uppercase text-wrap flex flex-col justify-center min-h-[30px] h-fit text-white font-[600] text-[12px] font-inter "
                 >
-                  {item?.title}
-                </p>
-              </NavLink>
+                  <p
+                    className={`p-[0.5rem] w-fit h-fit rounded-[8px] hover:bg-white/15 duration-300 hover:text-white`}
+                  >
+                    {item?.title}
+                  </p>
+                </NavLink>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       )}
     </NavLink>
   );
@@ -206,9 +230,9 @@ const NavMobile = ({ content = {}, toggle = () => {} }) => {
             navigate(content?.to);
           }
         }}
-        className=" w-full h-[40px] flex flex-row items-center  duration-500 uppercase  gap-[0.3rem] hover:bg-gray-900 flex-shrink-0 "
+        className=" w-full h-[40px] flex flex-row items-center  duration-500 uppercase  gap-[0.3rem] hover:bg-white/15 flex-shrink-0 "
       >
-        <h1 className="text-[white] text-[12px] font-inter ps-[2rem] flex flex-row gap-[0.5rem] items-center">
+        <h1 className="text-white text-[12px] font-[600] font-inter ps-[2rem] flex flex-row gap-[0.5rem] items-center">
           {content?.title}
 
           <TbTriangleInvertedFilled size={10} color={"white"} />
@@ -233,7 +257,7 @@ const NavMobile = ({ content = {}, toggle = () => {} }) => {
           return (
             <NavLink
               to={item?.to}
-              className="ps-[4rem]   text-[12px] text-white font-poppins uppercase hover:ps-[4.5rem] duration-300"
+              className="ps-[4rem]   text-[12px] text-white font-[600] font-inter uppercase hover:ps-[4.5rem] duration-300"
             >
               {item?.title}
             </NavLink>
@@ -290,13 +314,13 @@ const NavBar = () => {
 
   return (
     <>
-      <div className=" fixed top-[1.5rem] max-w-[90%]  z-[20000] left-[50%] -translate-x-1/2 backdrop-blur-md bg-white/10 border border-white/20 shadow-xl w-fit rounded-[20px] h-fit  ps-[1rem] pe-[1rem] md:flex  hidden flex-row gap-[1.5rem]">
+      <div className=" fixed top-[1.5rem] max-w-[90%]  z-[20000] left-[50%] -translate-x-1/2 backdrop-blur-lg bg-black/70 border border-white/20 shadow-xl w-fit rounded-[20px] h-fit  ps-[1rem] pe-[1rem] md:flex  hidden flex-row gap-[1.5rem]">
         {NavBarLinks?.map((item) => {
           return <NavLap content={item} />;
         })}
       </div>
 
-      <div className=" md:hidden fixed z-[200001] top-[1.5rem] left-[50%] -translate-x-1/2 bg-gray-800 bg-opacity-80 shadow-xl w-fit rounded-[20px] h-fit  ps-[1rem] pe-[1rem] flex flex-row gap-[1.5rem]">
+      <div className=" md:hidden fixed z-[200001] top-[1.5rem] left-[50%] -translate-x-1/2 backdrop-blur-lg bg-black/70 border border-white/20 shadow-xl w-fit rounded-[20px] h-fit  ps-[1rem] pe-[1rem] flex flex-row gap-[1.5rem]">
         <button onClick={toggle} className=" p-[0.5rem]">
           {isOpen ? (
             <IoMdClose size={30} color="white" />
