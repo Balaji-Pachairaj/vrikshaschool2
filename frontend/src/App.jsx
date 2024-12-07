@@ -49,7 +49,6 @@ import Alumniconnect from "./pages/Alumni/Alumniconnect";
 import Alumnibenefits from "./pages/Alumni/Alumnibenefits";
 import AlumniHero from "./pages/Alumni/Alumnihero";
 import CTA2 from "./pages/CTA2";
-import Marathoncarousal from "./pages/Marathon/Marathoncarousal";
 
 
 const router = createBrowserRouter([
@@ -195,8 +194,7 @@ const router = createBrowserRouter([
     <>
     <div className="w-full h-[0.1px]" id="start"></div>
     <NavBar />
-    <div className="w-full h-[0.1px]"></div>
-      <Marathoncarousal/>
+    
     <div className="w-full h-[0.1px]" id="hero"></div>
       <Marathonhero/>
     <div className="w-full h-[0.1px]" id="about"></div>

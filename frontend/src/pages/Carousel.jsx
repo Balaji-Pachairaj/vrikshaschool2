@@ -1,8 +1,8 @@
 // Marathoncarousal.jsx
 import { useState, useEffect } from 'react';
-import slide1 from "../../assets/marathon/face1.png";
-import slide2 from "../../assets/marathon/face2.png";
-import slide3 from "../../assets/marathon/face3.png";
+import slide1 from "../assets/marathon/slide1.png";
+import slide2 from "../assets/marathon/slide2.png";
+import slide3 from "../assets/marathon/slide3.png";
 
 const Marathoncarousal = () => {
   const images = [
@@ -24,12 +24,12 @@ const Marathoncarousal = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative mt-12 w-full max-w-6xl mx-auto h-[250px] overflow-hidden">
       {/* Slides */}
       {images.map((image, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-500 ease-in-out
+          className={`absolute w-full h-full transition-opacity duration-500 ease-in-out
             ${index === currentIndex ? 'opacity-100' : 'opacity-0'}`}
         >
           <img
@@ -41,13 +41,13 @@ const Marathoncarousal = () => {
       ))}
 
       {/* Navigation Dots */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-10">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-4 h-4 rounded-full transition-colors duration-300
-              ${index === currentIndex ? 'bg-white' : 'bg-white/50'} hover:bg-white/75`}
+            className={`w-3 h-3 rounded-full transition-colors duration-300
+              ${index === currentIndex ? 'bg-white' : 'bg-white/50'}`}
           />
         ))}
       </div>
