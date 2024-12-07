@@ -263,8 +263,43 @@ const NavBar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
   const controls = useAnimation();
   const navRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
+  const scrollTimeout = useRef(null);
 
   const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (scrollTimeout.current) {
+        window.cancelAnimationFrame(scrollTimeout.current);
+      }
+
+      scrollTimeout.current = window.requestAnimationFrame(() => {
+        const currentScrollY = window.scrollY;
+        const scrollDelta = currentScrollY - lastScrollY.current;
+        
+        // Only trigger animation if scroll is significant
+        if (Math.abs(scrollDelta) < 10) return;
+        
+        if (scrollDelta < 0 || currentScrollY < 50) { // Scrolling up or near top
+          setIsVisible(true);
+        } else if (scrollDelta > 0 && currentScrollY > 100) { // Scrolling down and past threshold
+          setIsVisible(false);
+        }
+        
+        lastScrollY.current = currentScrollY;
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (scrollTimeout.current) {
+        window.cancelAnimationFrame(scrollTimeout.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const section = searchParams.get("section");
@@ -326,26 +361,69 @@ const NavBar = () => {
 
   return (
     <>
-      <div className=" fixed top-[1.5rem] max-w-[90%]  z-[20000] left-[50%] -translate-x-1/2 backdrop-blur-lg bg-black/70 border border-white/20 shadow-xl w-fit rounded-[20px] h-fit  ps-[1rem] pe-[1rem] md:flex  hidden flex-row gap-[1.5rem]">
+      <motion.div 
+        initial={{ y: 0, opacity: 1 }}
+        animate={{ 
+          y: isVisible ? 0 : -100,
+          opacity: isVisible ? 1 : 0,
+          scale: isVisible ? 1 : 0.95
+        }}
+        transition={{ 
+          duration: 0.3,
+          ease: [0.25, 0.1, 0.25, 1],
+          opacity: { duration: 0.2 },
+          scale: { duration: 0.2 }
+        }}
+        className="fixed left-0 right-0 mx-auto top-[1.5rem] w-fit max-w-[90%] z-[20000] backdrop-blur-lg bg-black/70 border border-white/20 shadow-xl rounded-[20px] h-fit px-6 md:flex hidden items-center justify-center flex-row gap-[1.5rem]"
+      >
         {NavBarLinks?.map((item) => {
-          return <NavLap content={item} />;
+          return <NavLap key={item.title} content={item} />;
         })}
-      </div>
+      </motion.div>
 
-      <div className=" md:hidden fixed z-[200001] top-[1.5rem] left-[50%] -translate-x-1/2 backdrop-blur-lg bg-black/70 border border-white/20 shadow-xl w-fit rounded-[20px] h-fit  ps-[1rem] pe-[1rem] flex flex-row gap-[1.5rem]">
-        <button onClick={toggle} className=" p-[0.5rem]">
+      <motion.div 
+        initial={{ y: 0, opacity: 1 }}
+        animate={{ 
+          y: isVisible ? 0 : -100,
+          opacity: isVisible ? 1 : 0,
+          scale: isVisible ? 1 : 0.95
+        }}
+        transition={{ 
+          duration: 0.3,
+          ease: [0.25, 0.1, 0.25, 1],
+          opacity: { duration: 0.2 },
+          scale: { duration: 0.2 }
+        }}
+        className="md:hidden fixed left-0 right-0 mx-auto top-[1.5rem] w-fit max-w-[90%] z-[200001] backdrop-blur-lg bg-black/70 border border-white/20 shadow-xl rounded-[20px] h-fit px-6 flex items-center justify-center flex-row gap-[1.5rem]"
+      >
+        <button onClick={toggle} className="p-[0.5rem]">
           {isOpen ? (
             <IoMdClose size={30} color="white" />
           ) : (
             <RxHamburgerMenu size={30} color={"white"} />
           )}
         </button>
-      </div>
+      </motion.div>
 
       <motion.div
         ref={navRef}
-        animate={controls}
-        className="w-full max-h-[80vh] overflow-y-auto z-[20000] fixed top-[-100%] pb-[2vh] backdrop-blur-lg bg-black/70 border border-white/20 shadow-xl flex flex-col gap-[0.5rem] md:hidden "
+        initial={{ y: "-100%" }}
+        animate={isOpen ? { 
+          y: 0,
+          opacity: 1,
+          scale: 1
+        } : { 
+          y: "-100%",
+          opacity: 0,
+          scale: 0.98
+        }}
+        transition={{ 
+          duration: 0.3,
+          ease: [0.25, 0.1, 0.25, 1],
+          opacity: { duration: 0.2 },
+          scale: { duration: 0.2 }
+        }}
+        className="w-full max-h-[80vh] overflow-y-auto z-[20000] fixed top-0 pb-[2vh] backdrop-blur-lg bg-black/70 border border-white/20 shadow-xl flex flex-col gap-[0.5rem] md:hidden"
       >
         <div className=" w-full h-[5rem]"></div>
 

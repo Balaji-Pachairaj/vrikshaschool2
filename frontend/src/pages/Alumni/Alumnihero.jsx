@@ -162,11 +162,14 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center overflow-x-hidden relative">
+    <div className="min-h-screen flex items-center justify-center overflow-x-hidden relative rounded-3xl" style={{
+      background: 'linear-gradient(45deg, #7c2ae8 0%, #00c4cc 100%)',
+      borderRadius: '0 0 50px 50px'
+    }}>
       <div className="absolute w-full text-center z-0">
         <marquee className="text-white text-8xl font-bold" scrollamount="10">
           
-          Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to
+          Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to
         </marquee>
       </div>
       <div className="w-full h-full z-10 relative" ref={cubeRef} aria-hidden="true"></div>
