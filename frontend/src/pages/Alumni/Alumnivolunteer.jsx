@@ -1,81 +1,64 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import all from "../../assets/alumni/all.png";
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
 
 const HeroSection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.1 });
+  const [isInView, setIsInView] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInView(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   return (
     <section 
-      ref={ref}
-      className="min-h-screen bg-black relative overflow-hidden py-20"
+      ref={sectionRef}
+      className="min-h-screen bg-black relative overflow-hidden flex items-center justify-center px-4 sm:px-6 py-12"
     >
-      <div 
-        className="container mx-auto px-4 relative"
-      >
-        {/* Heading Content - Positioned behind image */}
-        <div 
-          className="absolute top-0 left-0 right-0 z-0 text-center pt-16 sm:pt-32"
-        >
-          <motion.h1 
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] mb-4 sm:mb-8 px-4"
-          >
-            Give Back and <br/> Make an Impact
-          </motion.h1>
-        </div>
+      <div className="w-full max-w-7xl mx-auto">
+        <div className={`relative z-10 rounded-3xl bg-[#1a1a1a] shadow-2xl transition-all duration-1000 ease-out ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 p-6 sm:p-10 md:p-12">
+            {/* Left side content */}
+            <div className="w-full lg:w-1/2 space-y-8">
+              <h1 className={`text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] transition-all duration-1000 ease-out ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                Give Back and Make an Impact
+              </h1>
 
-        {/* Centered Image with Overlapping Text Box */}
-        <div 
-          className="relative z-10 max-w-5xl mx-auto"
-        >
-          <div 
-            className="relative"
-          >
-            {/* Background Rectangle */}
-            <motion.div 
-              initial={{ scaleY: 0 }}
-              animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="absolute bottom-0 left-0 right-0 h-[40%] bg-[#1a1a1a] transform rounded-2xl -z-10"
-            />
-            
-            <motion.div 
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
-              transition={{ duration: 0.8 }}
-              className="w-full h-[400px] sm:h-[600px] md:h-[900px]"
-            >
-              <img 
-                src={all}
-                alt="Alumni mentor" 
-                className="w-full h-full object-cover rounded-2xl shadow-xl"
-              />
-            </motion.div>
-
-            {/* Bottom Centered Text Box */}
-            <div
-              className="absolute -bottom-16 sm:-bottom-20 left-0 right-0 mx-auto w-full flex justify-center px-4"
-            >
-              <motion.div 
-                initial={{ y: 100, opacity: 0 }}
-                animate={isInView ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                className="bg-gradient-to-r from-blue-500 to-purple-600 p-6 sm:p-8 md:p-10 rounded-xl shadow-lg border border-white/10 max-w-3xl w-[95%] sm:w-[90%]"
-              >
-                <motion.p 
-                  initial={{ opacity: 0 }}
-                  animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-                  transition={{ duration: 0.4, delay: 0.8 }}
-                  className="text-base sm:text-xl text-white font-medium leading-relaxed text-center"
-                >
+              <div className={`bg-gradient-to-r from-blue-500 to-purple-600 p-6 sm:p-8 rounded-2xl shadow-lg border border-white/10 transition-all duration-1000 delay-300 ease-out ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                <p className="text-lg sm:text-xl md:text-2xl text-white font-medium leading-relaxed">
                   Use your experience and expertise to mentor, inspire, and support the next generation of students and alumni.
-                </motion.p>
-              </motion.div>
+                </p>
+              </div>
+
+            </div>
+
+            {/* Image on Right */}
+            <div className="w-full lg:w-1/2 flex items-center justify-center">
+              <div className={`relative w-full max-w-md transition-all duration-1000 delay-500 ease-out ${isInView ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] rounded-full filter blur-3xl opacity-70 animate-pulse"></div>
+                <img 
+                  src={all}
+                  alt="Alumni mentor" 
+                  className="relative z-10 w-full h-auto object-contain rounded-2xl"
+                  style={{ 
+                    filter: 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))'
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>

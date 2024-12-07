@@ -1,9 +1,8 @@
 import React from "react";
-import png11 from "../../assets/sportsacademy/11.png"
-import png12 from "../../assets/sportsacademy/12.png"
-import png13 from "../../assets/sportsacademy/13.png"
-import png14 from "../../assets/sportsacademy/14.png"
-import png15 from "../../assets/sportsacademy/15.png"
+import png11 from "../../assets/sportsacademy/11.JPG"
+import png12 from "../../assets/sportsacademy/12.JPG"
+import png13 from "../../assets/sportsacademy/13.JPG"
+import png15 from "../../assets/sportsacademy/15.JPG"
 
 const SportAcademyAboutUs = () => {
   return (

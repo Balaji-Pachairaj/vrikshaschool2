@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import png1 from "../../assets/alumni/15.png";
 import png2 from "../../assets/alumni/16.png";
@@ -8,8 +8,36 @@ import png5 from "../../assets/alumni/19.png";
 
 const Hero = () => {
   const cubeRef = useRef(null);
+  const sectionRef = useRef(null);
+  const [backgroundColor, setBackgroundColor] = useState('#4B0082'); // Start with Indigo
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      {
+        rootMargin: '-100px',
+        threshold: 0.3
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    // Set background color to black when component mounts
+    // document.body.style.backgroundColor = '#000000';
+    
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       75,
@@ -84,6 +112,19 @@ const Hero = () => {
         { rotationX: 0, rotationY: 0 }              // Front
       ];
 
+      // Define background colors array
+      const bgColors = [
+        '#4B0082', // Indigo
+        '#87CEEB', // Sky Blue
+        '#FFDE21', // Yellow
+        '#FFC0CB', // Pink
+        '#FFA500', // Orange
+        '#FFC0CB'  // Pink
+      ];
+      
+      // Set initial background color
+      // document.body.style.backgroundColor = bgColors[0];
+
       let currentSequence = 0;
       let animationTime = 0;  
       const ROTATION_INTERVAL = 3; // 3 second total rotation cycle
@@ -103,6 +144,8 @@ const Hero = () => {
         if (animationTime >= ROTATION_INTERVAL) {
           animationTime = 0;
           currentSequence = (currentSequence + 1) % sequences.length;
+          // Update the background color through state
+          setBackgroundColor(bgColors[currentSequence]);
         }
 
         // Zoom in effect
@@ -162,14 +205,23 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex items-center justify-center overflow-x-hidden relative rounded-3xl" style={{
-      background: 'linear-gradient(45deg, #7c2ae8 0%, #00c4cc 100%)',
-      borderRadius: '0 0 50px 50px'
-    }}>
+    <div 
+      ref={sectionRef}
+      className={`min-h-screen flex items-center justify-center overflow-x-hidden relative`}
+      style={{
+        background: backgroundColor,
+        transition: 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible 
+          ? 'translateY(0) scale(1)' 
+          : 'translateY(100px) scale(0.95)',
+        filter: isVisible ? 'blur(0)' : 'blur(5px)'
+      }}
+    >
       <div className="absolute w-full text-center z-0">
         <marquee className="text-white text-8xl font-bold" scrollamount="10">
           
-          Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to
+          Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to the Alumni Network - Welcome Back to
         </marquee>
       </div>
       <div className="w-full h-full z-10 relative" ref={cubeRef} aria-hidden="true"></div>
