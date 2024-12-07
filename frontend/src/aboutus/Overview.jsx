@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import leftcard from "../assets/aboutus/1.jpg"
-import rightcard from "../assets/aboutus/2.jpg"
-import centercard from "../assets/aboutus/3.jpg"
+import leftcard from "../assets/aboutus/1.JPG"
+import rightcard from "../assets/aboutus/2.JPG"
+import centercard from "../assets/aboutus/3.JPG"
 
 const Overview = () => {
   const [showImages, setShowImages] = useState(false);
