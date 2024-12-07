@@ -1,121 +1,202 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
+import styled from "styled-components";
 import dolphin from "../assets/houses/Dolphin.png";
 import lions from "../assets/houses/lions.png";
 import hawks from "../assets/houses/hawks.png";
 
-const CardStack = () => {
-  const cardsRef = useRef([]);
-  const containerRef = useRef(null);
-  const [isStacked, setIsStacked] = useState(false);
+const CardWidth = 800;
+const CardMargin = 20;
 
-  const cards = [
+const HousesWrapper = styled.div`
+  height: 300vh;
+  position: relative;
+`;
+
+const HousesContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  z-index: 20;
+`;
+
+const ImageCardsContainer = styled.div`
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.1s ease-out;
+  z-index: 30;
+`;
+
+const ImageCard = styled.div`
+  width: 600px;
+  height: 400px;
+  margin-right: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  perspective: 1000px;
+  cursor: pointer;
+
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  &:hover .card-inner {
+    transform: rotateX(180deg);
+  }
+
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+  }
+
+  .card-front {
+    background-image: url(${(props) => props.imageUrl});
+    background-size: cover;
+    background-position: center;
+  }
+
+  .card-back {
+    background: #1a1a1a;
+    transform: rotateX(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+`;
+
+const BackContent = styled.div`
+  padding: 20px;
+  text-align: left;
+  color: white;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-y: auto;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  p {
+    margin-bottom: 12px;
+  }
+`;
+
+const Houses = () => {
+  const houses = [
+    {
+      image: null,
+      isTitle: true,
+      title: "About Our Houses"
+    },
     {
       image: dolphin,
-      title: "-Dolphin House-",
+      title: "Dolphin House"
     },
     {
       image: lions,
-      title: "-Lions House-",
+      title: "Lions House"
     },
     {
       image: hawks,
-      title: "-Hawks House-",
+      title: "Hawks House"
     },
   ];
 
+  const containerRef = useRef(null);
+
   useEffect(() => {
-    cardsRef.current = cardsRef.current.slice(0, cards.length);
-
     const handleScroll = () => {
-      let allCardsStacked = true;
+      const scrollPosition = window.scrollY;
+      const containerElement = containerRef.current;
+      if (containerElement) {
+        const housesWrapper = document.getElementById("houses-wrapper");
+        const wrapperRect = housesWrapper.getBoundingClientRect();
+        const wrapperStart = wrapperRect.top + window.scrollY;
+        const wrapperEnd = wrapperStart + wrapperRect.height - window.innerHeight;
 
-      cardsRef.current.forEach((card, index) => {
-        if (!card || index === cardsRef.current.length - 1) return;
+        const scrollProgress = (scrollPosition - wrapperStart) / (wrapperEnd - wrapperStart);
+        const clampedProgress = Math.max(0, Math.min(1, scrollProgress));
 
-        const rect = card.getBoundingClientRect();
-        const nextCard = cardsRef.current[index + 1];
-        const nextRect = nextCard?.getBoundingClientRect();
+        const totalCardsWidth = houses.length * (CardWidth + CardMargin) - CardMargin;
+        const containerWidth = window.innerWidth;
+        const scrollDistance = totalCardsWidth - containerWidth;
+        const translateX = -clampedProgress * scrollDistance;
 
-        if (!nextRect) return;
-
-        const distanceToNext = nextRect.top - rect.top;
-        const maxDistance = window.innerHeight * 0.8;
-        const percentage = Math.max(0, Math.min(1, distanceToNext / maxDistance));
-        
-        // Check if this card is stacked
-        if (distanceToNext > 20) {
-          allCardsStacked = false;
-        }
-
-        // Calculate brightness
-        const brightness = 1 - (0.4 * (1 - percentage));
-        
-        if (card.style) {
-          card.style.filter = `brightness(${brightness})`;
-        }
-      });
-
-      setIsStacked(allCardsStacked);
+        containerElement.style.transform = `translateY(-50%) translateX(${translateX}px)`;
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [cards.length]);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [houses.length]);
 
   return (
-    <div className="min-h-screen bg-black">
-      <div/>
-      
-      <h1 className="text-6xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] py-8">Vriksha Houses</h1>
-      
-      <div 
-        ref={containerRef} 
-        className="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8"
-        style={{
-          display: 'grid',
-          gap: '0',
-          gridTemplateRows: `repeat(${cards.length}, auto)`
-        }}
-      >
-        {cards.map((card, index) => (
-          <div 
-            key={index}
-            className={`sticky top-0 transition-transform duration-700 ease-in-out ${
-              isStacked ? 'rotate-0' : 'rotate-2 sm:rotate-3'
-            }`}
-            style={{ 
-              paddingTop: `${index * 2}px`,
-              top: '-5vh'
-            }}
-          >
-            <div
-              ref={el => cardsRef.current[index] = el}
-              className="rounded-xl mt-8 sm:mt-16 lg:mt-32 overflow-hidden shadow-lg transform-gpu will-change-transform relative"
-              style={{ transformOrigin: 'center top' }}
+    <HousesWrapper id="houses-wrapper">
+      <HousesContainer>
+        <ImageCardsContainer ref={containerRef}>
+          {houses.map((house, index) => (
+            <ImageCard 
+              key={index} 
+              imageUrl={house.image}
             >
-              <div className="relative">
-                <img
-                  src={card.image}
-                  alt={card.title}
-                  className="w-full h-[400px] sm:h-[500px] lg:h-[600px] object-cover opacity-80"
-                />
-                {/* Remove the overlay title */}
-                {/* <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center p-4">
-                  <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white text-center tracking-wider">
-                    {card.title}
-                  </h1>
-                </div> */}
+              <div className="card-inner">
+                <div className="card-front" style={house.isTitle ? { 
+                  background: '#1a1a1a'
+                } : {}}>
+                  {house.isTitle ? (
+                    <div className="w-full h-full flex flex-col justify-center items-center">
+                      <h1 className="text-[48px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
+                        {house.title}
+                      </h1>
+                    </div>
+                  ) : (
+                    <div className="w-full h-full"></div>
+                  )}
+                </div>
+                <div className="card-back">
+                  {house.isTitle ? (
+                    <BackContent>
+                      <p>
+                        We have introduced House Points System for our students based on isolated achievement, sustained achievement and special achievement by our student. This system aims to encourage a real sense of pride and achievement for the children.
+                      </p>
+                      <p>
+                        The house points are counted and announced weekly during our Assembly every Friday and added to the house points. At the end of the year, once all house points are tallied, the House Champions will be announced in our Broadway (Annual Day).
+                      </p>
+                      <p>
+                        We have three houses namely Lion House, Dolphin House & Hawk House. The three houses are appointed with a Captain, Vice-Captain & Prefect. School Pupil Elections are conducted every year to elect the respective house leaders. A common school pupil leader is also elected from the prospective leaders.
+                      </p>
+                    </BackContent>
+                  ) : (
+                    <h1 className="text-[32px] font-bold text-white">
+                      {house.title}
+                    </h1>
+                  )}
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="h-[30vh] sm:h-[40vh]" />
-    </div>
+            </ImageCard>
+          ))}
+        </ImageCardsContainer>
+      </HousesContainer>
+    </HousesWrapper>
   );
 };
 
-export default CardStack; 
+export default Houses; 

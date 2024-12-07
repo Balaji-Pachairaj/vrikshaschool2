@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, memo } from 'react';
 import styled from 'styled-components';
 import img1 from "../assets/CTA/img1.JPG";
 import img2 from "../assets/CTA/img2.JPG";
@@ -25,6 +25,7 @@ const Container = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 3rem;
+    text-align: center;
   }
 `;
 
@@ -35,8 +36,12 @@ const ImageContainer = styled.div`
 
   @media (max-width: 768px) {
     order: -1;
-    left: -2rem;
+    left: 0;
     margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    height: auto;
   }
 `;
 
@@ -49,18 +54,27 @@ const Image = styled.img`
   transition: transform 0.3s ease;
 
   @media (max-width: 768px) {
-    width: 180px;
-    height: 220px;
+    position: static;
+    width: 160px;
+    height: 200px;
   }
 
   &:first-child {
     left: 90px;
     top: 5px;
+    @media (max-width: 768px) {
+      left: auto;
+      top: auto;
+    }
   }
 
   &:last-child {
     right: 0;
     top: 100px;
+    @media (max-width: 768px) {
+      right: auto;
+      top: auto;
+    }
   }
 
   &:hover {
@@ -78,6 +92,7 @@ const Content = styled.div`
 
     @media (max-width: 768px) {
       font-size: 2.8rem;
+      text-align: center;
     }
   }
 
@@ -89,26 +104,34 @@ const Content = styled.div`
 
     @media (max-width: 768px) {
       font-size: 1.1rem;
+      text-align: center;
     }
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
 const Button = styled.button`
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-  background-color: transparent;
-  color: #ffffff;
-  border: 2px solid #ffffff;
-  border-radius: 30px;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+  background-color: white;
+  border: none;
+  border-radius: 50px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
 
   &:hover {
-    background-color: #ffffff;
-    color: #1a1a1a;
+    transform: scale(1.05) rotate(5deg);
+    box-shadow: 0 8px 15px -5px rgba(255, 255, 255, 0.5);
   }
 
   svg {
@@ -132,6 +155,30 @@ const Modal = styled.div`
   visibility: ${props => props.isOpen ? 'visible' : 'hidden'};
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(${props => props.isOpen ? '4px' : '0px'});
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      backdrop-filter: blur(0px);
+    }
+    to {
+      opacity: 1;
+      backdrop-filter: blur(4px);
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      backdrop-filter: blur(4px);
+    }
+    to {
+      opacity: 0;
+      backdrop-filter: blur(0px);
+    }
+  }
+
+  animation: ${props => props.isOpen ? 'fadeIn 0.3s ease-out' : 'fadeOut 0.3s ease-out'};
 `;
 
 const ModalContent = styled.div`
@@ -148,6 +195,39 @@ const ModalContent = styled.div`
   opacity: ${props => props.isOpen ? 1 : 0};
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
               opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  @keyframes slideIn {
+    from {
+      transform: scale(0.9) translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideOut {
+    from {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: scale(0.9) translateY(20px);
+      opacity: 0;
+    }
+  }
+
+  animation: ${props => props.isOpen ? 'slideIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)' : 'slideOut 0.3s cubic-bezier(0.4, 0, 0.2, 1)'};
 `;
 
 const CloseButton = styled.button`
@@ -176,6 +256,22 @@ const CloseButton = styled.button`
   }
 `;
 
+const FormInput = memo(({ label, name, value, onChange, placeholder }) => (
+  <div className="md:w-[48%] w-full flex flex-col gap-[0.5rem]">
+    <label className="text-[12px] text-white font-kanit uppercase tracking-wider">
+      {label}
+    </label>
+    <input
+      type="text"
+      name={name}
+      value={value}
+      onChange={onChange}
+      placeholder={placeholder}
+      className="w-full h-[45px] border-[1px] border-white/20 rounded-lg bg-black/20 text-[14px] text-white font-kanit px-[1rem] transition-all duration-300 focus:border-white/40 focus:outline-none hover:border-white/30 shadow-[0_4px_16px_0_rgba(255,255,255,0.1)]"
+    />
+  </div>
+));
+
 const CTA2 = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
@@ -186,14 +282,23 @@ const CTA2 = () => {
     description: ""
   });
   const scrollPosition = useRef(0);
+  const modalRef = useRef();
 
   useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setIsModalOpen(false);
+      }
+    };
+
     if (isModalOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
       scrollPosition.current = window.scrollY;
       document.body.style.overflow = 'hidden';
       document.body.style.touchAction = 'none';
       document.body.style.position = 'relative';
     } else {
+      document.removeEventListener('mousedown', handleClickOutside);
       document.body.style.overflow = '';
       document.body.style.touchAction = '';
       document.body.style.position = '';
@@ -201,6 +306,7 @@ const CTA2 = () => {
     }
 
     return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
       document.body.style.overflow = '';
       document.body.style.touchAction = '';
       document.body.style.position = '';
@@ -226,11 +332,13 @@ const CTA2 = () => {
         <ImageContainer>
           <Image 
             src={img1}
-            alt="Fashion model in dynamic pose" 
+            alt="Fashion model in dynamic pose"
+            loading="lazy"
           />
           <Image 
             src={img2}
-            alt="Fashion model in elegant hat" 
+            alt="Fashion model in elegant hat"
+            loading="lazy"
           />
         </ImageContainer>
         <Content>
@@ -245,90 +353,67 @@ const CTA2 = () => {
         </Content>
       </Container>
 
-      <Modal isOpen={isModalOpen}>
-        <ModalContent isOpen={isModalOpen}>
-          <CloseButton onClick={() => setIsModalOpen(false)}>×</CloseButton>
-          <form onSubmit={handleSubmit} className="w-full flex flex-col gap-[1rem]">
-            <div className="w-full flex md:flex-row flex-col justify-between gap-[1rem]">
-              <div className="md:w-[48%] w-full flex flex-col gap-[0.5rem]">
-                <label className="text-[12px] text-white font-kanit uppercase tracking-wider">
-                  First Name
-                </label>
-                <input
-                  type="text"
+      {isModalOpen && (
+        <Modal isOpen={isModalOpen}>
+          <ModalContent ref={modalRef} isOpen={isModalOpen}>
+            <CloseButton onClick={() => setIsModalOpen(false)}>×</CloseButton>
+            <form onSubmit={handleSubmit} className="w-full flex flex-col gap-[1rem]">
+              <div className="w-full flex md:flex-row flex-col justify-between gap-[1rem]">
+                <FormInput
+                  label="First Name"
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleChange}
                   placeholder="John"
-                  className="w-full h-[45px] border-[1px] border-white/20 rounded-lg bg-black/20 backdrop-blur-sm text-[14px] text-white font-kanit px-[1rem] transition-all duration-300 focus:border-white/40 focus:outline-none hover:border-white/30 shadow-[0_4px_16px_0_rgba(255,255,255,0.1)]"
                 />
-              </div>
-              <div className="md:w-[48%] w-full flex flex-col gap-[0.5rem]">
-                <label className="text-[12px] text-white font-kanit uppercase tracking-wider">
-                  Last Name
-                </label>
-                <input
-                  type="text"
+                <FormInput
+                  label="Last Name"
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleChange}
                   placeholder="Doe"
-                  className="w-full h-[45px] border-[1px] border-white/20 rounded-lg bg-black/20 backdrop-blur-sm text-[14px] text-white font-kanit px-[1rem] transition-all duration-300 focus:border-white/40 focus:outline-none hover:border-white/30 shadow-[0_4px_16px_0_rgba(255,255,255,0.1)]"
                 />
               </div>
-            </div>
-
-            <div className="w-full flex md:flex-row flex-col justify-between gap-[1rem]">
-              <div className="md:w-[48%] w-full flex flex-col gap-[0.5rem]">
-                <label className="text-[12px] text-white font-kanit uppercase tracking-wider">
-                  Timeline
-                </label>
-                <input
-                  type="text"
+              <div className="w-full flex md:flex-row flex-col justify-between gap-[1rem]">
+                <FormInput
+                  label="Timeline"
                   name="timeline"
                   value={formData.timeline}
                   onChange={handleChange}
                   placeholder="e.g., 2 weeks"
-                  className="w-full h-[45px] border-[1px] border-white/20 rounded-lg bg-black/20 backdrop-blur-sm text-[14px] text-white font-kanit px-[1rem] transition-all duration-300 focus:border-white/40 focus:outline-none hover:border-white/30 shadow-[0_4px_16px_0_rgba(255,255,255,0.1)]"
                 />
-              </div>
-              <div className="md:w-[48%] w-full flex flex-col gap-[0.5rem]">
-                <label className="text-[12px] text-white font-kanit uppercase tracking-wider">
-                  Budget
-                </label>
-                <input
-                  type="text"
+                <FormInput
+                  label="Budget"
                   name="budget"
                   value={formData.budget}
                   onChange={handleChange}
-                  placeholder="e.g., ₹5,000"
-                  className="w-full h-[45px] border-[1px] border-white/20 rounded-lg bg-black/20 backdrop-blur-sm text-[14px] text-white font-kanit px-[1rem] transition-all duration-300 focus:border-white/40 focus:outline-none hover:border-white/30 shadow-[0_4px_16px_0_rgba(255,255,255,0.1)]"
+                  placeholder="e.g., $1000"
                 />
               </div>
-            </div>
 
-            <div className="w-full">
-              <label className="text-[12px] text-white font-kanit uppercase tracking-wider block mb-[0.5rem]">
-                Description
-              </label>
-              <textarea
-                name="description"
-                value={formData.description}
-                onChange={handleChange}
-                placeholder="Tell us about your requirements..."
-                className="w-full h-[100px] border-[1px] border-white/20 rounded-lg bg-black/20 backdrop-blur-sm text-[14px] text-white font-kanit p-[1rem] transition-all duration-300 focus:border-white/40 focus:outline-none hover:border-white/30 shadow-[0_4px_16px_0_rgba(255,255,255,0.1)] resize-none"
-              />
-            </div>
+              <div className="w-full">
+                <label className="text-[12px] text-white font-kanit uppercase tracking-wider block mb-[0.5rem]">
+                  Description
+                </label>
+                <textarea
+                  name="description"
+                  value={formData.description}
+                  onChange={handleChange}
+                  placeholder="Tell us about your requirements..."
+                  className="w-full h-[100px] border-[1px] border-white/20 rounded-lg bg-black/20 text-[14px] text-white font-kanit p-[1rem] transition-all duration-300 focus:border-white/40 focus:outline-none hover:border-white/30 shadow-[0_4px_16px_0_rgba(255,255,255,0.1)] resize-none"
+                />
+              </div>
 
-            <button
-              type="submit"
-              className="w-full h-[45px] bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] rounded-lg text-[14px] text-white font-kanit uppercase tracking-wider transition-all duration-300 hover:opacity-90"
-            >
-              Submit
-            </button>
-          </form>
-        </ModalContent>
-      </Modal>
+              <button
+                type="submit"
+                className="w-full h-[45px] bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] rounded-lg text-[14px] text-white font-kanit uppercase tracking-wider transition-all duration-300 hover:opacity-90"
+              >
+                Submit
+              </button>
+            </form>
+          </ModalContent>
+        </Modal>
+      )}
     </Section>
   );
 };

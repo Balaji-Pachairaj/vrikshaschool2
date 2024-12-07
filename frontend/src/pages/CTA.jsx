@@ -223,6 +223,23 @@ const CTA = () => {
   const sectionRef = useRef(null);
   const lastScrollTop = useRef(0);
   const scrollPosition = useRef(0);
+  const modalRef = useRef();
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setIsModalOpen(false);
+      }
+    };
+
+    if (isModalOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isModalOpen]);
 
   const students = [
     { id: 1, name: 'Student 1', image: Std1 },
@@ -379,7 +396,7 @@ const CTA = () => {
         Join Now
       </JoinButton>
       <Modal isOpen={isModalOpen}>
-        <ModalContent isOpen={isModalOpen}>
+        <ModalContent ref={modalRef} isOpen={isModalOpen}>
           <CloseButton onClick={() => setIsModalOpen(false)}>×</CloseButton>
           <form onSubmit={handleSubmit} className="w-full flex flex-col gap-[1rem]">
             <div className="w-full flex md:flex-row flex-col justify-between gap-[1rem]">

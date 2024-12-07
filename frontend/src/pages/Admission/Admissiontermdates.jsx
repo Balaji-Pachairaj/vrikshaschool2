@@ -13,33 +13,33 @@ const Admissiontermdates = () => {
       </div>
 
       <div className="w-full h-fit flex flex-row justify-center">
-        <div className="w-fit h-fit border-[1px] rounded-[8px] flex md:flex-row flex-col">
+        <div className="w-fit h-fit flex md:flex-row flex-col gap-4">
           {/* First Term Card */}
-          <div className="md:w-[20vw] w-[80vw] flex-1 md:p-[2rem] p-[1rem] flex flex-col md:gap-[1rem] gap-[0.5rem] md:border-e-[1px] md:border-b-[0px] border-e-[0px] border-b-[1px] border-[white] bg-blue-600 hover:bg-blue-700 duration-150">
-            <h1 className="font-poppins lg:text-[26px] md:text-[18px] text-[16px] text-[white] font-[600] text-center">
+          <div className="md:w-[20vw] w-[80vw] flex-1 md:p-[2rem] p-[1rem] flex flex-col md:gap-[1rem] gap-[0.5rem] bg-[#FF69B4] rounded-lg">
+            <h1 className="font-poppins lg:text-[26px] md:text-[18px] text-[16px] text-black font-[600] text-center">
               First Term
             </h1>
-            <p className="text-white text-center text-lg">
+            <p className="text-black text-center text-lg">
               1st - 10th April
             </p>
           </div>
 
           {/* Second Term Card */}
-          <div className="md:w-[20vw] w-[80vw] flex-1 md:p-[2rem] p-[1rem] flex flex-col md:gap-[1rem] gap-[0.5rem] md:border-e-[1px] md:border-b-[0px] border-e-[0px] border-b-[1px] border-[white] bg-red-600 hover:bg-red-700 duration-150">
-            <h1 className="font-poppins lg:text-[26px] md:text-[18px] text-[16px] text-[white] font-[600] text-center">
+          <div className="md:w-[20vw] w-[80vw] flex-1 md:p-[2rem] p-[1rem] flex flex-col md:gap-[1rem] gap-[0.5rem] bg-[#FFFFFF] rounded-lg">
+            <h1 className="font-poppins lg:text-[26px] md:text-[18px] text-[16px] text-black font-[600] text-center">
               Second Term
             </h1>
-            <p className="text-white text-center text-lg">
+            <p className="text-black text-center text-lg">
               1st - 10th August
             </p>
           </div>
 
           {/* Third Term Card */}
-          <div className="md:w-[20vw] w-[80vw] flex-1 md:p-[2rem] p-[1rem] flex flex-col md:gap-[1rem] gap-[0.5rem] md:border-e-[1px] md:border-b-[0px] border-e-[0px] border-b-[1px] border-[white] bg-pink-600 hover:bg-pink-700 duration-150">
-            <h1 className="font-poppins lg:text-[26px] md:text-[18px] text-[16px] text-[white] font-[600] text-center">
+          <div className="md:w-[20vw] w-[80vw] flex-1 md:p-[2rem] p-[1rem] flex flex-col md:gap-[1rem] gap-[0.5rem] bg-[#FFD700] rounded-lg">
+            <h1 className="font-poppins lg:text-[26px] md:text-[18px] text-[16px] text-black font-[600] text-center">
               Third Term
             </h1>
-            <p className="text-white text-center text-lg">
+            <p className="text-black text-center text-lg">
               1st - 10th December
             </p>
           </div>

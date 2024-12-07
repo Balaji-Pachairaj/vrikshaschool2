@@ -14,13 +14,13 @@ const Admissionoverview = () => {
       </div>
 
       <div className="w-full h-fit flex flex-row justify-center">
-        <div className="w-fit h-fit border-[1px] rounded-[8px] flex md:flex-row flex-col">
+        <div className="w-fit h-fit flex md:flex-row flex-col gap-4">
           {/* Enquiry Card */}
-          <div className="md:w-[20vw] w-[80vw] flex-1 md:p-[2rem] p-[1rem] flex flex-col md:gap-[1rem] gap-[0.5rem] md:border-e-[0px] md:border-b-[0px] border-e-[0px] border-b-[1px] border-[white] hover:bg-gray-100 hover:bg-opacity-15 duration-150">
+          <div className="md:w-[20vw] w-[80vw] flex-1 md:p-[2rem] p-[1rem] flex flex-col md:gap-[1rem] gap-[0.5rem] bg-[#FF69B4] rounded-lg">
             <div className="flex justify-center mb-2">
-              <ClipboardList className="text-white w-8 h-8" />
+              <ClipboardList className="text-black w-8 h-8" />
             </div>
-            <h1 className="font-poppins lg:text-[26px] md:text-[18px] text-[16px] text-[white] font-[600] text-center">
+            <h1 className="font-poppins lg:text-[26px] md:text-[18px] text-[16px] text-black font-[600] text-center">
               Enquiry
             </h1>
           </div>
@@ -31,11 +31,11 @@ const Admissionoverview = () => {
           </div>
 
           {/* Registration Card */}
-          <div className="md:w-[20vw] w-[80vw] flex-1 md:p-[2rem] p-[1rem] flex flex-col md:gap-[1rem] gap-[0.5rem] md:border-e-[0px] md:border-b-[0px] border-e-[0px] border-b-[1px] border-[white] hover:bg-gray-100 hover:bg-opacity-15 duration-150">
+          <div className="md:w-[20vw] w-[80vw] flex-1 md:p-[2rem] p-[1rem] flex flex-col md:gap-[1rem] gap-[0.5rem] bg-[#FFFFFF] rounded-lg">
             <div className="flex justify-center mb-2">
-              <UserPlus className="text-white w-8 h-8" />
+              <UserPlus className="text-black w-8 h-8" />
             </div>
-            <h1 className="font-poppins lg:text-[26px] md:text-[18px] text-[16px] text-[white] font-[600] text-center">
+            <h1 className="font-poppins lg:text-[26px] md:text-[18px] text-[16px] text-black font-[600] text-center">
               Registration
             </h1>
           </div>
@@ -46,11 +46,11 @@ const Admissionoverview = () => {
           </div>
 
           {/* Admission Card */}
-          <div className="md:w-[20vw] w-[80vw] flex-1 md:p-[2rem] p-[1rem] flex flex-col md:gap-[1rem] gap-[0.5rem] md:border-e-[0px] md:border-b-[0px] border-e-[0px] border-b-[1px] border-[white] hover:bg-gray-100 hover:bg-opacity-15 duration-150">
+          <div className="md:w-[20vw] w-[80vw] flex-1 md:p-[2rem] p-[1rem] flex flex-col md:gap-[1rem] gap-[0.5rem] bg-[#FFD700] rounded-lg">
             <div className="flex justify-center mb-2">
-              <GraduationCap className="text-white w-8 h-8" />
+              <GraduationCap className="text-black w-8 h-8" />
             </div>
-            <h1 className="font-poppins lg:text-[26px] md:text-[18px] text-[16px] text-[white] font-[600] text-center">
+            <h1 className="font-poppins lg:text-[26px] md:text-[18px] text-[16px] text-black font-[600] text-center">
               Admission
             </h1>
           </div>

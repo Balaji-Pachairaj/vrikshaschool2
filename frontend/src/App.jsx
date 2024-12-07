@@ -48,6 +48,7 @@ import Alumninoteable from "./pages/Alumni/Alumninoteable"
 import Alumniconnect from "./pages/Alumni/Alumniconnect";
 import Alumnibenefits from "./pages/Alumni/Alumnibenefits";
 import AlumniHero from "./pages/Alumni/Alumnihero";
+import CTA2 from "./pages/CTA2";
 
 
 const router = createBrowserRouter([
@@ -77,7 +78,7 @@ const router = createBrowserRouter([
         <div className="w-full bg-black h-[10vh]" id="partners"></div>
         <Partners />
         <div className="w-full bg-black h-[0.1vh]" id="cta"></div>
-        <CTA />
+        <CTA2 />
         <FooterSection />
       </>
     ),

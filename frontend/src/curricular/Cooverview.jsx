@@ -1,4 +1,11 @@
 import React from "react";
+import vector1 from "../assets/curricular/1.png"
+import vector2 from "../assets/curricular/2.png"
+import vector3 from "../assets/curricular/3.png"
+import vector4 from "../assets/curricular/4.png"
+import vector5 from "../assets/curricular/5.png"
+import vector6 from "../assets/curricular/6.png"
+import vector7 from "../assets/curricular/7.png"
 
 const Component = ({
   content = {
@@ -14,143 +21,25 @@ const Component = ({
         style={{ background: `linear-gradient(135deg, #7c2ae8, #00c4cc)` }}
         className="w-full h-full flex flex-col justify-start gap-[1.5rem] p-6 rounded-[8px] hover:rotate-6 duration-300 relative"
       >
-        <h1
-          style={{ color: 'white' }}
-          className="w-full font-[500] text-2xl md:text-2xl uppercase duration-300"
-        >
-          {content?.title}
-        </h1>
-        <p 
-          style={{ color: content?.bodytext }}
-          className="font-[300] font-poppins text-base md:text-base"
-        >
-          {content?.body}
-        </p>
-        {content?.title === "PHYSICAL DEVELOPMENT" ? (
-          <svg
-            className="absolute bottom-4 right-4 w-12 h-12 opacity-30"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+        <div className="relative z-10">
+          <h1
+            style={{ color: 'white' }}
+            className="w-full font-[500] text-2xl md:text-2xl uppercase duration-300"
           >
-            <path
-              d="M7 16V8h10v8M7 12h10"
-              stroke="white"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              r="9"
-              stroke="white"
-              strokeWidth="2"
-            />
-          </svg>
-        ) : content?.title === "SOCIAL DEVELOPMENT" ? (
-          <svg
-            className="absolute bottom-4 right-4 w-12 h-12 opacity-30"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+            {content?.title}
+          </h1>
+          <p 
+            style={{ color: content?.bodytext }}
+            className="font-[300] font-poppins text-base md:text-base"
           >
-            <circle
-              cx="12"
-              cy="8"
-              r="4"
-              stroke="white"
-              strokeWidth="2"
-            />
-            <path
-              d="M4 20c0-4.4 3.6-8 8-8s8 3.6 8 8"
-              stroke="white"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-          </svg>
-        ) : content?.title === "INTELLECTUAL DEVELOPMENT" ? (
-          <svg
-            className="absolute bottom-4 right-4 w-12 h-12 opacity-30"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M12 3v3M3 12h3m13 0h3M12 18v3M5.6 5.6l2.1 2.1m8.6-2.1l-2.1 2.1"
-              stroke="white"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              r="4"
-              stroke="white"
-              strokeWidth="2"
-            />
-          </svg>
-        ) : content?.title === "PSYCHOMOTOR DEVELOPMENT" ? (
-          <svg
-            className="absolute bottom-4 right-4 w-12 h-12 opacity-30"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
-              stroke="white"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        ) : content?.title === "CIVIC VALUES DEVELOPMENT" ? (
-          <svg
-            className="absolute bottom-4 right-4 w-12 h-12 opacity-30"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
-              stroke="white"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        ) : content?.title === "CULTURAL DEVELOPMENT" ? (
-          <svg
-            className="absolute bottom-4 right-4 w-12 h-12 opacity-30"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
-              stroke="white"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        ) : content?.title === "excursions/ picnics/ tours" ? (
-          <svg
-            className="absolute bottom-4 right-4 w-12 h-12 opacity-30"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
-              stroke="white"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        ) : null}
+            {content?.body}
+          </p>
+        </div>
+        <img 
+          src={content?.image}
+          alt={content?.title}
+          className="absolute bottom-4 right-4 w-36 h-36 z-0"
+        />
       </div>
     </div>
   );
@@ -165,6 +54,7 @@ const array = [
     bg: "#1a1a1a",
     text: "white",
     textHover: "#ff643d",
+    image: vector1
   },
   {
     title: "SOCIAL DEVELOPMENT",
@@ -174,6 +64,7 @@ const array = [
     bg: "#1a1a1a",
     text: "white",
     textHover: "#ff643d",
+    image: vector2
   },
   {
     title: "INTELLECTUAL DEVELOPMENT",
@@ -183,6 +74,7 @@ const array = [
     bg: "#1a1a1a",
     text: "white",
     textHover: "#ff643d",
+    image: vector3
   },
   {
     title: "PSYCHOMOTOR DEVELOPMENT",
@@ -192,6 +84,7 @@ const array = [
     bg: "#1a1a1a",
     text: "white",
     textHover: "#ff643d",
+    image: vector4
   },
   {
     title: "CIVIC VALUES DEVELOPMENT",
@@ -201,6 +94,7 @@ const array = [
     bg: "#1a1a1a",
     text: "white",
     textHover: "#ff643d",
+    image: vector5
   },
   {
     title: "CULTURAL DEVELOPMENT",
@@ -210,6 +104,7 @@ const array = [
     bg: "#1a1a1a",
     text: "white",
     textHover: "#ff643d",
+    image: vector6
   },
   {
     title: "excursions/ picnics/ tours",
@@ -219,6 +114,7 @@ const array = [
     bg: "#1a1a1a",
     text: "white",
     textHover: "#ff643d",
+    image: vector7
   },
   
 ];
