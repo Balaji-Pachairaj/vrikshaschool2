@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import img1 from "../assets/CTA/img1.jpg";
-import img2 from "../assets/CTA/img2.jpg";
+import img1 from "../assets/CTA/img1.JPG";
+import img2 from "../assets/CTA/img2.JPG";
 
 const Section = styled.section`
   background-color: #000000;
