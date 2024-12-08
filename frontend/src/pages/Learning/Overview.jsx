@@ -1,186 +1,99 @@
-import React from "react";
-import bg from "../../assets/Learning/backgroundimage.png";
-import overviewImage from "../../assets/Learning/Overview.png";
+import React, { useRef, useEffect } from 'react';
+import overview from "../../assets/Learning/overview.JPG"
+import academics from "../../assets/Learning/academics.JPG"
 
-import { motion, useAnimation } from "framer-motion";
+const Card = ({ title, description, imageUrl, index, totalCards }) => {
+  const cardRef = useRef(null);
+  const innerRef = useRef(null);
 
-const Overview = () => {
-  let MoreAboutUstext1 = useAnimation();
-  let MoreAboutUstext2 = useAnimation();
+  useEffect(() => {
+    const card = cardRef.current;
+    const inner = innerRef.current;
+    const CARD_SPACING = 40;
+    const SCALE_FACTOR = 0.08;
+    
+    const offsetTop = CARD_SPACING * index;
+    const toScale = 1 - (totalCards - 1 - index) * SCALE_FACTOR;
+
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const rect = card.getBoundingClientRect();
+          const parentRect = card.parentElement.getBoundingClientRect();
+          const parentHeight = parentRect.height;
+          const scrollPercentage = Math.max(0, Math.min(1, 
+            (parentRect.bottom - rect.top) / parentHeight
+          ));
+          
+          const scale = 1 - (1 - toScale) * scrollPercentage;
+          
+          inner.style.transform = `scale(${scale})`;
+          
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    card.style.top = `${offsetTop}px`;
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [index, totalCards]);
 
   return (
-    <div
-      className=" w-full min-h-screen  h-fit relative overflow-hidden bg-cover pb-[10vh] pt-[5vh] "
-      style={{ backgroundImage: `url(${bg})` }}
-    >
-      {/* <img className=" w-full h-full object-cover " src={bg} /> */}
-
-      <div className=" w-full h-fit  top-0 left-0 pt-[10vh] flex flex-col justify-center items-center ">
-        <div className="w-fit h-fit border-[1px] rounded-[8px] flex md:flex-row flex-col justify-center ">
-          {/* ONE */}
-          <div className="lg:w-[30vw] md:w-[40vw] w-[80vw] flex-1 md:p-[2rem] p-[1rem] flex flex-col md:gap-[1rem] gap-[0.5rem] md:border-e-[1px] md:border-b-[0px] border-e-[0px] border-b-[1px] border-[white] hover:bg-gray-100 hover:bg-opacity-15 duration-150">
-            <h1 className=" font-poppins lg:text-[26px] md:text-[18px] text-[24px] text-[white] font-[600] text-center ">
-              Overview
-            </h1>
-            <p className=" lg:text-[16px] md:text-[14px] text-[14px] text-[#fbfbfb]">
-              The School is affiliated to the Central Board of Secondary
-              Education (CBSE).
-            </p>
-            <p className=" lg:text-[16px] md:text-[14px] text-[14px] text-[#fbfbfb]">
-              We encourage independence in our students to develop individual
-              interests and be passionate about what they wish to do.
-            </p>
-            <p className=" lg:text-[16px] md:text-[14px] text-[14px] text-[#fbfbfb]">
-              Students are made to feel connected to everything that goes on in
-              the world- through projects, curriculum related activities like
-              excursions, workshops, lectures, seminars, films and national and
-              international festivals and anniversaries.
-            </p>
-          </div>
-
-          {/* ONE */}
-          <div className="lg::w-[30vw] md:w-[40vw] w-[80vw]  flex-1 md:p-[2rem] p-[1rem] flex flex-col gap-[1rem] md:border-e-[1px] md:border-b-[0px] border-e-[0px] border-b-[1px] border-[white]  hover:bg-gray-100 hover:bg-opacity-15 duration-150">
-            <h1 className=" font-poppins lg:text-[26px] md:text-[18px] text-[24px] text-[white] font-[600] text-center ">
-              Academics
-            </h1>
-            <p className=" lg:text-[16px] md:text-[14px] text-[14px] text-[#fbfbfb]">
-              The medium of instruction is English and the second language for
-              all classes up to VIII is Tamil. Hindi/ French are a third choice
-              from classes VI to VIII. Our students have shown excellent results
-              in both our Class X Board examinations.
-            </p>
-            <p className=" lg:text-[16px] md:text-[14px] text-[14px] text-[#fbfbfb]">
-              Physical Education and work experience are an essential part of
-              the curriculum. Computer science is compulsory for classes IV to
-              X. Plans are afoot to offer an additional foreign and modern
-              Indian language.
-            </p>
-            <p className=" lg:text-[16px] md:text-[14px] text-[14px] text-[#fbfbfb]">
-              In junior school the curriculum is based on the fundamentals –
-              mathematics, science, language and reasoning – the basics of all
-              learning. No formal examinations are held until class VI. However
-              there is an assessment system based on weekly class assignments
-              and projects.
-            </p>
-          </div>
-        </div>
-        {/* <div className=" w-full h-fit flex flex-col items-center">
-          <h1 className=" font-cabin xl:text-[4vw] lg:text-[4.5vw] md:text-[5vw] sm:text-[6vw] text-[6.5vw] text-[white] text-center font-[500]">
-           
-          </h1>
-
-          <p className=" ps-8 pe-8 md:max-w-[705px] max-w-[580px] font-cabin lg:text-[20px] md:text-[16px] text-[14px]  text-[#dcdcdc] text-center font-[400] mt-[1rem]">
-            The School is affiliated to the Central Board of Secondary Education
-            (CBSE).
-          </p>
-          <p className=" ps-8 pe-8 md:max-w-[75%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[14px]  text-[#dcdcdc] text-center font-[400] mt-[1rem]">
-            We encourage independence in our students to develop individual
-            interests and be passionate about what they wish to do.
-          </p>
-          <p className=" ps-8 pe-8  md:max-w-[75%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[14px]  text-[#dcdcdc] text-center font-[400] mt-[1rem]">
-            Students are made to feel connected to everything that goes on in
-            the world- through projects, curriculum related activities like
-            excursions, workshops, lectures, seminars, films and national and
-            international festivals and anniversaries.
-          </p>
-        </div>
-
-        <div className=" w-full h-fit flex flex-col items-center mt-[5rem]">
-          <h1 className=" font-cabin xl:text-[3.5vw] lg:text-[4vw] md:text-[4.5vw] sm:text-[5vw] text-[5.5vw] text-[blue] text-center font-[500]">
-            Academics
-          </h1>
-
-          <p className=" ps-8 pe-8  md:max-w-[75%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[14px]  text-[#dcdcdc] text-center font-[400] mt-[1rem]">
-            The medium of instruction is English and the second language for all
-            classes up to VIII is Tamil. Hindi/ French are a third choice from
-            classes VI to VIII. Our students have shown excellent results in
-            both our Class X Board examinations.
-          </p>
-          <p className=" ps-8 pe-8  md:max-w-[75%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[14px]  text-[#dcdcdc] text-center font-[400] mt-[1rem]">
-            Physical Education and work experience are an essential part of the
-            curriculum. Computer science is compulsory for classes IV to X.
-            Plans are afoot to offer an additional foreign and modern Indian
-            language.
-          </p>
-          <p className=" ps-8 pe-8 md:max-w-[75%] max-w-[100%]   font-cabin lg:text-[20px] md:text-[16px] text-[14px]  text-[#dcdcdc] text-center font-[400] mt-[1rem]">
-            In junior school the curriculum is based on the fundamentals –
-            mathematics, science, language and reasoning – the basics of all
-            learning. No formal examinations are held until class VI. However
-            there is an assessment system based on weekly class assignments and
-            projects.
-          </p>
-        </div> */}
-
-        <div className=" w-full flex flex-row justify-center ">
-          <div className=" w-[80vw] sm:h-[80vh] h-[40vh] sm:mt-[4rem] mt-[1rem]">
-            <img
-              src={overviewImage}
-              className=" w-full h-full object-contain"
+    <div ref={cardRef} className="sticky top-0 flex justify-center" style={{ paddingTop: `${20 + index * 20}px` }}>
+      <div ref={innerRef} className="flex overflow-hidden bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] rounded-lg shadow-lg transform origin-top will-change-transform w-[1100px] h-[500px]">
+        <div className="w-1/2 p-8">
+          <div className="w-full h-full relative rounded-lg overflow-hidden">
+            <img 
+              src={imageUrl} 
+              alt="" 
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
-
-        {/* Stat */}
-        <div className=" w-full h-fit flex flex-row justify-center mt-[2.5rem]">
-          <div className=" md:w-fit w-full h-fit flex flex-row md:justify-center justify-evenly md:gap-[1rem] gap-y-[1rem] flex-wrap md:flex-nowrap ">
-            {/* One */}
-            {/* <div className="  font-cabin w-[45%] md:w-fit h-fit flex flex-col gap-[1.5rem] md:items-start items-center">
-              <div className=" w-fit flex flex-col gap-[1.5rem]">
-                <h1 className=" font-[600] text-[white] text-[24px] md:text-[3.5vw]">
-                  180+
-                </h1>
-
-                <p className="font-cabin md:text-[20px] text-[16px] text-[#dcdcdc] text-start font-[400]">
-                  Projects completed in<br></br>24 countries
-                </p>
-              </div>
-            </div> */}
-            {/* Sliding Div */}
-            {/* <div className=" w-[100px] h-fit md:flex hidden flex-row justify-center   ">
-              <motion.div
-                style={{ rotate: "20deg" }}
-                className=" w-[1.5px] md:h-[180px] h-[135px] bg-[white] "
-              ></motion.div>
-            </div> */}
-            {/* One */}
-            {/* <div className=" font-cabin w-[45%] md:w-fit h-fit flex flex-col gap-[1.5rem] md:items-start items-center">
-              <div className=" w-fit flex flex-col gap-[1.5rem]">
-                <h1 className=" font-[600] text-[white] text-[24px] md:text-[3.5vw]">
-                  180+
-                </h1>
-
-                <p className="font-cabin md:text-[20px] text-[16px] text-[#dcdcdc] text-start font-[400]">
-                  Projects completed in<br></br>24 countries
-                </p>
-              </div>
-            </div> */}
-            {/* Sliding Div */}
-            {/* <div className=" w-[100px] h-fit md:flex hidden flex-row justify-center ">
-              <motion.div
-                style={{ rotate: "20deg" }}
-                className=" w-[1.5px] md:h-[180px] h-[135px] bg-[white] "
-              ></motion.div>
-            </div> */}
-            {/* One */}
-            {/* <div className=" font-cabin w-[45%] md:w-fit h-fit flex flex-col gap-[1.5rem] md:items-start items-center">
-              <div className=" w-fit flex flex-col gap-[1.5rem]">
-                <h1 className=" font-[600] text-[white] text-[24px] md:text-[3.5vw]">
-                  180+
-                </h1>
-
-                <p className="font-cabin md:text-[20px] text-[16px] text-[#dcdcdc] text-start font-[400]">
-                  Projects completed in<br></br>24 countries
-                </p>
-              </div>
-            </div> */}
+        <div className="w-1/2 p-8 flex flex-col">
+          <h2 className="text-4xl font-semibold text-white mb-4">{title}</h2>
+          <div className="overflow-y-auto pr-4 flex-1">
+            <p className="text-base text-gray-300 leading-relaxed">{description}</p>
           </div>
         </div>
-        {/* <div className=" flex-1 min-h-[350px]">
-          <img src={people} className=" w-full h-full object-cover" />
-        </div> */}
       </div>
     </div>
   );
 };
 
-export default Overview;
+const StackingCards = () => {
+  return (
+    <div className="bg-black min-h-screen py-20">
+      <div className="w-full mx-auto relative">
+        <Card 
+          title="Overview"
+          description="The School is affiliated to the Central Board of Secondary Education (CBSE).
+            We encourage independence in our students to develop individual interests and be passionate about what they wish to do.
+            
+            Students are made to feel connected to everything that goes on in the world- through projects, curriculum related activities like excursions, workshops, lectures, seminars, films and national and international festivals and anniversaries."
+          imageUrl={overview}
+          index={0}
+          totalCards={2}
+        />
+        <Card 
+          title="Academics"
+          description="The medium of instruction is English and the second language for all classes up to VIII is Tamil. Hindi/ French are a third choice from classes VI to VIII. Our students have shown excellent results in both our Class X Board examinations.
+            
+            Physical Education and work experience are an essential part of the curriculum. Computer science is compulsory for classes IV to X. Plans are afoot to offer an additional foreign and modern Indian language.
+            
+            In junior school the curriculum is based on the fundamentals – mathematics, science, language and reasoning – the basics of all learning. No formal examinations are held until class VI. However there is an assessment system based on weekly class assignments and projects."
+          imageUrl={academics}
+          index={1}
+          totalCards={2}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default StackingCards;
+

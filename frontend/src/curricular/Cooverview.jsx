@@ -38,7 +38,7 @@ const Component = ({
         <img 
           src={content?.image}
           alt={content?.title}
-          className="absolute bottom-4 right-4 w-36 h-36 z-0"
+          className="absolute bottom-4 right-4 w-44 h-44 z-0"
         />
       </div>
     </div>
