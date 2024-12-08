@@ -12,6 +12,7 @@ import Testimonials from "./Testimonials";
 import Testimonials_Mobile from "./Testimonals_Mobile";
 import NavBar from "./NavBar";
 import FooterSection from "./FooterSection";
+import Carousel from "./Carousel";
 
 const Home = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -24,6 +25,7 @@ const Home = () => {
       {/* Main Content */}
       <main>
         
+        <Carousel />
         {/* Hero Section */}
         <HeroAndVisionSection />
 

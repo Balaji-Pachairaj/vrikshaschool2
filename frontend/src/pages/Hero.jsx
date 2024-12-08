@@ -67,7 +67,7 @@ const Hero = () => {
   const top_full_one = useTransform(
     fullRef_useScroll?.scrollYProgress,
     [0, 0.15, 0.8, 1],
-    ["55%", "30%", "30%", "-100%"]
+    ["85%", "30%", "30%", "-100%"]
   );
 
   const rotateX_one = useTransform(
@@ -99,7 +99,7 @@ const Hero = () => {
   const top_full_two = useTransform(
     fullRef_useScroll?.scrollYProgress,
     [0, 0.15, 0.8, 1],
-    ["55%", "30%", "30%", "-100%"]
+    ["85%", "30%", "30%", "-100%"]
   );
 
   const rotateX_two = useTransform(
@@ -131,7 +131,7 @@ const Hero = () => {
   const top_full_three = useTransform(
     fullRef_useScroll?.scrollYProgress,
     [0, 0.15, 0.8, 1],
-    ["75%", "55%", "55%", "-100%"]
+    ["105%", "55%", "55%", "-100%"]
   );
 
   const rotateX_three = useTransform(
@@ -163,7 +163,7 @@ const Hero = () => {
   const top_full_four = useTransform(
     fullRef_useScroll?.scrollYProgress,
     [0, 0.15, 0.8, 1],
-    ["75%", "55%", "55%", "-100%"]
+    ["105%", "55%", "55%", "-100%"]
   );
 
   const rotateX_four = useTransform(
@@ -183,7 +183,7 @@ const Hero = () => {
   const top_full_text = useTransform(
     fullRef_useScroll?.scrollYProgress,
     [0, 0.33, 0.66, 0.8, 1],
-    ["50%", "50%", "50%", "50%", "-100%"]
+    ["80%", "50%", "50%", "50%", "-100%"]
   );
 
   const scale_full_text = useTransform(
