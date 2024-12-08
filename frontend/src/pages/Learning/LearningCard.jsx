@@ -22,9 +22,13 @@ const LearningCard = () => {
 
 
           {/* Card 3 */}
+          <Link to="/lead" onClick={() => window.scrollTo(0, 0)}>
+
           <div className="bg-gradient-to-br from-[#7c2ae8] to-[#00c4cc] rounded-lg shadow-lg p-6 h-96 flex items-center justify-center cursor-pointer hover:opacity-90 transition-all">
             <h3 className="text-3xl font-bold text-white text-center">Lead Curriculum</h3>
           </div>
+          </Link>
+
         </div>
       </div>
     </section>

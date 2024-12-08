@@ -4,6 +4,7 @@ import img1 from "../../assets/Learning/1.png"
 import img2 from "../../assets/Learning/2.png"
 import img3 from "../../assets/Learning/3.png"
 import img4 from "../../assets/Learning/4.png"
+import well from "../../assets/Learning/well.JPG"
 
 const PrimarySchoolSection = () => {
   const [isFlipped, setIsFlipped] = useState([false, false, false, false]);
@@ -87,7 +88,7 @@ const PrimarySchoolSection = () => {
                   }}
                 >
                   <div className="w-full h-full flex-1 md:p-[2rem] p-[1rem] flex flex-col justify-center bg-[#1a1a1a] rounded-lg">
-                    <p className="lg:text-[16px] md:text-[14px] text-[14px] text-[#fbfbfb]">
+                    <p className="lg:text-[18px] md:text-[16px] text-[16px] text-white">
                       {card.description}
                     </p>
                   </div>
@@ -99,34 +100,45 @@ const PrimarySchoolSection = () => {
       </div>
 
       {/* ------------------------- */}
-      <div className=" w-full h-fit flex flex-col justify-center items-center mt-[4rem] mb-[4rem] ">
-        <h1 className=" font-cabin xl:text-[2vw] lg:text-[2.5vw] md:text-[3vw] sm:text-[3.5vw] text-[5vw] text-[white] text-center font-[600] ">
-          Well Rounded Learning
-        </h1>
+      <div 
+        className="w-full h-fit flex flex-col justify-center items-center mt-[4rem] mb-[4rem] relative"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${well})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="md:max-w-[85%] max-w-[100%] py-24 px-12">
+          <h1 className="font-cabin text-[48px] font-[600] mb-6 text-white">
+            Well Rounded Learning
+          </h1>
 
-        <p className=" ps-8 pe-8  md:max-w-[85%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[16px]  text-[white] text-center font-[400] mt-[1rem]">
-          We encourage children to ask questions which their own reading and
-          guided explorations or experiments can help them to answer.
-          Interaction between students and teachers make learning lively and
-          individually meaningful. On the other hand it is the application of
-          skills and techniques that is treated as important. We believe that
-          this stands our students in good stead when they are preparing for
-          examinations, both in school and after.
-        </p>
+          <p className="font-cabin text-[20px] leading-relaxed mb-8 text-white opacity-80">
+            Our educational approach is your go-to destination for comprehensive development, 
+            focusing on both academic excellence and personal growth. Curated by a team of 
+            passionate educators with diverse backgrounds, each learning experience reflects 
+            a unique blend of theoretical knowledge and practical application.
+          </p>
 
-        <p className=" ps-8 pe-8  md:max-w-[85%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[16px]  text-[white] text-center font-[400] mt-[1rem]">
-          The school aims at all round development of the children by bringing
-          out the best in them and inculcating the qualities of self-reliance,
-          mutual help, team spirit, service to community and nation, general
-          awareness and leadership.
-        </p>
-
-        <p className=" ps-8 pe-8  md:max-w-[85%] max-w-[100%] font-cabin lg:text-[20px] md:text-[16px] text-[16px]  text-[white] text-center font-[400] mt-[1rem]">
-          The traits of character, confidence, curiosity and compassion are what
-          we aim to inculcate in Vriksha Global School. Our role, quite simply
-          is to develop the potential and proclivities within each individual
-          student, leading to a life of individual fulfillment.
-        </p>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <p className="font-cabin text-[18px] leading-relaxed text-white opacity-80">
+                We encourage children to ask questions which their own reading and
+                guided explorations or experiments can help them to answer.
+                Interaction between students and teachers make learning lively and
+                individually meaningful.
+              </p>
+            </div>
+            <div>
+              <p className="font-cabin text-[18px] leading-relaxed text-white opacity-80">
+                The school aims at all round development of the children by bringing
+                out the best in them and inculcating the qualities of self-reliance,
+                mutual help, team spirit, service to community and nation.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

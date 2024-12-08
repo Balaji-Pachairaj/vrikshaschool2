@@ -52,6 +52,8 @@ import AlumniHero from "./pages/Alumni/Alumnihero";
 import CTA2 from "./pages/CTA2";
 import FacilitiesSection from "./pages/Learning/FacilitiesSection";
 import LearningHigher from "./pages/Learning/LearningHigher";
+import PrimarySchoolSection from "./pages/Learning/PrimarySchoolSection";
+import LeadCurriculam from "./pages/Learning/LeadCurriculam";
 
 
 const router = createBrowserRouter([
@@ -114,9 +116,28 @@ const router = createBrowserRouter([
       <>
         <div className="w-full h-[0.1px]" id="start"></div>
         <NavBar />
-        <div className="w-full h-[0.1px]" id="facilitessection" ></div>
-        
+
+        <div className="w-full h-[0.1px]" id="higher" ></div>
         <LearningHigher />
+
+        
+        <div className=" w-full h-[0.1px]" id="primaryschool"></div>
+        <PrimarySchoolSection />
+        
+        <FooterSection />
+      </>
+    ),
+  },
+
+  {
+    path: "/lead",
+    element: (
+      <>
+        <div className="w-full h-[0.1px]" id="start"></div>
+        <NavBar />
+
+        <div className="w-full h-[0.1px]" id="lead" ></div>
+        <LeadCurriculam />
         
         <FooterSection />
       </>

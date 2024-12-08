@@ -1,5 +1,5 @@
 import React from "react";
-import PrimarySchoolSection from "./PrimarySchoolSection";
+
 import LeadCurriculam from "./LeadCurriculam";
 import Facilities from "./Facilities";
 import FacilitiesMobile from "./FacilitiesMobile";
@@ -20,12 +20,7 @@ const Learning = () => {
 
       <div className=" w-full h-[0.1px]" id="learningcard"></div>
       <LearningCard />
-
-      <div className=" w-full h-[0.1px]" id="primaryschool"></div>
-      <PrimarySchoolSection />
-
-      <div className=" w-full h-[0.1px]" id="lead"></div>
-      <LeadCurriculam />
+      
       <FooterSection />
     </div>
   );
