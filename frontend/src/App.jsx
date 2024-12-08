@@ -50,6 +50,8 @@ import Alumniconnect from "./pages/Alumni/Alumniconnect";
 import Alumnibenefits from "./pages/Alumni/Alumnibenefits";
 import AlumniHero from "./pages/Alumni/Alumnihero";
 import CTA2 from "./pages/CTA2";
+import FacilitiesSection from "./pages/Learning/FacilitiesSection";
+import LearningHigher from "./pages/Learning/LearningHigher";
 
 
 const router = createBrowserRouter([
@@ -90,6 +92,37 @@ const router = createBrowserRouter([
     path: "/learning",
     element: <Learning />,
   },
+
+  {
+    path: "/facilities",
+    element: (
+      <>
+        <div className="w-full h-[0.1px]" id="start"></div>
+        <NavBar />
+        <div className="w-full h-[0.1px]" id="facilitessection" ></div>
+        
+        <FacilitiesSection />
+        
+        <FooterSection />
+      </>
+    ),
+  },
+
+  {
+    path: "/higher",
+    element: (
+      <>
+        <div className="w-full h-[0.1px]" id="start"></div>
+        <NavBar />
+        <div className="w-full h-[0.1px]" id="facilitessection" ></div>
+        
+        <LearningHigher />
+        
+        <FooterSection />
+      </>
+    ),
+  },
+
   {
     path: "/curricular",
     element: (

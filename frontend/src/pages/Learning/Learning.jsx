@@ -12,17 +12,14 @@ import LearningCard from "./LearningCard";
 
 const Learning = () => {
   return (
-    <div className="w-full bg-black  ">
+    <div className="w-full bg-black">
         <div className="w-full h-[0.1px]" id="start"></div>
       <NavBar />
       <div className=" w-full h-[0.1px]" id="overview"></div>
       <Overview />
 
-      <div className=" w-full h-[0.1px]" id="facilities"></div>
+      <div className=" w-full h-[0.1px]" id="learningcard"></div>
       <LearningCard />
-
-      <div className=" w-full h-[0.1px]" id="facilities"></div>
-      <FacilitiesSection />
 
       <div className=" w-full h-[0.1px]" id="primaryschool"></div>
       <PrimarySchoolSection />
