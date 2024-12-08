@@ -8,6 +8,7 @@ import Overview from "./Overview";
 import FacilitiesSection from "./FacilitiesSection";
 import NavBar from "../NavBar";
 import FooterSection from "../FooterSection";
+import LearningCard from "./LearningCard";
 
 const Learning = () => {
   return (
@@ -16,6 +17,9 @@ const Learning = () => {
       <NavBar />
       <div className=" w-full h-[0.1px]" id="overview"></div>
       <Overview />
+
+      <div className=" w-full h-[0.1px]" id="facilities"></div>
+      <LearningCard />
 
       <div className=" w-full h-[0.1px]" id="facilities"></div>
       <FacilitiesSection />

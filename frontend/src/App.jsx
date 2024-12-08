@@ -8,6 +8,7 @@ import Mission from "./aboutus/Mission";
 import Overview from "./aboutus/Overview";
 import Learning from "./pages/Learning/Learning";
 import Houses from "./aboutus/Houses";
+import Leadership from "./aboutus/Leadership";
 import Partners from "./pages/Partners";
 import CTA from "./pages/CTA";
 import VKadvantage from "./aboutus/VKadvantage";
@@ -75,6 +76,8 @@ const router = createBrowserRouter([
         <VKadvantage />
         <div className="w-full bg-black h-[10vh]" id="houses"></div>
         <Houses />
+        <div className="w-full bg-black h-[10vh]" id="partners"></div>
+        <Leadership />
         <div className="w-full bg-black h-[10vh]" id="partners"></div>
         <Partners />
         <div className="w-full bg-black h-[0.1vh]" id="cta"></div>

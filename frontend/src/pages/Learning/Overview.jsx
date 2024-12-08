@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import overview from "../../assets/Learning/overview.JPG"
 import academics from "../../assets/Learning/academics.JPG"
 
-const Card = ({ title, description, imageUrl, index, totalCards }) => {
+const Card = ({ title, description, imageUrl, index, totalCards, className = "text-lg", imageOnRight = false }) => {
   const cardRef = useRef(null);
   const innerRef = useRef(null);
 
@@ -45,25 +45,40 @@ const Card = ({ title, description, imageUrl, index, totalCards }) => {
   return (
     <div ref={cardRef} className="sticky top-0 flex justify-center" style={{ paddingTop: `${20 + index * 20}px` }}>
       <div ref={innerRef} className="flex overflow-hidden bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] rounded-lg shadow-lg transform origin-top will-change-transform w-[1100px] h-[500px]">
-        <div className="w-1/2 p-8">
-          <div className="w-full h-full relative rounded-lg overflow-hidden">
-            <img 
-              src={imageUrl} 
-              alt="" 
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-        <div className="w-1/2 p-8 flex flex-col">
-          <h2 className="text-4xl font-semibold text-white mb-4">{title}</h2>
-          <div className="overflow-y-auto pr-4 flex-1">
-            <p className="text-base text-gray-300 leading-relaxed">{description}</p>
-          </div>
-        </div>
+        {!imageOnRight ? (
+          <>
+            <div className="w-1/2 p-8">
+              <div className="w-full h-full relative rounded-lg overflow-hidden">
+                <img src={imageUrl} alt="" className="w-full h-full object-cover" />
+              </div>
+            </div>
+            <div className="w-1/2 p-8 flex flex-col">
+              <h2 className="text-4xl font-semibold text-white mb-4">{title}</h2>
+              <div className="overflow-y-auto pr-4 flex-1">
+                <p className={`${className} text-gray-300 leading-relaxed`} dangerouslySetInnerHTML={{ __html: description }} />
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="w-1/2 p-8 flex flex-col">
+              <h2 className="text-4xl font-semibold text-white mb-4">{title}</h2>
+              <div className="overflow-y-auto pr-4 flex-1">
+                <p className={`${className} text-gray-300 leading-relaxed`} dangerouslySetInnerHTML={{ __html: description }} />
+              </div>
+            </div>
+            <div className="w-1/2 p-8">
+              <div className="w-full h-full relative rounded-lg overflow-hidden">
+                <img src={imageUrl} alt="" className="w-full h-full object-cover" />
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
 };
+
 
 const StackingCards = () => {
   return (
@@ -71,24 +86,27 @@ const StackingCards = () => {
       <div className="w-full mx-auto relative">
         <Card 
           title="Overview"
-          description="The School is affiliated to the Central Board of Secondary Education (CBSE).
-            We encourage independence in our students to develop individual interests and be passionate about what they wish to do.
-            
-            Students are made to feel connected to everything that goes on in the world- through projects, curriculum related activities like excursions, workshops, lectures, seminars, films and national and international festivals and anniversaries."
+          description="The School is affiliated to the Central Board of Secondary Education (CBSE).<br /><br />
+
+We encourage independence in our students to develop individual interests and be passionate about what they wish to do.<br /><br />
+
+Students are made to feel connected to everything that goes on in the world- through projects, curriculum related activities like excursions, workshops, lectures, seminars, films and national and international festivals and anniversaries."
           imageUrl={overview}
           index={0}
           totalCards={2}
         />
         <Card 
           title="Academics"
-          description="The medium of instruction is English and the second language for all classes up to VIII is Tamil. Hindi/ French are a third choice from classes VI to VIII. Our students have shown excellent results in both our Class X Board examinations.
-            
-            Physical Education and work experience are an essential part of the curriculum. Computer science is compulsory for classes IV to X. Plans are afoot to offer an additional foreign and modern Indian language.
-            
-            In junior school the curriculum is based on the fundamentals – mathematics, science, language and reasoning – the basics of all learning. No formal examinations are held until class VI. However there is an assessment system based on weekly class assignments and projects."
+          description="The medium of instruction is English and the second language for all classes up to VIII is Tamil. Hindi/ French are a third choice from classes VI to VIII. Our students have shown excellent results in both our Class X Board examinations.<br /><br />
+
+Physical Education and work experience are an essential part of the curriculum. Computer science is compulsory for classes IV to X. Plans are afoot to offer an additional foreign and modern Indian language.<br /><br />
+
+In junior school the curriculum is based on the fundamentals – mathematics, science, language and reasoning – the basics of all learning. No formal examinations are held until class VI. However there is an assessment system based on weekly class assignments and projects."
           imageUrl={academics}
           index={1}
           totalCards={2}
+          className="text-sm"
+          imageOnRight={true}
         />
       </div>
     </div>
