@@ -46,7 +46,7 @@ export const NavBarLinks = [
     ],
   },
   {
-    title: "curricular",
+    title: "CO & EXTRA CURRICULARS",
     to: "/curricular?section=start",
     sections: [
       { title: "overview", to: "/curricular?section=overview" },
@@ -140,7 +140,7 @@ const NavLap = ({ content = {} }) => {
       className={({ isActive }) => {
         return `cursor-pointer uppercase ${
           isActive ? "border-b-2 border-white" : ""
-        } text-white text-[14px] font-[600] font-inter h-fit w-fit ps-[0.25rem] pe-[0.25rem] pt-[0.5rem] pb-[0.5rem] text-nowrap relative`;
+        } text-white text-[12px] font-[600] font-inter h-fit w-fit ps-[0.25rem] pe-[0.25rem] pt-[0.5rem] pb-[0.5rem] text-nowrap relative`;
       }}
     >
       {content?.title}
@@ -229,7 +229,7 @@ const NavMobile = ({ content = {}, toggle = () => {}, isActive, setActiveMenu })
         onClick={handleClick}
         className=" w-full h-[40px] flex flex-row items-center  duration-500 uppercase  gap-[0.3rem] hover:bg-white/15 flex-shrink-0 "
       >
-        <h1 className="text-white text-[12px] font-[600] font-inter ps-[2rem] flex flex-row gap-[0.5rem] items-center">
+        <h1 className="text-white text-[10px] font-[600] font-inter ps-[2rem] flex flex-row gap-[0.5rem] items-center">
           {content?.title}
           <TbTriangleInvertedFilled size={10} color={"white"} />
         </h1>
