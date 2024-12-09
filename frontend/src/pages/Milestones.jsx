@@ -201,21 +201,21 @@ const Milestone_actual_animation = () => {
           top={image_one_top}
           rotateX={image_one_rotate}
           scale={scale_one_fullRef}
-          text=""
+          
         />
         <Milestone_Card
           src={src2}
           top={image_two_top}
           rotateX={image_two_rotate}
           scale={scale_two_fullRef}
-          text=""
+          
         />
         <Milestone_Card
           src={src3}
           top={image_three_top}
           rotateX={image_three_rotate}
           scale={scale_three_fullRef}
-          text=""
+        
         />
 
         <Milestone_Card
@@ -223,14 +223,14 @@ const Milestone_actual_animation = () => {
           top={image_four_top}
           rotateX={image_four_rotate}
           scale={scale_four_fullRef}
-          text=""
+         
         />
         <Milestone_Card
           src={src5}
           top={image_five_top}
           rotateX={image_five_rotate}
           scale={scale_five_fullRef}
-          text=""
+         
         />
       </div>
     </>

@@ -282,13 +282,13 @@ const MeetOurTeam3 = () => {
         }}
         className="w-[300px] h-[285px] fixed rounded-[15px] overflow-hidden"
       >
-        <h1 className="text-[4vw] leading-[4.2vw] text-[#fff]">
+        <h1 className="text-[3vw] leading-[4.2vw] text-[#fff]">
           Leaders Democratising Education
         </h1>
       </motion.div>
 
       <div className="lg:hidden block p-4">
-        <h1 className="text-3xl text-white mb-8">Leaders Democratising Education</h1>
+        <h1 className="text-2xl text-white mb-8">Leaders Democratising Education</h1>
         <div className="flex flex-col gap-6">
           {teammember.slice(0, 4).map((member, index) => (
             <motion.div
