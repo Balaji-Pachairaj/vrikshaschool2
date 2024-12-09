@@ -1,24 +1,24 @@
 import React from "react";
-import img1 from "../assets/brand1.jpg";
-import img2 from "../assets/brand2.jpg";
-import img3 from "../assets/brand3.jpg";
-import img4 from "../assets/brand4.jpg";
+import img1 from "../assets/home/1.JPG";
+import img2 from "../assets/home/2.JPG";
+import img3 from "../assets/home/3.JPG";
+import img4 from "../assets/home/4.JPG";
 
 const accordionData = [
   {
-    title: "Academics",
+    title: "Learning",
     image: img1,
   },
   {
-    title: "Co-Curricular & Extra Curricular",
+    title: "Co & Extra Curiculuars",
     image: img2,
   },
   {
-    title: "Community",
+    title: "Facilities",
     image: img3,
   },
   {
-    title: "Infrastructure & Amenities",
+    title: "Admissions",
     image: img4,
   },
 ];
