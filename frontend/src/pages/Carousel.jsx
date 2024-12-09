@@ -24,7 +24,7 @@ const Marathoncarousal = () => {
   }, []);
 
   return (
-    <div className="relative mt-12 w-full max-w-6xl mx-auto h-[250px] overflow-hidden">
+    <div className="relative mt-20 w-full max-w-6xl mx-auto h-[250px] overflow-hidden">
       {/* Slides */}
       {images.map((image, index) => (
         <div

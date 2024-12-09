@@ -36,9 +36,7 @@ const MeetOurTeam3 = () => {
     {
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=870&auto=format&fit=crop",
     },
-    {
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=870&auto=format&fit=crop",
-    }
+    
   ];
   const fullRef = useRef();
 
@@ -258,18 +256,7 @@ const MeetOurTeam3 = () => {
         <ImageComponents team={teammember[2]} />
       </motion.div>
 
-      <motion.div
-        style={{
-          top: topSection4,
-          x: "-50%",
-          y: "-50%",
-          scale: scaleSection4,
-          left: leftSection4,
-        }}
-        className="xl:w-[200px] xl:h-[285px] lg:w-[150px] lg:h-[215px] bg-red-400 fixed rounded-[15px] overflow-hidden"
-      >
-        <ImageComponents team={teammember[3]} />
-      </motion.div>
+     
 
       <motion.div
         style={{
@@ -296,14 +283,14 @@ const MeetOurTeam3 = () => {
         className="w-[300px] h-[285px] fixed rounded-[15px] overflow-hidden"
       >
         <h1 className="text-[4vw] leading-[4.2vw] text-[#fff]">
-          Enriching Lives
+          Leaders Democratising Education
         </h1>
       </motion.div>
 
       <div className="lg:hidden block p-4">
-        <h1 className="text-3xl text-white mb-8">Enriching Lives</h1>
+        <h1 className="text-3xl text-white mb-8">Leaders Democratising Education</h1>
         <div className="flex flex-col gap-6">
-          {teammember.map((member, index) => (
+          {teammember.slice(0, 4).map((member, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}

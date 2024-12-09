@@ -56,6 +56,8 @@ import PrimarySchoolSection from "./pages/Learning/PrimarySchoolSection";
 import LeadCurriculam from "./pages/Learning/LeadCurriculam";
 
 
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -85,6 +87,8 @@ const router = createBrowserRouter([
         <div className="w-full bg-black h-[10vh]" id="partners"></div>
         <Partners />
         <div className="w-full bg-black h-[0.1vh]" id="cta"></div>
+        <CTA />
+        <div className="w-full bg-black h-[0.1vh]" id="cta2"></div>
         <CTA2 />
         <FooterSection />
       </>
@@ -104,6 +108,7 @@ const router = createBrowserRouter([
         <div className="w-full h-[0.1px]" id="facilitessection" ></div>
         
         <FacilitiesSection />
+        
         
         <FooterSection />
       </>
@@ -154,6 +159,11 @@ const router = createBrowserRouter([
         <Cooverview />
         <div className="w-full h-[0.1px] " id={"co"}></div>
         <Cocurricular />
+
+        <div className="w-full bg-black h-[0.1vh]" id="cta"></div>
+        <CTA />
+        <div className="w-full bg-black h-[0.1vh]" id="cta2"></div>
+        <CTA2 />
         
         <FooterSection />
       </>
@@ -171,6 +181,11 @@ const router = createBrowserRouter([
         <Mess />
         <div className="w-full h-[10vh] bg-black " id={"content"}></div>
         <Content />
+
+        <div className="w-full bg-black h-[0.1vh]" id="cta"></div>
+        <CTA />
+        <div className="w-full bg-black h-[0.1vh]" id="cta2"></div>
+        <CTA2 />
         <FooterSection />
       </>
     ),
@@ -293,6 +308,11 @@ const router = createBrowserRouter([
       <Alumninoteable/>
       <div className="w-full h-[0.1px]" id="connect"></div>
       <Alumniconnect/>
+
+      <div className="w-full bg-black h-[0.1vh]" id="cta"></div>
+        <CTA />
+        <div className="w-full bg-black h-[0.1vh]" id="cta2"></div>
+        <CTA2 />
 
       <FooterSection />
 

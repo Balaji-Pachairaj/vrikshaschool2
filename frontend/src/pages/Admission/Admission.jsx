@@ -7,6 +7,8 @@ import Admissiontermdates from "./Admissiontermdates"
 import AdmissionFAQ from "./AdmissionFAQ"
 import AdmissionDOCS from "./AdmissionDOCS"
 import Admissionconditions from "./Admissionconditions"
+import CTA from "../CTA"
+import CTA2 from "../CTA2";
 
 const Admission = () => {
   return (
@@ -25,7 +27,10 @@ const Admission = () => {
       <Admissiontermdates/>
       <div className=" w-full h-[0.1px] bg-black" id="faq"></div>
       <AdmissionFAQ/>
-      
+      <div className="w-full bg-black h-[0.1vh]" id="cta"></div>
+        <CTA />
+        <div className="w-full bg-black h-[0.1vh]" id="cta2"></div>
+        <CTA2 />
 
       <FooterSection />
     </>
