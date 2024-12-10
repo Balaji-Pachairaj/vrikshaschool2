@@ -37,12 +37,13 @@ export const NavBarLinks = [
     to: "/learning?section=start",
     sections: [
       { title: "overview", to: "/learning?section=overview" },
-      { title: "our facilities", to: "/learning?section=facilities" },
+      { title: "three sections", to: "/learning?section=learningcard" },
+      { title: "vriksha junior", to: "/facilities?section=facilitessection" },
       {
         title: "Primary, Seconday & High School",
-        to: "/learning?section=primaryschool",
+        to: "/higher?section=higher",
       },
-      { title: "LEAD Curriculum", to: "/learning?section=lead" },
+      { title: "LEAD Curriculum", to: "/lead?section=lead" },
     ],
   },
   {
@@ -125,6 +126,32 @@ export const NavBarLinks = [
   },
 ];
 
+// Custom hook for section scrolling
+const useScrollToSection = (searchParams) => {
+  useEffect(() => {
+    const section = searchParams.get("section");
+    if (section) {
+      // Add a small delay to ensure the new page content is loaded
+      setTimeout(() => {
+        try {
+          const targetElement = document.getElementById(section);
+          if (targetElement) {
+            const navbarHeight = document.querySelector('nav')?.offsetHeight || 0;
+            const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+            
+            window.scrollTo({
+              top: targetPosition - navbarHeight - 20, // Subtract navbar height and add some padding
+              behavior: "smooth",
+            });
+          }
+        } catch (error) {
+          console.error("Error scrolling to section:", error);
+        }
+      }, 100);
+    }
+  }, [searchParams]);
+};
+
 const NavLap = ({ content = {} }) => {
   const [onHover, setOnHover] = useState(false);
 
@@ -192,6 +219,9 @@ const NavLap = ({ content = {} }) => {
 const NavMobile = ({ content = {}, toggle = () => {}, isActive, setActiveMenu }) => {
   const controls = useAnimation();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  
+  useScrollToSection(searchParams);
 
   useEffect(() => {
     if (isActive) {
@@ -266,8 +296,9 @@ const NavBar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
   const scrollTimeout = useRef(null);
-
   const [searchParams] = useSearchParams();
+  
+  useScrollToSection(searchParams);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -300,24 +331,6 @@ const NavBar = () => {
       }
     };
   }, []);
-
-  useEffect(() => {
-    const section = searchParams.get("section");
-    if (section) {
-      try {
-        const targetElement = document.getElementById(section);
-        if (targetElement) {
-          const targetPosition = targetElement?.offsetTop;
-
-          // Scroll to the target section
-          window.scrollTo({
-            top: targetPosition,
-            behavior: "smooth",
-          });
-        }
-      } catch {}
-    }
-  }, [searchParams]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
