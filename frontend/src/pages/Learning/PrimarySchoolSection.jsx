@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import img1 from "../../assets/Learning/1.png"
 import img2 from "../../assets/Learning/2.png"
@@ -56,8 +56,8 @@ const PrimarySchoolSection = () => {
               <motion.div
                 className="w-full h-full"
                 initial={false}
-                animate={{ rotateY: isFlipped[index] ? 180 : 0 }}
-                transition={{ duration: 0.6 }}
+                animate={{ rotateY: window.innerWidth > 768 ? (isFlipped[index] ? 180 : 0) : 0 }}
+                transition={{ duration: 0.3 }}
                 style={{ transformStyle: "preserve-3d" }}
               >
                 {/* Front */}
@@ -71,9 +71,9 @@ const PrimarySchoolSection = () => {
                     <img 
                       src={card.image} 
                       alt={card.title}
-                      className="w-[120px] h-[120px] object-contain mb-4"
+                      className="w-[80px] h-[80px] object-contain mb-4 lazyload"
                     />
-                    <h1 className="font-poppins lg:text-[26px] md:text-[18px] text-[20px] text-[white] font-[600] text-center">
+                    <h1 className="font-poppins lg:text-[20px] md:text-[16px] text-[18px] text-[white] font-[600] text-center">
                       {card.title}
                     </h1>
                   </div>
@@ -88,7 +88,7 @@ const PrimarySchoolSection = () => {
                   }}
                 >
                   <div className="w-full h-full flex-1 md:p-[2rem] p-[1rem] flex flex-col justify-center bg-[#1a1a1a] rounded-lg">
-                    <p className="lg:text-[18px] md:text-[16px] text-[16px] text-white">
+                    <p className="lg:text-[16px] md:text-[16px] text-[16px] text-white">
                       {card.description}
                     </p>
                   </div>
@@ -106,7 +106,7 @@ const PrimarySchoolSection = () => {
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${well})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
+          backgroundAttachment: window.innerWidth > 768 ? 'fixed' : 'scroll'
         }}
       >
         <div className="md:max-w-[85%] max-w-[100%] py-24 px-12">

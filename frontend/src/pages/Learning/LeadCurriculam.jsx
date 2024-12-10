@@ -22,7 +22,7 @@ const Component = ({
   return (
     <div
       style={{ backgroundColor: content?.boxbg }}
-      className="md:w-[90%] w-[45%] md:h-[45%] h-[30vh] overflow-visible rounded-[8px] font-cabin"
+      className="md:w-[90%] w-[95%] md:h-[45%] h-[200px] overflow-visible rounded-[8px] font-cabin"
     >
       <div
         style={{ background: `linear-gradient(135deg, #7c2ae8, #00c4cc)` }}
@@ -107,8 +107,8 @@ const array = [
 
 const LeadCurriculam = () => {
   return (
-    <div className="w-full min-h-screen bg-[black] pt-[2rem] pb-[2rem] overflow-hidden">
-      <div className="relative w-[95%] h-[90vh] mb-[4rem] mx-auto rounded-2xl overflow-hidden shadow-2xl">
+    <div className="w-full min-h-screen bg-[black] pt-[2rem] pb-[2rem] overflow-hidden px-4 md:px-0">
+      <div className="relative w-[95%] md:h-[90vh] h-[60vh] mb-[4rem] mx-auto rounded-2xl overflow-hidden shadow-2xl">
         <div className="absolute inset-0 w-full h-full">
           <img 
             src={lead}
@@ -117,35 +117,35 @@ const LeadCurriculam = () => {
           />
         </div>
         
-        <div className="absolute bottom-[1rem] left-[2rem] bg-white p-[1.5rem] rounded-lg shadow-xl max-w-[450px]">
-          <h1 className="font-bold text-[2rem] font-[600] mb-3">
+        <div className="absolute bottom-[1rem] left-[1rem] md:left-[2rem] bg-white p-[1rem] md:p-[1.5rem] rounded-lg shadow-xl max-w-[450px] w-[90%] md:w-auto">
+          <h1 className="font-bold text-[1.5rem] md:text-[2rem] font-[600] mb-2 md:mb-3">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
               Lead Curriculum
             </span>
           </h1>
-          <p className="font-bold text-[16px] text-gray-800 mb-2">
+          <p className="font-bold text-[14px] md:text-[16px] text-gray-800 mb-2">
             Academic excellence powered by Lead School
           </p>
-          <p className="font-cabin text-[14px] text-gray-600 mb-2">
+          <p className="font-cabin text-[12px] md:text-[14px] text-gray-600 mb-2">
           Our school has partnered with LEAD School which is an Academic Excellence System who towards empowering India by making excellent education accessible and affordable to every child.
           </p>
           
         </div>
       </div>
 
-      <div className="w-full md:h-screen h-fit flex flex-row justify-center md:flex-nowrap flex-wrap gap-y-[1rem]">
-        <div className="md:w-[33vw] w-[100vw] md:h-full h-fit flex md:flex-col flex-row md:items-center  justify-evenly">
+      <div className="w-full md:h-screen h-fit flex flex-col md:flex-row justify-center md:flex-nowrap flex-wrap gap-y-[2rem] md:gap-y-[1rem] px-4 md:px-0">
+        <div className="md:w-[33vw] w-full md:h-full h-fit flex md:flex-col flex-row md:items-center justify-evenly gap-4 md:gap-0">
           <Component content={array[0]} />
           <Component content={array[1]} />
         </div>
-        <div className="md:w-[33vw] w-[100vw] md:h-full h-fit flex md:flex-col flex-row md:items-center  justify-evenly">
+        <div className="md:w-[33vw] w-full md:h-full h-fit flex md:flex-col flex-row md:items-center justify-evenly gap-4 md:gap-0">
           <Component content={array[2]} />
           <Component content={array[3]} />
         </div>
-        <div className="md:w-[33vw] w-[100vw] md:h-full h-fit flex md:flex-col flex-row md:items-center  justify-evenly">
+        <div className="md:w-[33vw] w-full md:h-full h-fit flex md:flex-col flex-row md:items-center justify-evenly gap-4 md:gap-0">
           <Component content={array[4]} />
           <div
-            className={` md:w-[90%] w-[45%] md:h-[45%]  h-[30vh] bg-transparent overflow-visible rounded-[8px] `}
+            className={` md:w-[90%] w-[95%] md:h-[45%]  h-[200px] bg-transparent overflow-visible rounded-[8px] `}
           ></div>
         </div>
       </div>
