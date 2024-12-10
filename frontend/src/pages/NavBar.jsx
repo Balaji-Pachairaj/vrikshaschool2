@@ -28,8 +28,8 @@ export const NavBarLinks = [
       { title: "Vision and mission", to: "/aboutus?section=mission" },
       { title: "the Vriksha advantage", to: "/aboutus?section=advantage" },
       { title: "houses", to: "/aboutus?section=houses" },
+      { title: "leadership", to: "/aboutus?section=leadership" },
       { title: "our partners", to: "/aboutus?section=partners" },
-      // { title: "cta", to: "/aboutus?section=cta" },
     ],
   },
   {

@@ -82,7 +82,7 @@ const router = createBrowserRouter([
         <VKadvantage />
         <div className="w-full bg-black h-[10vh]" id="houses"></div>
         <Houses />
-        <div className="w-full bg-black h-[10vh]" id="partners"></div>
+        <div className="w-full bg-black h-[10vh]" id="leadership"></div>
         <Leadership />
         <div className="w-full bg-black h-[10vh]" id="partners"></div>
         <Partners />
