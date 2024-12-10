@@ -48,7 +48,7 @@ const Overview = () => {
       <div className="relative w-full max-w-6xl mx-auto">
         {sections.map((section, index) => (
           <div key={index} className="px-6 md:px-12 py-8 text-white grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div className={`${index === 1 ? 'order-last md:order-last' : ''}`}>
+            <div className={`order-2 md:order-none ${index === 1 ? '' : index % 2 === 1 ? 'md:order-last' : ''}`}>
               <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] mb-6">{section.title}</h2>
               <div className="space-y-4 text-base">
                 <ul className="list-disc list-inside">
@@ -58,7 +58,7 @@ const Overview = () => {
                 </ul>
               </div>
             </div>
-            <div className="rounded-lg overflow-hidden shadow-lg image-container group">
+            <div className={`order-1 md:order-none ${index === 1 ? 'md:order-first' : ''} rounded-lg overflow-hidden shadow-lg image-container group`}>
               <img
                 src={section.image}
                 alt={section.title}

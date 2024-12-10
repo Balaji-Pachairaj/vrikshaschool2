@@ -44,15 +44,15 @@ const Card = ({ title, description, imageUrl, index, totalCards, className = "te
 
   return (
     <div ref={cardRef} className="sticky top-0 flex justify-center" style={{ paddingTop: `${20 + index * 20}px` }}>
-      <div ref={innerRef} className="flex overflow-hidden bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] rounded-lg shadow-lg transform origin-top will-change-transform w-[1100px] h-[500px]">
+      <div ref={innerRef} className="flex flex-col md:flex-row overflow-hidden bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] rounded-lg shadow-lg transform origin-top will-change-transform w-[1100px] h-[900px] md:h-[500px]">
         {!imageOnRight ? (
           <>
-            <div className="w-1/2 p-8">
+            <div className="w-full md:w-1/2 p-8">
               <div className="w-full h-full relative rounded-lg overflow-hidden">
                 <img src={imageUrl} alt="" className="w-full h-full object-cover" />
               </div>
             </div>
-            <div className="w-1/2 p-8 flex flex-col">
+            <div className="w-full md:w-1/2 p-8 flex flex-col">
               <h2 className="text-4xl font-semibold text-white mb-4">{title}</h2>
               <div className="overflow-y-auto pr-4 flex-1">
                 <p className={`${className} text-gray-300 leading-relaxed`} dangerouslySetInnerHTML={{ __html: description }} />
@@ -61,13 +61,13 @@ const Card = ({ title, description, imageUrl, index, totalCards, className = "te
           </>
         ) : (
           <>
-            <div className="w-1/2 p-8 flex flex-col">
+            <div className="order-2 md:order-1 w-full md:w-1/2 p-8 flex flex-col">
               <h2 className="text-4xl font-semibold text-white mb-4">{title}</h2>
               <div className="overflow-y-auto pr-4 flex-1">
                 <p className={`${className} text-gray-300 leading-relaxed`} dangerouslySetInnerHTML={{ __html: description }} />
               </div>
             </div>
-            <div className="w-1/2 p-8">
+            <div className="order-1 md:order-2 w-full md:w-1/2 p-8">
               <div className="w-full h-full relative rounded-lg overflow-hidden">
                 <img src={imageUrl} alt="" className="w-full h-full object-cover" />
               </div>
@@ -114,4 +114,3 @@ In junior school the curriculum is based on the fundamentals – mathematics, sc
 };
 
 export default StackingCards;
-

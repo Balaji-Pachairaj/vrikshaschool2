@@ -290,7 +290,7 @@ const MeetOurTeam3 = () => {
       <div className="lg:hidden block p-4">
         <h1 className="text-2xl text-white mb-8">Leaders Democratising Education</h1>
         <div className="flex flex-col gap-6">
-          {teammember.slice(0, 4).map((member, index) => (
+          {teammember.slice(0, 3).map((member, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}

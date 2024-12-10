@@ -51,6 +51,17 @@ const Marathoncarousal = () => {
           />
         ))}
       </div>
+      <style>
+        {`
+          @media (max-width: 768px) {
+            .relative.w-full.h-screen {
+              height: 40vh;
+              margin-top: 100px;
+              margin-bottom: 20px;
+            }
+          }
+        `}
+      </style>
     </div>
   );
 };

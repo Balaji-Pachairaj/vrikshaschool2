@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
-import milestone1 from "../assets/milestones/Mil1.jpg";
-import milestone2 from "../assets/milestones/Mil2.jpg";
-import milestone3 from "../assets/milestones/Mil3.jpg";
-import milestone4 from "../assets/milestones/Mil4.jpg";
-import milestone5 from "../assets/milestones/Mil5.jpg";
+import milestone1 from "../assets/milestones/1.png";
+import milestone2 from "../assets/milestones/2.png";
+import milestone3 from "../assets/milestones/3.png";
+import milestone4 from "../assets/milestones/4.png";
+import milestone5 from "../assets/milestones/5.png";
 
 const src1 = milestone1;
 const src2 = milestone2;
