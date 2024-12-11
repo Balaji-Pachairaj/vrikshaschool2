@@ -23,8 +23,8 @@ const cardContents = [
 const SingleCardCom = ({ content }) => {
   return (
     <Link to={content.path} onClick={() => window.scrollTo(0, 0)}>
-      <div className="w-full h-full relative rounded-lg shadow-lg p-6 bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] flex items-center justify-center">
-        <h2 className="text-2xl font-bold text-center text-white mb-3">{content.title}</h2>
+      <div className="w-full h-full relative rounded-3xl shadow-lg p-6 bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] flex items-center justify-center">
+        <h2 className="text-5xl uppercase font-bold text-center text-white mb-3">{content.title}</h2>
       </div>
     </Link>
   );
@@ -64,7 +64,7 @@ const GallerySection = () => {
   const topSlide1UseScroll = useTransform(
     slide1RefUseScroll.scrollYProgress,
     [0, 0.5, 1],
-    ["155%", "50%", "-25%"]
+    ["190%", "70%", "-55%"]
   );
 
   const leftSlide1UseScroll = useTransform(
@@ -91,7 +91,7 @@ const GallerySection = () => {
   const topslide2UseScroll = useTransform(
     slide2RefUseScroll.scrollYProgress,
     [0, 0.5, 1],
-    ["155%", "65%", "-5%"]
+    ["190%", "100%", "-25%"]
   );
 
   const leftslide2UseScroll = useTransform(
@@ -118,7 +118,7 @@ const GallerySection = () => {
   const topslide3UseScroll = useTransform(
     slide3RefUseScroll.scrollYProgress,
     [0, 0.5, 1],
-    ["155%", "65%", "-5%"]
+    ["190%", "100%", "-25%"]
   );
 
   const leftslide3UseScroll = useTransform(
@@ -161,7 +161,7 @@ const GallerySection = () => {
               left: leftSlide1UseScroll,
               rotateY: rotateYSlide1UseScroll,
             }}
-            className="fixed top-[90%] lg:w-[450px] lg:h-[300px] md:w-[400px] md:h-[275px] sm:w-[350px] sm:h-[220px] w-[275px] h-[150px]"
+            className="fixed top-[90%] lg:w-[450px] lg:h-[450px] md:w-[400px] md:h-[275px] sm:w-[350px] sm:h-[220px] w-[275px] h-[150px]"
           >
             <SingleCardCom content={cardContents[0]} />
           </motion.div>
@@ -174,7 +174,7 @@ const GallerySection = () => {
               left: leftslide2UseScroll,
               rotateY: rotateYSlide2UseScroll,
             }}
-            className="fixed top-[90%] lg:w-[450px] lg:h-[300px] md:w-[400px] md:h-[275px] sm:w-[350px] sm:h-[220px] w-[275px] h-[150px]"
+            className="fixed top-[90%] lg:w-[450px] lg:h-[450px] md:w-[400px] md:h-[275px] sm:w-[350px] sm:h-[220px] w-[275px] h-[150px]"
           >
             <SingleCardCom content={cardContents[1]} />
           </motion.div>
@@ -187,14 +187,14 @@ const GallerySection = () => {
               left: leftslide3UseScroll,
               rotateY: rotateYslide3UseScroll,
             }}
-            className="fixed top-[90%] lg:w-[450px] lg:h-[300px] md:w-[400px] md:h-[275px] sm:w-[350px] sm:h-[220px] w-[275px] h-[150px]"
+            className="fixed top-[90%] lg:w-[450px] lg:h-[450px] md:w-[400px] md:h-[275px] sm:w-[350px] sm:h-[220px] w-[275px] h-[150px]"
           >
             <SingleCardCom content={cardContents[2]} />
           </motion.div>
         </div>
       )}
       
-      <div className={`w-full ${isMobile ? 'h-[5vh]' : 'h-screen'}`}></div>
+      <div className={`w-full ${isMobile ? 'h-[5vh]' : 'h-[140vh]'}`}></div>
     </>
   );
 };
