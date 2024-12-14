@@ -1,10 +1,11 @@
-import React, { useEffect, useState, useRef } from "react";
-import { Link, NavLink, useNavigate, useSearchParams } from "react-router-dom";
+import React, { useEffect, useState, useRef, useCallback, useMemo } from "react";
+import { NavLink, useNavigate, useSearchParams } from "react-router-dom";
 import { IoMdClose } from "react-icons/io";
 import { TbTriangleInvertedFilled } from "react-icons/tb";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { motion, useAnimation } from "framer-motion";
 
+// Navigation link data structure containing all routes and their sub-sections
 export const NavBarLinks = [
   {
     title: "Home",
@@ -126,7 +127,7 @@ export const NavBarLinks = [
   },
 ];
 
-// Custom hook for section scrolling
+// Custom hook to handle scrolling to specific sections when URL parameters change
 const useScrollToSection = (searchParams) => {
   useEffect(() => {
     const section = searchParams.get("section");
@@ -152,7 +153,8 @@ const useScrollToSection = (searchParams) => {
   }, [searchParams]);
 };
 
-const NavLap = ({ content = {} }) => {
+// Desktop navigation link component
+const NavLap = React.memo(({ content = {} }) => {
   const [onHover, setOnHover] = useState(false);
 
   return (
@@ -215,8 +217,10 @@ const NavLap = ({ content = {} }) => {
       )}
     </NavLink>
   );
-};
-const NavMobile = ({ content = {}, toggle = () => {}, isActive, setActiveMenu }) => {
+});
+
+// Mobile navigation link component with dropdown functionality
+const NavMobile = React.memo(({ content = {}, toggle = () => {}, isActive, setActiveMenu }) => {
   const controls = useAnimation();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
@@ -286,21 +290,15 @@ const NavMobile = ({ content = {}, toggle = () => {}, isActive, setActiveMenu })
       </motion.div>
     </>
   );
-};
+});
 
-const NavBar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [activeMenu, setActiveMenu] = useState(null);
-  const controls = useAnimation();
-  const navRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(true);
+// Custom hook to handle navbar visibility on scroll
+const useNavbarScroll = (setIsVisible) => {
   const lastScrollY = useRef(0);
   const scrollTimeout = useRef(null);
-  const [searchParams] = useSearchParams();
-  
-  useScrollToSection(searchParams);
 
   useEffect(() => {
+    // Handle scroll events with requestAnimationFrame for performance
     const handleScroll = () => {
       if (scrollTimeout.current) {
         window.cancelAnimationFrame(scrollTimeout.current);
@@ -310,12 +308,11 @@ const NavBar = () => {
         const currentScrollY = window.scrollY;
         const scrollDelta = currentScrollY - lastScrollY.current;
         
-        // Only trigger animation if scroll is significant
         if (Math.abs(scrollDelta) < 10) return;
         
-        if (scrollDelta < 0 || currentScrollY < 50) { // Scrolling up or near top
+        if (scrollDelta < 0 || currentScrollY < 50) {
           setIsVisible(true);
-        } else if (scrollDelta > 0 && currentScrollY > 100) { // Scrolling down and past threshold
+        } else if (scrollDelta > 0 && currentScrollY > 100) {
           setIsVisible(false);
         }
         
@@ -330,29 +327,47 @@ const NavBar = () => {
         window.cancelAnimationFrame(scrollTimeout.current);
       }
     };
-  }, []);
+  }, [setIsVisible]);
+};
+
+// Main NavBar component
+const NavBar = () => {
+  // State for mobile menu
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState(null);
+  const controls = useAnimation();
+  const navRef = useRef(null);
+  // State for navbar visibility
+  const [isVisible, setIsVisible] = useState(true);
+  const [searchParams] = useSearchParams();
+  
+  // Initialize scroll handling and section scrolling
+  useNavbarScroll(setIsVisible);
+  useScrollToSection(searchParams);
+
+  // Handle clicks outside mobile menu to close it
+  const handleClickOutside = useCallback((event) => {
+    if (navRef.current && !navRef.current.contains(event.target) && isOpen) {
+      controls.start({
+        top: "-100%",
+        transition: {
+          duration: 0.5,
+        },
+      });
+      setIsOpen(false);
+      setActiveMenu(null);
+    }
+  }, [isOpen, controls]);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (navRef.current && !navRef.current.contains(event.target) && isOpen) {
-        controls.start({
-          top: "-100%",
-          transition: {
-            duration: 0.5,
-          },
-        });
-        setIsOpen(false);
-        setActiveMenu(null);
-      }
-    };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isOpen, controls]);
+  }, [handleClickOutside]);
 
-  const toggle = () => {
+  // Toggle mobile menu open/closed
+  const toggle = useCallback(() => {
     if (isOpen) {
       controls.start({
         top: "-100%",
@@ -370,10 +385,31 @@ const NavBar = () => {
       });
       setIsOpen(true);
     }
-  };
+  }, [isOpen, controls]);
+
+  // Memoized desktop navigation links
+  const navBarLinksElements = useMemo(() => 
+    NavBarLinks?.map((item) => (
+      <NavLap key={item.title} content={item} />
+    ))
+  , []);
+
+  // Memoized mobile navigation links
+  const mobileNavBarLinksElements = useMemo(() => 
+    NavBarLinks?.map((item) => (
+      <NavMobile
+        key={item.title}
+        content={item}
+        toggle={toggle}
+        isActive={activeMenu === item.title}
+        setActiveMenu={setActiveMenu}
+      />
+    ))
+  , [toggle, activeMenu]);
 
   return (
     <>
+      {/* Desktop Navigation Bar */}
       <motion.div 
         initial={{ y: 0, opacity: 1 }}
         animate={{ 
@@ -389,11 +425,10 @@ const NavBar = () => {
         }}
         className="fixed left-0 right-0 mx-auto top-[1.5rem] w-fit max-w-[90%] z-[20000] backdrop-blur-lg bg-black/70 border border-white/20 shadow-xl rounded-[20px] h-fit px-6 md:flex hidden items-center justify-center flex-row gap-[1.5rem]"
       >
-        {NavBarLinks?.map((item) => {
-          return <NavLap key={item.title} content={item} />;
-        })}
+        {navBarLinksElements}
       </motion.div>
 
+      {/* Mobile Navigation Toggle Button */}
       <motion.div 
         initial={{ y: 0, opacity: 1 }}
         animate={{ 
@@ -418,6 +453,7 @@ const NavBar = () => {
         </button>
       </motion.div>
 
+      {/* Mobile Navigation Menu */}
       <motion.div
         ref={navRef}
         initial={{ y: "-100%" }}
@@ -438,19 +474,8 @@ const NavBar = () => {
         }}
         className="w-full max-h-[80vh] overflow-y-auto z-[20000] fixed top-0 pb-[2vh] backdrop-blur-lg bg-black/70 border border-white/20 shadow-xl flex flex-col gap-[0.5rem] md:hidden"
       >
-        <div className=" w-full h-[5rem]"></div>
-
-        {NavBarLinks?.map((item) => {
-          return (
-            <NavMobile
-              key={item.title}
-              content={item}
-              toggle={toggle}
-              isActive={activeMenu === item.title}
-              setActiveMenu={setActiveMenu}
-            />
-          );
-        })}
+        <div className="w-full h-[5rem]"></div>
+        {mobileNavBarLinksElements}
       </motion.div>
     </>
   );

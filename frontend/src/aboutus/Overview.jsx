@@ -1,10 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import leftcard from "../assets/aboutus/1.JPG"
 import rightcard from "../assets/aboutus/2.JPG"
 import centercard from "../assets/aboutus/3.JPG"
 
 const Overview = () => {
   const [showImages, setShowImages] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState({
+    left: false,
+    center: false,
+    right: false
+  });
+
+  const imageRefs = {
+    left: useRef(null),
+    center: useRef(null),
+    right: useRef(null)
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -17,6 +28,7 @@ const Overview = () => {
       },
       {
         threshold: 0.1,
+        rootMargin: '50px'
       }
     );
 
@@ -25,7 +37,47 @@ const Overview = () => {
       observer.observe(overviewSection);
     }
 
-    return () => observer.disconnect();
+    // Lazy load images
+    const imgObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            const src = img.getAttribute('data-src');
+            if (src) {
+              img.src = src;
+              img.removeAttribute('data-src');
+
+              // Update loading state for specific image
+              const imageId = img.getAttribute('data-id');
+              if (imageId) {
+                setImagesLoaded(prev => ({
+                  ...prev,
+                  [imageId]: true
+                }));
+              }
+            }
+            imgObserver.unobserve(img);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '50px'
+      }
+    );
+
+    // Observe each image
+    Object.values(imageRefs).forEach(ref => {
+      if (ref.current) {
+        imgObserver.observe(ref.current);
+      }
+    });
+
+    return () => {
+      observer.disconnect();
+      imgObserver.disconnect();
+    };
   }, []);
 
   return (
@@ -40,10 +92,13 @@ const Overview = () => {
             {/* Left Image */}
             <div className={`relative z-10 lg:-mr-24 ${showImages ? 'show-element' : 'hide-left'}`}>
               <div className="w-[280px] lg:w-100 h-[280px] lg:h-[360px] rounded-[32px] overflow-hidden shadow-2xl">
-                <img 
-                  src={leftcard} 
-                  alt="Left profile" 
-                  className="w-full h-full object-cover"
+                <img
+                  ref={imageRefs.left}
+                  data-src={leftcard}
+                  data-id="left"
+                  alt="Left profile"
+                  className={`w-full h-full object-cover transition-opacity duration-300 ${imagesLoaded.left ? 'opacity-100' : 'opacity-0'}`}
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -51,10 +106,13 @@ const Overview = () => {
             {/* Center Image */}
             <div className={`relative z-20 ${showImages ? 'show-element' : 'hide-element'}`}>
               <div className="w-[320px] lg:w-[500px] h-[320px] lg:h-[400px] rounded-[40px] overflow-hidden shadow-[0_35px_60px_-15px_rgba(0,0,0,0.8)]">
-                <img 
-                  src={centercard} 
-                  alt="Center profile" 
-                  className="w-full h-full object-cover"
+                <img
+                  ref={imageRefs.center}
+                  data-src={centercard}
+                  data-id="center"
+                  alt="Center profile"
+                  className={`w-full h-full object-cover transition-opacity duration-300 ${imagesLoaded.center ? 'opacity-100' : 'opacity-0'}`}
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -62,10 +120,13 @@ const Overview = () => {
             {/* Right Image */}
             <div className={`relative z-10 lg:-ml-32 ${showImages ? 'show-element' : 'hide-element'}`}>
               <div className="w-[280px] lg:w-80 h-[280px] lg:h-[300px] rounded-[32px] overflow-hidden shadow-2xl">
-                <img 
-                  src={rightcard} 
-                  alt="Right profile" 
-                  className="w-full h-full object-cover"
+                <img
+                  ref={imageRefs.right}
+                  data-src={rightcard}
+                  data-id="right"
+                  alt="Right profile"
+                  className={`w-full h-full object-cover transition-opacity duration-300 ${imagesLoaded.right ? 'opacity-100' : 'opacity-0'}`}
+                  loading="lazy"
                 />
               </div>
             </div>

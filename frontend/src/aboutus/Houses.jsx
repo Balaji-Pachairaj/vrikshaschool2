@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styled from "styled-components";
 import dolphin from "../assets/houses/Dolphin.png";
 import lions from "../assets/houses/lions.png";
@@ -99,7 +99,22 @@ const BackContent = styled.div`
   }
 `;
 
+const LazyImage = styled.div`
+  width: 100%;
+  height: 100%;
+  background-image: ${props => props.isLoaded ? `url(${props.imageUrl})` : 'none'};
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.3s ease-in-out;
+  opacity: ${props => props.isLoaded ? 1 : 0};
+  border-radius: 10px;
+`;
+
 const Houses = () => {
+  const [loadedImages, setLoadedImages] = useState({});
+  const imageRefs = useRef({});
+  const containerRef = useRef(null);
+
   const houses = [
     {
       image: null,
@@ -120,7 +135,42 @@ const Houses = () => {
     },
   ];
 
-  const containerRef = useRef(null);
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '50px',
+      threshold: 0.1
+    };
+
+    const imageObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const imageId = entry.target.dataset.imageid;
+          if (houses[imageId]?.image) {
+            const img = new Image();
+            img.src = houses[imageId].image;
+            img.onload = () => {
+              setLoadedImages(prev => ({
+                ...prev,
+                [imageId]: true
+              }));
+            };
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Set up observers for each image
+    houses.forEach((_, index) => {
+      if (imageRefs.current[index]) {
+        imageObserver.observe(imageRefs.current[index]);
+      }
+    });
+
+    return () => {
+      imageObserver.disconnect();
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -153,14 +203,16 @@ const Houses = () => {
       <HousesContainer>
         <ImageCardsContainer ref={containerRef}>
           {houses.map((house, index) => (
-            <ImageCard 
-              key={index} 
-              imageUrl={house.image}
+            <ImageCard
+              key={index}
             >
               <div className="card-inner">
-                <div className="card-front" style={house.isTitle ? { 
-                  background: '#1a1a1a'
-                } : {}}>
+                <div
+                  className="card-front"
+                  ref={el => imageRefs.current[index] = el}
+                  data-imageid={index}
+                  style={house.isTitle ? { background: '#1a1a1a' } : {}}
+                >
                   {house.isTitle ? (
                     <div className="w-full h-full flex flex-col justify-center items-center">
                       <h1 className="text-[48px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
@@ -168,7 +220,10 @@ const Houses = () => {
                       </h1>
                     </div>
                   ) : (
-                    <div className="w-full h-full"></div>
+                    <LazyImage
+                      isLoaded={loadedImages[index]}
+                      imageUrl={house.image}
+                    />
                   )}
                 </div>
                 <div className="card-back">

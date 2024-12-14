@@ -1,23 +1,40 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import React, { useRef } from "react";
+import React, { lazy, Suspense, useRef } from "react";
 
-const ImageComponents = ({ team }) => {
-  return (
-    <div className="w-full h-full relative bg-dharangradient">
-      <img 
-        src={team.image} 
+// Lazy loaded ImageComponents
+const ImageComponents = lazy(() => Promise.resolve({
+  default: ({ team }) => (
+    <div className="w-full h-full">
+      <img
+        src={team.image}
         alt="Team member"
-        className="w-full h-full object-cover absolute"
+        className="w-full h-full object-cover"
       />
     </div>
-  );
-};
+  )
+}));
 
-const MeetOurTeam3 = () => {
-  const dharan = {
+// Lazy loaded TeamMemberCard
+const TeamMemberCard = lazy(() => Promise.resolve({
+  default: ({ style, className, team }) => (
+    <motion.div style={style} className={className}>
+      <ImageComponents team={team} />
+    </motion.div>
+  )
+}));
+
+
+// Loading fallback component
+const LoadingFallback = () => (
+  <div className="text-white text-center">Loading...</div>
+);
+
+// Team member data
+const teamData = {
+  dharan: {
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=387&auto=format&fit=crop",
-  };
-  const teammember = [
+  },
+  teammember: [
     {
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=388&auto=format&fit=crop",
     },
@@ -28,253 +45,114 @@ const MeetOurTeam3 = () => {
       image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=387&auto=format&fit=crop",
     },
     {
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=387&auto=format&fit=crop",
-    },
-    {
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=387&auto=format&fit=crop",
     },
     {
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=870&auto=format&fit=crop",
     },
-    
-  ];
+  ]
+};
+
+const MeetOurTeam3 = () => {
   const fullRef = useRef();
+  const lastRef = useRef();
 
   const fullRefUseScroll = useScroll({
     target: fullRef,
     offset: ["0 0.5", "1 0"],
   });
 
+  // Animation constants
   const endTopState = "70%";
   const endLeftState = "50%";
   const endScale = 1.5;
-
   const upState = "-50%";
   const point = "0.88";
 
-  //-------------------------------------------------------------------
+  // Animation timing configurations
+  const createTimingConfig = (start, mid1, mid2, end) => ({
+    timing: [0, 0.1, mid1, mid2, point, 1],
+    top: ["175%", "25%", "25%", endTopState, endTopState, upState],
+    left: [`${start}%`, `${start}%`, `${start}%`, endLeftState, endLeftState, endLeftState],
+    scale: [1, 1, 1, endScale, endScale, endScale]
+  });
 
-  const timing1 = [0, 0.1, 0.12, 0.3, point, 1];
+  // Create transform configurations for each section
+  const sections = [
+    createTimingConfig(20, 0.12, 0.3),    // Section 1
+    createTimingConfig(40, 0.3, 0.48),     // Section 2
+    createTimingConfig(60, 0.48, 0.66),    // Section 3
+  ];
 
-  const topSection1 = useTransform(fullRefUseScroll.scrollYProgress, timing1, [
-    "175%",
-    "25%",
-    "25%",
-    endTopState,
-    endTopState,
-    upState,
-  ]);
+  // Create transform functions for each section
+  const sectionTransforms = sections.map(section => ({
+    top: useTransform(fullRefUseScroll.scrollYProgress, section.timing, section.top),
+    left: useTransform(fullRefUseScroll.scrollYProgress, section.timing, section.left),
+    scale: useTransform(fullRefUseScroll.scrollYProgress, section.timing, section.scale)
+  }));
 
-  const leftSection1 = useTransform(fullRefUseScroll.scrollYProgress, timing1, [
-    "20%",
-    "20%",
-    "20%",
-    endLeftState,
-    endLeftState,
-    endLeftState,
-  ]);
-
-  const scaleSection1 = useTransform(
-    fullRefUseScroll.scrollYProgress,
-    timing1,
-    [1, 1, 1, endScale, endScale, endScale]
-  );
-
-  ///--------------------------------------------------------------------
-
-  const timing2 = [0, 0.1, 0.3, 0.48, point, 1];
-
-  const topSection2 = useTransform(fullRefUseScroll.scrollYProgress, timing2, [
-    "175%",
-    "25%",
-    "25%",
-    endTopState,
-    endTopState,
-    upState,
-  ]);
-
-  const leftSection2 = useTransform(fullRefUseScroll.scrollYProgress, timing2, [
-    "40%",
-    "40%",
-    "40%",
-    endLeftState,
-    endLeftState,
-    endLeftState,
-  ]);
-
-  const scaleSection2 = useTransform(
-    fullRefUseScroll.scrollYProgress,
-    timing2,
-    [1, 1, 1, endScale, endScale, endScale]
-  );
-
-  ///--------------------------------------------------------------------
-
-  const timing3 = [0, 0.1, 0.48, 0.66, point, 1];
-
-  const topSection3 = useTransform(fullRefUseScroll.scrollYProgress, timing3, [
-    "175%",
-    "25%",
-    "25%",
-    endTopState,
-    endTopState,
-    upState,
-  ]);
-
-  const leftSection3 = useTransform(fullRefUseScroll.scrollYProgress, timing3, [
-    "60%",
-    "60%",
-    "60%",
-    endLeftState,
-    endLeftState,
-    endLeftState,
-  ]);
-
-  const scaleSection3 = useTransform(
-    fullRefUseScroll.scrollYProgress,
-    timing3,
-    [1, 1, 1, endScale, endScale, endScale]
-  );
-
-  ///--------------------------------------------------------------------
-
-  const timing4 = [0, 0.1, 0.66, 0.78, point, 1];
-
-  const topSection4 = useTransform(fullRefUseScroll.scrollYProgress, timing4, [
-    "175%",
-    "25%",
-    "25%",
-    endTopState,
-    endTopState,
-    upState,
-  ]);
-
-  const leftSection4 = useTransform(fullRefUseScroll.scrollYProgress, timing4, [
-    "80%",
-    "80%",
-    "80%",
-    endLeftState,
-    endLeftState,
-    endLeftState,
-  ]);
-
-  const scaleSection4 = useTransform(
-    fullRefUseScroll.scrollYProgress,
-    timing4,
-    [1, 1, 1, endScale, endScale, endScale]
-  );
-
+  // Special transforms for section 8
   const timing8 = [0, 0.1, 0.8, 0.87, point, 1];
+  const section8Transform = {
+    top: useTransform(fullRefUseScroll.scrollYProgress, timing8,
+      ["225%", "75%", "75%", endTopState, endTopState, upState]),
+    left: useTransform(fullRefUseScroll.scrollYProgress, timing8,
+      ["90%", "90%", "90%", endLeftState, endLeftState, endLeftState]),
+    scale: useTransform(fullRefUseScroll.scrollYProgress, timing8,
+      [1, 1, 1, endScale, endScale, endScale])
+  };
 
-  const left8 = "90%";
-
-  const topSection8 = useTransform(fullRefUseScroll.scrollYProgress, timing8, [
-    "225%",
-    "75%",
-    "75%",
-    endTopState,
-    endTopState,
-    upState,
-  ]);
-
-  const leftSection8 = useTransform(fullRefUseScroll.scrollYProgress, timing8, [
-    left8,
-    left8,
-    left8,
-    endLeftState,
-    endLeftState,
-    endLeftState,
-  ]);
-
-  const scaleSection8 = useTransform(
-    fullRefUseScroll.scrollYProgress,
-    timing8,
-    [1, 1, 1, endScale, endScale, endScale]
-  );
-
-  //---------------------------------------------------------------------
-
+  // Transform for section 9
   const topSection9 = useTransform(
     fullRefUseScroll.scrollYProgress,
     [0, 0.1, 0.86, 0.88, 1],
     ["100%", "100%%", "100%", "60%", "-75%"]
   );
 
-  //------------------------------------------------------------------------
-
-  const lastRef = useRef();
-
   return (
     <>
+      {/* Desktop Layout */}
       <div ref={fullRef} className="w-full min-h-screen lg:block hidden">
-        <div className="w-full h-[50vh]"></div>
-        <div className="w-full h-[50vh]"></div>
-        <div className="w-full h-[50vh]"></div>
-        <div className="w-full h-[50vh]"></div>
-        <div className="w-full h-[50vh]"></div>
-        <div className="w-full h-[50vh]"></div>
+        {[...Array(6)].map((_, i) => (
+          <div key={i} className="w-full h-[50vh]"></div>
+        ))}
       </div>
 
       <div ref={lastRef} className="w-full h-screen lg:block hidden"></div>
-      
-      <motion.div
-        style={{
-          top: topSection1,
-          x: "-50%",
-          y: "-50%",
-          scale: scaleSection1,
-          left: leftSection1,
-        }}
-        className="xl:w-[200px] xl:h-[285px] lg:w-[150px] lg:h-[215px] bg-dharangradient3 fixed rounded-[15px] overflow-hidden"
-      >
-        <ImageComponents team={teammember[0]} />
-      </motion.div>
 
-      <motion.div
-        style={{
-          top: topSection2,
-          x: "-50%",
-          y: "-50%",
-          scale: scaleSection2,
-          left: leftSection2,
-        }}
-        className="xl:w-[200px] xl:h-[285px] lg:w-[150px] lg:h-[215px] bg-red-200 fixed rounded-[15px] overflow-hidden"
-      >
-        <ImageComponents team={teammember[1]} />
-      </motion.div>
+      {/* Team Member Cards */}
+      {sectionTransforms.map((transform, index) => (
+        <Suspense key={index} fallback={<LoadingFallback />}>
+          <TeamMemberCard
+            style={{
+              top: transform.top,
+              x: "-50%",
+              y: "-50%",
+              scale: transform.scale,
+              left: transform.left,
+            }}
+            className="xl:w-[200px] xl:h-[285px] lg:w-[150px] lg:h-[215px] bg-dharangradient3 fixed rounded-[15px] overflow-hidden"
+            team={teamData.teammember[index]}
+          />
+        </Suspense>
+      ))}
 
-      <motion.div
-        style={{
-          top: topSection3,
-          x: "-50%",
-          y: "-50%",
-          scale: scaleSection3,
-          left: leftSection3,
-        }}
-        className="xl:w-[200px] xl:h-[285px] lg:w-[150px] lg:h-[215px] bg-red-300 fixed rounded-[15px] overflow-hidden"
-      >
-        <ImageComponents team={teammember[2]} />
-      </motion.div>
-
-     
-
-      <motion.div
-        style={{
-          top: topSection8,
-          x: "-50%",
-          y: "-50%",
-          scale: scaleSection8,
-          left: leftSection8,
-        }}
-        className="xl:w-[200px] xl:h-[285px] lg:w-[150px] lg:h-[215px] bg-red-800 fixed rounded-[15px] overflow-hidden"
-      >
-        <ImageComponents
-          team={{
-            image: dharan.image,
+      {/* Leader Card */}
+      <Suspense fallback={<LoadingFallback />}>
+        <TeamMemberCard
+          style={{
+            top: section8Transform.top,
+            x: "-50%",
+            y: "-50%",
+            scale: section8Transform.scale,
+            left: section8Transform.left,
           }}
+          className="xl:w-[200px] xl:h-[285px] lg:w-[150px] lg:h-[215px] bg-red-800 fixed rounded-[15px] overflow-hidden"
+          team={{ image: teamData.dharan.image }}
         />
-      </motion.div>
+      </Suspense>
 
+      {/* Title Section */}
       <motion.div
         style={{
           top: topSection9,
@@ -287,10 +165,11 @@ const MeetOurTeam3 = () => {
         </h1>
       </motion.div>
 
+      {/* Mobile Layout */}
       <div className="lg:hidden block p-4">
         <h1 className="text-2xl text-white mb-8">Leaders Democratising Education</h1>
         <div className="flex flex-col gap-6">
-          {teammember.slice(0, 3).map((member, index) => (
+          {teamData.teammember.slice(0, 3).map((member, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
@@ -299,17 +178,21 @@ const MeetOurTeam3 = () => {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className="w-full h-[300px] rounded-[15px] overflow-hidden"
             >
-              <ImageComponents team={member} />
+              <Suspense fallback={<LoadingFallback />}>
+                <ImageComponents team={member} />
+              </Suspense>
             </motion.div>
           ))}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: teammember.length * 0.2 }}
+            transition={{ duration: 0.5, delay: teamData.teammember.length * 0.2 }}
             className="w-full h-[300px] rounded-[15px] overflow-hidden"
           >
-            <ImageComponents team={{ image: dharan.image }} />
+            <Suspense fallback={<LoadingFallback />}>
+              <ImageComponents team={{ image: teamData.dharan.image }} />
+            </Suspense>
           </motion.div>
         </div>
       </div>
