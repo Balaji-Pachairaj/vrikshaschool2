@@ -203,12 +203,12 @@ const Houses = () => {
       <HousesContainer>
         <ImageCardsContainer ref={containerRef}>
           {houses.map((house, index) => (
-            <ImageCard
-              key={index}
+            <ImageCard 
+              key={index} 
             >
               <div className="card-inner">
-                <div
-                  className="card-front"
+                <div 
+                  className="card-front" 
                   ref={el => imageRefs.current[index] = el}
                   data-imageid={index}
                   style={house.isTitle ? { background: '#1a1a1a' } : {}}
@@ -220,7 +220,7 @@ const Houses = () => {
                       </h1>
                     </div>
                   ) : (
-                    <LazyImage
+                    <LazyImage 
                       isLoaded={loadedImages[index]}
                       imageUrl={house.image}
                     />

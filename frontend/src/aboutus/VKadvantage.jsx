@@ -1,34 +1,8 @@
-import React, { useEffect, lazy, Suspense } from 'react';
+import React, { useEffect } from 'react';
 import one from "../assets/aboutus/one.png"
 import two from "../assets/aboutus/two.png"
 import three from "../assets/aboutus/three.png"
 import four from "../assets/aboutus/four.png"
-
-// Lazy load the content component
-const AdvantageContent = lazy(() => Promise.resolve({
-  default: ({ project }) => (
-    <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-4 md:gap-8 mb-16 md:mb-32">
-      <div className="w-[90%] md:w-1/2 project-container px-4 md:px-0 mt-6 md:mt-0">
-        <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal heading-animate font-panchang transition-all duration-1000 ease-in-out opacity-80 transform translate-y-5">
-          <div className="transform-3d">
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] uppercase tracking-tight">{project.title}</span>
-          </div>
-        </h2>
-        <p className="text-sm md:text-base mt-4 md:mt-6 text-gray-300">{project.description}</p>
-      </div>
-      <div className="w-[90%] md:w-1/2">
-        <div className="rounded-lg overflow-hidden shadow-lg image-container group">
-          <img
-            loading="lazy"
-            src={project.imgSrc}
-            alt={project.title}
-            className="w-full h-[250px] md:h-[350px] object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
-          />
-        </div>
-      </div>
-    </div>
-  )
-}));
 
 const VKadvantage = () => {
   useEffect(() => {
@@ -57,40 +31,12 @@ const VKadvantage = () => {
       });
     }, observerOptions);
 
-    const headings = document.querySelectorAll('.heading-animate');
-    headings.forEach((heading) => {
+    document.querySelectorAll('.heading-animate').forEach((heading) => {
       observer.observe(heading);
     });
 
-    return () => {
-      headings.forEach((heading) => {
-        observer.unobserve(heading);
-      });
-    };
+    return () => observer.disconnect();
   }, []);
-
-  const advantageData = [
-    {
-      title: 'microcosm of the modern world',
-      description: 'A coeducation school, which stands as the perfect learning ground for every child. The vast expanse of the campus inspires a child in treating the world as his / her domain. When young minds are opened to the exceptional world of talent that lies inside them, they will surely lead the world to a greater tomorrow.',
-      imgSrc: one,
-    },
-    {
-      title: 'A welcoming, family atmosphere',
-      description: 'At Vriksha there exists a welcoming, family atmosphere of warmth, security, trust and friendliness where firmness is mixed with encouragement and challenge to stimulate the child. Every child is equipped with his bravado to meet the challenges of the world, and rewrite his/her future.',
-      imgSrc: two,
-    },
-    {
-      title: 'high standards for students',
-      description: 'We set very high standards, not only for teaching and learning, but also for behaviour and attitude towards others. We believe that the behaviour of students will have a huge impact not only on the quality of their own lives, but also on the lives of others. We want our students to develop confidence in themselves and their abilities, so that they can learn to handle new situations and accept the challenges that life offers.',
-      imgSrc: three,
-    },
-    {
-      title: 'LIVELY INTERESt AND CURIOSITY',
-      description: 'We work to give students a thorough grounding in basic skills, to develop a lively interest and curiosity about the world in which they live, to experience a wide curriculum that includes the creative arts and physical activities and to develop a love of learning that will stay with them throughout their life.',
-      imgSrc: four,
-    },
-  ];
 
   return (
     <div className="w-full bg-black relative">
@@ -100,11 +46,48 @@ const VKadvantage = () => {
             The Vriksha Advantage
           </span>
         </h1>
-        <Suspense fallback={<div className="text-white text-center">Loading...</div>}>
-          {advantageData.map((project, index) => (
-            <AdvantageContent key={index} project={project} />
-          ))}
-        </Suspense>
+        {[/* eslint-disable */
+          {
+            title: 'microcosm of the modern world',
+            description: 'A coeducation school, which stands as the perfect learning ground for every child. The vast expanse of the campus inspires a child in treating the world as his / her domain. When young minds are opened to the exceptional world of talent that lies inside them, they will surely lead the world to a greater tomorrow.',
+            imgSrc: one,
+          },
+          {
+            title: 'A welcoming, family atmosphere',
+            description: 'At Vriksha there exists a welcoming, family atmosphere of warmth, security, trust and friendliness where firmness is mixed with encouragement and challenge to stimulate the child. Every child is equipped with his bravado to meet the challenges of the world, and rewrite his/her future.',
+            imgSrc: two,
+          },
+          {
+            title: 'high standards for students',
+            description: 'We set very high standards, not only for teaching and learning, but also for behaviour and attitude towards others. We believe that the behaviour of students will have a huge impact not only on the quality of their own lives, but also on the lives of others. We want our students to develop confidence in themselves and their abilities, so that they can learn to handle new situations and accept the challenges that life offers.',
+            imgSrc: three,
+          },
+          {
+            title: 'LIVELY INTERESt AND CURIOSITY',
+            description: 'We work to give students a thorough grounding in basic skills, to develop a lively interest and curiosity about the world in which they live, to experience a wide curriculum that includes the creative arts and physical activities and to develop a love of learning that will stay with them throughout their life.',
+            imgSrc: four,
+          },
+        ].map((project, index) => (
+          <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-4 md:gap-8 mb-16 md:mb-32" key={index}>
+            <div className="w-[90%] md:w-1/2 project-container px-4 md:px-0 mt-6 md:mt-0">
+              <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal heading-animate font-panchang transition-all duration-1000 ease-in-out opacity-80 transform translate-y-5">
+                <div className="transform-3d">
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] uppercase tracking-tight">{project.title}</span>
+                </div>
+              </h2>
+              <p className="text-sm md:text-base mt-4 md:mt-6 text-gray-300">{project.description}</p>
+            </div>
+            <div className="w-[90%] md:w-1/2">
+              <div className="rounded-lg overflow-hidden shadow-lg image-container group">
+                <img
+                  src={project.imgSrc}
+                  alt={project.title}
+                  className="w-full h-[250px] md:h-[350px] object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                />
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
 
       <style jsx global>{`
