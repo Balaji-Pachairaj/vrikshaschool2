@@ -105,11 +105,9 @@ const LazyImage = styled.div`
   background-image: ${props => props.isLoaded ? `url(${props.imageUrl})` : 'none'};
   background-size: cover;
   background-position: center;
-  transition: opacity 0.3s ease-in-out;
-  opacity: ${props => props.isLoaded ? 1 : 0};
+  opacity: 1;
   border-radius: 10px;
 `;
-
 const Houses = () => {
   const [loadedImages, setLoadedImages] = useState({});
   const imageRefs = useRef({});
