@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
-import { content_testimonal } from "./Alumninoteable";
+import { content_testimonal } from "./Alumninoteable"
 
 const Separtate_testimonal_Component = ({
   text_control = {},
@@ -252,11 +252,7 @@ const Testimonals_Mobile = () => {
   return (
     <>
       <div className=" w-full h-[120vh] overflow-hidden sm:hidden  ">
-        <h1 className="text-[12vw] text-center font-black text-white uppercase tracking-[-0.05em] leading-[0.8] whitespace-nowrap scale-y-[1.2] mt-[5rem]">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
-          Notable Alumni
-          </span>
-        </h1>
+        
 
         <div className="w-full h-screen relative overflow-hidden sm:hidden ">
           {/* ---------------- */}
@@ -319,22 +315,21 @@ const Testimonals_Mobile = () => {
             {/* Button 1 */}
             <button
               onClick={() => {
-                left_scroll_button_click();
+                right_scroll_button_click();  // Changed from left to right
               }}
-              className=" w-[60px] h-[60px] rounded-[50%] bg-[#3d3d3d] flex flex-row justify-center items-center hover:bg-[#ff516f] hover:scale-110 duration-300 "
+              className="w-[60px] h-[60px] rounded-[50%] bg-[#3d3d3d] flex flex-row justify-center items-center hover:bg-[#ff516f] hover:scale-110 duration-300"
             >
               <MdKeyboardDoubleArrowLeft size={24} color="white" />
             </button>
             {/* Button 2 */}
             <button
               onClick={() => {
-                right_scroll_button_click();
+                left_scroll_button_click();  // Changed from right to left
               }}
-              className=" w-[60px] h-[60px] rounded-[50%] rotate-180 bg-[#3d3d3d] flex flex-row justify-center items-center hover:bg-[#ff516f] hover:scale-110 duration-300 "
+              className="w-[60px] h-[60px] rounded-[50%] rotate-180 bg-[#3d3d3d] flex flex-row justify-center items-center hover:bg-[#ff516f] hover:scale-110 duration-300"
             >
               <MdKeyboardDoubleArrowLeft size={24} color="white" />
-            </button>
-          </div>
+            </button>          </div>
           {/* ---------------- */}
         </div>
       </div>

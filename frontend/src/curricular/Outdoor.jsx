@@ -71,7 +71,7 @@ const Outdoor = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={inView2 ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.8 }}
-          className="relative"
+          className="relative md:order-none order-2"
         >
           <div className="relative overflow-hidden rounded-2xl group">
             <img
@@ -87,7 +87,7 @@ const Outdoor = () => {
           initial={{ opacity: 0, x: 50 }}
           animate={inView2 ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="space-y-12"
+          className="space-y-12 md:order-none order-1"
         >
           <div className="space-y-8">
             <motion.div
@@ -111,8 +111,6 @@ const Outdoor = () => {
                   <li>Table tennis</li>
                   <li>Skating rink</li>
                 </ul>
-
-                
               </div>
             </motion.div>
           </div>

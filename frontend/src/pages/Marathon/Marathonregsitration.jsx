@@ -5,6 +5,7 @@ const ContactSection = () => {
   const navigate = useNavigate();
 
   const handleContactClick = () => {
+    window.scrollTo(0, 0);
     navigate('/contact');
   };
 
