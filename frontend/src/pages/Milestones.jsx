@@ -184,7 +184,7 @@ const Milestone_actual_animation = () => {
         <motion.h1
           style={{
             x: "-50%",
-            y: "-50%",
+            y: "-40%",
             left: "50%",
             top: top_text,
           }}

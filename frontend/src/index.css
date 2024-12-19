@@ -19,3 +19,23 @@ body {
   font-family: "Poppins", sans-serif;   
   background-color: black;
 }
+
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #7c2ae8, #00c4cc);;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #00c4cc, #7c2ae8);;
+}
