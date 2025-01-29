@@ -343,7 +343,7 @@ const CTA2 = () => {
         </ImageContainer>
         <Content>
           <h1>Shaping Future Leaders Starts with You</h1>
-          <p>Join Our School's Exceptional Teaching Team!</p>
+          <p>Join Our School Team!</p>
           <Button onClick={() => setIsModalOpen(true)}>
             JOIN NOW
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

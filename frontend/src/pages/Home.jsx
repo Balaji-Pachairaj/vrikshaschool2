@@ -43,8 +43,7 @@ const Home = () => {
         <Testimonials />
         <Testimonials_Mobile />
         
-        <div className="w-full h-[10vh]" id={"partners"}></div>
-        <Partners />
+        
         <CTA />
         <CTA2 />
         <FooterSection />

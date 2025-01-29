@@ -19,7 +19,7 @@ const Marathontime = () => {
     },
     {
       name: "Location",
-      content: "Vriksha Sports Academy",
+      content: "Vriksha Academy for sports",
       image: img3,
       color: "bg-pink-600/80",
     }

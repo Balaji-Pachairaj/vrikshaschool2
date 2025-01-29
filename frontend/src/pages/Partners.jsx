@@ -1,19 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 // Import all partner logos
-import niit from '../assets/partners/niit.png';
+
 import sof from '../assets/partners/sof.png';
-import words from '../assets/partners/words.png';
-import voice from '../assets/partners/snap.png';
 import cctv from '../assets/partners/ctv.png';
 import lead from '../assets/partners/Lead.png';
 import neo from '../assets/partners/neo.png';
 
 const partners = [
-  { name: 'niit', logo: niit },
   { name: 'Science Olympiad Foundation', logo: sof },
-  { name: 'Words worth', logo: words },
-  { name: 'Voice Snap', logo: voice },
   { name: 'CCTV Center', logo: cctv },
   { name: 'Lead', logo: lead },
   { name: 'Neo', logo: neo },

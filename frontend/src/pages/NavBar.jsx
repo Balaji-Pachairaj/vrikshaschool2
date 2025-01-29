@@ -11,14 +11,12 @@ export const NavBarLinks = [
     title: "Home",
     to: "/?section=start",
     sections: [
-      { title: "Hero", to: "/?section=hero" },
       { title: "Our vision", to: "/?section=visionandmission" },
       { title: "our Milestone", to: "/?section=milestone" },
       { title: "category", to: "/?section=category" },
       { title: "the advantages", to: "/?section=advantages" },
       { title: "our events", to: "/?section=events" },
       { title: "the testimonals", to: "/?section=testimonals" },
-      { title: "our partners", to: "/?section=partners" },
     ],
   },
   {
@@ -63,11 +61,11 @@ export const NavBarLinks = [
   {
     title: "discover",
     to: "/discover?section=start",
-    sections: [
+    /*sections: [
       { title: "overview", to: "/discover?section=overview" },
       { title: "facilities", to: "/discover?section=mess" },
       { title: "discover", to: "/discover?section=content" },
-    ],
+    ],*/
   },
   {
     title: "admissions",
@@ -85,7 +83,6 @@ export const NavBarLinks = [
     title: "sport academy",
     to: "/sportacademy?section=start",
     sections: [
-      { title: "hero", to: "/sportacademy?section=hero" },
       { title: "aboutus", to: "/sportacademy?section=aboutus" },
       { title: "program offer", to: "/sportacademy?section=programoffer" },
       { title: "training", to: "/sportacademy?section=training" },
@@ -99,7 +96,6 @@ export const NavBarLinks = [
     title: "Alum",
     to: "/alumni?section=start",
     sections: [
-      { title: "hero", to: "/alumni?section=hero" },
       { title: "overview", to: "/alumni?section=overview" },
       { title: "Opportunities", to: "/alumni?section=network" },
       { title: "Volunteer", to: "/alumni?section=volunteer" },
@@ -111,7 +107,7 @@ export const NavBarLinks = [
     title: "Marathon",
     to: "/marathon?section=start",
     sections: [
-      { title: "hero", to: "/marathon?section=hero" },
+
       { title: "about", to: "/marathon?section=about" },
       { title: "categories", to: "/marathon?section=categories" },
       { title: "time", to: "/marathon?section=time" },
