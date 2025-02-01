@@ -419,8 +419,21 @@ const NavBar = () => {
           opacity: { duration: 0.2 },
           scale: { duration: 0.2 }
         }}
-        className="fixed left-0 right-0 mx-auto top-[1.5rem] w-fit max-w-[90%] z-[20000] backdrop-blur-lg bg-black/70 border border-white/20 shadow-xl rounded-[20px] h-fit px-6 md:flex hidden items-center justify-center flex-row gap-[1.5rem]"
+        className="fixed left-0 right-0 mx-auto top-[1.5rem] w-fit max-w-[100%] z-[20000] backdrop-blur-lg bg-black/70 border border-white/20 shadow-xl rounded-[20px] h-fit px-4 md:flex hidden items-center justify-center flex-row gap-[1.2rem]"
       >
+        <NavLink to="/" className="flex items-center">
+          <img 
+            src="/navlogo.png"
+            alt="Vriksha School Logo" 
+            className="h-[4rem] w-auto " 
+            loading="eager"
+            style={{ objectFit: 'contain' }}
+            onError={(e) => {
+              console.error('Logo failed to load');
+              e.target.style.display = 'none';
+            }}
+          />
+        </NavLink>
         {navBarLinksElements}
       </motion.div>
 
@@ -438,9 +451,22 @@ const NavBar = () => {
           opacity: { duration: 0.2 },
           scale: { duration: 0.2 }
         }}
-        className="md:hidden fixed left-0 right-0 mx-auto top-[1.5rem] w-fit max-w-[90%] z-[200001] backdrop-blur-lg bg-black/70 border border-white/20 shadow-xl rounded-[20px] h-fit px-6 flex items-center justify-center flex-row gap-[1.5rem]"
+        className="md:hidden fixed left-0 right-0 mx-auto top-[1.5rem] w-fit max-w-[95%] z-[200001] backdrop-blur-lg bg-black/70 border border-white/20 shadow-xl rounded-[20px] h-fit px-4 flex items-center justify-between flex-row gap-[16rem]"
       >
-        <button onClick={toggle} className="p-[0.5rem]">
+        <NavLink to="/" className="flex  items-center">
+          <img 
+            src="/navlogo.png"
+            alt="Vriksha School Logo" 
+            className="h-16 w-auto py-2" 
+            loading="eager"
+            style={{ objectFit: 'contain' }}
+            onError={(e) => {
+              console.error('Logo failed to load');
+              e.target.style.display = 'none';
+            }}
+          />
+        </NavLink>
+        <button onClick={toggle} className="p-[0.75rem]">
           {isOpen ? (
             <IoMdClose size={30} color="white" />
           ) : (
@@ -452,23 +478,15 @@ const NavBar = () => {
       {/* Mobile Navigation Menu */}
       <motion.div
         ref={navRef}
-        initial={{ y: "-100%" }}
-        animate={isOpen ? { 
-          y: 0,
-          opacity: 1,
-          scale: 1
-        } : { 
-          y: "-100%",
-          opacity: 0,
-          scale: 0.98
+        initial={{ x: "100%" }}
+        animate={{
+          x: isOpen ? "0%" : "100%",
         }}
-        transition={{ 
+        transition={{
           duration: 0.3,
-          ease: [0.25, 0.1, 0.25, 1],
-          opacity: { duration: 0.2 },
-          scale: { duration: 0.2 }
+          ease: "easeOut",
         }}
-        className="w-full max-h-[80vh] overflow-y-auto z-[20000] fixed top-0 pb-[2vh] backdrop-blur-lg bg-black/70 border border-white/20 shadow-xl flex flex-col gap-[0.5rem] md:hidden"
+        className="fixed top-0 right-0 w-full h-screen bg-black/95 backdrop-blur-lg z-50 flex flex-col overflow-y-auto"
       >
         <div className="w-full h-[5rem]"></div>
         {mobileNavBarLinksElements}

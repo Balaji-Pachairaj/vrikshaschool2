@@ -86,10 +86,10 @@ const FooterSection = () => {
           <div className=" w-full h-[1px] bg-white"></div>
           {/* ------------------------ */}
           {/* ------------------------ */}
-          <div className=" w-full h-fit flex flex-row flex-wrap justify-between    gap-y-[1.5rem]">
+          <div className=" w-full h-fit flex flex-row flex-wrap justify-between gap-y-[1.5rem]">
             <h3 className="  md:text-[16px] text-[12px] font-inter text-[#eee] flex flex-row items-center gap-[0.5rem]">
               <MdOutlineEmail />
-              info@vrikshaglobalschool.com
+              vrikshaglobal@gmail.com
             </h3>
 
             <div className=" flex gap-[1rem] ">
@@ -101,6 +101,11 @@ const FooterSection = () => {
                 Built By Rick Mummery
               </h3> */}
             </div>
+          </div>
+          <div className=" w-full h-fit flex flex-row flex-wrap justify-between gap-y-[1.5rem]">
+            <h2 className="md:text-[12px] text-[10px] font-inter text-[#eee] flex flex-row items-center gap-[0.5rem]">
+              CBSE SYLLABUS | AFFILIATION NUMBER : 1930830 | ISO 9001 : 2015 CERTIFIED
+            </h2>
           </div>
           {/* ------------------------ */}
         </div>

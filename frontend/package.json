@@ -10,9 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@getbrevo/brevo": "^2.2.0",
     "@react-three/drei": "^9.117.3",
     "@react-three/fiber": "^8.17.10",
+    "axios": "^1.7.9",
     "clsx": "^2.1.1",
+    "firebase": "^11.2.0",
     "framer-motion": "^11.11.17",
     "gsap": "^3.12.5",
     "lucide-react": "^0.460.0",
