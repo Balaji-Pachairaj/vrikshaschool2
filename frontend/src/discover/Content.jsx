@@ -1,7 +1,7 @@
 import React from "react";
 import img1 from "../assets/discover/1.png"
 import img2 from "../assets/discover/3.png"
-import img3 from "../assets/discover/bus.JPEG"
+import img3 from "../assets/discover/bus.jpeg"
 
 const sections = [
   {
