@@ -5,7 +5,7 @@ import sof from '../assets/partners/sof.png';
 import cctv from '../assets/partners/ctv.png';
 import lead from '../assets/partners/Lead.png';
 import neo from '../assets/partners/neo.png';
-import jothi from '../assets/partners/jothi.png';
+import jothi from '../assets/partners/Jothi.png';
 import groble from '../assets/partners/Groble.png';
 import HI5 from '../assets/partners/HI5.png';
 import Studio from '../assets/partners/Studio.png';
