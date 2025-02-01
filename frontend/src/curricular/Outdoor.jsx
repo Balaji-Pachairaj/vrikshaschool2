@@ -102,14 +102,16 @@ const Outdoor = () => {
                 </p>
 
                 <ul className="text-white text-xl grid grid-cols-2 gap-x-4 gap-y-2 pl-6 list-disc">
-                  <li>200m running track</li>
-                  <li>Football court</li>
-                  <li>Volleyball court</li>
-                  <li>Kho-kho ground</li>
-                  <li>Badminton court</li>
-                  <li>Cricket pitch</li>
-                  <li>Table tennis</li>
-                  <li>Skating rink</li>
+                <li>Swimming Pool</li>
+                <li>Basketball</li>
+                <li>Volleyball</li>
+                <li>Football</li>
+                <li>Badminton</li>
+                <li>Pickleball</li>
+                <li>Table Tennis</li>
+                <li>Cricket</li>
+                <li>Archery</li>
+                <li>Atheletics</li>
                 </ul>
               </div>
             </motion.div>

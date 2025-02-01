@@ -1,7 +1,7 @@
 import React from "react";
 import img1 from "../assets/discover/1.png"
 import img2 from "../assets/discover/3.png"
-import img3 from "../assets/discover/2.png"
+import img3 from "../assets/discover/bus.JPEG"
 
 const sections = [
   {
@@ -80,11 +80,11 @@ const Overview = () => {
                     </ul>
                   </div>
                 </div>
-                <div className="order-1 md:order-none rounded-lg overflow-hidden shadow-lg image-container group">
+                <div className="rounded-lg overflow-hidden shadow-lg image-container group">
                   <img
                     src={section.image}
                     alt={section.title}
-                    className="w-full h-[250px] md:h-[350px] object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
+                    className={`w-full h-[480px] object-cover transition-transform duration-700 ease-in-out group-hover:scale-110`}
                   />
                 </div>
               </>

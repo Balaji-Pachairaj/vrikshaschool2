@@ -1,17 +1,31 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-// Import all partner logos
 
 import sof from '../assets/partners/sof.png';
 import cctv from '../assets/partners/ctv.png';
 import lead from '../assets/partners/Lead.png';
 import neo from '../assets/partners/neo.png';
+import jothi from '../assets/partners/jothi.png';
+import groble from '../assets/partners/Groble.png';
+import HI5 from '../assets/partners/HI5.png';
+import Studio from '../assets/partners/Studio.png';
+import surya from '../assets/partners/surya.png';
+import Suryan from '../assets/partners/Suryan.png';
+import Hero from '../assets/partners/Hero.png';
+
 
 const partners = [
   { name: 'Science Olympiad Foundation', logo: sof },
   { name: 'CCTV Center', logo: cctv },
   { name: 'Lead', logo: lead },
   { name: 'Neo', logo: neo },
+  { name: 'Jothi', logo: jothi },
+  { name: 'Groble', logo: groble },
+  { name: 'HI5', logo: HI5 },
+  { name: 'Studio', logo: Studio },
+  { name: 'Suyra', logo: surya },
+  { name: 'Suryan', logo: Suryan },
+  { name: 'Hero', logo: Hero },
 ];
 
 const Partners = () => {
