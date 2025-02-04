@@ -457,7 +457,7 @@ const NavBar = () => {
           <img 
             src="/navlogo.png"
             alt="Vriksha School Logo" 
-            className="h-16 w-auto py-2" 
+            className="h-20 w-auto py-2" 
             loading="eager"
             style={{ objectFit: 'contain' }}
             onError={(e) => {
