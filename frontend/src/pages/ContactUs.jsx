@@ -8,12 +8,11 @@ import NotificationPopup from '../components/NotificationPopup';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    name: "",
     email: "",
-    timeline: "",
-    budget: "",
-    description: ""
+    phoneNumber: "",
+    enquiryType: "Admissions",
+    message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [notification, setNotification] = useState({ show: false, type: '', message: '' });
@@ -35,11 +34,11 @@ const ContactUs = () => {
       subject: "New Contact Form Submission - Vriksha Global School",
       htmlContent: `
         <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${data.firstName} ${data.lastName}</p>
+        <p><strong>Name:</strong> ${data.name}</p>
         <p><strong>Email:</strong> ${data.email}</p>
-        <p><strong>Timeline:</strong> ${data.timeline}</p>
-        <p><strong>Budget:</strong> ${data.budget}</p>
-        <p><strong>Description:</strong> ${data.description}</p>
+        <p><strong>Phone Number:</strong> ${data.phoneNumber}</p>
+        <p><strong>Type of Enquiry:</strong> ${data.enquiryType}</p>
+        <p><strong>Message:</strong> ${data.message}</p>
       `
     };
 
@@ -51,18 +50,19 @@ const ContactUs = () => {
       },
       to: [{
         email: data.email,
-        name: `${data.firstName} ${data.lastName}`
+        name: `${data.name}`
       }],
       subject: "Thank you for contacting Vriksha Global School",
       htmlContent: `
         <h2>Thank you for contacting us!</h2>
-        <p>Dear ${data.firstName},</p>
+        <p>Dear ${data.name},</p>
         <p>We have received your inquiry and will get back to you shortly.</p>
         <p>Here's a copy of your submission:</p>
         <ul>
-          <li><strong>Timeline:</strong> ${data.timeline}</li>
-          <li><strong>Budget:</strong> ${data.budget}</li>
-          <li><strong>Description:</strong> ${data.description}</li>
+          <li><strong>Email:</strong> ${data.email}</li>
+          <li><strong>Phone Number:</strong> ${data.phoneNumber}</li>
+          <li><strong>Type of Enquiry:</strong> ${data.enquiryType}</li>
+          <li><strong>Message:</strong> ${data.message}</li>
         </ul>
         <p>Best regards,<br>Vriksha Global School Team</p>
       `
@@ -123,12 +123,11 @@ const ContactUs = () => {
 
       // Clear form
       setFormData({
-        firstName: "",
-        lastName: "",
+        name: "",
         email: "",
-        timeline: "",
-        budget: "",
-        description: ""
+        phoneNumber: "",
+        enquiryType: "Admissions",
+        message: ""
       });
       
       setNotification({
@@ -178,39 +177,23 @@ const ContactUs = () => {
               />
             )}
             
-            <div className="w-full h-fit flex md:flex-row flex-col justify-between gap-[1.5rem]">
-              <div className="md:w-[48%] w-full flex flex-col gap-[0.5rem]">
+            <div className="w-full h-fit flex flex-col gap-[1.5rem]">
+              <div className="flex flex-col gap-[0.5rem]">
                 <label className="text-[14px] text-white font-kanit uppercase tracking-wider">
-                  First Name
+                  Name
                 </label>
                 <input
                   type="text"
-                  name="firstName"
-                  value={formData.firstName}
+                  name="name"
+                  value={formData.name}
                   onChange={handleChange}
-                  placeholder="John"
+                  placeholder="John Doe"
                   required
                   className="w-full h-[52px] border-[1px] border-white/20 rounded-lg bg-black/20 backdrop-blur-sm text-[16px] text-white font-kanit px-[1rem] transition-all duration-300 focus:border-white/40 focus:outline-none hover:border-white/30 shadow-[0_4px_16px_0_rgba(255,255,255,0.1)]"
                 />
               </div>
-              <div className="md:w-[48%] w-full flex flex-col gap-[0.5rem]">
-                <label className="text-[14px] text-white font-kanit uppercase tracking-wider">
-                  Last Name
-                </label>
-                <input
-                  type="text"
-                  name="lastName"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                  placeholder="Doe"
-                  required
-                  className="w-full h-[52px] border-[1px] border-white/20 rounded-lg bg-black/20 backdrop-blur-sm text-[16px] text-white font-kanit px-[1rem] transition-all duration-300 focus:border-white/40 focus:outline-none hover:border-white/30 shadow-[0_4px_16px_0_rgba(255,255,255,0.1)]"
-                />
-              </div>
-            </div>
 
-            <div className="w-full h-fit flex md:flex-row flex-col justify-between gap-[1.5rem]">
-              <div className="md:w-[48%] w-full flex flex-col gap-[0.5rem]">
+              <div className="flex flex-col gap-[0.5rem]">
                 <label className="text-[14px] text-white font-kanit uppercase tracking-wider">
                   Email
                 </label>
@@ -219,54 +202,54 @@ const ContactUs = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="john.doe@example.com"
+                  placeholder="johndoe@example.com"
                   required
                   className="w-full h-[52px] border-[1px] border-white/20 rounded-lg bg-black/20 backdrop-blur-sm text-[16px] text-white font-kanit px-[1rem] transition-all duration-300 focus:border-white/40 focus:outline-none hover:border-white/30 shadow-[0_4px_16px_0_rgba(255,255,255,0.1)]"
                 />
               </div>
-              <div className="md:w-[48%] w-full flex flex-col gap-[0.5rem]">
+
+              <div className="flex flex-col gap-[0.5rem]">
                 <label className="text-[14px] text-white font-kanit uppercase tracking-wider">
-                  Timeline
+                  Phone Number
                 </label>
                 <input
-                  type="text"
-                  name="timeline"
-                  value={formData.timeline}
+                  type="tel"
+                  name="phoneNumber"
+                  value={formData.phoneNumber}
                   onChange={handleChange}
-                  placeholder="e.g., 2 weeks"
+                  placeholder="1234567890"
                   required
                   className="w-full h-[52px] border-[1px] border-white/20 rounded-lg bg-black/20 backdrop-blur-sm text-[16px] text-white font-kanit px-[1rem] transition-all duration-300 focus:border-white/40 focus:outline-none hover:border-white/30 shadow-[0_4px_16px_0_rgba(255,255,255,0.1)]"
                 />
               </div>
-            </div>
-
-            <div className="w-full h-fit flex flex-col gap-[0.5rem]">
-              <label className="text-[14px] text-white font-kanit uppercase tracking-wider">
-                Budget
-              </label>
-              <input
-                type="text"
-                name="budget"
-                value={formData.budget}
-                onChange={handleChange}
-                placeholder="e.g., ₹5,000"
-                required
-                className="w-full h-[52px] border-[1px] border-white/20 rounded-lg bg-black/20 backdrop-blur-sm text-[16px] text-white font-kanit px-[1rem] transition-all duration-300 focus:border-white/40 focus:outline-none hover:border-white/30 shadow-[0_4px_16px_0_rgba(255,255,255,0.1)]"
-              />
-            </div>
-
-            <div className="w-full h-fit">
-              <label className="text-[14px] text-white font-kanit uppercase tracking-wider block mb-[0.5rem]">
-                Description
-              </label>
-              <textarea
-                name="description"
-                value={formData.description}
-                onChange={handleChange}
-                placeholder="Tell us about your requirements..."
-                required
-                className="w-full h-[200px] border-[1px] border-white/20 rounded-lg bg-black/20 backdrop-blur-sm text-[16px] text-white font-kanit p-[1rem] transition-all duration-300 focus:border-white/40 focus:outline-none hover:border-white/30 shadow-[0_4px_16px_0_rgba(255,255,255,0.1)] resize-none"
-              />
+              <div className="flex flex-col gap-[0.5rem]">
+                <label className="text-[14px] text-white font-kanit uppercase tracking-wider">
+                  Type of Enquiry
+                </label>
+                <select
+                  name="enquiryType"
+                  value={formData.enquiryType}
+                  onChange={handleChange}
+                  className="w-full h-[52px] border-[1px] border-white/20 rounded-lg bg-black/20 backdrop-blur-sm text-[16px] text-white font-kanit px-[1rem] transition-all duration-300 focus:border-white/40 focus:outline-none hover:border-white/30 shadow-[0_4px_16px_0_rgba(255,255,255,0.1)] appearance-none bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:12px_12px] bg-[right_1rem_center] bg-no-repeat"
+                  required
+                >
+                  <option value="Admissions">Admissions</option>
+                  <option value="Others">Others</option>
+                </select>
+              </div>
+              <div className="flex flex-col gap-[0.5rem]">
+                <label className="text-[14px] text-white font-kanit uppercase tracking-wider">
+                  Tell us More
+                </label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Tell us about your requirements..."
+                  required
+                  className="w-full h-[200px] border-[1px] border-white/20 rounded-lg bg-black/20 backdrop-blur-sm text-[16px] text-white font-kanit p-[1rem] transition-all duration-300 focus:border-white/40 focus:outline-none hover:border-white/30 shadow-[0_4px_16px_0_rgba(255,255,255,0.1)] resize-none"
+                />
+              </div>
             </div>
 
             <button 
