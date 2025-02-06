@@ -421,11 +421,15 @@ const NavBar = () => {
         }}
         className="fixed left-0 right-0 mx-auto top-[1.5rem] w-fit max-w-[100%] z-[20000] backdrop-blur-lg bg-black/70 border border-white/20 shadow-xl rounded-[20px] h-fit px-4 md:flex hidden items-center justify-center flex-row gap-[1.2rem]"
       >
+        {/* Left side navigation links */}
+        <div className="flex items-center gap-[1.2rem]">
+          {navBarLinksElements.slice(0, Math.ceil(navBarLinksElements.length / 2))}
+        </div>
         <NavLink to="/" className="flex items-center">
           <img 
             src="/navlogo.png"
             alt="Vriksha School Logo" 
-            className="h-[4rem] w-auto " 
+            className="h-[5rem] w-auto " 
             loading="eager"
             style={{ objectFit: 'contain' }}
             onError={(e) => {
@@ -434,7 +438,10 @@ const NavBar = () => {
             }}
           />
         </NavLink>
-        {navBarLinksElements}
+        {/* Right side navigation links */}
+  <div className="flex items-center gap-[1.2rem]">
+    {navBarLinksElements.slice(Math.ceil(navBarLinksElements.length / 2))}
+  </div>
       </motion.div>
 
       {/* Mobile Navigation Toggle Button */}
@@ -457,9 +464,10 @@ const NavBar = () => {
           <img 
             src="/navlogo.png"
             alt="Vriksha School Logo" 
-            className="h-20 w-auto py-2" 
+            className="h-24 w-auto py-2" 
             loading="eager"
-            style={{ objectFit: 'contain' }}
+            style={{ objectFit: 'contain',minWidth: '45px',
+              filter: 'brightness(1.02)' }}
             onError={(e) => {
               console.error('Logo failed to load');
               e.target.style.display = 'none';
