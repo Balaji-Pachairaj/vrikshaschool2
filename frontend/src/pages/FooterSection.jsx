@@ -50,18 +50,28 @@ const FooterSection = () => {
                   Visit Other Pages
                 </h1>
                 <div className="grid grid-cols-2 gap-x-8 gap-y-[1.5rem]">
-                  {NavBarLinks?.map((item) => {
+                  {NavBarLinks?.filter(item => item.title !== "Others").map((item) => {
                     return (
                       <NavLink
+                        key={item.title}
                         to={item?.to}
                         className={({ isActive }) => {
-                          return `text-[14px] hover:-translate-y-[2px] duration-100 uppercase  font-inter text-white`;
+                          return `text-[14px] hover:-translate-y-[2px] duration-100 uppercase font-inter text-white`;
                         }}
                       >
                         {item?.title}
                       </NavLink>
                     );
                   })}
+                  <NavLink to="/alumni?section=start" className="text-[14px] hover:-translate-y-[2px] duration-100 uppercase font-inter text-white">
+                    Alumni
+                  </NavLink>
+                  <NavLink to="/marathon?section=start" className="text-[14px] hover:-translate-y-[2px] duration-100 uppercase font-inter text-white">
+                    Marathon
+                  </NavLink>
+                  <NavLink to="/contact?section=start" className="text-[14px] hover:-translate-y-[2px] duration-100 uppercase font-inter text-white">
+                    Contact Us
+                  </NavLink>
                 </div>
               </div>
               <div className=" w-fit h-fit flex flex-col items-start gap-[1.5rem]">

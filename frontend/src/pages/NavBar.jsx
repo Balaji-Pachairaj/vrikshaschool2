@@ -38,10 +38,7 @@ export const NavBarLinks = [
       { title: "overview", to: "/learning?section=overview" },
       { title: "three sections", to: "/learning?section=learningcard" },
       { title: "vriksha junior", to: "/facilities?section=facilitessection" },
-      {
-        title: "Primary, Seconday & High School",
-        to: "/higher?section=higher",
-      },
+      { title: "Primary, Seconday & High School", to: "/higher?section=higher" },
       { title: "LEAD Curriculum", to: "/lead?section=lead" },
     ],
   },
@@ -58,14 +55,15 @@ export const NavBarLinks = [
       { title: "creative arts", to: "/creative?section=creative" },
     ],
   },
+  // Right side links (after logo)
   {
     title: "discover",
     to: "/discover?section=start",
-    /*sections: [
+    sections: [
       { title: "overview", to: "/discover?section=overview" },
       { title: "facilities", to: "/discover?section=mess" },
       { title: "discover", to: "/discover?section=content" },
-    ],*/
+    ],
   },
   {
     title: "admissions",
@@ -80,7 +78,7 @@ export const NavBarLinks = [
     ],
   },
   {
-    title: "sport academy",
+    title: "sports academy",
     to: "/sportacademy?section=start",
     sections: [
       { title: "aboutus", to: "/sportacademy?section=aboutus" },
@@ -93,33 +91,22 @@ export const NavBarLinks = [
     ],
   },
   {
-    title: "Alum",
+    title: "Others",
     to: "/alumni?section=start",
     sections: [
-      { title: "overview", to: "/alumni?section=overview" },
-      { title: "Opportunities", to: "/alumni?section=network" },
-      { title: "Volunteer", to: "/alumni?section=volunteer" },
-      { title: "Noteable alumni", to: "/alumni?section=noteable" },
-      { title: "Connect", to: "/alumni?section=connect" },
+      {
+        title: "Alumni",
+        to: "/alumni?section=start",
+      },
+      {
+        title: "Marathon",
+        to: "/marathon?section=start",
+      },
+      {
+        title: "Contact Us",
+        to: "/contact?section=start",
+      },
     ],
-  },
-  {
-    title: "Marathon",
-    to: "/marathon?section=start",
-    sections: [
-
-      { title: "about", to: "/marathon?section=about" },
-      { title: "categories", to: "/marathon?section=categories" },
-      { title: "time", to: "/marathon?section=time" },
-      { title: "sponsor", to: "/marathon?section=sponsor" },
-      { title: "goodies", to: "/marathon?section=goodies" },
-      { title: "registration", to: "/marathon?section=registration" },
-    ],
-  },
-  {
-    title: "contact us",
-    to: "/contact?section=start",
-    sections: [],
   },
 ];
 
@@ -165,7 +152,7 @@ const NavLap = React.memo(({ content = {} }) => {
       className={({ isActive }) => {
         return `cursor-pointer uppercase ${
           isActive ? "border-b-2 border-white" : ""
-        } text-white text-[12px] font-[600] font-inter h-fit w-fit ps-[0.25rem] pe-[0.25rem] pt-[0.5rem] pb-[0.5rem] text-nowrap relative`;
+        } text-white text-[13px] font-[600] font-inter h-fit w-fit ps-[0.25rem] pe-[0.25rem] pt-[0.5rem] pb-[0.5rem] text-nowrap relative`;
       }}
     >
       {content?.title}
@@ -403,6 +390,10 @@ const NavBar = () => {
     ))
   , [toggle, activeMenu]);
 
+  // Split navigation links for desktop view
+  const leftSideLinks = navBarLinksElements.slice(0, 4);
+  const rightSideLinks = navBarLinksElements.slice(4);
+
   return (
     <>
       {/* Desktop Navigation Bar */}
@@ -411,7 +402,7 @@ const NavBar = () => {
         animate={{ 
           y: isVisible ? 0 : -100,
           opacity: isVisible ? 1 : 0,
-          scale: isVisible ? 1 : 0.95
+          scale: isVisible ? 0.95 : 0.95
         }}
         transition={{ 
           duration: 0.3,
@@ -422,26 +413,19 @@ const NavBar = () => {
         className="fixed left-0 right-0 mx-auto top-[1.5rem] w-fit max-w-[100%] z-[20000] backdrop-blur-lg bg-black/70 border border-white/20 shadow-xl rounded-[20px] h-fit px-4 md:flex hidden items-center justify-center flex-row gap-[1.2rem]"
       >
         {/* Left side navigation links */}
-        <div className="flex items-center gap-[1.2rem]">
-          {navBarLinksElements.slice(0, Math.ceil(navBarLinksElements.length / 2))}
+        <div className="flex items-center gap-[1rem]">
+          {leftSideLinks}
         </div>
+        
+        {/* Logo */}
         <NavLink to="/" className="flex items-center">
-          <img 
-            src="/navlogo.png"
-            alt="Vriksha School Logo" 
-            className="h-[5rem] w-auto " 
-            loading="eager"
-            style={{ objectFit: 'contain' }}
-            onError={(e) => {
-              console.error('Logo failed to load');
-              e.target.style.display = 'none';
-            }}
-          />
+          <img src="/navlogo.png" alt="Vriksha School Logo" className="h-[6rem] w-auto" />
         </NavLink>
+        
         {/* Right side navigation links */}
-  <div className="flex items-center gap-[1.2rem]">
-    {navBarLinksElements.slice(Math.ceil(navBarLinksElements.length / 2))}
-  </div>
+        <div className="flex items-center gap-[1.2rem]">
+          {rightSideLinks}
+        </div>
       </motion.div>
 
       {/* Mobile Navigation Toggle Button */}
@@ -458,27 +442,31 @@ const NavBar = () => {
           opacity: { duration: 0.2 },
           scale: { duration: 0.2 }
         }}
-        className="md:hidden fixed left-0 right-0 mx-auto top-[1.5rem] w-fit max-w-[95%] z-[200001] backdrop-blur-lg bg-black/70 border border-white/20 shadow-xl rounded-[20px] h-fit px-4 flex items-center justify-between flex-row gap-[16rem]"
+        className="md:hidden fixed left-0 right-0 mx-auto top-[1.5rem] w-[95%] z-[200001] backdrop-blur-lg bg-black/70 border border-white/20 shadow-xl rounded-[20px] h-fit px-3 flex items-center justify-between"
       >
-        <NavLink to="/" className="flex  items-center">
+        <NavLink to="/" className="flex items-center">
           <img 
             src="/navlogo.png"
             alt="Vriksha School Logo" 
-            className="h-24 w-auto py-2" 
+            className="h-20 w-auto py-2" 
             loading="eager"
-            style={{ objectFit: 'contain',minWidth: '45px',
-              filter: 'brightness(1.02)' }}
+            style={{ 
+              objectFit: 'contain',
+              maxWidth: '120px',
+              minWidth: '60px',
+              filter: 'brightness(1.02)'
+            }}
             onError={(e) => {
               console.error('Logo failed to load');
               e.target.style.display = 'none';
             }}
           />
         </NavLink>
-        <button onClick={toggle} className="p-[0.75rem]">
+        <button onClick={toggle} className="p-2">
           {isOpen ? (
-            <IoMdClose size={30} color="white" />
+            <IoMdClose size={24} color="white" />
           ) : (
-            <RxHamburgerMenu size={30} color={"white"} />
+            <RxHamburgerMenu size={24} color={"white"} />
           )}
         </button>
       </motion.div>
