@@ -3,8 +3,8 @@ import { useMediaQuery } from "react-responsive";
 import HeroAndVisionSection from "./HeroAndVisionSection";
 import Categories from "./Categories";
 import Advantages from "./Advantages";
-import EventsMobile from "./Event_Mobile";
-import Events from "./Events";
+import Whyus_mobile from "./Whyus_mobile";
+import Whyus from "./Whyus";
 import Partners from "./Partners";
 import CTA from "./CTA";
 import CTA2 from "./CTA2";
@@ -36,8 +36,8 @@ const Home = () => {
         <div className="w-full h-[10vh]" id={"advantages"}></div>
         <Advantages />
         
-        <div className="w-full h-[0.1px]" id={"events"}></div>
-        {isMobile ? <EventsMobile /> : <Events />}
+        <div className="w-full h-[0.1px]" id={"whyus"}></div>
+        {isMobile ? <Whyus_mobile /> : <Whyus />}
         
         <div className="w-full h-[10vh]" id={"testimonals"}></div>
         <Testimonials />

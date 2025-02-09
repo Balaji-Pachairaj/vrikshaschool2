@@ -101,7 +101,7 @@ const MobileMillestones = () => {
       <ScrollContainer>
         <MilestoneText>
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
-            Milestone
+            Milestones
           </span>
           
         </MilestoneText>

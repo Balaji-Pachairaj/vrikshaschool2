@@ -107,7 +107,6 @@ const router = createBrowserRouter([
         <div className="w-full h-[0.1px]" id="start"></div>
         <NavBar />
         <div className="w-full h-[0.1px]" id="facilitessection" ></div>
-        
         <FacilitiesSection />
         
         
@@ -221,8 +220,6 @@ const router = createBrowserRouter([
         <NavBar />
         <div className="w-full h-[0.1px] " id="outdoor"></div>
         <Outdoor />
-       
-       
       
         <FooterSection />
       </>

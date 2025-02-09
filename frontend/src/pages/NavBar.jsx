@@ -15,7 +15,7 @@ export const NavBarLinks = [
       { title: "our Milestone", to: "/?section=milestone" },
       { title: "category", to: "/?section=category" },
       { title: "the advantages", to: "/?section=advantages" },
-      { title: "our events", to: "/?section=events" },
+      { title: "why us?", to: "/?section=whyus" }, 
       { title: "the testimonals", to: "/?section=testimonals" },
     ],
   },
