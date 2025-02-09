@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import leftcard from "../assets/aboutus/1.JPG"
-import rightcard from "../assets/aboutus/2.JPG"
-import centercard from "../assets/aboutus/3.JPG"
+import leftcard from "../assets/aboutus/12.png"
+import rightcard from "../assets/aboutus/13.png"
+import centercard from "../assets/aboutus/11.png"
 
 const Overview = () => {
   const [showImages, setShowImages] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const observer = new IntersectionObserver(  
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {

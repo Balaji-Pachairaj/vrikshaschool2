@@ -2,34 +2,33 @@ import React, { useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 
+import test1 from "../assets/testimonials/test1.png";
+import test2 from "../assets/testimonials/test2.png";
+import test3 from "../assets/testimonials/test3.png";
+import test4 from "../assets/testimonials/test4.png";
+
 export const content_testimonal = [
   {
     image:
-      "https://cdn.prod.website-files.com/66d39c6cae70a65d79022708/66e8840553eff51ab7404b73_testimonial-img-03.webp",
-    name: "Sophia Chen",
-    testimonial: `"Thanks to their AI-driven insights, we’ve been able to make smarter decisions faster. Their dedication to our success was evident from day one."`,
-    position: "Head of Operations, Innovatex",
+      test1,
+    name: "Mr. Vijay Prabhu C",
   },
   {
     image:
-      "https://cdn.prod.website-files.com/66d39c6cae70a65d79022708/66e88407dc8dd84e8b5f5848_testimonial-img-04.webp",
-    name: "Emma Blake",
-    testimonial: `"Working with this AI team has been a game-changer for our business. Their innovative solutions streamlined our operations and improved efficiency beyond expectations."`,
-    position: "CTO, Fintechpro",
+      test2,
+    name: "Sachu Prakash",
+
   },
   {
     image:
-      "https://cdn.prod.website-files.com/66d39c6cae70a65d79022708/66e88405b213c2b042b9a7f3_testimonial-img-01.webp",
-    name: "Carlos Ramirez",
-    testimonial: `"Their AI solutions transformed our customer experience, allowing us to provide personalized services at scale. I highly recommend their team for any AI project."`,
-    position: "Product Manager, Healthify",
+      test3,
+    name: "Rubia Valar",
   },
   {
     image:
-      "https://cdn.prod.website-files.com/66d39c6cae70a65d79022708/66e8840579d3cd5c95a0eaec_testimonial-img-02.webp",
-    name: "David Morgan",
-    testimonial: `"The AI services provided were not only cutting-edge but also customized to fit our exact needs. Their expertise truly elevated our digital strategy."`,
-    position: "CEO, Beyond",
+      test4,
+    name: "Reena",
+  
   },
 ];
 

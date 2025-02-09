@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
-import overview from "../../assets/Learning/overview.JPG"
-import academics from "../../assets/Learning/academics.JPG"
+import overview from "../../assets/Learning/Overview.png"
+import academics from "../../assets/Learning/Academics.png"
 
 const Card = ({ title, description, imageUrl, index, totalCards, className = "text-lg", imageOnRight = false }) => {
   const cardRef = useRef(null);

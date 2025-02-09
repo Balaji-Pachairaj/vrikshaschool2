@@ -3,6 +3,7 @@ import { motion, useAnimation } from "framer-motion";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { content_testimonal } from "./Testimonials";
 
+
 const Separtate_testimonal_Component = ({
   text_control = {},
   image_control = {},
