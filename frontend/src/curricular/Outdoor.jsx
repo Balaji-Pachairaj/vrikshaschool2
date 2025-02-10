@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import outdoor from "../assets/curricular/outdoor.png"
+import sports  from "../assets/curricular/Sports2.png"
 
 const Outdoor = () => {
   const [ref1, inView1] = useInView({
@@ -56,7 +58,7 @@ const Outdoor = () => {
         >
           <div className="relative overflow-hidden rounded-2xl group">
             <img
-              src="https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+              src= {outdoor}
               alt="Sports Facilities"
               className="w-full h-[400px] object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
             />
@@ -75,7 +77,7 @@ const Outdoor = () => {
         >
           <div className="relative overflow-hidden rounded-2xl group">
             <img
-              src="https://images.unsplash.com/photo-1571210862729-78a52d3779a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+              src= {sports}
               alt="Nature Exploration"
               className="w-full h-[400px] object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
             />

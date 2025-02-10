@@ -27,7 +27,7 @@ import ContactUs from "./pages/ContactUs";
 import Admission from "./pages/Admission/Admission";
 
 
-
+import Music from "./curricular/Music"
 import Outdoor from "./curricular/Outdoor";
 import Clubs from "./curricular/Clubs";
 import Clubcard from "./curricular/Clubscards";
@@ -238,6 +238,20 @@ const router = createBrowserRouter([
        
         <Clubcard />
         <Clubcard2 />
+        <FooterSection />
+      </>
+    ),
+  },
+
+  {
+    path: "/music-dance",
+    element: (
+      <>
+        <div className="w-full h-[0.1px]" id="start"></div>
+        <NavBar />
+        <div className="w-full h-[0.1px] " id="music-dance"></div>
+        <Music />
+        <div className="w-full h-[0.1px]"></div>
         <FooterSection />
       </>
     ),

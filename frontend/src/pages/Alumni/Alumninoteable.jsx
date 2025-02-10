@@ -2,35 +2,32 @@ import React, { useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 
+import test1 from "../../assets/alumni/test1.png";
+import test2 from "../../assets/alumni/test2.png";
+import test3 from "../../assets/alumni/test3.png";
+
 export const content_testimonal = [
   {
     image:
-      "https://cdn.prod.website-files.com/66d39c6cae70a65d79022708/66e8840553eff51ab7404b73_testimonial-img-03.webp",
-    name: "Sophia Chen",
-    testimonial: `"Thanks to their AI-driven insights, we’ve been able to make smarter decisions faster. Their dedication to our success was evident from day one."`,
-    position: "Head of Operations, Innovatex",
+      test1,
+    name: "Arun M E",
+    testimonial: "From the very first day, the teachers and management of vriksha have been incredibly supportive, encouraging and inspiring. Through various club activities and leadership opportunities, I was able to develop essential skills, including problem-solving, teamwork, and leadership. Beyond academics, Vriksha has given me a close-knit community of friends and a treasure trove of lifelong memories that I will always cherish.",
+    position: "Batch of 2020, Mobile App Developer Trainee, E2 Info Systems Limited",
   },
   {
     image:
-      "https://cdn.prod.website-files.com/66d39c6cae70a65d79022708/66e88407dc8dd84e8b5f5848_testimonial-img-04.webp",
-    name: "Emma Blake",
-    testimonial: `"Working with this AI team has been a game-changer for our business. Their innovative solutions streamlined our operations and improved efficiency beyond expectations."`,
-    position: "CTO, Fintechpro",
+      test2,
+    name: "Aatithiyaa V R",
+    testimonial: "Vriksha has played a significant role in shaping my confidence, adaptability, and decision-making skills, equipping me for future challenges. Through its well-structured curriculum, I have gained immense practical knowledge that continues to benefit me. Beyond academics, Vriksha has provided me with exposure to various co-curricular and extracurricular activities, helping me enhance my problem-solving abilities, personality development, and leadership skills—all essential in today's dynamic world.",
+    position: "Batch of 2023, B.Com, Banking and Capital Markets, VIT",
   },
   {
     image:
-      "https://cdn.prod.website-files.com/66d39c6cae70a65d79022708/66e88405b213c2b042b9a7f3_testimonial-img-01.webp",
-    name: "Carlos Ramirez",
-    testimonial: `"Their AI solutions transformed our customer experience, allowing us to provide personalized services at scale. I highly recommend their team for any AI project."`,
-    position: "Product Manager, Healthify",
-  },
-  {
-    image:
-      "https://cdn.prod.website-files.com/66d39c6cae70a65d79022708/66e8840579d3cd5c95a0eaec_testimonial-img-02.webp",
-    name: "David Morgan",
-    testimonial: `"The AI services provided were not only cutting-edge but also customized to fit our exact needs. Their expertise truly elevated our digital strategy."`,
-    position: "CEO, Beyond",
-  },
+      test3,
+    name: "V. Shriyha",
+    testimonial: "During my tenure, I had the privilege of nominating a School Pupil Leader, an experience that greatly shaped my growth. It enhanced my leadership, team collaboration, and management skills, preparing me for greater challenges. Additionally, Vriksha played a vital role in refining my musical and sports abilities through various training sessions and opportunities. Today, I thrive in multiple disciplines, all thanks to Vriksha and its invaluable teachings.",
+    position: "Batch of 2024, B.Tech, AI & DS, Saveetha College of Engineering",
+  }
 ];
 
 const Separtate_testimonal_Component = ({
@@ -63,12 +60,13 @@ const Separtate_testimonal_Component = ({
         <h1 className=" xl:text-[32px] lg:text-[30px] md:text-[26px] sm:text-[24px] font-poppins text-[white]">
           {content?.name}
         </h1>
+        <h2 className=" xl:text-[18px] lg:text-[16px] md:text-[14px] sm:text-[12px] font-poppins mb-3 text-[white]">
+          {content?.position}
+        </h2>
         <p className=" xl:text-[16px] lg:text-[16px] md:text-[14px] sm:text-[12px] font-poppins text-[white]">
           {content?.testimonial}
         </p>
-        <h2 className=" xl:text-[18px] lg:text-[16px] md:text-[14px] sm:text-[12px]  font-poppins text-[white]">
-          {content?.position}
-        </h2>
+       
       </motion.div>
     </motion.div>
   );
@@ -146,7 +144,7 @@ const Testimonial = () => {
   let difference_percentage = 35;
 
   const left_scroll_button_click = () => {
-    if (currentSelect === 4) {
+    if (currentSelect === 3) {
       return;
     }
 
@@ -182,15 +180,7 @@ const Testimonial = () => {
     set_three_left((state) => {
       return state - difference_percentage;
     });
-    // ------------------ Four ---------------
-    let left_four = four_left - difference_percentage;
-    whole_four_control.start({
-      left: left_four + "%",
-      transition: transition_obj,
-    });
-    set_four_left((state) => {
-      return state - difference_percentage;
-    });
+    
 
     //---------------------------------------------------------------
 
@@ -248,16 +238,7 @@ const Testimonial = () => {
     set_three_left((state) => {
       return state + difference_percentage;
     });
-    // ------------------ Four ---------------
-    let left_four = four_left + difference_percentage;
-    whole_four_control.start({
-      left: left_four + "%",
-      transition: transition_obj,
-    });
-    set_four_left((state) => {
-      return state + difference_percentage;
-    });
-
+    
     //---------------------------------------------------------------
 
     if (currentSelect === 1) {
@@ -281,9 +262,8 @@ const Testimonial = () => {
 
   return (
     <>
-      <div className=" w-full h-[130vh] overflow-hidden sm:block hidden">
-      
-        <div className="w-full h-screen relative overflow-hidden sm:block hidden">
+      <div className=" w-full h-[150vh] sm:block overflow-x-hidden">
+        <div className="w-full h-screen relative sm:block hidden">
           {/* ---------------- */}
 
           {/* First */}
@@ -324,20 +304,7 @@ const Testimonial = () => {
             content={content_testimonal[2]}
           />
 
-          {/* Fourth  */}
-          <Separtate_testimonal_Component
-            whole_control={whole_four_control}
-            text_control={text_four_control}
-            image_control={image_four_control}
-            whole_initial={{
-              x: "-50%",
-              y: "-50%",
-              left: four_left + "%",
-            }}
-            text_initial={{ opacity: 0 }}
-            image_initial={{ scale: 0.75 }}
-            content={content_testimonal[3]}
-          />
+          
 
           {/* -------------- Button Section --------- */}
           <div className="w-fit h-fit absolute bottom-[5rem] right-[2rem] flex flex-row justify-center gap-[1.5rem]">

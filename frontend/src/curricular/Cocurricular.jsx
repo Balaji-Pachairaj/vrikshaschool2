@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import sports from "../assets/curricular/sports.png"
+import sports from "../assets/curricular/Sports.png"
 import clubs from "../assets/curricular/clubs.png"
 import music from "../assets/curricular/music.png"
 import creative from "../assets/curricular/creative.png"

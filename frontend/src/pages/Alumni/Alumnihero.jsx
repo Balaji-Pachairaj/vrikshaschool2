@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
-import png1 from "../../assets/alumni/15.png";
-import png2 from "../../assets/alumni/16.png";
-import png3 from "../../assets/alumni/17.png";
-import png4 from "../../assets/alumni/18.png";
-import png5 from "../../assets/alumni/19.png";
+import png1 from "../../assets/alumni/25.png";
+import png2 from "../../assets/alumni/26.png";
+import png3 from "../../assets/alumni/27.png";
+import png4 from "../../assets/alumni/28.png";
+import png5 from "../../assets/alumni/29.png";
 
 const Hero = () => {
   const cubeRef = useRef(null);

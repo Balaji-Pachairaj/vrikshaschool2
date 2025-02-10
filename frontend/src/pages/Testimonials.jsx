@@ -12,22 +12,25 @@ export const content_testimonal = [
     image:
       test1,
     name: "Mr. Vijay Prabhu C",
+    testimonial: "My child thoroughly enjoys every moment at Vriksha. I sincerely thank the management and team for creating such a wonderful and enriching learning environment for our children."
   },
   {
     image:
       test2,
     name: "Sachu Prakash",
-
+    testimonial: "Vriksha School provides a green, spacious, and stress-free environment where my son thrives both academically and in sports. Seeing him excel and enjoy his learning journey reassures me that I made the right choice as a parent.",
   },
   {
     image:
       test3,
     name: "Rubia Valar",
+    testimonial: "Vriksha Global School provides an ideal foundation for my child’s education with its student-centered learning approach. I truly appreciate the dedicated teachers and the holistic development my child experiences through active participation in all activities."
   },
   {
     image:
       test4,
     name: "Reena",
+    testimonial: "As a teacher, I take pride in being part of Vriksha Global School, where young minds are nurtured beyond textbooks. The school fosters a dynamic learning environment where both students and educators grow together, making every day a fulfilling and enriching experience."
   
   },
 ];
@@ -280,13 +283,13 @@ const Testimonial = () => {
 
   return (
     <>
-      <div className=" w-full h-[130vh] overflow-hidden sm:block hidden">
+      <div className=" w-full h-[150vh] overflow-x-hidden sm:block hidden">
         <h1 className="text-[12vw] text-center font-black text-white uppercase tracking-[-0.05em] leading-[0.8] whitespace-nowrap scale-y-[1.2] mb-[2rem]">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
             Testimonals
           </span>
         </h1>
-        <div className="w-full h-screen relative overflow-hidden sm:block hidden">
+        <div className="w-full h-screen relative sm:block hidden">
           {/* ---------------- */}
 
           {/* First */}

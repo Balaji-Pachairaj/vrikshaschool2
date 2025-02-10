@@ -28,7 +28,7 @@ const Marathonrun = () => {
       {/* Content container */}
       <div className="max-w-2xl text-center px-4">
         <p className="text-lg md:text-xl lg:text-2xl text-white leading-relaxed">
-        Get ready to push your limits at the Vriksha Marathon 2025, happening on Republic Day, January 26th! Whether you're a seasoned runner or a first-timer, it's your chance to challenge yourself and be part of something bigger. Lace up, join the movement, and let's run this Republic Day!
+          Thank you for being a part of the Vriksha Marathon 2025! Your energy and dedication made this event a great success. Let’s keep the spirit alive—lace up and get ready for an even bigger run in 2026! See you at the starting line next year! 
         </p>
       </div>
     </div>

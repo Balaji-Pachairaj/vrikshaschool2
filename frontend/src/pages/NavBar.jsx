@@ -51,7 +51,7 @@ export const NavBarLinks = [
       { title: "sports", to: "/sports?section=sports" },
       { title: "outdoor activites", to: "/outdoor?section=outdoor" },
       { title: "clubs", to: "/clubs?section=clubs" },
-      { title: "Music & Dance", to: "/curricular?section=outdoor" },
+      { title: "Music & Dance", to: "/music-dance?section=music-dance" },
       { title: "creative arts", to: "/creative?section=creative" },
     ],
   },

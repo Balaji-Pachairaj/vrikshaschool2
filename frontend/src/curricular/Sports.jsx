@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import sports from "../assets/curricular/Sports.png"
 
 const cardData = [
   { title: "Qualified trainers and coaches", description: "monitor the progress of every child, to ensure that they learn, and excel in sports. Keeping this in view, the school has invested heavily in creating world - class sports infrastructure" },
@@ -97,7 +98,7 @@ const Sports = () => {
           >
             <div className="relative overflow-hidden rounded-2xl group">
               <img
-                src="https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                src= {sports}
                 alt="Sports Facilities"
                 className="w-full h-[400px] object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
               />

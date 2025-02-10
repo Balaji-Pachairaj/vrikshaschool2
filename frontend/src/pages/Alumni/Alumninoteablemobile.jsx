@@ -33,12 +33,13 @@ const Separtate_testimonal_Component = ({
         <h1 className=" xl:text-[32px] lg:text-[30px] md:text-[26px] sm:text-[24px] text-[20px] font-poppins text-[white]">
           {content?.name}
         </h1>
+        <h2 className="mb-3 xl:text-[18px] lg:text-[16px] md:text-[14px] sm:text-[12px] text-[14px]  font-poppins text-[white]">
+          {content?.position}
+        </h2>
         <p className=" xl:text-[16px] lg:text-[16px] md:text-[14px] sm:text-[12px] text-[13px] font-poppins text-[white]">
           {content?.testimonial}
         </p>
-        <h2 className=" xl:text-[18px] lg:text-[16px] md:text-[14px] sm:text-[12px] text-[14px]  font-poppins text-[white]">
-          {content?.position}
-        </h2>
+        
       </motion.div>
     </motion.div>
   );
