@@ -43,7 +43,6 @@ const FooterSection = () => {
                 <p className=" text-[14px]  font-inter text-white">
                   Contact Us
                 </p>
-                <p className=" text-[14px]  font-inter text-white">Faq's</p>
               </div>
               <div className=" w-fit h-fit flex flex-col items-start gap-[1.5rem]">
                 <h1 className=" text-[18px]  font-inter font-bold text-[#ffd82b]">

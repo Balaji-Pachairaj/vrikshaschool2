@@ -31,8 +31,8 @@ const SportAcademy = () => {
       {isMobile ? <SportAcademyTrainingMobile /> : <SportAcademyTraining />}
       <div className=" w-full h-[10vh] " id="success"></div>
       {isMobile ? <SportAcademySuccessMobile /> : <SportAdacemySuccess />}
-      <div className=" w-full h-[10vh] " id="story"></div>
-      {isMobile ? <SportAcademyStoryMobile /> : <SportAcedemyStory />}
+      {/* <div className=" w-full h-[10vh] " id="story"></div>
+      {isMobile ? <SportAcademyStoryMobile /> : <SportAcedemyStory />} */}
 
       
       <div className=" w-full h-[10vh] " id="faqs"></div>
