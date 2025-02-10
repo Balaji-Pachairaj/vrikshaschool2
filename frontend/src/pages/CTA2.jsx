@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef, memo } from 'react';
 import styled from 'styled-components';
-import img1 from "../assets/CTA/img1.JPG";
+import img1 from "../assets/CTA/Left.png";
 import img2 from "../assets/CTA/Right.png"; 
 
 const Section = styled.section`
   background-color: #000000;
   color: #ffffff;
   padding: 4rem 0;
-  display: flex;
+  display: flex;  
   justify-content: center;
   align-items: center;
   min-height: 80vh;

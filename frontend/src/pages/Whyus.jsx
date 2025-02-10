@@ -11,7 +11,7 @@ import why7 from "../assets/whyus/8.png";
 import why8 from "../assets/whyus/9.png";
 
 // Set these values to match your design
-const CardWidth = 500; // width of each card
+const CardWidth = 450; // width of each card
 const CardMargin = 20; // right margin between cards
 const TotalCards = 8;  // total number of cards
 
@@ -53,7 +53,7 @@ const ImageCardsContainer = styled.div`
 
 const ImageCard = styled.div`
   width: ${CardWidth}px;
-  height: 400px;
+  height: 450px;
   margin-right: ${CardMargin}px;
   background-image: url(${(props) => props.imageUrl});
   background-size: cover;

@@ -1,6 +1,9 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 
+import img1 from "../assets/aboutus/1.png";
+import img2 from "../assets/aboutus/2.png";
+
 const ImageComponents = ({ team }) => {
   return (
     <div className="w-full h-full relative bg-dharangradient">
@@ -19,10 +22,10 @@ const MeetOurTeam3 = () => {
   };
   const teammember = [
     {
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=388&auto=format&fit=crop",
+      image: img1,
     },
     {
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=461&auto=format&fit=crop",
+      image: img2,
     },
     {
       image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=387&auto=format&fit=crop",
@@ -36,7 +39,6 @@ const MeetOurTeam3 = () => {
     {
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=870&auto=format&fit=crop",
     },
-    
   ];
   const fullRef = useRef();
 
@@ -53,7 +55,6 @@ const MeetOurTeam3 = () => {
   const point = "0.88";
 
   //-------------------------------------------------------------------
-
   const timing1 = [0, 0.1, 0.12, 0.3, point, 1];
 
   const topSection1 = useTransform(fullRefUseScroll.scrollYProgress, timing1, [
@@ -81,7 +82,6 @@ const MeetOurTeam3 = () => {
   );
 
   ///--------------------------------------------------------------------
-
   const timing2 = [0, 0.1, 0.3, 0.48, point, 1];
 
   const topSection2 = useTransform(fullRefUseScroll.scrollYProgress, timing2, [
@@ -108,36 +108,34 @@ const MeetOurTeam3 = () => {
     [1, 1, 1, endScale, endScale, endScale]
   );
 
+  // ///--------------------------------------------------------------------
+  // const timing3 = [0, 0.1, 0.48, 0.66, point, 1];
+
+  // const topSection3 = useTransform(fullRefUseScroll.scrollYProgress, timing3, [
+  //   "175%",
+  //   "25%",
+  //   "25%",
+  //   endTopState,
+  //   endTopState,
+  //   upState,
+  // ]);
+
+  // const leftSection3 = useTransform(fullRefUseScroll.scrollYProgress, timing3, [
+  //   "60%",
+  //   "60%",
+  //   "60%",
+  //   endLeftState,
+  //   endLeftState,
+  //   endLeftState,
+  // ]);
+
+  // const scaleSection3 = useTransform(
+  //   fullRefUseScroll.scrollYProgress,
+  //   timing3,
+  //   [1, 1, 1, endScale, endScale, endScale]
+  // );
+
   ///--------------------------------------------------------------------
-
-  const timing3 = [0, 0.1, 0.48, 0.66, point, 1];
-
-  const topSection3 = useTransform(fullRefUseScroll.scrollYProgress, timing3, [
-    "175%",
-    "25%",
-    "25%",
-    endTopState,
-    endTopState,
-    upState,
-  ]);
-
-  const leftSection3 = useTransform(fullRefUseScroll.scrollYProgress, timing3, [
-    "60%",
-    "60%",
-    "60%",
-    endLeftState,
-    endLeftState,
-    endLeftState,
-  ]);
-
-  const scaleSection3 = useTransform(
-    fullRefUseScroll.scrollYProgress,
-    timing3,
-    [1, 1, 1, endScale, endScale, endScale]
-  );
-
-  ///--------------------------------------------------------------------
-
   const timing4 = [0, 0.1, 0.66, 0.78, point, 1];
 
   const topSection4 = useTransform(fullRefUseScroll.scrollYProgress, timing4, [
@@ -150,9 +148,9 @@ const MeetOurTeam3 = () => {
   ]);
 
   const leftSection4 = useTransform(fullRefUseScroll.scrollYProgress, timing4, [
-    "80%",
-    "80%",
-    "80%",
+    "60%",
+    "60%",
+    "60%",
     endLeftState,
     endLeftState,
     endLeftState,
@@ -193,7 +191,6 @@ const MeetOurTeam3 = () => {
   );
 
   //---------------------------------------------------------------------
-
   const topSection9 = useTransform(
     fullRefUseScroll.scrollYProgress,
     [0, 0.1, 0.86, 0.88, 1],
@@ -201,7 +198,6 @@ const MeetOurTeam3 = () => {
   );
 
   //------------------------------------------------------------------------
-
   const lastRef = useRef();
 
   return (
@@ -217,6 +213,7 @@ const MeetOurTeam3 = () => {
 
       <div ref={lastRef} className="w-full h-screen lg:block hidden"></div>
       
+      {/* Desktop Animated Cards */}
       <motion.div
         style={{
           top: topSection1,
@@ -243,6 +240,8 @@ const MeetOurTeam3 = () => {
         <ImageComponents team={teammember[1]} />
       </motion.div>
 
+      {/*
+      // Commented Out: Removed the third card as per request.
       <motion.div
         style={{
           top: topSection3,
@@ -255,8 +254,7 @@ const MeetOurTeam3 = () => {
       >
         <ImageComponents team={teammember[2]} />
       </motion.div>
-
-     
+      */}
 
       <motion.div
         style={{
@@ -268,11 +266,7 @@ const MeetOurTeam3 = () => {
         }}
         className="xl:w-[200px] xl:h-[285px] lg:w-[150px] lg:h-[215px] bg-red-800 fixed rounded-[15px] overflow-hidden"
       >
-        <ImageComponents
-          team={{
-            image: dharan.image,
-          }}
-        />
+        <ImageComponents team={{ image: dharan.image }} />
       </motion.div>
 
       <motion.div
@@ -287,9 +281,29 @@ const MeetOurTeam3 = () => {
         </h1>
       </motion.div>
 
+      {/* Mobile Version */}
       <div className="lg:hidden block p-4">
         <h1 className="text-2xl text-white mb-8">Leaders Democratising Education</h1>
         <div className="flex flex-col gap-6">
+          {/* 
+            Changed from slice(0, 3) to slice(0, 2) so that only two team member cards are rendered,
+            and the dharan card will serve as the third card.
+          */}
+          {teammember.slice(0, 2).map((member, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="w-full h-[300px] rounded-[15px] overflow-hidden"
+            >
+              <ImageComponents team={member} />
+            </motion.div>
+          ))}
+
+          {/*
+          // Original code that rendered three team member cards:
           {teammember.slice(0, 3).map((member, index) => (
             <motion.div
               key={index}
@@ -302,6 +316,8 @@ const MeetOurTeam3 = () => {
               <ImageComponents team={member} />
             </motion.div>
           ))}
+          */}
+          
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
