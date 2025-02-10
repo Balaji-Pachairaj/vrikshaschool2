@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import sports from "../assets/curricular/Sports.png"
+import sports from "../assets/curricular/sports.png"
 
 const cardData = [
   { title: "Qualified trainers and coaches", description: "monitor the progress of every child, to ensure that they learn, and excel in sports. Keeping this in view, the school has invested heavily in creating world - class sports infrastructure" },
