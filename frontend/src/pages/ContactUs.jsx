@@ -141,7 +141,7 @@ const ContactUs = () => {
       setNotification({
         show: true,
         type: 'error',
-        message: 'There was an error submitting your form. Please try again or contact us directly at vikashuvi07@gmail.com'
+        message: 'There was an error submitting your form. Please try again or contact us directly at vrikshaglobal@gmail.com'
       });
     } finally {
       setIsSubmitting(false);

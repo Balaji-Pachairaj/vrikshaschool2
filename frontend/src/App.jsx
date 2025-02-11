@@ -284,12 +284,13 @@ const router = createBrowserRouter([
       <Marathonhero/>
     <div className="w-full h-[0.1px]" id="about"></div>
     <Marathonrun />
+    <div className="w-full h-[0.1px]" id="sponsor"></div>
+    <Marathonglimpses/>
     <div className="w-full h-[0.1px]" id="categories"></div>
     <Marathoncategories/>
     <div className="w-full h-[0.1px]" id="time"></div>
     <Marathontime/>
-    <div className="w-full h-[0.1px]" id="sponsor"></div>
-    <Marathonglimpses/>
+    
     <div className="w-full h-[0.1px]" id="sponsor"></div>
     <Marathonsponsor/>
     <div className="w-full h-[0.1px]" id="goodies"></div>

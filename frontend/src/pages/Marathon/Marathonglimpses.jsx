@@ -39,7 +39,7 @@ const Marathonglimpses = () => {
       <h1 className="text-6xl font-extrabold text-center mb-16 tracking-tight">
         
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
-            Marathon Glimpses   
+        Glimpses from Runtastic 2025  
                 </span>
       </h1>
       <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-3 gap-4">
