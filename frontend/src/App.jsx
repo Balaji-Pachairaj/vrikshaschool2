@@ -38,6 +38,7 @@ import Marathonhero from "./pages/Marathon/Marathonhero"
 import Marathonrun from "./pages/Marathon/Marathonrun"
 import Marathoncategories from "./pages/Marathon/Marathoncategories"
 import Marathontime from "./pages/Marathon/Marathontime";
+import Marathonglimpses from "./pages/Marathon/Marathonglimpses";
 import Marathonsponsor from "./pages/Marathon/Marathonsponsor"
 import Marathongoodies from "./pages/Marathon/Marathongoodies";
 import Marathonregistration from "./pages/Marathon/Marathonregsitration"
@@ -287,6 +288,8 @@ const router = createBrowserRouter([
     <Marathoncategories/>
     <div className="w-full h-[0.1px]" id="time"></div>
     <Marathontime/>
+    <div className="w-full h-[0.1px]" id="sponsor"></div>
+    <Marathonglimpses/>
     <div className="w-full h-[0.1px]" id="sponsor"></div>
     <Marathonsponsor/>
     <div className="w-full h-[0.1px]" id="goodies"></div>

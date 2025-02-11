@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 
 import img1 from "../assets/aboutus/1.png";
 import img2 from "../assets/aboutus/2.png";
+import img3 from "../assets/aboutus/VK.png";
 
 const ImageComponents = ({ team }) => {
   return (
@@ -18,7 +19,7 @@ const ImageComponents = ({ team }) => {
 
 const MeetOurTeam3 = () => {
   const dharan = {
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=387&auto=format&fit=crop",
+    image: img3,
   };
   const teammember = [
     {
@@ -28,7 +29,7 @@ const MeetOurTeam3 = () => {
       image: img2,
     },
     {
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=387&auto=format&fit=crop",
+      image: img3,
     },
     {
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=387&auto=format&fit=crop",
@@ -136,7 +137,7 @@ const MeetOurTeam3 = () => {
   // );
 
   ///--------------------------------------------------------------------
-  const timing4 = [0, 0.1, 0.66, 0.78, point, 1];
+  const timing4 = [0, 0.1, 0.48, 0.66, point, 1];
 
   const topSection4 = useTransform(fullRefUseScroll.scrollYProgress, timing4, [
     "175%",
@@ -162,7 +163,7 @@ const MeetOurTeam3 = () => {
     [1, 1, 1, endScale, endScale, endScale]
   );
 
-  const timing8 = [0, 0.1, 0.8, 0.87, point, 1];
+  const timing8 = [0, 0.1, 0.4, 0.66, point, 1];
 
   const left8 = "90%";
 
@@ -193,7 +194,7 @@ const MeetOurTeam3 = () => {
   //---------------------------------------------------------------------
   const topSection9 = useTransform(
     fullRefUseScroll.scrollYProgress,
-    [0, 0.1, 0.86, 0.88, 1],
+    [0, 0.1, 0.66, 0.88, 1],
     ["100%", "100%%", "100%", "60%", "-75%"]
   );
 
@@ -274,7 +275,7 @@ const MeetOurTeam3 = () => {
           top: topSection9,
           left: "62%",
         }}
-        className="w-[300px] h-[285px] fixed rounded-[15px] overflow-hidden"
+        className="w-[300px] h-[285px] fixed rounded-[15px]"
       >
         <h1 className="text-[3vw] leading-[4.2vw] text-[#fff]">
           Leaders Democratising Education
