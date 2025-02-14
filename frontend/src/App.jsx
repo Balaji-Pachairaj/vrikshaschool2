@@ -286,6 +286,7 @@ const router = createBrowserRouter([
     <Marathonrun />
     <div className="w-full h-[0.1px]" id="sponsor"></div>
     <Marathonglimpses/>
+    {/* 
     <div className="w-full h-[0.1px]" id="categories"></div>
     <Marathoncategories/>
     <div className="w-full h-[0.1px]" id="time"></div>
@@ -296,7 +297,7 @@ const router = createBrowserRouter([
     <div className="w-full h-[0.1px]" id="goodies"></div>
     <Marathongoodies/>
     <div className="w-full h-[0.1px]" id="registration"></div>
-    <Marathonregistration/>
+    <Marathonregistration/>  */}
 
     <FooterSection /> 
     </>
