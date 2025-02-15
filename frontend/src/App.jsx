@@ -57,8 +57,7 @@ import LearningHigher from "./pages/Learning/LearningHigher";
 import PrimarySchoolSection from "./pages/Learning/PrimarySchoolSection";
 import LeadCurriculam from "./pages/Learning/LeadCurriculam";
 
-
-
+import { ModalProvider } from './context/ModalContext';
 
 const router = createBrowserRouter([
   {
@@ -344,9 +343,9 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <>
+    <ModalProvider>
       <RouterProvider router={router} />
-    </>
+    </ModalProvider>
   );
 }
 

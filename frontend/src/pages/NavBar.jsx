@@ -1,9 +1,10 @@
-import React, { useEffect, useState, useRef, useCallback, useMemo } from "react";
+import React, { useEffect, useState, useRef, useCallback, useMemo, useContext } from "react";
 import { NavLink, useNavigate, useSearchParams } from "react-router-dom";
 import { IoMdClose } from "react-icons/io";
 import { TbTriangleInvertedFilled } from "react-icons/tb";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { motion, useAnimation } from "framer-motion";
+import { ModalContext } from '../context/ModalContext';
 
 // Navigation link data structure containing all routes and their sub-sections
 export const NavBarLinks = [
@@ -328,6 +329,8 @@ const NavBar = () => {
   useNavbarScroll(setIsVisible);
   useScrollToSection(searchParams);
 
+  const { isModalOpen } = useContext(ModalContext);
+
   // Handle clicks outside mobile menu to close it
   const handleClickOutside = useCallback((event) => {
     if (navRef.current && !navRef.current.contains(event.target) && isOpen) {
@@ -400,8 +403,8 @@ const NavBar = () => {
       <motion.div 
         initial={{ y: 0, opacity: 1 }}
         animate={{ 
-          y: isVisible ? 0 : -100,
-          opacity: isVisible ? 1 : 0,
+          y: isVisible && !isModalOpen ? 0 : -100,
+          opacity: isVisible && !isModalOpen ? 1 : 0,
           scale: isVisible ? 0.95 : 0.95
         }}
         transition={{ 
@@ -432,8 +435,8 @@ const NavBar = () => {
       <motion.div 
         initial={{ y: 0, opacity: 1 }}
         animate={{ 
-          y: isVisible ? 0 : -100,
-          opacity: isVisible ? 1 : 0,
+          y: isVisible && !isModalOpen ? 0 : -100,
+          opacity: isVisible && !isModalOpen ? 1 : 0,
           scale: isVisible ? 1 : 0.95
         }}
         transition={{ 
