@@ -4,7 +4,7 @@ import pool from "../../assets/sportsacademy/pool.jpeg"
 import turf from "../../assets/sportsacademy/turf.JPG"
 import basket from "../../assets/sportsacademy/basket.jpeg"
 import ground from "../../assets/sportsacademy/ground.jpeg"
-import volley from "../../assets/sportsacademy/volley1.jpg"
+import volley from "../../assets/sportsacademy/volley1.JPG"
 import cricket from "../../assets/sportsacademy/cricket.jpg"
 
 import { motion, useScroll, useTransform } from "framer-motion";
