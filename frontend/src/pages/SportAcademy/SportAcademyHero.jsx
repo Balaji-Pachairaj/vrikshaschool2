@@ -6,8 +6,6 @@ import png3 from "../../assets/sportsacademy/3.png"
 import png4 from "../../assets/sportsacademy/4.png"
 import logo from "../../assets/sportsacademy/logo.png"
 
-import overviewImage from "../../assets/Learning/learningOverview.webp";
-
 import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 
