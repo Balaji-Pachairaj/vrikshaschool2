@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import outdoor from "../assets/curricular/outdoor.png"
+import outdoor from "../assets/curricular/out.jpg"
 import sports  from "../assets/curricular/Sports2.png"
 
 const Outdoor = () => {

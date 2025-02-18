@@ -104,8 +104,8 @@ const StatsCard = ({ number, label }) => {
 
 const StatsSection = () => {
   const stats = [
-    { number: '1:20', label: 'Teacher student ratio' },
-    { number: '2000', label: 'Books and journals' },
+    { number: '1:15', label: 'Teacher student ratio' },
+    { number: '4000', label: 'Books and journals' },
     { number: '700', label: 'Dining hall capacity' },
     { number: '25m', label: 'Olympic size swimming pool' },
   ];

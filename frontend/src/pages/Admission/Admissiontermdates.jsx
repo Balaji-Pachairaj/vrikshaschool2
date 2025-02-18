@@ -40,7 +40,7 @@ const Admissiontermdates = () => {
               Third Term
             </h1>
             <p className="text-black text-center text-lg">
-              1st - 10th December
+              1st - 10th November
             </p>
           </div>
         </div>

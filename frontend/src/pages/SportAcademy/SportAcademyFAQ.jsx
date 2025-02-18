@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import png1 from "../../assets/sportsacademy/1.png";
+import png1 from "../../assets/sportsacademy/volley.jpg";
 
 const Com = ({ title, body, state = "0", onClick = () => { } }) => {
   return (

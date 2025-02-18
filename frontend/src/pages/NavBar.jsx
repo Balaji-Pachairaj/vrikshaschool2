@@ -87,7 +87,7 @@ export const NavBarLinks = [
       { title: "training", to: "/sportacademy?section=training" },
       { title: "success", to: "/sportacademy?section=success" },
       // { title: "story", to: "/sportacademy?section=story" },
-      { title: "membership", to: "/sportacademy?section=membership" },
+      // { title: "membership", to: "/sportacademy?section=membership" },
       { title: "faq's", to: "/sportacademy?section=faqs" },
     ],
   },

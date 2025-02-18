@@ -6,6 +6,7 @@ import { FaInstagram } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
 
 import logo from "../assets/footer/footer.png";
+import mandatoryDisclosurePDF from "../assets/public.pdf";
 
 import { NavLink } from "react-router-dom";
 import { NavBarLinks } from "./NavBar";
@@ -43,6 +44,14 @@ const FooterSection = () => {
                 <p className=" text-[14px]  font-inter text-white">
                   Contact Us
                 </p>
+                <a 
+                  href={mandatoryDisclosurePDF}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[14px] font-inter text-white hover:text-[#ffd82b] transition-colors"
+                >
+                  Public <br /> Mandatory <br /> Disclosure
+                </a>
               </div>
               <div className=" w-fit h-fit flex flex-col items-start gap-[1.5rem]">
                 <h1 className=" text-[18px]  font-inter font-bold text-[#ffd82b]">

@@ -4,6 +4,8 @@ import pool from "../../assets/sportsacademy/pool.jpeg"
 import turf from "../../assets/sportsacademy/turf.JPG"
 import basket from "../../assets/sportsacademy/basket.jpeg"
 import ground from "../../assets/sportsacademy/ground.jpeg"
+import volley from "../../assets/sportsacademy/volley1.jpg"
+import cricket from "../../assets/sportsacademy/cricket.jpg"
 
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -39,17 +41,29 @@ const SportAcademySuccessMobile = () => {
       description: "Designed to accommodate track and field events, our ground empowers athletes to train and compete at their peak performance",
       image: ground,
       alt: "Athletic Ground"
+    },
+    {
+      title: "Pro-Level  Cricket Training Nets",
+      description: "Sharpen your batting and bowling skills in our professional cricket nets—ideal for focused practice and peak performance training",
+      image: cricket,
+      alt: "Cricket nets"
+    },
+    {
+      title: "Premier Volleyball Practice Court",
+      description: "Train, play, and excel on our top-notch volleyball court—designed for champions in the making. Perfect for all skill levels, from beginners to pros!",
+      image: volley,
+      alt: "Volley"
     }
   ];
 
   return (
     <div ref={containerRef} className="relative bg-black">
-      <div className="h-[400vh] relative">
+      <div className="h-[600vh] relative">
         <div className="sticky top-0 h-screen overflow-hidden">
           {sections.map((section, index) => {
             const progress = useTransform(
               scrollYProgress,
-              [index * 0.25, (index + 1) * 0.25],
+              [index * 0.166, (index + 1) * 0.166],
               [0, 1]
             );
 
@@ -78,7 +92,7 @@ const SportAcademySuccessMobile = () => {
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-12 h-1 bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] rounded-full"></div>
                     <span className="text-[#00c4cc] text-sm font-medium">
-                      {`0${index + 1} / 04`}
+                      {`0${index + 1} / 06`}
                     </span>
                   </div>
 
@@ -101,7 +115,7 @@ const SportAcademySuccessMobile = () => {
                       />
                     </div>
                     <div className="w-12 h-12 rounded-full border-2 border-[#00c4cc] flex items-center justify-center">
-                      <span className="text-[#00c4cc] font-bold">04</span>
+                      <span className="text-[#00c4cc] font-bold">06</span>
                     </div>
                   </div>
                 </div>
