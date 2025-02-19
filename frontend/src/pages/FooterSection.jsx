@@ -45,7 +45,7 @@ const FooterSection = () => {
                   Contact Us
                 </p>
                 <a 
-                  href={mandatoryDisclosurePDF}
+                  href={`${mandatoryDisclosurePDF}#toolbar=0&navpanes=0&scrollbar=0`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[14px] font-inter text-white hover:text-[#ffd82b] transition-colors"
