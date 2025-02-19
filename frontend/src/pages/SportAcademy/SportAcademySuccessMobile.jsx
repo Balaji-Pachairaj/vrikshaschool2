@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import pool from "../../assets/sportsacademy/pool.jpeg"
 import turf from "../../assets/sportsacademy/cricket.jpg"
 import basket from "../../assets/sportsacademy/basket.jpeg"
-import ground from "../../assets/sportsacademy/ground.JPG"
+import ground from "../../assets/sportsacademy/ground.jpg"
 import volley from "../../assets/sportsacademy/volley1.JPG"
 import cricket from "../../assets/sportsacademy/cricket.jpg"
 
