@@ -5,7 +5,7 @@ import sports from "../assets/curricular/sports.png"
 import clubs from "../assets/curricular/clubs.png"
 import music from "../assets/curricular/music.png"
 import creative from "../assets/curricular/creative.png"
-import outdoor from "../assets/curricular/outdoor.png"
+import outdoor from "../assets/curricular/out.jpg"
 
 const PortfolioGrid = () => {
   const navigate = useNavigate();
