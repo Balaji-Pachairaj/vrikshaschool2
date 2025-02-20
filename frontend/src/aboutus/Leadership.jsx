@@ -12,9 +12,13 @@ const ImageComponents = ({ team }) => {
     <div className="w-full h-full relative bg-dharangradient">
       <img 
         src={team.image} 
-        alt="Team member"
+        alt={team.name}
         className="w-full h-full object-cover absolute"
       />
+      <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-3">
+        <h3 className="text-sm font-semibold">{team.name}</h3>
+        <p className="text-xs">{team.position}</p>
+      </div>
     </div>
   );
 };
@@ -22,19 +26,29 @@ const ImageComponents = ({ team }) => {
 const MeetOurTeam3 = () => {
   const dharan = {
     image: img5,
+    name: "Dr. Krishnakumari S",
+    position: "Executive officer"
   };
   const teammember = [
     {
       image: img1,
+      name: "Mr. Rajasekaran R",
+      position: "Chairman"
     },
     {
       image: img2,
+      name: "Mr. Harinivas Rajasekaran",
+      position: "Correspondent"
     },
     {
       image: img3,
+      name: "Mr. Nivedha Harinivas",
+      position: "Directress"
     },
     {
       image: img4,
+      name: "Ms. Yamini Radhakrishnan",
+      position: "Senior Principal"
     }
   ];
   const fullRef = useRef();
@@ -224,7 +238,7 @@ const topSection9 = useTransform(
           scale: scaleSection1,
           left: leftSection1,
         }}
-        className="xl:w-[200px] xl:h-[285px] lg:w-[150px] lg:h-[215px] bg-dharangradient3 fixed rounded-[15px] overflow-hidden"
+        className="xl:w-[200px] xl:h-[300px] lg:w-[180px] lg:h-[250px] bg-dharangradient3 fixed rounded-[15px] overflow-hidden"
       >
         <ImageComponents team={teammember[0]} />
       </motion.div>
@@ -237,7 +251,7 @@ const topSection9 = useTransform(
           scale: scaleSection2,
           left: leftSection2,
         }}
-        className="xl:w-[200px] xl:h-[285px] lg:w-[150px] lg:h-[215px] bg-red-200 fixed rounded-[15px] overflow-hidden"
+        className="xl:w-[200px] xl:h-[300px] lg:w-[180px] lg:h-[250px] bg-red-200 fixed rounded-[15px] overflow-hidden"
       >
         <ImageComponents team={teammember[1]} />
       </motion.div>
@@ -250,7 +264,7 @@ const topSection9 = useTransform(
           scale: scaleSection3,
           left: leftSection3,
         }}
-        className="xl:w-[200px] xl:h-[285px] lg:w-[150px] lg:h-[215px] bg-red-300 fixed rounded-[15px] overflow-hidden"
+        className="xl:w-[200px] xl:h-[300px] lg:w-[180px] lg:h-[250px] bg-red-300 fixed rounded-[15px] overflow-hidden"
       >
         <ImageComponents team={teammember[2]} />
       </motion.div>
@@ -263,7 +277,7 @@ const topSection9 = useTransform(
           scale: scaleSection4,
           left: leftSection4,
         }}
-        className=" xl:w-[200px] xl:h-[285px] lg:w-[150px] lg:h-[215px] bg-red-400 fixed rounded-[15px] overflow-hidden"
+        className=" xl:w-[200px] xl:h-[300px] lg:w-[180px] lg:h-[250px] bg-red-400 fixed rounded-[15px] overflow-hidden"
       >
         <ImageComponents team={teammember[3]} />
       </motion.div>
@@ -276,9 +290,9 @@ const topSection9 = useTransform(
           scale: scaleSection8,
           left: leftSection8,
         }}
-        className="xl:w-[200px] xl:h-[285px] lg:w-[150px] lg:h-[215px] bg-red-800 fixed rounded-[15px] overflow-hidden"
+        className="xl:w-[200px] xl:h-[300px] lg:w-[180px] lg:h-[250px] bg-red-800 fixed rounded-[15px] overflow-hidden"
       >
-        <ImageComponents team={{ image: dharan.image }} />
+        <ImageComponents team={{ image: dharan.image, name: dharan.name, position: dharan.position }} />
       </motion.div>
 
       <motion.div
@@ -298,43 +312,27 @@ const topSection9 = useTransform(
         <h1 className="text-2xl text-white mb-8">Leaders Democratising Education</h1>
         <div className="flex flex-col gap-6">
           
-          {teammember.slice(0, 2).map((member, index) => (
+          {teammember.map((member, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="w-full h-[300px] rounded-[15px] overflow-hidden"
+              className="w-full h-[420px] rounded-[15px] overflow-hidden"
             >
               <ImageComponents team={member} />
             </motion.div>
           ))}
 
-          
-          // Original code that rendered three team member cards:
-          {teammember.slice(0, 3).map((member, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="w-full h-[300px] rounded-[15px] overflow-hidden"
-            >
-              <ImageComponents team={member} />
-            </motion.div>
-          ))}
-         
-          
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: teammember.length * 0.2 }}
-            className="w-full h-[300px] rounded-[15px] overflow-hidden"
+            className="w-full h-[420px] rounded-[15px] overflow-hidden"
           >
-            <ImageComponents team={{ image: dharan.image }} />
+            <ImageComponents team={{ image: dharan.image, name: dharan.name, position: dharan.position }} />
           </motion.div>
         </div>
       </div>
