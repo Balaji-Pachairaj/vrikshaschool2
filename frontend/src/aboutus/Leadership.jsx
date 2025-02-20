@@ -1,9 +1,11 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 
-import img1 from "../assets/aboutus/1.png";
+import img1 from "../assets/aboutus/1.jpg";
 import img2 from "../assets/aboutus/2.png";
-import img3 from "../assets/aboutus/VK.png";
+import img3 from "../assets/aboutus/3.png";
+import img4 from "../assets/aboutus/4.png";
+import img5 from "../assets/aboutus/5.png";
 
 const ImageComponents = ({ team }) => {
   return (
@@ -19,7 +21,7 @@ const ImageComponents = ({ team }) => {
 
 const MeetOurTeam3 = () => {
   const dharan = {
-    image: img3,
+    image: img5,
   };
   const teammember = [
     {
@@ -32,14 +34,8 @@ const MeetOurTeam3 = () => {
       image: img3,
     },
     {
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=387&auto=format&fit=crop",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=387&auto=format&fit=crop",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=870&auto=format&fit=crop",
-    },
+      image: img4,
+    }
   ];
   const fullRef = useRef();
 
@@ -82,123 +78,128 @@ const MeetOurTeam3 = () => {
     [1, 1, 1, endScale, endScale, endScale]
   );
 
-  ///--------------------------------------------------------------------
-  const timing2 = [0, 0.1, 0.3, 0.48, point, 1];
+///--------------------------------------------------------------------
 
-  const topSection2 = useTransform(fullRefUseScroll.scrollYProgress, timing2, [
-    "175%",
-    "25%",
-    "25%",
-    endTopState,
-    endTopState,
-    upState,
-  ]);
+const timing2 = [0, 0.1, 0.3, 0.48, point, 1];
 
-  const leftSection2 = useTransform(fullRefUseScroll.scrollYProgress, timing2, [
-    "40%",
-    "40%",
-    "40%",
-    endLeftState,
-    endLeftState,
-    endLeftState,
-  ]);
+const topSection2 = useTransform(fullRefUseScroll.scrollYProgress, timing2, [
+  "175%",
+  "25%",
+  "25%",
+  endTopState,
+  endTopState,
+  upState,
+]);
 
-  const scaleSection2 = useTransform(
-    fullRefUseScroll.scrollYProgress,
-    timing2,
-    [1, 1, 1, endScale, endScale, endScale]
-  );
+const leftSection2 = useTransform(fullRefUseScroll.scrollYProgress, timing2, [
+  "40%",
+  "40%",
+  "40%",
+  endLeftState,
+  endLeftState,
+  endLeftState,
+]);
 
-  // ///--------------------------------------------------------------------
-  // const timing3 = [0, 0.1, 0.48, 0.66, point, 1];
+const scaleSection2 = useTransform(
+  fullRefUseScroll.scrollYProgress,
+  timing2,
+  [1, 1, 1, endScale, endScale, endScale]
+);
 
-  // const topSection3 = useTransform(fullRefUseScroll.scrollYProgress, timing3, [
-  //   "175%",
-  //   "25%",
-  //   "25%",
-  //   endTopState,
-  //   endTopState,
-  //   upState,
-  // ]);
+///--------------------------------------------------------------------
 
-  // const leftSection3 = useTransform(fullRefUseScroll.scrollYProgress, timing3, [
-  //   "60%",
-  //   "60%",
-  //   "60%",
-  //   endLeftState,
-  //   endLeftState,
-  //   endLeftState,
-  // ]);
+const timing3 = [0, 0.1, 0.48, 0.66, point, 1];
 
-  // const scaleSection3 = useTransform(
-  //   fullRefUseScroll.scrollYProgress,
-  //   timing3,
-  //   [1, 1, 1, endScale, endScale, endScale]
-  // );
+const topSection3 = useTransform(fullRefUseScroll.scrollYProgress, timing3, [
+  "175%",
+  "25%",
+  "25%",
+  endTopState,
+  endTopState,
+  upState,
+]);
 
-  ///--------------------------------------------------------------------
-  const timing4 = [0, 0.1, 0.48, 0.66, point, 1];
+const leftSection3 = useTransform(fullRefUseScroll.scrollYProgress, timing3, [
+  "60%",
+  "60%",
+  "60%",
+  endLeftState,
+  endLeftState,
+  endLeftState,
+]);
 
-  const topSection4 = useTransform(fullRefUseScroll.scrollYProgress, timing4, [
-    "175%",
-    "25%",
-    "25%",
-    endTopState,
-    endTopState,
-    upState,
-  ]);
+const scaleSection3 = useTransform(
+  fullRefUseScroll.scrollYProgress,
+  timing3,
+  [1, 1, 1, endScale, endScale, endScale]
+);
 
-  const leftSection4 = useTransform(fullRefUseScroll.scrollYProgress, timing4, [
-    "60%",
-    "60%",
-    "60%",
-    endLeftState,
-    endLeftState,
-    endLeftState,
-  ]);
+///--------------------------------------------------------------------
 
-  const scaleSection4 = useTransform(
-    fullRefUseScroll.scrollYProgress,
-    timing4,
-    [1, 1, 1, endScale, endScale, endScale]
-  );
+const timing4 = [0, 0.1, 0.66, 0.78, point, 1];
 
-  const timing8 = [0, 0.1, 0.4, 0.66, point, 1];
+const topSection4 = useTransform(fullRefUseScroll.scrollYProgress, timing4, [
+  "175%",
+  "25%",
+  "25%",
+  endTopState,
+  endTopState,
+  upState,
+]);
 
-  const left8 = "90%";
+const leftSection4 = useTransform(fullRefUseScroll.scrollYProgress, timing4, [
+  "80%",
+  "80%",
+  "80%",
+  endLeftState,
+  endLeftState,
+  endLeftState,
+]);
 
-  const topSection8 = useTransform(fullRefUseScroll.scrollYProgress, timing8, [
-    "225%",
-    "75%",
-    "75%",
-    endTopState,
-    endTopState,
-    upState,
-  ]);
+const scaleSection4 = useTransform(
+  fullRefUseScroll.scrollYProgress,
+  timing4,
+  [1, 1, 1, endScale, endScale, endScale]
+);
 
-  const leftSection8 = useTransform(fullRefUseScroll.scrollYProgress, timing8, [
-    left8,
-    left8,
-    left8,
-    endLeftState,
-    endLeftState,
-    endLeftState,
-  ]);
+const timing8 = [0, 0.1, 0.8, 0.87, point, 1];
 
-  const scaleSection8 = useTransform(
-    fullRefUseScroll.scrollYProgress,
-    timing8,
-    [1, 1, 1, endScale, endScale, endScale]
-  );
+const left8 = "90%";
 
-  //---------------------------------------------------------------------
-  const topSection9 = useTransform(
-    fullRefUseScroll.scrollYProgress,
-    [0, 0.1, 0.66, 0.88, 1],
-    ["100%", "100%%", "100%", "60%", "-75%"]
-  );
+const topSection8 = useTransform(fullRefUseScroll.scrollYProgress, timing8, [
+  "225%",
+  "75%",
+  "75%",
+  endTopState,
+  endTopState,
+  upState,
+]);
 
-  //------------------------------------------------------------------------
+const leftSection8 = useTransform(fullRefUseScroll.scrollYProgress, timing8, [
+  left8,
+  left8,
+  left8,
+  endLeftState,
+  endLeftState,
+  endLeftState,
+]);
+
+const scaleSection8 = useTransform(
+  fullRefUseScroll.scrollYProgress,
+  timing8,
+  [1, 1, 1, endScale, endScale, endScale]
+);
+
+//---------------------------------------------------------------------
+
+const topSection9 = useTransform(
+  fullRefUseScroll.scrollYProgress,
+  [0, 0.1, 0.86, 0.88, 1],
+  ["100%", "100%%", "100%", "60%", "-75%"]
+);
+
+//------------------------------------------------------------------------
+
   const lastRef = useRef();
 
   return (
@@ -241,8 +242,6 @@ const MeetOurTeam3 = () => {
         <ImageComponents team={teammember[1]} />
       </motion.div>
 
-      {/*
-      // Commented Out: Removed the third card as per request.
       <motion.div
         style={{
           top: topSection3,
@@ -255,7 +254,19 @@ const MeetOurTeam3 = () => {
       >
         <ImageComponents team={teammember[2]} />
       </motion.div>
-      */}
+     
+      <motion.div
+        style={{
+          top: topSection4,
+          x: "-50%",
+          y: "-50%",
+          scale: scaleSection4,
+          left: leftSection4,
+        }}
+        className=" xl:w-[200px] xl:h-[285px] lg:w-[150px] lg:h-[215px] bg-red-400 fixed rounded-[15px] overflow-hidden"
+      >
+        <ImageComponents team={teammember[3]} />
+      </motion.div>
 
       <motion.div
         style={{
@@ -286,10 +297,7 @@ const MeetOurTeam3 = () => {
       <div className="lg:hidden block p-4">
         <h1 className="text-2xl text-white mb-8">Leaders Democratising Education</h1>
         <div className="flex flex-col gap-6">
-          {/* 
-            Changed from slice(0, 3) to slice(0, 2) so that only two team member cards are rendered,
-            and the dharan card will serve as the third card.
-          */}
+          
           {teammember.slice(0, 2).map((member, index) => (
             <motion.div
               key={index}
@@ -303,7 +311,7 @@ const MeetOurTeam3 = () => {
             </motion.div>
           ))}
 
-          {/*
+          
           // Original code that rendered three team member cards:
           {teammember.slice(0, 3).map((member, index) => (
             <motion.div
@@ -317,7 +325,7 @@ const MeetOurTeam3 = () => {
               <ImageComponents team={member} />
             </motion.div>
           ))}
-          */}
+         
           
           <motion.div
             initial={{ opacity: 0, y: 50 }}

@@ -17,19 +17,19 @@ export const content_testimonal = [
   {
     image:
       test2,
-    name: "Sachu Prakash",
+    name: "Ms. Vimala G",
     testimonial: "Vriksha School provides a green, spacious, and stress-free environment where my son thrives both academically and in sports. Seeing him excel and enjoy his learning journey reassures me that I made the right choice as a parent.",
   },
   {
     image:
       test3,
-    name: "Rubia Valar",
+    name: "Ms. Chandrakala",
     testimonial: "Vriksha Global School provides an ideal foundation for my child’s education with its student-centered learning approach. I truly appreciate the dedicated teachers and the holistic development my child experiences through active participation in all activities."
   },
   {
     image:
       test4,
-    name: "Reena",
+    name: "Ms. Kavitha Ramasamy",
     testimonial: "As a teacher, I take pride in being part of Vriksha Global School, where young minds are nurtured beyond textbooks. The school fosters a dynamic learning environment where both students and educators grow together, making every day a fulfilling and enriching experience."
   
   },
