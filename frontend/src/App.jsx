@@ -312,14 +312,14 @@ const router = createBrowserRouter([
       <div className="w-full h-[0.1px]" id="hero"></div>
       <AlumniHero/>
       <div className="w-full h-[0.1px]" id="overview"></div>
-      <Alumnioverview/>
+      {/* <Alumnioverview/> */}
       <div className="w-full h-[0.1px]" id="network"></div>
-      <Alumninetwork/>
+      {/* <Alumninetwork/> */}
       <div className="w-full h-[0.1px]" id="benefits"></div>
       <Alumnibenefits/>  
       
       <div className="w-full h-[0.1px]" id="volunteer"></div>    
-      <Alumnivolunteer/>
+      {/* <Alumnivolunteer/> */}
       <div className="w-full h-[0.1px]" id="noteable"></div>
      
        <Alumninoteablemobile/> <Alumninoteable/>

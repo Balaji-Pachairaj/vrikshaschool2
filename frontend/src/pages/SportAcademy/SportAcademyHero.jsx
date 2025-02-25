@@ -156,7 +156,7 @@ const SportAcademyHero = () => {
         </motion.div>
       </div>
 
-      <div className=" w-full h-[100vh] flex flex-col justify-center gap-[3rem] bg-black">
+      {/* <div className=" w-full h-[100vh] flex flex-col justify-center gap-[3rem] bg-black">
         <div className=" w-full h-fit  md:ps-[5rem]">
           <h1 className=" font-cabin  text-[white] md:text-[4vw] text-[8vw] font-bold md:text-start text-center ">
           
@@ -170,7 +170,7 @@ const SportAcademyHero = () => {
           With state-of-the-art facilities, expert coaches, and a focus on holistic development, we provide athletes with the tools they need to excel both on and off the field. Whether you're striving for professional success or personal growth, this is where champions are made.
           </p>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

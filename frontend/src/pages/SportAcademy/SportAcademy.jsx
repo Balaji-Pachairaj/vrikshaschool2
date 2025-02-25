@@ -13,6 +13,7 @@ import SportAcademyMemberShip from "./SportAcademyMemberShip";
 import SportAcademyFAQ from "./SportAcademyFAQ";
 import NavBar from "../NavBar";
 import FooterSection from "../FooterSection";
+import SportAcademyOffersNew from "./SportAcademyOffersNew";
 
 const SportAcademy = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -23,18 +24,18 @@ const SportAcademy = () => {
       <div className=" w-full h-[0.1px] " id="hero"></div>
       <SportAcademyHero />
       <div className=" w-full h-[10vh] " id="aboutus"></div>
-      <SportAcademyAboutUs />
+      {/* <SportAcademyAboutUs /> */}
       <div className=" w-full h-[10vh] " id="programoffer"></div>
       <SportAcademyProgramOffer />
 
       <div className=" w-full h-[10vh] " id="training"></div>
-      {isMobile ? <SportAcademyTrainingMobile /> : <SportAcademyTraining />}
+      {/* {isMobile ? <SportAcademyTrainingMobile /> : <SportAcademyTraining />} */}
       <div className=" w-full h-[10vh] " id="success"></div>
-      {isMobile ? <SportAcademySuccessMobile /> : <SportAdacemySuccess />}
+      <SportAcademyOffersNew />
+      {/* {isMobile ? <SportAcademySuccessMobile /> : <SportAdacemySuccess />} */}
       {/* <div className=" w-full h-[10vh] " id="story"></div>
       {isMobile ? <SportAcademyStoryMobile /> : <SportAcedemyStory />} */}
 
-      
       <div className=" w-full h-[10vh] " id="faqs"></div>
       <SportAcademyFAQ />
       <FooterSection />

@@ -9,6 +9,7 @@ import AdmissionDOCS from "./AdmissionDOCS"
 import Admissionconditions from "./Admissionconditions"
 import CTA from "../CTA"
 import CTA2 from "../CTA2";
+import AdmissionStepsNew from "./AdmissionStepsNew";
 
 const Admission = () => {
   return (
@@ -18,7 +19,8 @@ const Admission = () => {
       <div className="w-full h-[0.1px]" id="overview" ></div>
       <Admissionoverview />
       <div className=" w-full h-[0.1px]" id="admissionsteps"></div>
-      <Admissionsteps />
+      {/* <Admissionsteps /> */}
+      <AdmissionStepsNew />
       <div className=" w-full h-[0.1px]" id="admissiondocuments"></div>
       <AdmissionDOCS/>
       <div className=" w-full h-[0.1px] bg-black" id="termsconditions"></div>
