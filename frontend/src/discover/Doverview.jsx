@@ -5,7 +5,7 @@ const Doverview = () => {
   return (
     <section 
       className="relative min-h-screen w-full bg-cover bg-center flex items-center justify-center text-white text-center"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
+      // style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-10 flex flex-col items-center justify-center">
         <div className="absolute bottom-0 left-0 right-0 h-80 bg-gradient-to-t from-black to-transparent/10 z-0"></div>
