@@ -19,7 +19,7 @@ const cardContents = [
 const Card = ({ content = {} }) => {
   return (
     <Link
-      to={content?.to}
+      to={content?.path}
       onClick={() => window.scrollTo(0, 0)}
       className=" md:w-[27%] md:h-[60vh] w-[90%] sm:h-[60vh] h-[50vh]  "
     >

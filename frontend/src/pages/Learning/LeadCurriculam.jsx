@@ -25,7 +25,7 @@ const Component = ({
     >
       <div
         style={{ background: `linear-gradient(135deg, #7c2ae8, #00c4cc)` }}
-        className="w-full h-full flex flex-col justify-start  md:p-[2rem] p-[1.5rem] rounded-[8px] hover:rotate-6 duration-300 relative"
+        className="w-full h-full flex flex-col justify-start  md:p-[2rem] p-[1.5rem] rounded-[8px]  duration-300 relative"
       >
         <div className=" w-full  flex flex-row justify-center">
           <img src={content?.vectorImg} alt="Vector" className=" w-[35%] " />
@@ -113,7 +113,7 @@ const LeadCurriculam = () => {
         </div>
 
         <div className="absolute bottom-[1rem] left-[1rem] md:left-[2rem] bg-white p-[1rem] md:p-[1.5rem] rounded-lg shadow-xl max-w-[450px] w-[90%] md:w-auto">
-          <h1 className="font-bold text-[1.5rem] md:text-[2rem] font-[600] mb-2 md:mb-3">
+          <h1 className=" text-[1.5rem] md:text-[2rem] font-[600] mb-2 md:mb-3">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
               Lead Curriculum
             </span>
