@@ -159,7 +159,7 @@ const ContactUs = () => {
     <>
       <div className="w-full h-[0.1px]" id="start"></div>
       <NavBar />
-      <div className="w-full min-h-screen bg-black" id="contact">
+      <div className=" mt-[5rem]  w-full min-h-screen bg-black" id="contact">
         <div className="w-full md:h-[40vh] h-[25vh] flex flex-col md:justify-center justify-end items-center">
           <h1 className="text-[8vw] font-kanit uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
             Contact Us

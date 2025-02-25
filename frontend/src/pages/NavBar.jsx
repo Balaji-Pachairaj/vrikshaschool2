@@ -1,10 +1,17 @@
-import React, { useEffect, useState, useRef, useCallback, useMemo, useContext } from "react";
-import { NavLink, useNavigate, useSearchParams } from "react-router-dom";
+import React, {
+  useEffect,
+  useState,
+  useRef,
+  useCallback,
+  useMemo,
+  useContext,
+} from "react";
+import { Link, NavLink, useNavigate, useSearchParams } from "react-router-dom";
 import { IoMdClose } from "react-icons/io";
 import { TbTriangleInvertedFilled } from "react-icons/tb";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { motion, useAnimation } from "framer-motion";
-import { ModalContext } from '../context/ModalContext';
+import { ModalContext } from "../context/ModalContext";
 
 // Navigation link data structure containing all routes and their sub-sections
 export const NavBarLinks = [
@@ -16,7 +23,7 @@ export const NavBarLinks = [
       { title: "our Milestone", to: "/?section=milestone" },
       // { title: "category", to: "/?section=category" },
       { title: "the advantages", to: "/?section=advantages" },
-      { title: "why us?", to: "/?section=whyus" }, 
+      { title: "why us?", to: "/?section=whyus" },
       { title: "the testimonals", to: "/?section=testimonals" },
     ],
   },
@@ -39,7 +46,10 @@ export const NavBarLinks = [
       { title: "overview", to: "/learning?section=overview" },
       { title: "three sections", to: "/learning?section=learningcard" },
       { title: "vriksha junior", to: "/facilities?section=facilitessection" },
-      { title: "Primary, Seconday & High School", to: "/higher?section=higher" },
+      {
+        title: "Primary, Seconday & High School",
+        to: "/higher?section=higher",
+      },
       { title: "LEAD Curriculum", to: "/lead?section=lead" },
     ],
   },
@@ -79,22 +89,30 @@ export const NavBarLinks = [
     ],
   },
   {
-    title: "sports academy",
-    to: "/sportacademy?section=start",
-    sections: [
-      { title: "aboutus", to: "/sportacademy?section=aboutus" },
-      { title: "program offer", to: "/sportacademy?section=programoffer" },
-      { title: "training", to: "/sportacademy?section=training" },
-      // { title: "success", to: "/sportacademy?section=success" },
-      // { title: "story", to: "/sportacademy?section=story" },
-      // { title: "membership", to: "/sportacademy?section=membership" },
-      { title: "faq's", to: "/sportacademy?section=faqs" },
-    ],
+    title: "Contact Us",
+    to: "/contact?section=start",
   },
+  // {
+  //   title: "sports academy",
+  //   to: "/sportacademy?section=start",
+  //   sections: [
+  //     { title: "aboutus", to: "/sportacademy?section=aboutus" },
+  //     { title: "program offer", to: "/sportacademy?section=programoffer" },
+  //     { title: "training", to: "/sportacademy?section=training" },
+  //     // { title: "success", to: "/sportacademy?section=success" },
+  //     // { title: "story", to: "/sportacademy?section=story" },
+  //     // { title: "membership", to: "/sportacademy?section=membership" },
+  //     { title: "faq's", to: "/sportacademy?section=faqs" },
+  //   ],
+  // },
   {
     title: "Others",
     to: "/alumni?section=start",
     sections: [
+      {
+        title: "sports academy",
+        to: "/sportacademy?section=start",
+      },
       {
         title: "Alumni",
         to: "/alumni?section=start",
@@ -102,10 +120,6 @@ export const NavBarLinks = [
       {
         title: "Marathon",
         to: "/marathon?section=start",
-      },
-      {
-        title: "Contact Us",
-        to: "/contact?section=start",
       },
     ],
   },
@@ -121,9 +135,11 @@ const useScrollToSection = (searchParams) => {
         try {
           const targetElement = document.getElementById(section);
           if (targetElement) {
-            const navbarHeight = document.querySelector('nav')?.offsetHeight || 0;
-            const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-            
+            const navbarHeight =
+              document.querySelector("nav")?.offsetHeight || 0;
+            const targetPosition =
+              targetElement.getBoundingClientRect().top + window.scrollY;
+
             window.scrollTo({
               top: targetPosition - navbarHeight - 20, // Subtract navbar height and add some padding
               behavior: "smooth",
@@ -204,77 +220,79 @@ const NavLap = React.memo(({ content = {} }) => {
 });
 
 // Mobile navigation link component with dropdown functionality
-const NavMobile = React.memo(({ content = {}, toggle = () => {}, isActive, setActiveMenu }) => {
-  const controls = useAnimation();
-  const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
-  
-  useScrollToSection(searchParams);
+const NavMobile = React.memo(
+  ({ content = {}, toggle = () => {}, isActive, setActiveMenu }) => {
+    const controls = useAnimation();
+    const navigate = useNavigate();
+    const [searchParams] = useSearchParams();
 
-  useEffect(() => {
-    if (isActive) {
-      controls.start({
-        height: content?.sections?.length * 25 + "px",
-        transition: {
-          duration: 0.3,
-        },
-      });
-    } else {
-      controls.start({
-        height: "0.5px",
-        transition: {
-          duration: 0.1,
-        },
-      });
-    }
-  }, [isActive, content?.sections?.length, controls]);
+    useScrollToSection(searchParams);
 
-  const handleClick = () => {
-    if (!isActive) {
-      setActiveMenu(content.title);
-    } else {
-      setActiveMenu(null);
-    }
+    useEffect(() => {
+      if (isActive) {
+        controls.start({
+          height: content?.sections?.length * 25 + "px",
+          transition: {
+            duration: 0.3,
+          },
+        });
+      } else {
+        controls.start({
+          height: "0.5px",
+          transition: {
+            duration: 0.1,
+          },
+        });
+      }
+    }, [isActive, content?.sections?.length, controls]);
 
-    if (!content?.sections?.length) {
-      navigate(content?.to);
-    }
-  };
+    const handleClick = () => {
+      if (!isActive) {
+        setActiveMenu(content.title);
+      } else {
+        setActiveMenu(null);
+      }
 
-  return (
-    <>
-      <button
-        onClick={handleClick}
-        className=" w-full h-[40px] flex flex-row items-center  duration-500 uppercase  gap-[0.3rem] hover:bg-white/15 flex-shrink-0 "
-      >
-        <h1 className="text-white text-[10px] font-[600] font-inter ps-[2rem] flex flex-row gap-[0.5rem] items-center">
-          {content?.title}
-          <TbTriangleInvertedFilled size={10} color={"white"} />
-        </h1>
-      </button>
-      <motion.div
-        initial={{ height: "0px" }}
-        animate={controls}
-        onClick={() => {
-          setActiveMenu(null);
-          toggle();
-        }}
-        className={`w-full flex flex-col gap-[0.5rem] flex-shrink-0 overflow-hidden`}
-      >
-        {content?.sections?.map((item) => {
-          return (
-            <NavLink
-              to={item?.to}
-              className="ps-[4rem]   text-[12px] text-white font-[600] font-inter uppercase hover:ps-[4.5rem] duration-300"
-            >
-              {item?.title}
-            </NavLink>
-          );
-        })}
-      </motion.div>
-    </>
-  );
-});
+      if (!content?.sections?.length) {
+        navigate(content?.to);
+      }
+    };
+
+    return (
+      <>
+        <button
+          onClick={handleClick}
+          className=" w-full h-[40px] flex flex-row items-center  duration-500 uppercase  gap-[0.3rem] hover:bg-white/15 flex-shrink-0 "
+        >
+          <h1 className="text-white text-[10px] font-[600] font-inter ps-[2rem] flex flex-row gap-[0.5rem] items-center">
+            {content?.title}
+            <TbTriangleInvertedFilled size={10} color={"white"} />
+          </h1>
+        </button>
+        <motion.div
+          initial={{ height: "0px" }}
+          animate={controls}
+          onClick={() => {
+            setActiveMenu(null);
+            toggle();
+          }}
+          className={`w-full flex flex-col gap-[0.5rem] flex-shrink-0 overflow-hidden`}
+        >
+          {content?.sections?.map((item) => {
+            return (
+              <NavLink
+                to={item?.to}
+                className="ps-[4rem]   text-[12px] text-white font-[600] font-inter uppercase hover:ps-[4.5rem] duration-300"
+              >
+                {item?.title}
+              </NavLink>
+            );
+          })}
+        </motion.div>
+      </>
+    );
+  }
+);
 
 // Custom hook to handle navbar visibility on scroll
 const useNavbarScroll = (setIsVisible) => {
@@ -291,22 +309,22 @@ const useNavbarScroll = (setIsVisible) => {
       scrollTimeout.current = window.requestAnimationFrame(() => {
         const currentScrollY = window.scrollY;
         const scrollDelta = currentScrollY - lastScrollY.current;
-        
+
         if (Math.abs(scrollDelta) < 10) return;
-        
+
         if (scrollDelta < 0 || currentScrollY < 50) {
           setIsVisible(true);
         } else if (scrollDelta > 0 && currentScrollY > 100) {
           setIsVisible(false);
         }
-        
+
         lastScrollY.current = currentScrollY;
       });
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
       if (scrollTimeout.current) {
         window.cancelAnimationFrame(scrollTimeout.current);
       }
@@ -324,7 +342,7 @@ const NavBar = () => {
   // State for navbar visibility
   const [isVisible, setIsVisible] = useState(true);
   const [searchParams] = useSearchParams();
-  
+
   // Initialize scroll handling and section scrolling
   useNavbarScroll(setIsVisible);
   useScrollToSection(searchParams);
@@ -332,18 +350,21 @@ const NavBar = () => {
   const { isModalOpen } = useContext(ModalContext);
 
   // Handle clicks outside mobile menu to close it
-  const handleClickOutside = useCallback((event) => {
-    if (navRef.current && !navRef.current.contains(event.target) && isOpen) {
-      controls.start({
-        top: "-100%",
-        transition: {
-          duration: 0.5,
-        },
-      });
-      setIsOpen(false);
-      setActiveMenu(null);
-    }
-  }, [isOpen, controls]);
+  const handleClickOutside = useCallback(
+    (event) => {
+      if (navRef.current && !navRef.current.contains(event.target) && isOpen) {
+        controls.start({
+          top: "-100%",
+          transition: {
+            duration: 0.5,
+          },
+        });
+        setIsOpen(false);
+        setActiveMenu(null);
+      }
+    },
+    [isOpen, controls]
+  );
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
@@ -374,97 +395,117 @@ const NavBar = () => {
   }, [isOpen, controls]);
 
   // Memoized desktop navigation links
-  const navBarLinksElements = useMemo(() => 
-    NavBarLinks?.map((item) => (
-      <NavLap key={item.title} content={item} />
-    ))
-  , []);
+  const navBarLinksElements = useMemo(
+    () =>
+      NavBarLinks?.map((item) => <NavLap key={item.title} content={item} />),
+    []
+  );
 
   // Memoized mobile navigation links
-  const mobileNavBarLinksElements = useMemo(() => 
-    NavBarLinks?.map((item) => (
-      <NavMobile
-        key={item.title}
-        content={item}
-        toggle={toggle}
-        isActive={activeMenu === item.title}
-        setActiveMenu={setActiveMenu}
-      />
-    ))
-  , [toggle, activeMenu]);
+  const mobileNavBarLinksElements = useMemo(
+    () =>
+      NavBarLinks?.map((item) => (
+        <NavMobile
+          key={item.title}
+          content={item}
+          toggle={toggle}
+          isActive={activeMenu === item.title}
+          setActiveMenu={setActiveMenu}
+        />
+      )),
+    [toggle, activeMenu]
+  );
 
   // Split navigation links for desktop view
-  const leftSideLinks = navBarLinksElements.slice(0, 4);
-  const rightSideLinks = navBarLinksElements.slice(4);
+
+  const rightside = navBarLinksElements;
 
   return (
     <>
       {/* Desktop Navigation Bar */}
-      <motion.div 
+      <motion.div
         initial={{ y: 0, opacity: 1 }}
-        animate={{ 
+        animate={{
           y: isVisible && !isModalOpen ? 0 : -100,
           opacity: isVisible && !isModalOpen ? 1 : 0,
-          scale: isVisible ? 0.95 : 0.95
+          scale: isVisible ? 0.95 : 0.95,
         }}
-        transition={{ 
+        transition={{
           duration: 0.3,
           ease: [0.25, 0.1, 0.25, 1],
           opacity: { duration: 0.2 },
-          scale: { duration: 0.2 }
+          scale: { duration: 0.2 },
         }}
         className="fixed left-0 right-0 mx-auto top-[1.5rem] w-fit max-w-[100%] z-[20000] backdrop-blur-lg bg-black/70 border border-white/20 shadow-xl rounded-[20px] h-fit px-4 md:flex hidden items-center justify-center flex-row gap-[1.2rem]"
       >
         {/* Left side navigation links */}
-        <div className="flex items-center gap-[1rem]">
-          {leftSideLinks}
-        </div>
-        
+        {/* <div className="flex items-center gap-[1rem]">
+         
+        </div> */}
+
         {/* Logo */}
         <NavLink to="/" className="flex items-center">
-          <img src="/navlogo.png" alt="Vriksha School Logo" className="h-[6rem] w-auto" />
+          <img
+            src="/navlogo.png"
+            alt="Vriksha School Logo"
+            className="h-[6rem] w-auto"
+          />
         </NavLink>
-        
+
+        <Link
+          to="/contact?section=start"
+          className=" bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc] text-white rounded-3xl pt-2 pb-2 ps-4 pe-3 font-poppins text-[16px]  font-bold  bg- "
+        >
+          Enroll Now
+        </Link>
+
         {/* Right side navigation links */}
-        <div className="flex items-center gap-[1.2rem]">
-          {rightSideLinks}
-        </div>
+        <div className="flex items-center gap-[1.2rem]">{rightside}</div>
       </motion.div>
 
       {/* Mobile Navigation Toggle Button */}
-      <motion.div 
+      <motion.div
         initial={{ y: 0, opacity: 1 }}
-        animate={{ 
+        animate={{
           y: isVisible && !isModalOpen ? 0 : -100,
           opacity: isVisible && !isModalOpen ? 1 : 0,
-          scale: isVisible ? 1 : 0.95
+          scale: isVisible ? 1 : 0.95,
         }}
-        transition={{ 
+        transition={{
           duration: 0.3,
           ease: [0.25, 0.1, 0.25, 1],
           opacity: { duration: 0.2 },
-          scale: { duration: 0.2 }
+          scale: { duration: 0.2 },
         }}
         className="md:hidden fixed left-0 right-0 mx-auto top-[1.5rem] w-[95%] z-[200001] backdrop-blur-lg bg-black/70 border border-white/20 shadow-xl rounded-[20px] h-fit px-3 flex items-center justify-between"
       >
-        <NavLink to="/" className="flex items-center">
-          <img 
-            src="/navlogo.png"
-            alt="Vriksha School Logo" 
-            className="h-20 w-auto py-2" 
-            loading="eager"
-            style={{ 
-              objectFit: 'contain',
-              maxWidth: '120px',
-              minWidth: '60px',
-              filter: 'brightness(1.02)'
-            }}
-            onError={(e) => {
-              console.error('Logo failed to load');
-              e.target.style.display = 'none';
-            }}
-          />
-        </NavLink>
+        <span className=" h-full flex gap-[1rem] ">
+          <NavLink to="/" className="flex items-center">
+            <img
+              src="/navlogo.png"
+              alt="Vriksha School Logo"
+              className="h-20 w-auto py-2"
+              loading="eager"
+              style={{
+                objectFit: "contain",
+                maxWidth: "120px",
+                minWidth: "60px",
+                filter: "brightness(1.02)",
+              }}
+              onError={(e) => {
+                console.error("Logo failed to load");
+                e.target.style.display = "none";
+              }}
+            />
+          </NavLink>
+
+          <Link
+            to="/contact?section=start"
+            className=" bg-gradient-to-r mt-[1.2rem] from-[#7c2ae8] to-[#00c4cc] text-white rounded-3xl pt-2 pb-2 ps-4 pe-3 h-[40px] font-poppins text-[16px]  font-bold  bg- "
+          >
+            Enroll Now
+          </Link>
+        </span>
         <button onClick={toggle} className="p-2">
           {isOpen ? (
             <IoMdClose size={24} color="white" />

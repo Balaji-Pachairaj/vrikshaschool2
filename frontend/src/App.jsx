@@ -58,6 +58,7 @@ import PrimarySchoolSection from "./pages/Learning/PrimarySchoolSection";
 import LeadCurriculam from "./pages/Learning/LeadCurriculam";
 
 import { ModalProvider } from './context/ModalContext';
+import AluminiTestimonial from "./pages/Alumni/AluminiTestimonial";
 
 const router = createBrowserRouter([
   {
@@ -322,7 +323,8 @@ const router = createBrowserRouter([
       {/* <Alumnivolunteer/> */}
       <div className="w-full h-[0.1px]" id="noteable"></div>
      
-       <Alumninoteablemobile/> <Alumninoteable/>
+       {/* <Alumninoteablemobile/> <Alumninoteable/> */}
+       <AluminiTestimonial />
 
       <div className="w-full h-[0.1px]" id="connect"></div>
       <Alumniconnect/>
