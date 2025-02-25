@@ -30,8 +30,8 @@ const Home = () => {
         <HeroAndVisionSection />
 
         {/* Other Sections */}
-        <div className="w-full h-[10vh]" id={"category"}></div>
-        <Categories />
+        {/* <div className="w-full h-[10vh]" id={"category"}></div>
+        <Categories /> */}
         
         <div className="w-full h-[10vh]" id={"advantages"}></div>
         <Advantages />
@@ -41,7 +41,6 @@ const Home = () => {
         
         <div className="w-full h-[10vh]" id={"testimonals"}></div>
         <Testimonials />
-        <Testimonials_Mobile />
         
         
         <CTA />
