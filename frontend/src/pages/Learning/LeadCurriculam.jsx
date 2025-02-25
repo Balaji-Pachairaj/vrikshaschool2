@@ -1,11 +1,10 @@
 import React from "react";
-import lead from "../../assets/Learning/lead.JPG"
-import vector1 from "../../assets/Learning/11.png"
-import vector2 from "../../assets/Learning/12.png"
-import vector3 from "../../assets/Learning/13.png"
-import vector4 from "../../assets/Learning/14.png"
-import vector5 from "../../assets/Learning/15.png"
-
+import lead from "../../assets/Learning/lead.JPG";
+import vector1 from "../../assets/Learning/11.png";
+import vector2 from "../../assets/Learning/12.png";
+import vector3 from "../../assets/Learning/13.png";
+import vector4 from "../../assets/Learning/14.png";
+import vector5 from "../../assets/Learning/15.png";
 
 const Component = ({
   content = {
@@ -26,26 +25,23 @@ const Component = ({
     >
       <div
         style={{ background: `linear-gradient(135deg, #7c2ae8, #00c4cc)` }}
-        className="w-full h-full flex flex-col justify-start gap-[2.5rem] md:p-[2rem] p-[1.5rem] rounded-[8px] hover:rotate-6 duration-300 relative"
+        className="w-full h-full flex flex-col justify-start  md:p-[2rem] p-[1.5rem] rounded-[8px] hover:rotate-6 duration-300 relative"
       >
+        <div className=" w-full  flex flex-row justify-center">
+          <img src={content?.vectorImg} alt="Vector" className=" w-[35%] " />
+        </div>
         <h1
-          style={{ color: 'white' }}
+          style={{ color: "white" }}
           className="w-full font-[500] lg:text-[24px] md:text-[20px] text-[18px] duration-300"
         >
           {content?.title}
         </h1>
         <p
-          style={{ color: 'white' }}
+          style={{ color: "white" }}
           className="font-[400] font-poppins lg:text-[20px] md:text-[16px] text-[16px]"
         >
           {content?.body}
         </p>
-        
-        <img 
-          src={content?.vectorImg} 
-          alt="Vector" 
-          className="absolute bottom-4 right-4 w-28 h-28"
-        />
       </div>
     </div>
   );
@@ -102,7 +98,6 @@ const array = [
     textHover: "white",
     vectorImg: vector3,
   },
-  
 ];
 
 const LeadCurriculam = () => {
@@ -110,13 +105,13 @@ const LeadCurriculam = () => {
     <div className="w-full min-h-screen bg-[black] pt-[2rem] pb-[2rem] overflow-hidden px-4 md:px-0">
       <div className="relative w-[95%] md:h-[90vh] h-[60vh] mb-[4rem] mx-auto rounded-2xl overflow-hidden shadow-2xl">
         <div className="absolute inset-0 w-full h-full">
-          <img 
+          <img
             src={lead}
             alt="Lead Curriculum"
             className="w-full h-full object-cover rounded-2xl"
           />
         </div>
-        
+
         <div className="absolute bottom-[1rem] left-[1rem] md:left-[2rem] bg-white p-[1rem] md:p-[1.5rem] rounded-lg shadow-xl max-w-[450px] w-[90%] md:w-auto">
           <h1 className="font-bold text-[1.5rem] md:text-[2rem] font-[600] mb-2 md:mb-3">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7c2ae8] to-[#00c4cc]">
@@ -127,9 +122,10 @@ const LeadCurriculam = () => {
             Academic excellence powered by Lead School
           </p>
           <p className="font-cabin text-[12px] md:text-[14px] text-gray-600 mb-2">
-          Our school has partnered with LEAD School which is an Academic Excellence System who towards empowering India by making excellent education accessible and affordable to every child.
+            Our school has partnered with LEAD School which is an Academic
+            Excellence System who towards empowering India by making excellent
+            education accessible and affordable to every child.
           </p>
-          
         </div>
       </div>
 

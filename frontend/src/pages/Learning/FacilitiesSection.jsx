@@ -4,6 +4,7 @@ import FacilitiesMobile from "./FacilitiesMobile";
 import { useMediaQuery } from "react-responsive";
 
 import junior from "../../assets/Learning/JuniorImage.webp";
+import FacilitiesCardsSection from "./FacilitiesCardsSection";
 
 const FacilitiesSection = () => {
   const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -23,30 +24,31 @@ const FacilitiesSection = () => {
                 Admission is given for children between 2 to 6 years of age.
               </p>
               <p className="font-cabin lg:text-[20px] md:text-[16px] text-[16px] text-[white] font-[400] mt-[1rem]">
-                Unique 'Kiducation' to promote physical, emotional, social, emotional,
-                language and intellectual development in the child. Setting the right
-                foundation, we unfold your child's conceptual, cognitive, motor,
-                creative, & language skills.
+                Unique 'Kiducation' to promote physical, emotional, social,
+                emotional, language and intellectual development in the child.
+                Setting the right foundation, we unfold your child's conceptual,
+                cognitive, motor, creative, & language skills.
               </p>
               <p className="font-cabin lg:text-[20px] md:text-[16px] text-[16px] text-[white] font-[400] mt-[1rem]">
                 We follow a teaching methodology based on Play Way, Montessori &
-                Reggio Emilia models with a teacher-student ratio of 1:15. Active
-                parental involvement is always encouraged in our school.
+                Reggio Emilia models with a teacher-student ratio of 1:15.
+                Active parental involvement is always encouraged in our school.
               </p>
             </div>
 
             {/* Image Section - Right Side */}
             <div className="md:w-1/2 h-full overflow-hidden rounded-xl">
-              <img 
-                src={junior} 
-                className="w-full h-full object-contain transition-transform duration-300 ease-in-out hover:scale-110" 
-                alt="Vriksha Junior" 
+              <img
+                src={junior}
+                className="w-full h-full object-contain transition-transform duration-300 ease-in-out hover:scale-110"
+                alt="Vriksha Junior"
               />
             </div>
           </div>
         </div>
       </div>
-      {isMobile ? <FacilitiesMobile /> : <Facilities />}
+      {/* {isMobile ? <FacilitiesMobile /> : <Facilities />} */}
+      <FacilitiesCardsSection />
     </>
   );
 };
